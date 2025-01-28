@@ -1,4 +1,3 @@
-import os
 import pytest
 
 from backend.server.main import create_app
