@@ -1,0 +1,41 @@
+name: Basic workflow
+on: [push, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: ./backend
+        run: |
+          pip install poetry;
+          poetry install;
+      - name: Run test
+        working-directory: ./backend
+        run: |
+          poetry run pytest;
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: ./backend
+        run: |
+          pip install poetry;
+          poetry install;
+      - name: Run lint check
+        working-directory: ./backend
+        run: |
+          poetry run black --check .;
+
