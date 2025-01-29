@@ -6,3 +6,4 @@ __pycache__/
 infra/.terraform/
 infra/.terraform/*
 terraform.tfstate
+terraform.tfstate.*
