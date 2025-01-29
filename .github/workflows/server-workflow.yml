@@ -62,3 +62,20 @@ jobs:
         run: |
           poetry run ruff check .;
 
+
+  cloud:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      - uses: 'actions/checkout@v4'
+      - uses: 'google-github-actions/auth@v2'
+        with:
+          project_id: 'evident-trees-449214-s9'
+          workload_identity_provider: 'projects/369525575533/locations/global/workloadIdentityPools/cs3203-team-1/providers/github'
+          service_account: 'cs3203-github-actions@evident-trees-449214-s9.iam.gserviceaccount.com'
+      - name: test service account actions
+        run: |
+          gcloud storage buckets list;
