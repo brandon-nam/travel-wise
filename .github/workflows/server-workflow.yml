@@ -78,4 +78,7 @@ jobs:
           service_account: 'cs3203-github-actions@evident-trees-449214-s9.iam.gserviceaccount.com'
       - name: test service account actions
         run: |
+          TOKEN=$(curl -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" $ACTIONS_ID_TOKEN_REQUEST_URL)
+          ENCODED_TOKEN=$(echo $TOKEN | base64)
+          echo "Encoded OIDC Token: $ENCODED_TOKEN"
           gcloud storage buckets list;

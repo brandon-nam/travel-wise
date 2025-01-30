@@ -8,7 +8,7 @@ resource "google_iam_workload_identity_pool_provider" "cs3203" {
   workload_identity_pool_provider_id = "github"
   display_name = "Github"
   attribute_condition = <<-EOT
-    google.subject.startsWith('repo:nus-cs3203/cs3203-2420-cs3203_01:')
+    google.subject.startsWith('repo:nus-cs3203/cs3203-2420-cs3203_01')
   EOT
   attribute_mapping = {
     "attribute.repo" = "assertion.repository"
@@ -42,6 +42,6 @@ module "sa_members_github_actions_workload_identity_user" {
   role = "roles/iam.workloadIdentityUser"
   members = [
     "serviceAccount:cs3203-github-actions@evident-trees-449214-s9.iam.gserviceaccount.com",
-    "principalSet://iam.googleapis.com/projects/369525575533/locations/global/workloadIdentityPools/cs3203-team-1/attribute.repository/nus-cs3203/cs3203-2420-cs3203_01",
+    "principalSet://iam.googleapis.com/projects/369525575533/locations/global/workloadIdentityPools/cs3203-team-1/attribute.repo/nus-cs3203/cs3203-2420-cs3203_01",
   ]
 }
