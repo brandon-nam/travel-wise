@@ -1,0 +1,64 @@
+name: Collector workflow
+on:
+  push:
+    paths:
+      - 'collector/**'
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: ./collector
+        run: |
+          pip install poetry;
+          poetry install;
+      - name: Run test
+        working-directory: ./collector
+        run: |
+          poetry run pytest;
+
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: ./collector
+        run: |
+          pip install poetry;
+          poetry install;
+      - name: Run lint check
+        working-directory: ./collector
+        run: |
+          poetry run black --check .;
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: ./collector
+        run: |
+          pip install poetry;
+          poetry install;
+      - name: Run lint check
+        working-directory: ./collector
+        run: |
+          poetry run ruff check .;
+
