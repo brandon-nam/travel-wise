@@ -1,5 +1,9 @@
-name: Basic workflow
-on: [push, workflow_dispatch]
+name: Server workflow
+on:
+  push:
+    paths:
+      - 'server/**'
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -11,12 +15,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        working-directory: ./backend
+        working-directory: ./server
         run: |
           pip install poetry;
           poetry install;
       - name: Run test
-        working-directory: ./backend
+        working-directory: ./server
         run: |
           poetry run pytest;
 
@@ -30,12 +34,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        working-directory: ./backend
+        working-directory: ./server
         run: |
           pip install poetry;
           poetry install;
       - name: Run lint check
-        working-directory: ./backend
+        working-directory: ./server
         run: |
           poetry run black --check .;
 
@@ -49,12 +53,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        working-directory: ./backend
+        working-directory: ./server
         run: |
           pip install poetry;
           poetry install;
       - name: Run lint check
-        working-directory: ./backend
+        working-directory: ./server
         run: |
           poetry run ruff check .;
 
