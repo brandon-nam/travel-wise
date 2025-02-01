@@ -10,7 +10,8 @@ requires-python = ">=3.12"
 dependencies = [
     "praw (>=7.8.1,<8.0.0)",
     "black (>=25.1.0,<26.0.0)",
-    "ruff (>=0.9.4,<0.10.0)"
+    "ruff (>=0.9.4,<0.10.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)"
 ]
 
 
@@ -22,4 +23,7 @@ build-backend = "poetry.core.masonry.api"
 python = ">=3.12,<4.0"
 
 [tool.poetry.scripts]
-start = "collector.main:main"
+start = "src.main:main"
+
+[tool.poetry]
+packages = [{include = "*", from="src"}]
