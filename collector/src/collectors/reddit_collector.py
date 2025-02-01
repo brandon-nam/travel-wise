@@ -13,12 +13,11 @@ from collectors.collector import Collector
 
 logger = logging.getLogger(__name__)
 
-SUBREDDITS_TO_COLLECT_FROM = ["askSingapore", "JapanTravel"]
-QUERY_LIMIT = 3
-
 
 class RedditCollector(Collector):
-    def __init__(self) -> None:
+    def __init__(self, subreddit_list: list[str], query_limit: int) -> None:
+        self.subreddit_list = subreddit_list
+        self.query_limit = query_limit
         load_dotenv()
         self.reddit = praw.Reddit(
             client_id=os.getenv("REDDIT_CLIENT_ID"),
@@ -27,12 +26,14 @@ class RedditCollector(Collector):
         )
 
     def collect(self) -> Generator[tuple[str, list], None, None]:
-        for subreddit_name in SUBREDDITS_TO_COLLECT_FROM:
+        for subreddit_name in self.subreddit_list:
             logger.info(
                 f"Attempting to fetch data from subreddit r/{subreddit_name}..."
             )
             posts = RedditCollector.fetch_hot_posts(
-                reddit=self.reddit, subreddit_name=subreddit_name, limit=QUERY_LIMIT
+                reddit=self.reddit,
+                subreddit_name=subreddit_name,
+                limit=self.query_limit,
             )
             logger.info(
                 f"Successfully fetched {len(posts)} posts and "

@@ -8,14 +8,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-COLLECTOR_CLASSES = [RedditCollector]
+COLLECTORS = [
+    RedditCollector(subreddit_list=["askSingapore", "JapanTravel"], query_limit=3)
+]
 
 
 def main():
     storage = LocalStorage()
-    for collector_class in COLLECTOR_CLASSES:
-        logger.info(f"Begin: Collecting from {collector_class.__name__}")
-        collector = collector_class()
+    for collector in COLLECTORS:
+        logger.info(f"Begin: Collecting from {collector.__class__.__name__}")
         file_paths = []
         for file_path, data in collector.collect():
             file_paths.append(file_path)
