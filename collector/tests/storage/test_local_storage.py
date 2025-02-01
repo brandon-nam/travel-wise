@@ -11,7 +11,7 @@ def local_storage() -> LocalStorage:
 
 
 @pytest.mark.parametrize(
-    "data", [1, True, 1.0, {"key1", 2, "key2", "val2"}, [1, 4, {"key1": 2}]]
+    "data", [1, True, 1.0, {"key1", 2, "key2", "val2"}, [6, 4, {"key1": 2}]]
 )
 def test_save(local_storage: LocalStorage, data: Any) -> None:
     file_path = "mock_file_path"
