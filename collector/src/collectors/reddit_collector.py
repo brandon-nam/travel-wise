@@ -1,4 +1,5 @@
 import datetime
+import logging
 import os
 from typing import Any, Generator
 
@@ -9,6 +10,7 @@ from praw.models import Submission
 
 from collectors.collector import Collector
 
+logger = logging.getLogger(__name__)
 
 SUBREDDITS_TO_COLLECT_FROM = ["askSingapore", "JapanTravel"]
 QUERY_LIMIT = 3
@@ -25,8 +27,15 @@ class RedditCollector(Collector):
 
     def collect(self) -> Generator[tuple[str, list], None, None]:
         for subreddit_name in SUBREDDITS_TO_COLLECT_FROM:
+            logger.info(
+                f"Attempting to fetch data from subreddit r/{subreddit_name}..."
+            )
             posts = RedditCollector.fetch_hot_posts(
                 reddit=self.reddit, subreddit_name=subreddit_name, limit=QUERY_LIMIT
+            )
+            logger.info(
+                f"Successfully fetched {len(posts)} posts and "
+                f"{sum(len(post['comments']) for post in posts)} comments from r/{subreddit_name}..."
             )
             current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
             file_path = f"{subreddit_name}_{current_date}.json"
