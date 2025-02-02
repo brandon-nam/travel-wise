@@ -45,3 +45,12 @@ module "sa_members_github_actions_workload_identity_user" {
     "principalSet://iam.googleapis.com/projects/369525575533/locations/global/workloadIdentityPools/cs3203-team-1/attribute.repo/nus-cs3203/cs3203-2420-cs3203_01",
   ]
 }
+
+module "sa_members_github_actions_editor" {
+  source = "./modules/service_account_iam_members"
+  service_account_id = google_service_account.github_actions.name
+  role = "roles/editor"
+  members = [
+    "serviceAccount:cs3203-github-actions@evident-trees-449214-s9.iam.gserviceaccount.com",
+  ]
+}
