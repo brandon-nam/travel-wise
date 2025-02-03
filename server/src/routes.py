@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 
 def create_routes(app: Flask) -> None:
@@ -8,4 +8,4 @@ def create_routes(app: Flask) -> None:
 
     @app.route("/query", methods=["POST"])
     def query() -> str:
-        return str(request.json)
+        return jsonify(request.json)
