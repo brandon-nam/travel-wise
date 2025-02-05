@@ -1,7 +1,6 @@
 import datetime
 import logging
 import os
-import re
 from typing import Any, Generator
 
 import praw
@@ -63,29 +62,11 @@ class RedditCollector(Collector):
     @staticmethod
     def fetch_comments_from_post(post: Submission) -> list[dict[str, Any]]:
         post.comments.replace_more(limit=0)
-
-        raw_comment_list = post.comments.list()  # all post comments, flattened
-        comment_map = {
-            comment.id: {
+        return [
+            {
                 "id": comment.id,
                 "body": comment.body,
                 "score": comment.score,
-                "replies": [],  # nested
             }
-            for comment in raw_comment_list
-        }  # lookup table: key = comment id, used to populate replies
-        processed_comment_list = []
-
-        for raw_comment in raw_comment_list:
-            # https://praw.readthedocs.io/en/stable/package_info/glossary.html remove t1-t6 prefix
-            parent_id_without_prefix = re.sub(r"^t[1-6]_", "", raw_comment.parent_id)
-            if parent_id_without_prefix == post.id:
-                # top level comment because parent is the post itself
-                processed_comment_list.append(comment_map[raw_comment.id])
-            else:
-                # nested comment, append to the appropriate list
-                comment_map[parent_id_without_prefix]["replies"].append(
-                    comment_map[raw_comment.id]
-                )
-
-        return processed_comment_list
+            for comment in post.comments.list()
+        ]
