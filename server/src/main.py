@@ -9,7 +9,7 @@ from models import db
 from src.routes import create_routes
 
 
-def setup_db(app: Flask, db: SQLAlchemy) -> None:
+def setup_db(app: Flask, database: SQLAlchemy) -> None:
     load_dotenv()
     db_host, db_port, db_user, db_password, db_name = (
         os.getenv("DB_HOST") or "localhost",
@@ -21,7 +21,7 @@ def setup_db(app: Flask, db: SQLAlchemy) -> None:
     app.config["SQLALCHEMY_DATABASE_URI"] = (
         f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
     )
-    db.init_app(app)
+    database.init_app(app)
 
 
 def create_app() -> Flask:
