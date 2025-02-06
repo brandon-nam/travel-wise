@@ -3,7 +3,7 @@ import os
 from flask import Flask
 from flask_cors import CORS
 
-from src.database.sqlalchemy_db import SQLAlchemyDB
+from src.database.sqlalchemy_db.sqlalchemy_db import SQLAlchemyDB
 from src.routes.routes import create_routes
 
 

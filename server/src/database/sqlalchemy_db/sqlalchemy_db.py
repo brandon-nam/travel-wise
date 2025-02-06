@@ -2,7 +2,7 @@ from flask import Response, jsonify
 from sqlalchemy.orm import joinedload
 
 from src.database.base import BaseDB
-from src.database.sql_models import Post, Comment, db
+from src.database.sqlalchemy_db.sqlalchemy_models import Post, Comment, db
 
 
 class SQLAlchemyDB(BaseDB):
@@ -11,7 +11,7 @@ class SQLAlchemyDB(BaseDB):
         db.init_app(self.app)
 
     def get_posts(self) -> Response:
-        posts = Post.query.all()
+        posts = db.session.query(Post).all()
         return jsonify(
             [
                 {
@@ -26,7 +26,9 @@ class SQLAlchemyDB(BaseDB):
         )
 
     def get_comments(self) -> Response:
-        comments = Comment.query.options(joinedload(Comment.locations)).all()
+        comments = (
+            db.session.query(Comment).options(joinedload(Comment.locations)).all()
+        )
         return jsonify(
             [
                 {
