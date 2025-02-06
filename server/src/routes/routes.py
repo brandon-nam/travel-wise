@@ -1,36 +1,13 @@
-from flask import jsonify, Response
+from flask import Response, Flask
 
-from src.database.sql_models import Comment, Post
+from src.database.base import BaseDB
 
 
-def create_routes(app) -> None:
+def create_routes(app: Flask, database: BaseDB) -> None:
     @app.route("/posts", methods=["GET"])
     def get_posts() -> Response:
-        posts = Post.query.all()
-        return jsonify(
-            [
-                {
-                    "id": post.id,
-                    "title": post.title,
-                    "url": post.url,
-                    "karma": post.karma,
-                    "num_comments": post.num_comments,
-                }
-                for post in posts
-            ]
-        )
+        return database.get_posts()
 
     @app.route("/comments", methods=["GET"])
     def get_comments() -> Response:
-        comments = Comment.query.all()
-        return jsonify(
-            [
-                {
-                    "id": comment.id,
-                    "post_id": comment.post_id,
-                    "body": comment.body,
-                    "karma": comment.karma,
-                }
-                for comment in comments
-            ]
-        )
+        return database.get_comments()

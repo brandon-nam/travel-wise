@@ -2,15 +2,12 @@ import os
 
 from flask import Flask
 from flask_cors import CORS
-from flask.cli import load_dotenv
-from flask_sqlalchemy import SQLAlchemy
 
-from src.database.sql_models import db
+from src.database.sqlalchemy_db import SQLAlchemyDB
 from src.routes.routes import create_routes
 
 
-def setup_db(app: Flask, database: SQLAlchemy) -> None:
-    load_dotenv()
+def get_pg_connection_uri() -> str:
     db_host, db_port, db_user, db_password, db_name = (
         os.getenv("DB_HOST") or "localhost",
         os.getenv("DB_PORT") or "5432",
@@ -18,17 +15,15 @@ def setup_db(app: Flask, database: SQLAlchemy) -> None:
         os.getenv("DB_PASSWORD") or "",
         os.getenv("DB_NAME") or "travelwise",
     )
-    app.config["SQLALCHEMY_DATABASE_URI"] = (
-        f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
-    )
-    database.init_app(app)
+    return f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
 
 def create_app() -> Flask:
     app = Flask(__name__)
     CORS(app)
-    setup_db(app, db)
-    create_routes(app)
+    database = SQLAlchemyDB(app, get_pg_connection_uri())
+    database.setup_db()
+    create_routes(app, database)
     return app
 
 
