@@ -5,8 +5,8 @@ from flask_cors import CORS
 from flask.cli import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
 
-from models import db
-from src.routes import create_routes
+from src.database.sql_models import db
+from src.routes.routes import create_routes
 
 
 def setup_db(app: Flask, database: SQLAlchemy) -> None:

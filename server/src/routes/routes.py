@@ -1,6 +1,6 @@
 from flask import jsonify, Response
 
-from models import Post, Comment
+from src.database.sql_models import Comment, Post
 
 
 def create_routes(app) -> None:
