@@ -1,4 +1,5 @@
 from flask import Response, jsonify
+from sqlalchemy.orm import joinedload
 
 from src.database.base import BaseDB
 from src.database.sql_models import Post, Comment, db
@@ -25,7 +26,7 @@ class SQLAlchemyDB(BaseDB):
         )
 
     def get_comments(self) -> Response:
-        comments = Comment.query.all()
+        comments = Comment.query.options(joinedload(Comment.locations)).all()
         return jsonify(
             [
                 {
@@ -33,6 +34,11 @@ class SQLAlchemyDB(BaseDB):
                     "post_id": comment.post_id,
                     "body": comment.body,
                     "karma": comment.karma,
+                    "classification": comment.classification.value,
+                    "date_range": comment.date_range,
+                    "location_coordinates": [
+                        {"lat": loc.lat, "lng": loc.lng} for loc in comment.locations
+                    ],
                 }
                 for comment in comments
             ]
