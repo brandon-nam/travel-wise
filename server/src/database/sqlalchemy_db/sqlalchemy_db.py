@@ -1,7 +1,7 @@
 from flask import Response, jsonify
 from sqlalchemy.orm import joinedload
 
-from src.database.base import BaseDB
+from src.database.base_db import BaseDB
 from src.database.sqlalchemy_db.sqlalchemy_models import Post, Comment, db
 
 

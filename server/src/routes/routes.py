@@ -1,6 +1,6 @@
 from flask import Response, Flask
 
-from src.database.base import BaseDB
+from src.database.base_db import BaseDB
 
 
 def create_routes(app: Flask, database: BaseDB) -> None:
