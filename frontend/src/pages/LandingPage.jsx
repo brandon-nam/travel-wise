@@ -1,18 +1,21 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 function LandingPage() {
     const [text, setText] = useState("");
     const [result, setResult] = useState("");
+    let navigate = useNavigate();
 
     async function handleClick() {
-        const result = await axios.get("http://localhost:3203/posts", { input: text });
-        setResult(result.data);
+        // const result = await axios.get("http://localhost:3203/posts", { input: text });
+        // setResult(result.data);
+        navigate("/results");
     }
 
     return (
-        <div className="flex flex-col items-center space-y-4 p-6 w-full max-w-5xl">
-            <div className="text-xl font-semibold text-center text-gray-800">
+        <div className="flex flex-col items-center space-y-4 p-6 max-w-5xl mx-auto">
+            <div className="text-xl font-semibold text-center text-gray-800 w-full">
                 <h1 className="text-4xl font-bold">Welcome to Travelwise</h1>
                 <p className="text-lg">Get started by asking me for travel suggestions</p>
             </div>
