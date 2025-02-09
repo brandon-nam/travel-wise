@@ -18,7 +18,7 @@ function ResultsPage() {
             const tips = results.data.filter((result) => result.classification === "travel_tip");
 
             setTravelSuggestions(suggestions);
-            console.log(tips);
+
             setTravelTips(tips);
 
             setLoading(false);
@@ -29,9 +29,7 @@ function ResultsPage() {
 
     return (
         <div id="map-tip-container" className="flex w-full h-full min-h-screen">
-            <div className="h-100vh grow-8">
-                <MapComponent />
-            </div>
+            <div className="h-100vh grow-8">{!loading && <MapComponent suggestions={travelSuggestions} />}</div>
             <div id="tip-container" className="grow-2">
                 {!loading &&
                     travelTips.map((travelTip) => {
