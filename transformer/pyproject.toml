@@ -8,6 +8,9 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "black (>=25.1.0,<26.0.0)",
+    "ruff (>=0.9.6,<0.10.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)"
 ]
 
 
