@@ -1,15 +1,14 @@
 from abc import ABC, abstractmethod
 
-from flask import Flask, Response
+from flask import Response, Flask
 
 
 class BaseDB(ABC):
-    def __init__(self, app: Flask, db_connection_uri: str) -> None:
-        self.app = app
+    def __init__(self, db_connection_uri: str) -> None:
         self.db_connection_uri = db_connection_uri
 
     @abstractmethod
-    def setup_db(self) -> None:
+    def setup_db(self, app: Flask) -> None:
         """
         connect your app to the database
         """

@@ -1,4 +1,4 @@
-from flask import Response, jsonify
+from flask import Response, jsonify, Flask
 from sqlalchemy.orm import joinedload
 
 from src.database.base_db import BaseDB
@@ -6,9 +6,9 @@ from src.database.sqlalchemy_db.sqlalchemy_models import Post, Comment, db
 
 
 class SQLAlchemyDB(BaseDB):
-    def setup_db(self) -> None:
-        self.app.config["SQLALCHEMY_DATABASE_URI"] = self.db_connection_uri
-        db.init_app(self.app)
+    def setup_db(self, app: Flask) -> None:
+        app.config["SQLALCHEMY_DATABASE_URI"] = self.db_connection_uri
+        db.init_app(app)
 
     def get_posts(self) -> Response:
         posts = db.session.query(Post).all()
