@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS comments (
     body TEXT NOT NULL,
     karma INT NOT NULL,
     classification classification_type NOT NULL,
-    date_range DATERANGE
+    start_date DATE,
+    end_date DATE
 );
 
 CREATE TABLE IF NOT EXISTS locations (
@@ -26,4 +27,4 @@ CREATE TABLE IF NOT EXISTS locations (
     comment_id TEXT REFERENCES comments(id) ON DELETE CASCADE NOT NULL,
     lat DOUBLE PRECISION,
     lng DOUBLE PRECISION
-)
+);
