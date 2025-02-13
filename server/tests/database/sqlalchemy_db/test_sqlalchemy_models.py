@@ -19,7 +19,7 @@ from src.database.sqlalchemy_db.sqlalchemy_models import (
         (ClassificationType.travel_tip, "travel_tip"),
         (ClassificationType.travel_suggestion, "travel_suggestion"),
         (ClassificationType.other, "other"),
-    ]
+    ],
 )
 def test_classification_type_enum(enum_member, expected_value):
     assert enum_member.value == expected_value
