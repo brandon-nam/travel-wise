@@ -1,8 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 import enum
 
-from sqlalchemy import Enum
-from sqlalchemy.dialects.postgresql import DATERANGE
+from sqlalchemy import Enum, Date
 
 db = SQLAlchemy()
 
@@ -29,7 +28,8 @@ class Comment(db.Model):
     body = db.Column(db.Text, nullable=False)
     karma = db.Column(db.Integer, nullable=False)
     classification = db.Column(Enum(ClassificationType), nullable=False)
-    date_range = db.Column(DATERANGE())
+    start_date = db.Column(Date, nullable=True)
+    end_date = db.Column(Date, nullable=True)
 
     locations = db.relationship(
         "Location", backref="comment", cascade="all, delete-orphan"
@@ -38,7 +38,7 @@ class Comment(db.Model):
 
 class Location(db.Model):
     __tablename__ = "locations"
-    id = db.Column(db.Text, primary_key=True, autoincrement=True)
+    id = db.Column(db.Text, primary_key=True)
     comment_id = db.Column(db.Text, db.ForeignKey("comments.id", ondelete="CASCADE"))
     lat = db.Column(db.Float)
     lng = db.Column(db.Float)

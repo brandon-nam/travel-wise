@@ -37,7 +37,8 @@ class SQLAlchemyDB(BaseDB):
                     "body": comment.body,
                     "karma": comment.karma,
                     "classification": comment.classification.value,
-                    "date_range": comment.date_range,
+                    "start_date": comment.start_date,
+                    "end_date": comment.end_date,
                     "location_coordinates": [
                         {"lat": loc.lat, "lng": loc.lng} for loc in comment.locations
                     ],
