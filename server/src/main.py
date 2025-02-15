@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 
 from flask import Flask
 from flask_cors import CORS
@@ -6,6 +7,8 @@ from flask_cors import CORS
 from src.database.base_db import BaseDB
 from src.database.sqlalchemy_db.sqlalchemy_db import SQLAlchemyDB
 from src.routes.routes import create_routes
+
+load_dotenv()
 
 
 def get_pg_connection_uri() -> str:
