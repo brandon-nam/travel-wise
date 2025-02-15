@@ -28,7 +28,7 @@ class Loader(ABC):
         fs_access should be a subclass of BaseFSAccess.
         """
         writer = self.create_writer()
-        for file_path in fs_access.get_json_file_paths():
+        for file_path in fs_access.get_file_paths(file_type="json"):
             logger.info(f"{file_path}: attempting to load...")
             with fs_access.open(file_path) as f:
                 json_data = json.load(f)

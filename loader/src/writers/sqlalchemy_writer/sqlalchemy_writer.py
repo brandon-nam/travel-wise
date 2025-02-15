@@ -21,6 +21,10 @@ class SQLAlchemyWriter(BaseWriter):
 
     @contextmanager
     def create_session(self) -> Session:
+        """
+        Handles opening and closing of session (context mangaer: with-clause to be used)
+        If any error occurs, session is rolled back (no-op)
+        """
         engine = create_engine(self.db_uri)
         session = sessionmaker(bind=engine)()
         try:
@@ -34,11 +38,7 @@ class SQLAlchemyWriter(BaseWriter):
             session.close()
 
     def write_json(self, json_data: dict[str, Any]) -> None:
-        self._write_posts(json_data)
-        self._write_comments(json_data)
-        self._write_locations(json_data)
-
-    def _write_posts(self, json_data: dict[str, Any]) -> None:
+        # 3 sessions required because we need to insert Posts, Comments and Locations strictly in that order
         with self.create_session() as session:
             session.add_all(
                 [
@@ -53,7 +53,6 @@ class SQLAlchemyWriter(BaseWriter):
                 ]
             )
 
-    def _write_comments(self, json_data: dict[str, Any]) -> None:
         with self.create_session() as session:
             session.add_all(
                 Comment(
@@ -68,7 +67,6 @@ class SQLAlchemyWriter(BaseWriter):
                 for comment in json_data["comments"]
             )
 
-    def _write_locations(self, json_data: dict[str, Any]) -> None:
         with self.create_session() as session:
             session.add_all(
                 [

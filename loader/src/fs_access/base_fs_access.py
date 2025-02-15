@@ -8,7 +8,8 @@ class BaseFSAccess(ABC):
     """
 
     @abstractmethod
-    def get_json_file_paths(self) -> list[str]:
+    def get_file_paths(self, file_type: str) -> list[str]:
+        # file_type without the dot (.) e.g. get_file_paths("json") or get_file_paths("csv")
         pass
 
     @abstractmethod
