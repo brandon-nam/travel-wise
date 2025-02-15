@@ -1,0 +1,75 @@
+{
+    "posts": [
+        {
+            "title": "Exploring Mount Fuji and Nearby Trails – February 20, 2025",
+            "id": "1ipcj1d",
+            "url": "https://www.reddit.com/r/JapanTravel/comments/1ipcj1d/exploring_mount_fuji_and_nearby_trails/",
+            "karma": 5,
+            "num_comments": 2
+        },
+        {
+            "title": "Best Places to Visit in Kyoto During Cherry Blossom Season – March 10, 2025",
+            "id": "1ipfk2e",
+            "url": "https://www.reddit.com/r/JapanTravel/comments/1ipfk2e/best_places_to_visit_in_kyoto_during_cherry_blossom/",
+            "karma": 12,
+            "num_comments": 2
+        }
+    ],
+    "comments": [
+        {
+            "id": "mcqah2d",
+            "post_id": "1ipcj1d",
+            "body": "I'm planning to visit Mount Fuji in late March. Any tips for getting the best views while avoiding the crowds? Would love some local recommendations for nearby trails!",
+            "karma": 2,
+            "classification": "travel_tip",
+            "start_date": "2025-03-25",
+            "end_date": null,
+            "locations": [
+                {
+                    "lat": 35.3606,
+                    "lng": 138.7274
+                }
+            ]
+        },
+        {
+            "id": "mcqsh9b",
+            "post_id": "1ipcj1d",
+            "body": "I'm heading to Mount Fuji soon. Should I be worried about the altitude, and do I need any special gear for the trails?",
+            "karma": 3,
+            "classification": "other",
+            "start_date": null,
+            "end_date": null,
+            "locations": []
+        },
+        {
+            "id": "mcqsl9f",
+            "post_id": "1ipfk2e",
+            "body": "Thanks for the tips! I'm going to Kyoto for cherry blossoms in April. What are some of the lesser-known spots for the best views?",
+            "karma": 4,
+            "classification": "travel_suggestion",
+            "start_date": "2025-04-01",
+            "end_date": "2025-04-07",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681
+                }
+            ]
+        },
+        {
+            "id": "mcqv8kh",
+            "post_id": "1ipfk2e",
+            "body": "I'm planning a short trip to Kyoto in early April. Do you think I should book all accommodations in advance, or is it safe to wing it during cherry blossom season?",
+            "karma": 5,
+            "classification": "travel_tip",
+            "start_date": "2025-04-01",
+            "end_date": "2025-04-05",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681
+                }
+            ]
+        }
+    ]
+}

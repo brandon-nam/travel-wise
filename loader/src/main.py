@@ -1,6 +1,12 @@
 import os
 
+from dotenv import load_dotenv
+
+from src.fs_access.local_fs_access.local_fs_access import LocalFSAccess
 from src.loaders.sqlalchemy_loader.sqlalchemy_loader import SQLAlchemyLoader
+
+
+load_dotenv()
 
 
 def get_pg_connection_uri() -> str:
@@ -16,7 +22,7 @@ def get_pg_connection_uri() -> str:
 
 def main():
     loader = SQLAlchemyLoader(get_pg_connection_uri())
-    loader.load()
+    loader.load_json(LocalFSAccess(directory="./"))
 
 
 if __name__ == "__main__":

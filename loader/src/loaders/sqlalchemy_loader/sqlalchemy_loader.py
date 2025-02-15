@@ -1,4 +1,4 @@
-from src.loaders.loader import Loader
+from src.loaders.base_loader import Loader
 from src.writers.base_writer import BaseWriter
 from src.writers.sqlalchemy_writer.sqlalchemy_writer import SQLAlchemyWriter
 
