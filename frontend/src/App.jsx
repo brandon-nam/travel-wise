@@ -1,6 +1,7 @@
 import LandingPage from "./pages/LandingPage.jsx";
 import NavBar from "./components/NavBar";
-import ResultsPage from "./pages/ResultsPage.jsx";
+import SuggestionsPage from "./pages/SuggestionsPage.jsx";
+import TipsPage from "./pages/TipsPage.jsx";
 
 import { BrowserRouter, Routes, Route } from "react-router";
 
@@ -14,7 +15,8 @@ function App() {
                 <div className="min-w-full h-full pt-16">
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
-                        <Route path="/results" element={<ResultsPage />} />
+                        <Route path="/suggestions" element={<SuggestionsPage />} />
+                        <Route path="/tips" element={<TipsPage />} />
                     </Routes>
                 </div>
             </BrowserRouter>

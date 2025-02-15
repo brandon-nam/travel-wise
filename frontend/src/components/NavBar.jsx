@@ -8,8 +8,11 @@ function NavBar() {
                 <NavLink to="/" end>
                     Home
                 </NavLink>
-                <NavLink to="/results" end>
-                    Results
+                <NavLink to="/suggestions" end>
+                    Suggestions
+                </NavLink>
+                <NavLink to="/tips" end>
+                    Tips
                 </NavLink>
             </div>
         </div>
