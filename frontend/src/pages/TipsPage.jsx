@@ -3,7 +3,7 @@ import MapComponent from "../components/MapComponent";
 import TipCard from "../components/TipCard";
 import axios from "axios";
 
-function ResultsPage() {
+function TipsPage() {
     const [loading, setLoading] = useState(true);
     const [travelSuggestions, setTravelSuggestions] = useState([]);
     const [travelTips, setTravelTips] = useState([]);
@@ -40,4 +40,4 @@ function ResultsPage() {
     );
 }
 
-export default ResultsPage;
+export default TipsPage;
