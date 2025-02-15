@@ -32,9 +32,9 @@ class Loader(ABC):
             logger.info(f"{file_path}: attempting to load...")
             with fs_access.open(file_path) as f:
                 json_data = json.load(f)
-                try:
-                    writer.write_json(json_data)
-                except Exception as e:
-                    logger.info(f"{file_path}: failed to load due to: {e.orig}")
-                else:
-                    logger.info(f"{file_path} successfully loaded file")
+            try:
+                writer.write_json(json_data)
+            except Exception as e:
+                logger.info(f"{file_path}: failed to load due to: {e.orig}")
+            else:
+                logger.info(f"{file_path} successfully loaded file")
