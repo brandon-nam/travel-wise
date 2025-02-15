@@ -1,0 +1,110 @@
+{
+    "posts": [
+        {
+            "title": "Weekly Japan Travel Information and Discussion Thread - February 14, 2025",
+            "id": "1ipa23o",
+            "url": "https://www.reddit.com/r/JapanTravel/comments/1ipa23o/weekly_japan_travel_information_and_discussion/",
+            "karma": 3,
+            "num_comments": 3
+        },
+        {
+            "title": "Trip report: 14d winter foodie trip in Japan Alps, Kanazawa, & Tokyo Area!",
+            "id": "1ipg82l",
+            "url": "https://www.reddit.com/r/JapanTravel/comments/1ipg82l/trip_report_14d_winter_foodie_trip_in_japan_alps/",
+            "karma": 17,
+            "num_comments": 2
+        }
+    ],
+    "comments": [
+        {
+            "id": "mcqgj7e",
+            "post_id": "1ipa23o",
+            "body": "Hey all,\n\nI'm in Tokyo for the next few months and I'll have plenty of time to go to both TeamLabs exhibitions. I've been to PLANETS in the past, but I'm wondering if it's worth a repeat visit with the expansion. Anyone been to the before / after and have an opinion on this?\n\nThanks!",
+            "karma": 3,
+            "classification": "other",
+            "start_date": null,
+            "end_date": null,
+            "locations": [
+                {
+                    "lat": 35.6895,
+                    "lng": 139.6917
+                }
+            ]
+        },
+        {
+            "id": "mcrg8ws",
+            "post_id": "1ipa23o",
+            "body": "How realistic is able to walk around the onsens near the Shin-hotaka Ropeway and hike around Takayama in general in the middle of May?",
+            "karma": 1,
+            "classification": "travel_tip",
+            "start_date": null,
+            "end_date": null,
+            "locations": [
+                {
+                    "lat": 36.2945,
+                    "lng": 137.5484
+                }
+            ]
+        },
+        {
+            "id": "mcsvqlf",
+            "post_id": "1ipa23o",
+            "body": "**Kyushu Trip Itinerary – Looking for Feedback!**\n\nHey everyone, I’m planning a trip to Japan in late April–May and would love some feedback on the Kyushu portion. I’ve been to Tokyo and Kyoto before, so I haven’t fully planned those yet, but I wanted to get this part locked in first.\n\nI like a mix of nature, history, and unique local experiences. I also prefer traveling by public transport and won’t be renting a car. Would love any advice on whether this plan makes sense, if I should tweak the pacing, or if there are any hidden gems I shouldn’t miss!\n\n# Kyushu Itinerary\n\n**April 23 (Tue) – Travel Day**\n\n* Flying into Tokyo and heading straight to Kagoshima in the evening. Just a transit stop before heading to Yakushima.\n\n**April 24 (Wed) – Yakushima**\n\n* Taking the first ferry to Yakushima, dropping off my stuff, and starting to explore.\n\n**April 25–27 (Thu–Sat) – Yakushima**\n\n* Three full days on the island for hiking, nature, and exploring. Planning to leave on the last ferry on the 27th to head to Kumamoto.\n\n**April 28–29 (Sun–Mon) – Kumamoto**\n\n* Two days to explore Kumamoto. Might take a day trip somewhere nearby—still deciding.\n\n**April 30 (Tue) – Arita**\n\n* Heading to Arita for the annual pottery fair. Staying overnight.\n\n**May 1–3 (Wed–Fri) – Nagasaki**\n\n* Three days in Nagasaki, with at least one day trip (maybe Gunkanjima or Shimabara).\n\n**May 4–5 (Sat–Sun) – Yamaguchi**\n\n* Planning a day trip to Hagi and another TBD day around Yamaguchi.\n\n**May 6–8 (Mon–Wed) – Fukuyama / Okayama Area**\n\n* Still figuring out specifics, but thinking about places like Onomichi or Kurashiki.\n\nAfter this, I’ll be heading to Kyoto and Tokyo before flying home.\n\nDoes this look like a solid plan? Anything I should change or add? Appreciate any tips!",
+            "karma": 1,
+            "classification": "travel_suggestion",
+            "start_date": "2025-04-23",
+            "end_date": "2025-05-08",
+            "locations": [
+                {
+                    "lat": 30.3781,
+                    "lng": 130.5281
+                },
+                {
+                    "lat": 32.7898,
+                    "lng": 130.7417
+                },
+                {
+                    "lat": 33.1833,
+                    "lng": 129.7172
+                },
+                {
+                    "lat": 34.1781,
+                    "lng": 131.4738
+                }
+            ]
+        },
+        {
+            "id": "mcsvru7",
+            "post_id": "1ipg82l",
+            "body": "Bookmarking this- thanks.",
+            "karma": 2,
+            "classification": "other",
+            "start_date": null,
+            "end_date": null,
+            "locations": []
+        },
+        {
+            "id": "mctgit0",
+            "post_id": "1ipg82l",
+            "body": "I was planning on doing the same Tokyo -> Matsumoto -> Kakurean Hidaji -> Takayama. I was worried about switching hotels/traveling to a new place every day. I didn't know if I was trying to do too much. Are you glad you planned it that way, or do you wish you would have spent more time in one place? Also did you have any issues navigating the busses/getting tickets? Did you purchase them ahead of time? Did you bring your luggage with you? Any other details you'd like to share, especially about Kakurean Hidaji? That place looks so cool! Thanks so much for your trip report, and sorry for so many questions!",
+            "karma": 1,
+            "classification": "travel_tip",
+            "start_date": null,
+            "end_date": null,
+            "locations": [
+                {
+                    "lat": 35.6895,
+                    "lng": 139.6917
+                },
+                {
+                    "lat": 36.2381,
+                    "lng": 137.9711
+                },
+                {
+                    "lat": 36.1795,
+                    "lng": 137.3250
+                }
+            ]
+        }
+    ]
+}
