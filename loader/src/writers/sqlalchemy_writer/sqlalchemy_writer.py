@@ -34,11 +34,11 @@ class SQLAlchemyWriter(BaseWriter):
             session.close()
 
     def write_json(self, json_data: dict[str, Any]) -> None:
-        self.write_posts(json_data)
-        self.write_comments(json_data)
-        self.write_locations(json_data)
+        self._write_posts(json_data)
+        self._write_comments(json_data)
+        self._write_locations(json_data)
 
-    def write_posts(self, json_data: dict[str, Any]) -> None:
+    def _write_posts(self, json_data: dict[str, Any]) -> None:
         with self.create_session() as session:
             session.add_all(
                 [
@@ -53,7 +53,7 @@ class SQLAlchemyWriter(BaseWriter):
                 ]
             )
 
-    def write_comments(self, json_data: dict[str, Any]) -> None:
+    def _write_comments(self, json_data: dict[str, Any]) -> None:
         with self.create_session() as session:
             session.add_all(
                 Comment(
@@ -68,7 +68,7 @@ class SQLAlchemyWriter(BaseWriter):
                 for comment in json_data["comments"]
             )
 
-    def write_locations(self, json_data: dict[str, Any]) -> None:
+    def _write_locations(self, json_data: dict[str, Any]) -> None:
         with self.create_session() as session:
             session.add_all(
                 [
