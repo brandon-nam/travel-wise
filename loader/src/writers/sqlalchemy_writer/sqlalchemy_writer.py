@@ -22,7 +22,7 @@ class SQLAlchemyWriter(BaseWriter):
     @contextmanager
     def create_session(self) -> Session:
         """
-        Handles opening and closing of session (context mangaer: with-clause to be used)
+        Handles opening and closing of session (context manager: with-clause to be used)
         If any error occurs, session is rolled back (no-op)
         """
         engine = create_engine(self.db_uri)

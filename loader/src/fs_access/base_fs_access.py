@@ -14,4 +14,5 @@ class BaseFSAccess(ABC):
 
     @abstractmethod
     def open(self, path: str) -> IO:
+        # needs to be a context manager (handle cleanup/closing of file after reading)
         pass
