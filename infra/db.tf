@@ -52,7 +52,7 @@ resource "google_sql_user" "this" {
 resource "google_vpc_access_connector" "this" {
   name         = "db-connector"
   region       = var.region
-  network      = google_compute_network.this.id
+  network       = google_compute_network.this.id
   min_instances = 2
   ip_cidr_range = "10.8.0.0/28"
   max_instances = 3
