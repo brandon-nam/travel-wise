@@ -15,7 +15,7 @@ def classify_suggestion_or_tip(comments: list[dict[str, Any]]) -> str:
     Please classify the following list of comments into one of the following categories:
     - "travel_suggestion" if it mentions a location you can visit.
     - "travel_tip" if it mentions travel hacks, tips, or advice.
-    - "unrelated" if it does not mention any of the above.
+    - "other" if it does not mention any of the above.
 
     Respond by giving a json object with comment_id as key, and classification as value, 
     stripped of any ```json``` or trailing and leading quotes.
@@ -41,16 +41,25 @@ def classify_suggestion_or_tip(comments: list[dict[str, Any]]) -> str:
 def classify_location_coordinates(comments: list[dict[str, Any]]) -> str:
     prompt = f"""
     For each location mentioned in these comments, identify their respective coordinates.
-    Respond by giving a json object string with comment_id as key and a dictionary containing the coordinates as the value, 
-    stripped of any ```json``` or trailing and leading quotes. 
-    If there are no identifiable locations mentioned, return an empty dictionary instead.
     
-    Example format:
+    Respond with a dictionary where the comment_id is the key and a list of dictionaries as values, where each dictionary contains:
+    `"lat"` (latitude, float)
+    `"lng"` (longitude, float)
+    .
+    Make sure it is stripped of any ```json``` or trailing and leading quotes. 
+    Do not include any location names anywhere. If there are multiple locations, provide coordinates for all of them. 
+    If there are no identifiable locations mentioned, return an empty list instead.
+    
     {{
-      "Tokyo": [35.6895, 139.6917],
-      "Kamakura": [35.3192, 139.5467]
+      "mbomop8": [
+        {{"lat": 35.3192, "lng": 139.5467}}, 
+        {{"lat": 35.4449, "lng": 139.6368}}
+      ],
+      "mbr1lyf": [
+        {{"lat": 35.7719, "lng": 140.3929}}, 
+        {{"lat": 35.0116, "lng": 135.7681}}
+      ]
     }}
-
 
     Comments:
     {comments}
@@ -68,9 +77,46 @@ def classify_location_coordinates(comments: list[dict[str, Any]]) -> str:
 
     # Extract the classification results from the response
     classification_result = response.choices[0].message.content.strip()
-    #print(f"🔍 Raw OpenAI response: {repr(classification_result)}")  # Use repr() to show hidden characters
     cleaned_response = re.sub(r"```json\s*([\s\S]*?)\s*```", r"\1", classification_result).strip()
     return cleaned_response
+
+
+def classify_temporal(comments: list[dict[str, Any]]) -> dict[str,str | None]:
+    prompt = f"""
+    Identify a date range with a start and end date from these comments. 
+    If an exact date is mentioned, return that date as both the start and end dates.
+    If a specific date range is mentioned, return the respective start date and end date.
+    If a season is mentioned, approximate a two-week date range and return the respective start date and end date.
+    If no dates are found, return null for both.
+    
+    Return a dictionary with the following structure where the comment_id is the key and the dictionary is the value, stripped of any ```json``` or trailing and leading quotes:
+    {{
+        "start_date": "YYYY-MM-DD" | null,
+        "end_date": "YYYY-MM-DD" | null
+    }}
+    
+    Do not return any other text.
+
+    Comments:
+    {comments}
+    """
+    response = client.chat.completions.create(
+        model="gpt-4-turbo",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": prompt},
+        ],
+        max_tokens=1000,
+        temperature=0.5,
+    )
+
+    # Extract the classification results from the response
+    classification_result = response.choices[0].message.content.strip()
+    cleaned_response = re.sub(r"```json\s*([\s\S]*?)\s*```", r"\1", classification_result).strip()
+    parsed_response = json.loads(cleaned_response)
+    return parsed_response
+
+
 
 
 def main():
@@ -79,18 +125,32 @@ def main():
         data = json.load(f)
 
     classification_map = {}
+    coordinate_map = {}
 
     for post in data:
-        result = classify_location_coordinates(post["comments"])
-        classification_map.update(json.loads(result))
+        location_result = classify_location_coordinates(post["comments"])
+        classification_map.update(json.loads(location_result))
+
+        suggest_result = classify_suggestion_or_tip(post["comments"])
+        coordinate_map.update(json.loads(suggest_result))
 
     for post in data:
         for comment in post["comments"]:
-            comment.update(
-                {"classification": classification_map.get(comment["id"], "unknown")}
-            )
 
-    with open(f"./transformed_3_{input_file}", "w") as f:
+            location_data = {"locations": classification_map.get(comment["id"], "unknown")}
+            suggest_data = {"classification": coordinate_map.get(comment["id"], "unknown")}
+
+
+            date_data = classify_temporal(comment)
+            extract_date = date_data.get(comment["id"], {"start_date": None, "end_date": None})
+            comment.update({
+                **suggest_data,
+                **location_data,
+                **extract_date
+
+            })
+
+    with open(f"./transformed_{input_file}", "w") as f:
         json.dump(data, f, indent=4)
 
 
