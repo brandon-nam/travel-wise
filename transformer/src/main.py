@@ -1,5 +1,6 @@
 import json
 import os
+from collections import defaultdict
 from typing import Any
 import re
 
@@ -37,6 +38,7 @@ def classify_suggestion_or_tip(comments: list[dict[str, Any]]) -> str:
     # Extract the classification results from the response
     classification_result = response.choices[0].message.content.strip()
     return classification_result
+
 
 def classify_location_coordinates(comments: list[dict[str, Any]]) -> str:
     prompt = f"""
@@ -77,11 +79,13 @@ def classify_location_coordinates(comments: list[dict[str, Any]]) -> str:
 
     # Extract the classification results from the response
     classification_result = response.choices[0].message.content.strip()
-    cleaned_response = re.sub(r"```json\s*([\s\S]*?)\s*```", r"\1", classification_result).strip()
+    cleaned_response = re.sub(
+        r"```json\s*([\s\S]*?)\s*```", r"\1", classification_result
+    ).strip()
     return cleaned_response
 
 
-def classify_temporal(comments: list[dict[str, Any]]) -> dict[str,str | None]:
+def classify_temporal(comments: list[dict[str, Any]]) -> dict[str, str | None]:
     prompt = f"""
     Identify a date range with a start and end date from these comments. 
     If an exact date is mentioned, return that date as both the start and end dates.
@@ -112,15 +116,15 @@ def classify_temporal(comments: list[dict[str, Any]]) -> dict[str,str | None]:
 
     # Extract the classification results from the response
     classification_result = response.choices[0].message.content.strip()
-    cleaned_response = re.sub(r"```json\s*([\s\S]*?)\s*```", r"\1", classification_result).strip()
+    cleaned_response = re.sub(
+        r"```json\s*([\s\S]*?)\s*```", r"\1", classification_result
+    ).strip()
     parsed_response = json.loads(cleaned_response)
     return parsed_response
 
 
-
-
 def main():
-    input_file = "JapanTravel_2025-02-10 22:29.json"
+    input_file = "JapanTravel_2025-02-16 21:32.json"
     with open(f"./{input_file}") as f:
         data = json.load(f)
 
@@ -137,21 +141,45 @@ def main():
     for post in data:
         for comment in post["comments"]:
 
-            location_data = {"locations": classification_map.get(comment["id"], "unknown")}
-            suggest_data = {"classification": coordinate_map.get(comment["id"], "unknown")}
-
+            location_data = {
+                "locations": classification_map.get(comment["id"], "unknown")
+            }
+            suggest_data = {
+                "classification": coordinate_map.get(comment["id"], "unknown")
+            }
 
             date_data = classify_temporal(comment)
-            extract_date = date_data.get(comment["id"], {"start_date": None, "end_date": None})
-            comment.update({
-                **suggest_data,
-                **location_data,
-                **extract_date
-
-            })
+            extract_date = date_data.get(
+                comment["id"], {"start_date": None, "end_date": None}
+            )
+            comment.update({**suggest_data, **location_data, **extract_date})
+    final_data = defaultdict(list)
+    for post in data:
+        final_data["posts"].append(
+            {
+                "title": post["title"],
+                "id": post["id"],
+                "url": post["url"],
+                "karma": post["score"],
+                "num_comments": len(post["comments"]),
+            }
+        )
+        for comment in post["comments"]:
+            final_data["comments"].append(
+                {
+                    "id": comment["id"],
+                    "post_id": post["id"],
+                    "body": comment["body"],
+                    "karma": comment["score"],
+                    "classification": comment["classification"],
+                    "start_date": comment["start_date"],
+                    "end_date": comment["end_date"],
+                    "locations": comment["locations"],
+                }
+            )
 
     with open(f"./transformed_{input_file}", "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump(final_data, f, indent=4)
 
 
 if __name__ == "__main__":
