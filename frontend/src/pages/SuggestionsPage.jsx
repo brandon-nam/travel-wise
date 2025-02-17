@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import MapComponent from "../components/MapComponent";
 import TipCard from "../components/TipCard";
 import axios from "axios";
+import ClickMarkerContext from "../contexts/ClickMarkerContext";
 
 function SuggestionsPage() {
     const [loading, setLoading] = useState(true);
     const [travelSuggestions, setTravelSuggestions] = useState([]);
-    const [travelTips, setTravelTips] = useState([]);
+    const { clickedMarker } = useContext(ClickMarkerContext);
 
     useEffect(() => {
         // Fetches comments from the backend then classify
@@ -15,11 +16,9 @@ function SuggestionsPage() {
             const results = await axios.get("http://localhost:3203/comments");
 
             const suggestions = results.data.filter((result) => result.classification === "travel_suggestion");
-            const tips = results.data.filter((result) => result.classification === "travel_tip");
 
             setTravelSuggestions(suggestions);
 
-            setTravelTips(tips);
 
             setLoading(false);
         }
@@ -28,12 +27,12 @@ function SuggestionsPage() {
     }, []);
 
     return (
-        <div id="map-tip-container" className="flex w-full h-full min-h-screen">
-            <div className="h-100vh grow-8">{!loading && <MapComponent suggestions={travelSuggestions} />}</div>
-            <div id="tip-container" className="grow-2">
+        <div id="map-tip-container" className="flex w-full h-full ">
+            <div className="h-[calc(100vh-4rem)] w-3/5">{!loading && <MapComponent suggestions={travelSuggestions} />}</div>
+            <div id="tip-container" className="h-[calc(100vh-4rem)] w-2/5 overflow-y-scroll">
                 {!loading &&
-                    travelTips.map((travelTip) => {
-                        return <TipCard body={travelTip.body} key={travelTip.id} />;
+                    travelSuggestions.map((travelTip) => {
+                        return <TipCard body={travelTip.body} key={travelTip.id} highlight={clickedMarker ? travelTip.id == clickedMarker : false}/>;
                     })}
             </div>
         </div>
