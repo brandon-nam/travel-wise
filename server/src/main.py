@@ -12,14 +12,15 @@ load_dotenv()
 
 
 def get_pg_connection_uri() -> str:
-    db_host, db_port, db_user, db_password, db_name = (
+    db_host, db_port, db_user, db_password, db_name, db_driver = (
         os.getenv("DB_HOST") or "localhost",
         os.getenv("DB_PORT") or "5432",
         os.getenv("DB_USER") or "postgres",
         os.getenv("DB_PASSWORD") or "",
         os.getenv("DB_NAME") or "travelwise",
+        os.getenv("DB_DRIVER") or "postgresql",
     )
-    return f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+    return f"{db_driver}://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
 
 def create_app(database: BaseDB) -> Flask:
