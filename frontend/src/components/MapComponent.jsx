@@ -9,14 +9,24 @@ function PoiMarkers({ pois }) {
     return (
         <>
             {pois.map((poi) => (
-                <AdvancedMarker key={poi.id} position={poi.location_coordinates[0]} clickable={true} onClick={() => handleClick(poi.id)}>
-                    <Pin background={clickedMarker == poi.id ? "#FF0000" : "#FBBC04"} glyphColor={"#000"} borderColor={"#000"} />
-                </AdvancedMarker>
+                poi.location_coordinates.map((coord, index) => (
+                    <AdvancedMarker
+                        key={`${poi.id}-${index}`}
+                        position={coord}
+                        clickable={true}
+                        onClick={() => handleClick(poi.id)}
+                    >
+                        <Pin
+                            background={clickedMarker == poi.id ? "#FF0000" : "#FBBC04"}
+                            glyphColor={"#000"}
+                            borderColor={"#000"}
+                        />
+                    </AdvancedMarker>
+                ))
             ))}
         </>
     );
 }
-
 function MapComponent({ suggestions }) {
     const [defaultCenter, setDefaultCenter] = useState({ lat: 0, lng: 0 });
 
