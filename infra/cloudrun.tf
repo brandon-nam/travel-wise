@@ -26,6 +26,30 @@ resource "google_cloud_run_v2_service" "http_server" {
           memory = "512Mi"
         }
       }
+      env {
+        name = "DB_HOST"
+        value = google_sql_database_instance.this.ip_address.0.ip_address
+      }
+      env {
+        name = "DB_PORT"
+        value = var.db_port
+      }
+      env {
+        name = "DB_USER"
+        value = var.db_user
+      }
+      env {
+        name = "DB_PASSWORD"
+        value = var.db_password
+      }
+      env {
+        name = "DB_NAME"
+        value = var.db_name
+      }
+      env {
+        name = "DB_DRIVER"
+        value = var.db_driver
+      }
     }
   }
 }
