@@ -3,7 +3,9 @@ from transformers.reddit_transformer import RedditTransformer
 
 
 def main() -> None:
-    transformer = RedditTransformer(LocalFSAccess(""))
+    transformer = RedditTransformer(
+        LocalFSAccess(src_directory="raw_data", target_directory="transformed_data")
+    )
     transformer.transform()
 
 

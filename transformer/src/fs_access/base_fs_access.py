@@ -8,8 +8,12 @@ class BaseFSAccess(ABC):
     """
 
     @abstractmethod
-    def get_file_paths(self, file_type: str) -> list[str]:
+    def get_src_file_paths(self, file_type: str) -> list[str]:
         # file_type without the dot (.) e.g. get_file_paths("json") or get_file_paths("csv")
+        pass
+
+    @abstractmethod
+    def get_transformed_file_path(self, transformed_file_path: str) -> str:
         pass
 
     @abstractmethod

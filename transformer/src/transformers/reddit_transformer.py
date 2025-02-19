@@ -31,11 +31,13 @@ class RedditTransformer(BaseTransformer):
         return self._chain
 
     def transform(self) -> None:
-        for file_path in self.fs_access.get_file_paths("json"):
+        for file_path in self.fs_access.get_src_file_paths("json"):
             with self.fs_access.open(file_path) as f:
                 json_data = json.load(f)
 
-            with self.fs_access.open(f"./transformed_{file_path}", "w") as f:
+            transformed_file_path = self.fs_access.get_transformed_file_path(file_path)
+
+            with self.fs_access.open(transformed_file_path, "w") as f:
                 str_result = self.chain[0].handle(json.dumps(json_data))
                 json_result = json.loads(str_result)
                 json.dump(json_result, f, indent=4)
