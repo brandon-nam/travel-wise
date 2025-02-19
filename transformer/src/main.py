@@ -1,5 +1,5 @@
 from fs_access.local_fs_access.local_fs_access import LocalFSAccess
-from transformers.reddit_transformer import RedditTransformer
+from transformers.reddit_transformer.reddit_transformer import RedditTransformer
 
 
 def main() -> None:

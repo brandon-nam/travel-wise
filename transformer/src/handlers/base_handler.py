@@ -23,4 +23,5 @@ class BaseHandler(ABC):
 
     @abstractmethod
     def do_handle(self, input_data):
-        pass
+        raise NotImplementedError()
+

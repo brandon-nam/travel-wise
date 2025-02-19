@@ -2,6 +2,7 @@ import json
 
 from ai_provider.openai_provider.open_ai_provider import OpenAIProvider
 from fs_access.base_fs_access import BaseFSAccess
+from handlers.base_handler import BaseHandler
 from handlers.reddit.classify_location_coordinates_handler import (
     ClassifyLocationCoordinatesHandler,
 )
@@ -27,7 +28,7 @@ class RedditTransformer(BaseTransformer):
         super().__init__(fs_access)
 
     @property
-    def chain(self) -> list:
+    def chain(self) -> list[BaseHandler]:
         return self._chain
 
     def transform(self) -> None:

@@ -11,8 +11,9 @@ class BaseTransformer(ABC):
 
     @property
     def chain(self) -> list[BaseHandler]:
-        pass
+        raise NotImplementedError()
 
     @abstractmethod
     def transform(self) -> None:
-        pass
+        raise NotImplementedError()
+
