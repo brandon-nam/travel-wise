@@ -35,6 +35,6 @@ class Loader(ABC):
             try:
                 writer.write_json(json_data)
             except Exception as e:
-                logger.info(f"{file_path}: failed to load due to: {e.orig}")
+                logger.info(f"{file_path}: failed to load due to: {e}")
             else:
                 logger.info(f"{file_path} successfully loaded file")

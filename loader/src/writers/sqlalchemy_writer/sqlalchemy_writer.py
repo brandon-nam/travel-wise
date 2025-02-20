@@ -46,8 +46,7 @@ class SQLAlchemyWriter(BaseWriter):
                         id=post["id"],
                         title=post["title"],
                         url=post["url"],
-                        karma=post["karma"],
-                        num_comments=post["num_comments"],
+                        score=post["score"],
                     )
                     for post in json_data["posts"]
                 ]
@@ -59,7 +58,7 @@ class SQLAlchemyWriter(BaseWriter):
                     id=comment["id"],
                     post_id=comment["post_id"],
                     body=comment["body"],
-                    karma=comment["karma"],
+                    score=comment["score"],
                     classification=ClassificationType[comment["classification"]],
                     start_date=comment["start_date"],
                     end_date=comment["end_date"],

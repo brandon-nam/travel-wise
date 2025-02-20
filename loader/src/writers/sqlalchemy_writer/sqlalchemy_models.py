@@ -16,8 +16,7 @@ class Post(Base):
     id = Column(String, primary_key=True)
     title = Column(String, nullable=False)
     url = Column(String, nullable=False)
-    karma = Column(Integer, nullable=False)
-    num_comments = Column(Integer, nullable=False)
+    score = Column(Integer, nullable=False)
 
 
 class Comment(Base):
@@ -25,7 +24,7 @@ class Comment(Base):
     id = Column(String, primary_key=True)
     post_id = Column(String, ForeignKey("posts.id"), nullable=False)
     body = Column(String, nullable=False)
-    karma = Column(Integer, nullable=False)
+    score = Column(Integer, nullable=False)
     classification = Column(Enum(ClassificationType), nullable=False)
     start_date = Column(Date, nullable=True)
     end_date = Column(Date, nullable=True)
