@@ -18,7 +18,7 @@ class SQLAlchemyDB(BaseDB):
                     "id": post.id,
                     "title": post.title,
                     "url": post.url,
-                    "karma": post.karma,
+                    "score": post.score,
                     "num_comments": post.num_comments,
                 }
                 for post in posts
@@ -35,7 +35,7 @@ class SQLAlchemyDB(BaseDB):
                     "id": comment.id,
                     "post_id": comment.post_id,
                     "body": comment.body,
-                    "karma": comment.karma,
+                    "score": comment.score,
                     "classification": comment.classification.value,
                     "start_date": comment.start_date,
                     "end_date": comment.end_date,

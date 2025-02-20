@@ -27,14 +27,14 @@ def test_get_posts(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
             "id": "1ijug04",
             "title": "Weekly Japan Travel Information and Discussion Thread - February 07, 2025",
             "url": "https://www.reddit.com/r/JapanTravel/comments/1ijug04/weekly_japan_travel_information_and_discussion/",
-            "karma": 12,
+            "score": 12,
             "num_comments": 7,
         },
         {
             "id": "2ijug05",
             "title": "Japan Travel Tips and Recommendations",
             "url": "https://www.reddit.com/r/JapanTravel/comments/2ijug05/japan_travel_tips_and_recommendations/",
-            "karma": 15,
+            "score": 15,
             "num_comments": 10,
         },
     ]
@@ -57,7 +57,7 @@ def test_get_comments(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
             "id": "1ijug04",
             "title": "Weekly Japan Travel Information and Discussion Thread - February 07, 2025",
             "url": "https://www.reddit.com/r/JapanTravel/comments/1ijug04/weekly_japan_travel_information_and_discussion/",
-            "karma": 12,
+            "score": 12,
             "num_comments": 7,
         }
     ]
@@ -66,7 +66,7 @@ def test_get_comments(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
             "id": "mbomop8",
             "post_id": "1ijug04",
             "body": "Traveling to Kamakura from Tokyo next week. Can anyone recommend the best way to get to Yokohama chinatown on my way back to Tokyo? I did this last year and the taxi ride seemed too long from whatever station in Yokohama I arrived in from Kamakura which google maps recommended.",
-            "karma": 1,
+            "score": 1,
             "classification": ClassificationType.travel_suggestion,
             "start_date": datetime.date(2025, 2, 1),
             "end_date": datetime.date(2025, 2, 7),
@@ -75,7 +75,7 @@ def test_get_comments(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
             "id": "mbr1lyf",
             "post_id": "1ijug04",
             "body": "Heading to Japan in May, I''ve got a rough idea of what I am doing but need some help with accommodation recommendations, I''m going solo so I don''t need a lot but I don''t want to stay at hostels or capsule places...",
-            "karma": 1,
+            "score": 1,
             "classification": ClassificationType.travel_suggestion,
             "start_date": datetime.date(2025, 2, 1),
             "end_date": datetime.date(2025, 2, 7),
