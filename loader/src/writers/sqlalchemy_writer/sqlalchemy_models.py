@@ -17,6 +17,7 @@ class Post(Base):
     title = Column(String, nullable=False)
     url = Column(String, nullable=False)
     score = Column(Integer, nullable=False)
+    num_comments = Column(Integer, nullable=False)
 
 
 class Comment(Base):

@@ -14,6 +14,7 @@ class SplitPostsAndCommentsHandler(BaseHandler):
                 "id": entry["id"],
                 "url": entry["url"],
                 "score": entry["score"],
+                "num_comments": len(entry["comments"]),
             }
             result["posts"].append(post)
             for comment in entry["comments"]:
