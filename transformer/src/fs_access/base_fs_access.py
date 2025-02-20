@@ -20,4 +20,3 @@ class BaseFSAccess(ABC):
     def open(self, path: str, mode: str = "r") -> IO:
         # needs to be a context manager (handle cleanup/closing of file after reading)
         raise NotImplementedError()
-

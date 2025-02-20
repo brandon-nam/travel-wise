@@ -16,4 +16,3 @@ class BaseTransformer(ABC):
     @abstractmethod
     def transform(self) -> None:
         raise NotImplementedError()
-

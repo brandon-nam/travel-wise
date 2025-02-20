@@ -16,5 +16,7 @@ class SplitPostsAndCommentsHandler(BaseHandler):
                 "score": entry["score"],
             }
             result["posts"].append(post)
+            for comment in entry["comments"]:
+                comment["post_id"] = entry["id"]
             result["comments"].extend(entry["comments"])
         return json.dumps(result, indent=4)
