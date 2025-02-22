@@ -86,3 +86,41 @@ resource "google_project_iam_member" "cloud_run_invoker" {
   member  = "serviceAccount:${google_service_account.cloud_run_service_account.email}"
 }
 
+// Frontend
+
+resource "google_cloud_run_v2_service" "frontend" {
+  depends_on = [
+    google_service_account.cloud_run_service_account
+  ]
+  name     = "frontend"
+  location = "asia-southeast1"
+  deletion_protection = false
+  ingress = "INGRESS_TRAFFIC_ALL"
+  template {
+    service_account = google_service_account.cloud_run_service_account.email
+    scaling {
+      max_instance_count = 1
+    }
+    containers {
+      image = "asia-southeast1-docker.pkg.dev/evident-trees-449214-s9/cs3203-repo/cs3203_frontend:v1"
+      ports {
+        container_port = 4173
+      }
+      resources {
+        limits = {
+          cpu    = "1"
+          memory = "512Mi"
+        }
+      }
+    }
+  }
+}
+
+resource "google_cloud_run_service_iam_member" "frontend" {
+  location = google_cloud_run_v2_service.frontend.location
+  project = google_cloud_run_v2_service.frontend.project
+  service = google_cloud_run_v2_service.frontend.name
+  role = "roles/run.invoker"
+  member = "allUsers"
+}
+
