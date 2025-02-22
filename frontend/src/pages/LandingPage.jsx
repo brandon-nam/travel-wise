@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axiosInstance from "../utils/AxiosInstance";
 import { useNavigate } from "react-router";
 
 function LandingPage() {
@@ -8,7 +8,7 @@ function LandingPage() {
     let navigate = useNavigate();
 
     async function handleClick() {
-        // const result = await axios.get("http://localhost:3203/posts", { input: text });
+        // const result = await axiosInstance.get("posts", { input: text });
         // setResult(result.data);
         navigate("/results");
     }

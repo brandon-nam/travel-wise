@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import MapComponent from "../components/MapComponent";
 import TipCard from "../components/TipCard";
-import axios from "axios";
+import axiosInstance from "../utils/AxiosInstance";
 import ClickMarkerContext from "../contexts/ClickMarkerContext";
 
 function SuggestionsPage() {
@@ -13,7 +13,7 @@ function SuggestionsPage() {
         // Fetches comments from the backend then classify
         async function fetchAndClassifyData() {
             setLoading(true);
-            const results = await axios.get("http://localhost:3203/comments");
+            const results = await axiosInstance.get("comments");
 
             const suggestions = results.data.filter((result) => result.classification === "travel_suggestion");
 

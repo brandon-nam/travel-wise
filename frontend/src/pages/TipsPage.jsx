@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MapComponent from "../components/MapComponent";
 import TipCard from "../components/TipCard";
-import axios from "axios";
+import axiosInstance from "../utils/AxiosInstance";
 
 function TipsPage() {
     const [loading, setLoading] = useState(true);
@@ -11,7 +11,7 @@ function TipsPage() {
         // Fetches comments from the backend then classify
         async function fetchAndClassifyData() {
             setLoading(true);
-            const results = await axios.get("http://localhost:3203/comments");
+            const results = await axiosInstance.get("comments");
 
             const tips = results.data.filter((result) => result.classification === "travel_tip");
 

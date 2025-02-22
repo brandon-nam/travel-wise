@@ -1,0 +1,42 @@
+name: Frontend workflow
+on:
+  push:
+    paths:
+      - 'frontend/**'
+  workflow_dispatch:
+jobs:
+  cloud:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      - uses: 'actions/checkout@v4'
+      - uses: 'google-github-actions/auth@v2'
+        id: 'auth'
+        with:
+          project_id: 'evident-trees-449214-s9'
+          workload_identity_provider: 'projects/369525575533/locations/global/workloadIdentityPools/cs3203-team-1/providers/github'
+          service_account: 'cs3203-github-actions@evident-trees-449214-s9.iam.gserviceaccount.com'
+          token_format: 'access_token'
+      - name: test service account actions
+        run: |
+          TOKEN=$(curl -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" $ACTIONS_ID_TOKEN_REQUEST_URL)
+          ENCODED_TOKEN=$(echo $TOKEN | base64)
+          echo "Encoded OIDC Token: $ENCODED_TOKEN"
+          gcloud storage buckets list;
+      - name: login to artifact repository
+        uses: docker/login-action@v3
+        with:
+          registry: "asia-southeast1-docker.pkg.dev"
+          username: oauth2accesstoken
+          password: ${{ steps.auth.outputs.access_token }}
+      - name: build image
+        run: |
+          cd frontend/
+          docker build -t asia-southeast1-docker.pkg.dev/evident-trees-449214-s9/cs3203-repo/cs3203_frontend:v1 .
+      - name: push image
+        run: |
+          docker push asia-southeast1-docker.pkg.dev/evident-trees-449214-s9/cs3203-repo/cs3203_frontend:v1
+          
