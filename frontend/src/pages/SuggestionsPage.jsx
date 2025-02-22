@@ -13,6 +13,7 @@ function SuggestionsPage() {
         // Fetches comments from the backend then classify
         async function fetchAndClassifyData() {
             setLoading(true);
+            console.log('Axios Base URL:', axiosInstance.defaults.baseURL);
             const results = await axiosInstance.get("comments");
 
             const suggestions = results.data.filter((result) => result.classification === "travel_suggestion");

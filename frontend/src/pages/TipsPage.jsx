@@ -11,6 +11,7 @@ function TipsPage() {
         // Fetches comments from the backend then classify
         async function fetchAndClassifyData() {
             setLoading(true);
+            console.log('Axios Base URL:', axiosInstance.defaults.baseURL);
             const results = await axiosInstance.get("comments");
 
             const tips = results.data.filter((result) => result.classification === "travel_tip");
