@@ -27,7 +27,7 @@ class Comment(db.Model):
     post_id = db.Column(db.Text, db.ForeignKey("posts.id"), nullable=False)
     body = db.Column(db.Text, nullable=False)
     score = db.Column(db.Integer, nullable=False)
-    classification = db.Column(Enum(ClassificationType, name='classification_type'), nullable=False)
+    classification = db.Column(Enum(ClassificationType), nullable=False)
     start_date = db.Column(Date, nullable=True)
     end_date = db.Column(Date, nullable=True)
 
@@ -39,6 +39,6 @@ class Comment(db.Model):
 class Location(db.Model):
     __tablename__ = "locations"
     id = db.Column(db.Text, primary_key=True)
-    comment_id = db.Column(db.Text, db.ForeignKey("comments.id", ondelete="CASCADE"), nullable=False)
+    comment_id = db.Column(db.Text, db.ForeignKey("comments.id", ondelete="CASCADE"))
     lat = db.Column(db.Float)
     lng = db.Column(db.Float)

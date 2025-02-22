@@ -9,7 +9,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from database.sqlalchemy_db.sqlalchemy_models import db
+
+from src.database.sqlalchemy_db.sqlalchemy_models import db
 target_metadata = db.Model.metadata
 
 # this is the Alembic Config object, which provides
