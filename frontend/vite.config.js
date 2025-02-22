@@ -11,5 +11,6 @@ export default defineConfig({
   },
   allowedHosts: [
     'frontend-369525575533.asia-southeast1.run.app',
+    'maps.googleapis.com',
   ],
 })
