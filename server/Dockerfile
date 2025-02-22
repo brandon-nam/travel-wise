@@ -10,4 +10,6 @@ RUN poetry install
 
 ENV POETRY_VIRTUALENVS_CREATE=false
 
-CMD ["poetry", "run", "start"]
+RUN chmod +x /backend/entrypoint.sh
+
+CMD ["/backend/entrypoint.sh"]
