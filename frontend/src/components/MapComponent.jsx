@@ -31,7 +31,7 @@ function MapComponent({ suggestions }) {
     const [defaultCenter, setDefaultCenter] = useState({ lat: 0, lng: 0 });
 
     useEffect(() => {
-        console.log('suggestions:', suggestions[0]);
+        // console.log('suggestions:', suggestions[0]);
         if (suggestions !== null && suggestions !== undefined && suggestions.length !== 0) {
             setDefaultCenter(suggestions[0]['location_coordinates'][0]);
         }
