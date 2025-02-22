@@ -1,5 +1,5 @@
 import { Map, APIProvider, AdvancedMarker, Pin } from "@vis.gl/react-google-maps";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, memo } from "react";
 import ClickMarkerContext from "../contexts/ClickMarkerContext";
 
 function PoiMarkers({ travelSuggestions }) {
@@ -51,4 +51,4 @@ function MapComponent({ travelSuggestions }) {
     );
 }
 
-export default MapComponent;
+export default memo(MapComponent);

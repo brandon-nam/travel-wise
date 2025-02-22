@@ -5,10 +5,14 @@ import TipsPage from "./pages/TipsPage.jsx";
 
 import { BrowserRouter, Routes, Route } from "react-router";
 import ClickMarkerContext, { ClickMarkerProvider } from "./contexts/ClickMarkerContext.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
     return (
         <div className="flex flex-col items-center min-h-screen min-w-full bg-gray-100 h-full">
+            <QueryClientProvider client={queryClient}>
             <ClickMarkerProvider>
                 <BrowserRouter>
                     <div className="fixed top-0 w-full z-50">
@@ -25,6 +29,7 @@ function App() {
                     </div>
                 </BrowserRouter>
             </ClickMarkerProvider>
+            </QueryClientProvider>
         </div>
     );
 }

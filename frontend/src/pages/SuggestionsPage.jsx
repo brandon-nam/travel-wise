@@ -1,38 +1,32 @@
-import { useEffect, useState, useContext } from "react";
+import axios from "axios";
+
+import ClickMarkerContext from "../contexts/ClickMarkerContext";
 import MapComponent from "../components/MapComponent";
 
 import PlaceCard from "../components/PlaceCard";
-import axios from "axios";
-import ClickMarkerContext from "../contexts/ClickMarkerContext";
+
+import { useEffect, useState, useContext } from "react";
+import { useQuery } from "@tanstack/react-query"
+
+import { fetchComments } from "../lib/API";
+
 
 function SuggestionsPage() {
-    const [loading, setLoading] = useState(true);
-    const [travelSuggestions, setTravelSuggestions] = useState([]);
     const { clickedMarker } = useContext(ClickMarkerContext);
 
-    useEffect(() => {
-        // Fetches comments from the backend then classify
-        async function fetchAndClassifyData() {
-            setLoading(true);
-            console.log('Axios Base URL:', axiosInstance.defaults.baseURL);
-            const results = await axiosInstance.get("comments");
-
-            const suggestions = results.data.filter((result) => result.classification === "travel_suggestion");
-
-            setTravelSuggestions(suggestions);
-
-            setLoading(false);
-        }
-
-        fetchAndClassifyData();
-    }, []);
+    const { isLoading, data, error } = useQuery({
+        queryKey: ["travelSuggestions"],
+        queryFn: () => fetchComments(),
+        select: (data) => data.filter((result) => result.classification === "travel_suggestion"),
+        staleTime: Infinity
+    })
 
     return (
         <div id="map-tip-container" className="flex w-full h-full ">
-            <div className="h-[calc(100vh-4rem)] w-3/5">{!loading && <MapComponent travelSuggestions={travelSuggestions} />}</div>
+            <div className="h-[calc(100vh-4rem)] w-3/5">{!isLoading && <MapComponent travelSuggestions={data} />}</div>
             <div id="tip-container" className="h-[calc(100vh-4rem)] w-2/5 overflow-y-scroll">
-                {!loading &&
-                    travelSuggestions.map((travelSuggestion) => {
+                {!isLoading &&
+                    data.map((travelSuggestion) => {
                         if (travelSuggestion.location_coordinates.length > 1) {
                             const placeCards = [];
                             travelSuggestion.location_coordinates.map((location) => {

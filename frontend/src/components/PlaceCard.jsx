@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 
 function PlaceCard({ body, highlight }) {
     return (
@@ -8,4 +8,4 @@ function PlaceCard({ body, highlight }) {
     );
 }
 
-export default PlaceCard;
+export default memo(PlaceCard);
