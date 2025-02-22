@@ -3,7 +3,7 @@ set -e
 
 # Run migrations
 echo "Running database migrations..."
-alembic upgrade head
+poetry run alembic upgrade head
 
 # Start application
 echo "Starting server..."
