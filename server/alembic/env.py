@@ -11,6 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.database.sqlalchemy_db.sqlalchemy_models import db
+
 target_metadata = db.Model.metadata
 
 # this is the Alembic Config object, which provides
@@ -33,6 +34,7 @@ if config.config_file_name is not None:
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
 
+
 def get_url():
     db_host, db_port, db_user, db_password, db_name, db_driver = (
         os.getenv("DB_HOST") or "localhost",
@@ -43,7 +45,6 @@ def get_url():
         os.getenv("DB_DRIVER") or "postgresql",
     )
     return f"{db_driver}://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
-
 
 
 def run_migrations_offline() -> None:
@@ -77,7 +78,7 @@ def run_migrations_online() -> None:
     if not database_url:
         raise ValueError("DATABASE_URL environment variable not set")
 
-    config.set_main_option('sqlalchemy.url', database_url)
+    config.set_main_option("sqlalchemy.url", database_url)
 
     connectable = engine_from_config(
         config.get_section(config.config_ini_section, {}),
@@ -90,7 +91,7 @@ def run_migrations_online() -> None:
             connection=connection,
             target_metadata=target_metadata,
             compare_type=True,
-            compare_server_default=True
+            compare_server_default=True,
         )
 
         with context.begin_transaction():
