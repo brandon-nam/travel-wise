@@ -3,7 +3,7 @@ import React, { useState, createContext } from 'react';
 const ClickMarkerContext = createContext();
 
 export function ClickMarkerProvider({ children }) {
-    const [clickedMarker, setClickedMarker] = useState(null);
+    const [clickedMarker, setClickedMarker] = useState("");
 
     function handleClick(marker) {
         console.log("clicked!")

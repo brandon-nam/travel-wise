@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 
-function PlaceCard({ coordinate }) {
+function PlaceCard({ body, highlight }) {
     return (
-        <div className="flex flex-col border w-full items-center">
-            <div className="p-10">image</div>
-            <h1>{coordinate[0]["lng"]}</h1>
+        <div className={`flex flex-col shadow items-center py-10 bg-white m-3 rounded px-10 ${highlight ? "border-2 border-blue-500" : ""}`}>
+            <p>{body}</p>
         </div>
     );
 }

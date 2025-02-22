@@ -1,7 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import MapComponent from "../components/MapComponent";
-import TipCard from "../components/TipCard";
-import axiosInstance from "../utils/AxiosInstance";
+
+import PlaceCard from "../components/PlaceCard";
+import axios from "axios";
 import ClickMarkerContext from "../contexts/ClickMarkerContext";
 
 function SuggestionsPage() {
@@ -20,7 +21,6 @@ function SuggestionsPage() {
 
             setTravelSuggestions(suggestions);
 
-
             setLoading(false);
         }
 
@@ -29,11 +29,34 @@ function SuggestionsPage() {
 
     return (
         <div id="map-tip-container" className="flex w-full h-full ">
-            <div className="h-[calc(100vh-4rem)] w-3/5">{!loading && <MapComponent suggestions={travelSuggestions} />}</div>
+            <div className="h-[calc(100vh-4rem)] w-3/5">{!loading && <MapComponent travelSuggestions={travelSuggestions} />}</div>
             <div id="tip-container" className="h-[calc(100vh-4rem)] w-2/5 overflow-y-scroll">
                 {!loading &&
-                    travelSuggestions.map((travelTip) => {
-                        return <TipCard body={travelTip.body} key={travelTip.id} highlight={clickedMarker ? travelTip.id == clickedMarker : false}/>;
+                    travelSuggestions.map((travelSuggestion) => {
+                        if (travelSuggestion.location_coordinates.length > 1) {
+                            const placeCards = [];
+                            travelSuggestion.location_coordinates.map((location) => {
+                                console.log(`${location.lat}-${location.lng}` === clickedMarker);
+                                console.log(`${location.lat}-${location.lng}`);
+                                console.log(clickedMarker);
+                                placeCards.push(
+                                    <PlaceCard
+                                        body={location.loc_name}
+                                        key={`${location.lat}-${location.lng}`}
+                                        highlight={clickedMarker ? `${location.lat}-${location.lng}` === clickedMarker : false}
+                                    />
+                                );
+                            });
+
+                            return <>{placeCards}</>;
+                        }
+                        return (
+                            <PlaceCard
+                                body={travelSuggestion.location_coordinates[0].loc_name}
+                                key={travelSuggestion.id}
+                                highlight={clickedMarker ? travelSuggestion.id == clickedMarker : false}
+                            />
+                        );
                     })}
             </div>
         </div>
