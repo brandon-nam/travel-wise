@@ -68,6 +68,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: 'google-github-actions/auth@v2'
+        id: 'auth'
+        with:
+          project_id: 'evident-trees-449214-s9'
+          workload_identity_provider: 'projects/369525575533/locations/global/workloadIdentityPools/cs3203-team-1/providers/github'
+          service_account: 'cs3203-github-actions@evident-trees-449214-s9.iam.gserviceaccount.com'
+          token_format: 'access_token'
       - name: Set up python environment
         uses: actions/setup-python@v5
         with:
@@ -88,13 +95,6 @@ jobs:
           CLIENT_SECRET: ${{ secrets.CI_REDDIT_CLIENT_SECRET }}
         run: |
           poetry run start
-      - uses: 'google-github-actions/auth@v2'
-        id: 'auth'
-        with:
-          project_id: 'evident-trees-449214-s9'
-          workload_identity_provider: 'projects/369525575533/locations/global/workloadIdentityPools/cs3203-team-1/providers/github'
-          service_account: 'cs3203-github-actions@evident-trees-449214-s9.iam.gserviceaccount.com'
-          token_format: 'access_token'
       - name: Upload artifact to S3
         uses: actions/download-artifact@v4
         with:
