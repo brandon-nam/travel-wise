@@ -88,6 +88,7 @@ jobs:
           pip install poetry;
           poetry install;
       - name: Collect reddit posts
+        working-directory: ./collector
         env:
           CLIENT_ID: ${{ secrets.CI_REDDIT_CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CI_REDDIT_CLIENT_SECRET }}
