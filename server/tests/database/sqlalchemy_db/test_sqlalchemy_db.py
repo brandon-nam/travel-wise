@@ -82,8 +82,22 @@ def test_get_comments(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
         },
     ]
     locations = [
-        {"id": "loc1", "lat": 35.3195, "lng": 139.5502, "comment_id": "mbomop8"},
-        {"id": "loc2", "lat": 35.3215, "lng": 139.5510, "comment_id": "mbr1lyf"},
+        {
+            "id": "loc1",
+            "lat": 35.3195,
+            "lng": 139.5502,
+            "comment_id": "mbomop8",
+            "location_name": "Tokyo",
+            "characteristic": "City",
+        },
+        {
+            "id": "loc2",
+            "lat": 35.3215,
+            "lng": 139.5510,
+            "comment_id": "mbr1lyf",
+            "location_name": "Disneyland",
+            "characteristic": "Theme Park",
+        },
     ]
 
     add_rows_to_table(Post, posts, db_session)

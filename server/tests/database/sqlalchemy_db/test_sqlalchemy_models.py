@@ -50,7 +50,16 @@ def test_classification_type_enum(enum_member, expected_value):
                 "end_date": datetime.date(2025, 2, 7),
             },
         ),
-        (Location, {"id": "mbomop8", "lat": 35.3195, "lng": 139.5502}),
+        (
+            Location,
+            {
+                "id": "mbomop8",
+                "lat": 35.3195,
+                "lng": 139.5502,
+                "location_name": "Tokyo",
+                "characteristic": "City",
+            },
+        ),
     ],
 )
 def test_create_model(

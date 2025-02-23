@@ -42,3 +42,5 @@ class Location(db.Model):
     comment_id = db.Column(db.Text, db.ForeignKey("comments.id", ondelete="CASCADE"))
     lat = db.Column(db.Float)
     lng = db.Column(db.Float)
+    location_name = db.Column(db.Text, nullable=False)
+    characteristic = db.Column(db.Text, nullable=False)
