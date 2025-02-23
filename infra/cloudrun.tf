@@ -112,6 +112,14 @@ resource "google_cloud_run_v2_service" "frontend" {
           memory = "512Mi"
         }
       }
+      env {
+        name = "MAP_API_KEY"
+        value = var.map_api_key
+      }
+      env {
+        name = "MAP_ID"
+        value = var.map_id
+      }
     }
   }
 }

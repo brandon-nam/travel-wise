@@ -36,3 +36,15 @@ variable "db_driver" {
   type = string
   default = "postgresql+psycopg2"
 }
+
+// frontend
+
+variable "map_api_key" {
+  type = string
+  default = "cs3203-db"
+}
+
+variable "map_id" {
+  type = string
+  default = "cs3203-db"
+}
