@@ -46,6 +46,12 @@ module "sa_members_github_actions_workload_identity_user" {
   ]
 }
 
+resource "google_project_iam_member" "github-actions-editor" {
+  project = var.project_id
+  role    = "roles/editor"
+  member  = "serviceAccount:${google_service_account.github_actions.email}"
+}
+
 module "sa_members_github_actions_editor" {
   source = "./modules/service_account_iam_members"
   service_account_id = google_service_account.github_actions.name
