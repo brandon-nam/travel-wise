@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, Enum, Date, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, Enum, Date, ForeignKey, Text
 from sqlalchemy.orm import declarative_base, relationship
 import enum
 
@@ -41,3 +41,6 @@ class Location(Base):
     comment_id = Column(String, ForeignKey("comments.id", ondelete="CASCADE"))
     lat = Column(Float)
     lng = Column(Float)
+    location_name = Column(Text, nullable=False)
+    characteristic = Column(Text, nullable=False)
+
