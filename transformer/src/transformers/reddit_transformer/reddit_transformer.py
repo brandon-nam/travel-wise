@@ -1,4 +1,5 @@
 import json
+import os
 
 from ai_provider.openai_provider.open_ai_provider import OpenAIProvider
 from fs_access.base_fs_access import BaseFSAccess
@@ -32,11 +33,21 @@ class RedditTransformer(BaseTransformer):
         return self._chain
 
     def transform(self) -> None:
-        for file_path in self.fs_access.get_src_file_paths("json"):
+        src_directory = "raw_data"
+        target_directory = "transformed_data"
+
+        if not os.path.exists(target_directory):
+            os.makedirs(target_directory)
+
+        for file_path in self.fs_access.get_file_paths(
+            directory=src_directory, file_type="json"
+        ):
             with self.fs_access.open(file_path) as f:
                 json_data = json.load(f)
 
-            transformed_file_path = self.fs_access.get_transformed_file_path(file_path)
+            transformed_file_path = os.path.join(
+                target_directory, os.path.basename(file_path)
+            )
 
             with self.fs_access.open(transformed_file_path, "w") as f:
                 str_result = self.chain[0].handle(json.dumps(json_data))
