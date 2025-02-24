@@ -3,7 +3,7 @@ import os
 from contextlib import contextmanager
 from typing import IO
 
-from src.fs_access.base_fs_access import BaseFSAccess
+from fs_access.base_fs_access import BaseFSAccess
 
 
 class LocalFSAccess(BaseFSAccess):
