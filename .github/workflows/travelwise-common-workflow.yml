@@ -103,3 +103,35 @@ jobs:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
         run: |
           poetry publish --username __token__ --password $POETRY_PYPI_TOKEN_PYPI
+  update-dependencies:
+    needs: [publish]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Poetry
+        run: pip install poetry
+
+      - name: Find and update pyproject.toml dependencies
+        run: |
+          for project in $(find . -name "pyproject.toml" -not -path "./travelwise-common/*"); do
+            dir=$(dirname "$project")
+            echo "Updating travelwise-common in $dir"
+            cd "$dir"
+            poetry update travelwise-common
+            cd -
+          done
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "chore: update travelwise-common to latest version"
+          git push
+        continue-on-error: true
