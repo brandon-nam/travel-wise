@@ -1,9 +1,9 @@
-name: Common workflow
+name: travelwise common workflow
 
 on:
   push:
     paths:
-      - 'common/**'
+      - 'travelwise-common/**'
   pull_request:
     branches:
       - main
@@ -19,12 +19,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        working-directory: ./common
+        working-directory: ./travelwise-common
         run: |
           pip install poetry
           poetry install
       - name: Run test
-        working-directory: ./common
+        working-directory: ./travelwise-common
         run: |
           poetry run pytest
 
@@ -37,12 +37,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        working-directory: ./common
+        working-directory: ./travelwise-common
         run: |
           pip install poetry
           poetry install
       - name: Run lint check
-        working-directory: ./common
+        working-directory: ./travelwise-common
         run: |
           poetry run black --check .
 
@@ -55,12 +55,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        working-directory: ./common
+        working-directory: ./travelwise-common
         run: |
           pip install poetry
           poetry install
       - name: Run lint check
-        working-directory: ./common
+        working-directory: ./travelwise-common
         run: |
           poetry run ruff check .
 
@@ -75,16 +75,16 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        working-directory: ./common
+        working-directory: ./travelwise-common
         run: |
           pip install poetry
           poetry install
       - name: Build package
-        working-directory: ./common
+        working-directory: ./travelwise-common
         run: |
           poetry build
       - name: Publish to PyPI
-        working-directory: ./common
+        working-directory: ./travelwise-common
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
         run: |
