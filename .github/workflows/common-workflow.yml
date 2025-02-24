@@ -1,0 +1,91 @@
+name: Common workflow
+
+on:
+  push:
+    paths:
+      - 'common/**'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: ./common
+        run: |
+          pip install poetry
+          poetry install
+      - name: Run test
+        working-directory: ./common
+        run: |
+          poetry run pytest
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: ./common
+        run: |
+          pip install poetry
+          poetry install
+      - name: Run lint check
+        working-directory: ./common
+        run: |
+          poetry run black --check .
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: ./common
+        run: |
+          pip install poetry
+          poetry install
+      - name: Run lint check
+        working-directory: ./common
+        run: |
+          poetry run ruff check .
+
+  publish:
+    needs: [test, format, lint]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: ./common
+        run: |
+          pip install poetry
+          poetry install
+      - name: Build package
+        working-directory: ./common
+        run: |
+          poetry build
+      - name: Publish to PyPI
+        working-directory: ./common
+        env:
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          poetry publish --username __token__ --password $POETRY_PYPI_TOKEN_PYPI
