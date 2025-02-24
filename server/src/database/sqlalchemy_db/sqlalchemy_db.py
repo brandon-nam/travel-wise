@@ -39,8 +39,15 @@ class SQLAlchemyDB(BaseDB):
                     "classification": comment.classification.value,
                     "start_date": comment.start_date,
                     "end_date": comment.end_date,
+                    "characteristic": comment.characteristic,
                     "location_coordinates": [
-                        {"lat": loc.lat, "lng": loc.lng} for loc in comment.locations
+                        {
+                            "lat": loc.lat,
+                            "lng": loc.lng,
+                            "location_name": loc.location_name,
+                            "characteristic": loc.characteristic,
+                        }
+                        for loc in comment.locations
                     ],
                 }
                 for comment in comments

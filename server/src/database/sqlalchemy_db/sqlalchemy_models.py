@@ -32,6 +32,7 @@ class Comment(db.Model):
     classification = db.Column(Enum(ClassificationType), nullable=False)
     start_date = db.Column(Date, nullable=True)
     end_date = db.Column(Date, nullable=True)
+    characteristic = db.Column(db.Text, nullable=False)
 
     locations = db.relationship(
         "Location", backref="comment", cascade="all, delete-orphan"
