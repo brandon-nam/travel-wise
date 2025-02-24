@@ -70,6 +70,7 @@ def test_get_comments(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
             "classification": ClassificationType.travel_suggestion,
             "start_date": datetime.date(2025, 2, 1),
             "end_date": datetime.date(2025, 2, 7),
+            "characteristic": "transport",
         },
         {
             "id": "mbr1lyf",
@@ -79,6 +80,7 @@ def test_get_comments(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
             "classification": ClassificationType.travel_suggestion,
             "start_date": datetime.date(2025, 2, 1),
             "end_date": datetime.date(2025, 2, 7),
+            "characteristic": "itinerary",
         },
     ]
     locations = [

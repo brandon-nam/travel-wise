@@ -46,6 +46,7 @@ def test_classification_type_enum(enum_member, expected_value):
                 "body": "In Japan quality is expected and generally delivered. In Tokyo alone there are 137,000 restaurants overall...",
                 "score": 1,
                 "classification": ClassificationType.travel_suggestion,
+                "characteristic": "Food",
                 "start_date": datetime.date(2025, 2, 1),
                 "end_date": datetime.date(2025, 2, 7),
             },
