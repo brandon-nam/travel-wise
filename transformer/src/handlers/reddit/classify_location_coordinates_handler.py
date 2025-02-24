@@ -13,18 +13,20 @@ class ClassifyLocationCoordinatesHandler(BaseAIHandler):
         Respond with a json object where the comment_id is the key and a list of dictionaries as values, where each dictionary contains:
         `"lat"` (latitude, float)
         `"lng"` (longitude, float)
+        `"location_name"` (location_name, string, i.e. what is the name of the location?)
+        `"characteristic"` (characteristic, string, i.e. what kind of location is it? e.g. city, theme park, place of worship, restaurant, etc.)
         .
-        Do not include any location names anywhere. If there are multiple locations, provide coordinates for all of them. 
+        If there are multiple locations, provide the information for all of them. 
         If there are no identifiable locations mentioned, return an empty list instead.
 
         {{
           "mbomop8": [
-            {{"lat": 35.3192, "lng": 139.5467}}, 
-            {{"lat": 35.4449, "lng": 139.6368}}
+            {{"lat": 35.3192, "lng": 139.5467, "location_name": "Tokyo", "characteristic": "city"}}, 
+            {{"lat": 35.4449, "lng": 139.6368, "location_name": "Universal Studios Japan", "characteristic": "theme park"}}
           ],
           "mbr1lyf": [
-            {{"lat": 35.7719, "lng": 140.3929}}, 
-            {{"lat": 35.0116, "lng": 135.7681}}
+            {{"lat": 35.7719, "lng": 140.3929, "location_name": "Wagyu Idaten", "characteristic": "restaurant"}}, 
+            {{"lat": 35.0116, "lng": 135.7681, "location_name": "Ghibli Museum", "characteristic": "museum"}}
           ],
           "mba3rta": [],
         }}
