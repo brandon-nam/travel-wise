@@ -106,6 +106,9 @@ jobs:
   update-dependencies:
     needs: [publish]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -133,18 +136,28 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git checkout -b update-travelwise-common
+          
+          # Generate a unique branch name
+          BRANCH_NAME="update-travelwise-common-$(date +%s)"
+          
+          git checkout -b "$BRANCH_NAME"
           git add .
-          git commit -m "chore: update travelwise-common to latest version" || echo "No changes to commit"
-
-      - name: Push branch
-        run: git push origin update-travelwise-common
-        continue-on-error: true
+          
+          # Commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes detected, exiting."
+            exit 0
+          fi
+          
+          git commit -m "chore: update travelwise-common to latest version"
+          git push origin "$BRANCH_NAME"
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: update-travelwise-common
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: ${{ steps.commit_branch.outputs.branch }}
           title: "chore: update travelwise-common to latest version"
           body: "This PR updates travelwise-common to the latest version."
           labels: "dependencies"

@@ -9,4 +9,5 @@ class BaseFSAccess(ABC):
 
     @abstractmethod
     def open(self, path: str, mode: str) -> IO:
+        # open the given file, mode = "r"/"w"
         pass
