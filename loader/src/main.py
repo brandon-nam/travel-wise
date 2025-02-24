@@ -1,8 +1,8 @@
 import os
 
 from dotenv import load_dotenv
+from fs_access.local_fs_access.local_fs_access import LocalFSAccess
 
-from src.fs_access.local_fs_access.local_fs_access import LocalFSAccess
 from src.loaders.sqlalchemy_loader.sqlalchemy_loader import SQLAlchemyLoader
 
 
@@ -15,14 +15,14 @@ def get_pg_connection_uri() -> str:
         os.getenv("DB_PORT") or "5432",
         os.getenv("DB_USER") or "postgres",
         os.getenv("DB_PASSWORD") or "",
-        os.getenv("DB_NAME") or "travelwise",
+        os.getenv("DB_NAME") or "cs3203-db",
     )
     return f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
 
 def main():
     loader = SQLAlchemyLoader(get_pg_connection_uri())
-    loader.load_json(LocalFSAccess(directory="./"))
+    loader.load_json(LocalFSAccess())
 
 
 if __name__ == "__main__":
