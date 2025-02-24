@@ -1,3 +1,5 @@
+import uuid
+
 from flask_sqlalchemy import SQLAlchemy
 import enum
 
@@ -38,9 +40,9 @@ class Comment(db.Model):
 
 class Location(db.Model):
     __tablename__ = "locations"
-    id = db.Column(db.Text, primary_key=True)
+    id = db.Column(db.Text, primary_key=True, default=lambda: str(uuid.uuid4()))
     comment_id = db.Column(db.Text, db.ForeignKey("comments.id", ondelete="CASCADE"))
-    lat = db.Column(db.Float)
-    lng = db.Column(db.Float)
+    lat = db.Column(db.Float, nullable=False)
+    lng = db.Column(db.Float, nullable=False)
     location_name = db.Column(db.Text, nullable=False)
     characteristic = db.Column(db.Text, nullable=False)

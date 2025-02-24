@@ -1,5 +1,16 @@
-from sqlalchemy import Column, Integer, String, Float, Enum, Date, ForeignKey, Text
-from sqlalchemy.orm import declarative_base, relationship
+import uuid
+
+from sqlalchemy import (
+    Column,
+    Integer,
+    Text,
+    ForeignKey,
+    Enum,
+    Float,
+    Date,
+)
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 import enum
 
 Base = declarative_base()
@@ -13,18 +24,20 @@ class ClassificationType(enum.Enum):
 
 class Post(Base):
     __tablename__ = "posts"
-    id = Column(String, primary_key=True)
-    title = Column(String, nullable=False)
-    url = Column(String, nullable=False)
+
+    id = Column(Text, primary_key=True)
+    title = Column(Text, nullable=False)
+    url = Column(Text, nullable=False)
     score = Column(Integer, nullable=False)
     num_comments = Column(Integer, nullable=False)
 
 
 class Comment(Base):
     __tablename__ = "comments"
-    id = Column(String, primary_key=True)
-    post_id = Column(String, ForeignKey("posts.id"), nullable=False)
-    body = Column(String, nullable=False)
+
+    id = Column(Text, primary_key=True)
+    post_id = Column(Text, ForeignKey("posts.id"), nullable=False)
+    body = Column(Text, nullable=False)
     score = Column(Integer, nullable=False)
     classification = Column(Enum(ClassificationType), nullable=False)
     start_date = Column(Date, nullable=True)
@@ -37,10 +50,10 @@ class Comment(Base):
 
 class Location(Base):
     __tablename__ = "locations"
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    comment_id = Column(String, ForeignKey("comments.id", ondelete="CASCADE"))
-    lat = Column(Float)
-    lng = Column(Float)
+
+    id = Column(Text, primary_key=True, default=lambda: str(uuid.uuid4()))
+    comment_id = Column(Text, ForeignKey("comments.id", ondelete="CASCADE"))
+    lat = Column(Float, nullable=False)
+    lng = Column(Float, nullable=False)
     location_name = Column(Text, nullable=False)
     characteristic = Column(Text, nullable=False)
-

@@ -70,7 +70,13 @@ class SQLAlchemyWriter(BaseWriter):
         with self.create_session() as session:
             session.add_all(
                 [
-                    Location(comment_id=comment["id"], lat=loc["lat"], lng=loc["lng"])
+                    Location(
+                        comment_id=comment["id"],
+                        lat=loc["lat"],
+                        lng=loc["lng"],
+                        location_name=loc["location_name"],
+                        characteristic=loc["characteristic"],
+                    )
                     for comment in json_data["comments"]
                     for loc in comment["locations"]
                 ]
