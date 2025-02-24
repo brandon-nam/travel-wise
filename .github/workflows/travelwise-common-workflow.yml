@@ -108,6 +108,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up python environment
         uses: actions/setup-python@v5
@@ -127,11 +129,22 @@ jobs:
             cd -
           done
 
-      - name: Commit and push changes
+      - name: Commit changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+          git checkout -b update-travelwise-common
           git add .
-          git commit -m "chore: update travelwise-common to latest version"
-          git push
+          git commit -m "chore: update travelwise-common to latest version" || echo "No changes to commit"
+
+      - name: Push branch
+        run: git push origin update-travelwise-common
         continue-on-error: true
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: update-travelwise-common
+          title: "chore: update travelwise-common to latest version"
+          body: "This PR updates travelwise-common to the latest version."
+          labels: "dependencies"
