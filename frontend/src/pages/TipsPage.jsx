@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-import MapComponent from "../components/MapComponent";
 import TipCard from "../components/TipCard";
-import axios from "axios";
 
 import { useQuery } from "@tanstack/react-query";
 

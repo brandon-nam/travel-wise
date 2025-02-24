@@ -1,5 +1,6 @@
-import LandingPage from "./pages/LandingPage.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
 import NavBar from "./components/NavBar";
+import LandingPage from "./pages/LandingPage"
 import SuggestionsPage from "./pages/SuggestionsPage.jsx";
 import TipsPage from "./pages/TipsPage.jsx";
 
@@ -21,6 +22,8 @@ function App() {
                     <div className="min-w-full h-full pt-16">
                         <Routes>
                             <Route path="/" element={<LandingPage />} />
+
+                            <Route path="/search" element={<SearchPage />} />
 
                             <Route path="/suggestions" element={<SuggestionsPage />} />
 
