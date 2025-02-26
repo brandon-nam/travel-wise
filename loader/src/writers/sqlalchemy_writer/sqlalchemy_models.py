@@ -42,6 +42,7 @@ class Comment(Base):
     classification = Column(Enum(ClassificationType), nullable=False)
     start_date = Column(Date, nullable=True)
     end_date = Column(Date, nullable=True)
+    characteristic = Column(Text, nullable=False)
 
     locations = relationship(
         "Location", backref="comment", cascade="all, delete-orphan"

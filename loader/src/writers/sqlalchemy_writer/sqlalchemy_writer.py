@@ -63,6 +63,7 @@ class SQLAlchemyWriter(BaseWriter):
                     classification=ClassificationType[comment["classification"]],
                     start_date=comment["start_date"],
                     end_date=comment["end_date"],
+                    characteristic=comment["characteristic"],
                 )
                 for comment in json_data["comments"]
             )
