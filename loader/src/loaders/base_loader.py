@@ -12,7 +12,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-class Loader(ABC):
+class BaseLoader(ABC):
     """
     Abstract loader factory.
     Call self.create_writer() to get the concrete writer object.

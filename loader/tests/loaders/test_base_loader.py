@@ -3,10 +3,10 @@ from unittest.mock import MagicMock
 
 from fs_access.base_fs_access import BaseFSAccess
 
-from loaders.base_loader import Loader
+from loaders.base_loader import BaseLoader
 
 
-class MockLoader(Loader):
+class MockLoader(BaseLoader):
     def create_writer(self):
         return MagicMock()
 
