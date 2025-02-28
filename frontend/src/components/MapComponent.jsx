@@ -29,12 +29,13 @@ function PoiMarkers({ travelSuggestions }) {
     );
 }
 function MapComponent({ travelSuggestions }) {
-    const [defaultCenter, setDefaultCenter] = useState({ lat: 0, lng: 0 });
-
+    const [defaultCenter, setDefaultCenter] = useState({ lat: 36.2048, lng: 138.2529 });
+    
     useEffect(() => {
         console.log("suggestions:", travelSuggestions);
-        setDefaultCenter(travelSuggestions[0]["location_coordinates"][0]);
-    }, [defaultCenter]);
+        let suggestion = travelSuggestions[0]["location_coordinates"][0]
+        setDefaultCenter({ lat: suggestion["lat"], lng: suggestion["lng"]});
+    }, []);
 
     return (
         <APIProvider apiKey={import.meta.env.VITE_MAP_API} onLoad={() => console.log("Maps API has loaded.")}>
@@ -51,4 +52,4 @@ function MapComponent({ travelSuggestions }) {
     );
 }
 
-export default memo(MapComponent);
+export default MapComponent;
