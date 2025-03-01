@@ -68,7 +68,7 @@ function SuggestionsPage() {
                     ))}
             </div>
             <div id="place-container" className="h-[calc(100vh-4rem)] w-2/5 overflow-y-scroll">
-                <div id="search-tag-field" className="fixed w-2/5 bg-gray-100 h-20 py-5 px-3">
+                <div id="search-place-tag-field" className="fixed w-2/5 bg-gray-100 h-20 py-5 px-3">
                     <input
                         type="text"
                         className="bg-white shadow rounded-full h-10 w-full px-5"
@@ -76,7 +76,7 @@ function SuggestionsPage() {
                         onChange={handleSearch}
                     ></input>
                 </div>
-                <div id="search-tag-field-space" className="w-full h-20"></div>
+                <div id="search-tag-field-space" className="w-2/5 h-20"></div>
                 {!isLoading &&
                     (results.length != 0
                         ? results.map((travelSuggestion) => {
