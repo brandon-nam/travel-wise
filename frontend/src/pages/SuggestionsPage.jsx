@@ -38,7 +38,8 @@ function SuggestionsPage() {
     const fuse = new Fuse(data, {
         keys: [
             "characteristic",
-            "location_coordinates.characteristic", // Search nested fields
+            "location_coordinates.characteristic", 
+            "location_coordinates.location_name"
         ],
         threshold: 0.1, // Fuzzy match sensitivity
     });
