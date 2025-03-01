@@ -14,6 +14,7 @@ from handlers.reddit.classify_temporal_handler import ClassifyTemporalHandler
 from handlers.reddit.split_posts_and_comments_handler import (
     SplitPostsAndCommentsHandler,
 )
+from handlers.reddit.summarise_posts_handler import SummarisePostsHandler
 from transformers.base_transformer import BaseTransformer
 
 
@@ -25,6 +26,7 @@ class RedditTransformer(BaseTransformer):
             ClassifySuggestionOrTipHandler(openai_provider),
             ClassifyLocationCoordinatesHandler(openai_provider),
             ClassifyTemporalHandler(openai_provider),
+            SummarisePostsHandler(openai_provider),
         ]
         super().__init__(fs_access)
 
