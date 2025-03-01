@@ -2,6 +2,7 @@ import axios from "axios";
 import Fuse from "fuse.js";
 
 import ClickMarkerContext from "../contexts/ClickMarkerContext";
+import ClickDetailsContext from "../contexts/ClickDetailsContext";
 import MapComponent from "../components/MapComponent";
 
 import PlaceCard from "../components/PlaceCard";
@@ -13,19 +14,56 @@ import { fetchComments } from "../lib/API";
 
 function SuggestionsPage() {
     const { clickedMarker } = useContext(ClickMarkerContext);
+    const { clickedPlace, handleClickDetails } = useContext(ClickDetailsContext);
+
     const [query, setQuery] = useState("");
-    const [results, setResults] = useState([]);
+    const [searchResults, setSearchResults] = useState([]);
 
     const filterAndFlattenLocations = (data) => {
-        return data.flatMap((suggestion) => {
-            if (suggestion.classification === "travel_suggestion") {
-                return suggestion.location_coordinates.map((location) => ({
-                    ...suggestion,
-                    location_coordinates: location, // Single location object
-                }));
+        const locations = {};
+        const result = [];
+        let appendIndex = 0;
+        data.forEach((suggestion) => {
+            // Intended data structure: {
+            //  location_name, characteristic, lat, lng,
+            //  comments : { id, post_id, body, score, start_date, end_date, summary
+            // }}
+            // right now: {
+            //   id, post_id, body, score, start_date, end_date, summary,
+            //   location_coordinates: { lat, lng, location_name, characteristic }
+            //}
+            // rest: { id, post_id, body, score, start_date, end_date, summary }
+            try {
+                if (suggestion.classification === "travel_suggestion") {
+                    const { location_coordinates, ...rest } = suggestion;
+                    location_coordinates.forEach((location) => {
+                        const locationKey = `${location.lat},${location.lng}`;
+                        if (!locations[locationKey]) {
+                            locations[locationKey] = appendIndex;
+
+                            result[appendIndex] = {
+                                location_name: location.location_name,
+                                characteristic: location.characteristic,
+                                lat: location.lat,
+                                lng: location.lng,
+                                comments: [rest],
+                            };
+                            appendIndex++;
+                        } else {
+                            const index = locations[locationKey];
+                            let { comments, ..._ } = result[index];
+                            comments = [...comments, rest];
+                            result[index]["comments"] = comments;
+                        }
+                    });
+                }
+            } catch (e) {
+                console.log("error: ", e);
             }
-            return [];
         });
+
+        console.log(result);
+        return result;
     };
 
     const { isLoading, data, error } = useQuery({
@@ -36,24 +74,21 @@ function SuggestionsPage() {
     });
 
     const fuse = new Fuse(data, {
-        keys: [
-            "characteristic",
-            "location_coordinates.characteristic", 
-            "location_coordinates.location_name"
-        ],
-        threshold: 0.1, // Fuzzy match sensitivity
+        keys: ["characteristic", "location_name"],
+        threshold: 0.0, // Fuzzy match sensitivity
     });
 
     const handleSearch = (event) => {
+        handleClickDetails(null, null, null);
         const searchText = event.target.value;
         setQuery(searchText);
 
         if (searchText.trim() === "") {
-            setResults([]);
+            setSearchResults([]);
         } else {
-            const searchResults = fuse.search(searchText).map((result) => result.item);
-            console.log("searchResults: ", searchResults);
-            setResults(searchResults);
+            const searchsearchResults = fuse.search(searchText).map((result) => result.item);
+            console.log("searchsearchResults: ", searchsearchResults);
+            setSearchResults(searchsearchResults);
         }
     };
 
@@ -61,13 +96,13 @@ function SuggestionsPage() {
         <div id="map-place-container" className="flex w-full h-full ">
             <div id="map-container" className="h-[calc(100vh-4rem)] w-3/5">
                 {!isLoading &&
-                    (results.length != 0 ? (
-                        <MapComponent travelSuggestions={results} />
+                    (searchResults.length != 0 ? (
+                        <MapComponent travelSuggestions={searchResults} />
                     ) : (
                         <MapComponent travelSuggestions={data} />
                     ))}
             </div>
-            <div id="place-container" className="h-[calc(100vh-4rem)] w-2/5 overflow-y-scroll">
+            <div id="place-container" className="h-[calc(100vh-4rem)] w-2/5 flex flex-col">
                 <div id="search-place-tag-field" className="fixed w-2/5 bg-gray-100 h-20 py-5 px-3">
                     <input
                         type="text"
@@ -76,39 +111,50 @@ function SuggestionsPage() {
                         onChange={handleSearch}
                     ></input>
                 </div>
-                <div id="search-tag-field-space" className="w-2/5 h-20"></div>
-                {!isLoading &&
-                    (results.length != 0
-                        ? results.map((travelSuggestion) => {
-                              return (
-                                  <PlaceCard
-                                      tag={travelSuggestion["location_coordinates"]["characteristic"]}
-                                      body={travelSuggestion["location_coordinates"]["location_name"]}
-                                      key={`${travelSuggestion["location_coordinates"]["lat"]}-${travelSuggestion["location_coordinates"]["lng"]}`}
-                                      highlight={
-                                          clickedMarker
-                                              ? `${travelSuggestion["location_coordinates"]["lat"]}-${travelSuggestion["location_coordinates"]["lng"]}` ===
-                                                clickedMarker
-                                              : false
-                                      }
-                                  />
-                              );
-                          })
-                        : data.map((travelSuggestion) => {
-                              return (
-                                  <PlaceCard
-                                      tag={travelSuggestion["location_coordinates"]["characteristic"]}
-                                      body={travelSuggestion["location_coordinates"]["location_name"]}
-                                      key={`${travelSuggestion["location_coordinates"]["lat"]}-${travelSuggestion["location_coordinates"]["lng"]}`}
-                                      highlight={
-                                          clickedMarker
-                                              ? `${travelSuggestion["location_coordinates"]["lat"]}-${travelSuggestion["location_coordinates"]["lng"]}` ===
-                                                clickedMarker
-                                              : false
-                                      }
-                                  />
-                              );
-                          }))}
+                <div id="search-place-tag-field-space" className="py-10"></div>
+                {clickedPlace && clickedPlace}
+                <div className="overflow-y-scroll">
+                    {!isLoading && !clickedPlace ? (
+                        searchResults.length != 0 ? (
+                            Object.entries(searchResults).map(([_, travelSuggestion], __) => {
+                                // location_name, characteristic, lat, lng, comments : { id, post_id, body, score, start_date, end_date, summary }
+                                return (
+                                    <PlaceCard
+                                        tag={travelSuggestion.characteristic}
+                                        body={travelSuggestion.location_name}
+                                        key={`${travelSuggestion.lat}-${travelSuggestion.lng}`}
+                                        highlight={
+                                            clickedMarker
+                                                ? `${travelSuggestion.lat}-${travelSuggestion.lng}` === clickedMarker
+                                                : false
+                                        }
+                                        expanded={false}
+                                        comments={travelSuggestion.comments}
+                                    />
+                                );
+                            })
+                        ) : (
+                            Object.entries(data).map(([_, travelSuggestion], __) => {
+                                return (
+                                    <PlaceCard
+                                        tag={travelSuggestion.characteristic}
+                                        body={travelSuggestion.location_name}
+                                        key={`${travelSuggestion.lat}-${travelSuggestion.lng}`}
+                                        highlight={
+                                            clickedMarker
+                                                ? `${travelSuggestion.lat}-${travelSuggestion.lng}` === clickedMarker
+                                                : false
+                                        }
+                                        expanded={false}
+                                        comments={travelSuggestion.comments}
+                                    />
+                                );
+                            })
+                        )
+                    ) : (
+                        <></>
+                    )}
+                </div>
             </div>
         </div>
     );

@@ -7,9 +7,11 @@ function PoiMarkers({ travelSuggestions }) {
 
     return (
         <>
-            {travelSuggestions.map((travelSuggestion) => {
-                let lat = travelSuggestion["location_coordinates"]["lat"]
-                let lng = travelSuggestion["location_coordinates"]["lng"]
+            {Object.entries(travelSuggestions).map(([_, travelSuggestion], __) => {
+                // console.log("travel suggestion: ", travelSuggestion)
+                let lat = travelSuggestion.lat
+                // console.log("lat: ", lat)
+                let lng = travelSuggestion.lng
                 return (
                     <AdvancedMarker
                         key={`${lat}-${lng}`}
@@ -32,9 +34,10 @@ function MapComponent({ travelSuggestions }) {
     const [defaultCenter, setDefaultCenter] = useState({ lat: 36.2048, lng: 138.2529 });
 
     useEffect(() => {
-        console.log("suggestions:", travelSuggestions);
-        let suggestion = travelSuggestions[0]["location_coordinates"];
-        setDefaultCenter({ lat: suggestion["lat"], lng: suggestion["lng"] });
+        console.log(Object.entries(travelSuggestions));
+        let [ _, suggestion ]= Object.entries(travelSuggestions)[0];
+        console.log("default sugestion: ", suggestion)
+        setDefaultCenter({ lat: suggestion.lat, lng: suggestion.lng });
     }, []);
 
     return (
