@@ -7,34 +7,34 @@ function PoiMarkers({ travelSuggestions }) {
 
     return (
         <>
-            {travelSuggestions.map((travelSuggestion) =>
-                travelSuggestion.location_coordinates.map(({characteristic, lat, lng, loc_name}) => {
-                    return (
-                        <AdvancedMarker
-                            key={`${lat}-${lng}`}
-                            position={{ lat, lng }}
-                            clickable={true}
-                            onClick={() => handleClick(`${lat}-${lng}`)}
-                        >
-                            <Pin
-                                background={clickedMarker == `${lat}-${lng}`? "#FF0000" : "#FBBC04"}
-                                glyphColor={"#000"}
-                                borderColor={"#000"}
-                            />
-                        </AdvancedMarker>
-                    );
-                })
-            )}
+            {travelSuggestions.map((travelSuggestion) => {
+                let lat = travelSuggestion["location_coordinates"]["lat"]
+                let lng = travelSuggestion["location_coordinates"]["lng"]
+                return (
+                    <AdvancedMarker
+                        key={`${lat}-${lng}`}
+                        position={{ lat, lng }}
+                        clickable={true}
+                        onClick={() => handleClick(`${lat}-${lng}`)}
+                    >
+                        <Pin
+                            background={clickedMarker == `${lat}-${lng}` ? "#FF0000" : "#FBBC04"}
+                            glyphColor={"#000"}
+                            borderColor={"#000"}
+                        />
+                    </AdvancedMarker>
+                );
+            })}
         </>
     );
 }
 function MapComponent({ travelSuggestions }) {
     const [defaultCenter, setDefaultCenter] = useState({ lat: 36.2048, lng: 138.2529 });
-    
+
     useEffect(() => {
         console.log("suggestions:", travelSuggestions);
-        let suggestion = travelSuggestions[0]["location_coordinates"][0]
-        setDefaultCenter({ lat: suggestion["lat"], lng: suggestion["lng"]});
+        let suggestion = travelSuggestions[0]["location_coordinates"];
+        setDefaultCenter({ lat: suggestion["lat"], lng: suggestion["lng"] });
     }, []);
 
     return (

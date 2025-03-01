@@ -6,7 +6,7 @@ import MapComponent from "../components/MapComponent";
 
 import PlaceCard from "../components/PlaceCard";
 
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchComments } from "../lib/API";
@@ -17,7 +17,6 @@ function SuggestionsPage() {
     const [results, setResults] = useState([]);
 
     const filterAndFlattenLocations = (data) => {
-
         return data.flatMap((suggestion) => {
             if (suggestion.classification === "travel_suggestion") {
                 return suggestion.location_coordinates.map((location) => ({
@@ -32,8 +31,7 @@ function SuggestionsPage() {
     const { isLoading, data, error } = useQuery({
         queryKey: ["travelSuggestions"],
         queryFn: () => fetchComments(),
-        select: (data) => data.filter((result) => result.classification === "travel_suggestion"),
-        // select: (data) => filterAndFlattenLocations(data),
+        select: (data) => filterAndFlattenLocations(data),
         staleTime: Infinity,
     });
 
@@ -42,7 +40,7 @@ function SuggestionsPage() {
             "characteristic",
             "location_coordinates.characteristic", // Search nested fields
         ],
-        threshold: 0.3, // Fuzzy match sensitivity
+        threshold: 0.1, // Fuzzy match sensitivity
     });
 
     const handleSearch = (event) => {
@@ -81,65 +79,32 @@ function SuggestionsPage() {
                 {!isLoading &&
                     (results.length != 0
                         ? results.map((travelSuggestion) => {
-                              // If a comment has multiple locations, separate each location into a PlaceCard.
-                              if (travelSuggestion.location_coordinates.length > 1) {
-                                  const placeCards = [];
-                                  travelSuggestion.location_coordinates.map((location) => {
-                                      placeCards.push(
-                                          <PlaceCard
-                                              tag={location.characteristic}
-                                              body={location.location_name}
-                                              key={`${location.lat}-${location.lng}`}
-                                              highlight={
-                                                  clickedMarker ? `${location.lat}-${location.lng}` === clickedMarker : false
-                                              }
-                                          />
-                                      );
-                                  });
-
-                                  return <>{placeCards}</>;
-                              }
-
-                              // Else, the comment has only one location. Show it in a PlaceCard.
                               return (
                                   <PlaceCard
-                                      tag={travelSuggestion.location_coordinates[0].characteristic}
-                                      body={travelSuggestion.location_coordinates[0].location_name}
-                                      key={travelSuggestion.id}
-                                      highlight={clickedMarker ? travelSuggestion.id == clickedMarker : false}
+                                      tag={travelSuggestion["location_coordinates"]["characteristic"]}
+                                      body={travelSuggestion["location_coordinates"]["location_name"]}
+                                      key={`${travelSuggestion["location_coordinates"]["lat"]}-${travelSuggestion["location_coordinates"]["lng"]}`}
+                                      highlight={
+                                          clickedMarker
+                                              ? `${travelSuggestion["location_coordinates"]["lat"]}-${travelSuggestion["location_coordinates"]["lng"]}` ===
+                                                clickedMarker
+                                              : false
+                                      }
                                   />
                               );
                           })
-                        //   : console.log(data)
-                        // )}
-                        
                         : data.map((travelSuggestion) => {
-                              // If a comment has multiple locations, separate each location into a PlaceCard.
-                              if (travelSuggestion.location_coordinates.length > 1) {
-                                  const placeCards = [];
-                                  travelSuggestion.location_coordinates.map((location) => {
-                                      placeCards.push(
-                                          <PlaceCard
-                                              tag={location.characteristic}
-                                              body={location.location_name}
-                                              key={`${location.lat}-${location.lng}`}
-                                              highlight={
-                                                  clickedMarker ? `${location.lat}-${location.lng}` === clickedMarker : false
-                                              }
-                                          />
-                                      );
-                                  });
-
-                                  return <>{placeCards}</>;
-                              }
-
-                              // Else, the comment has only one location. Show it in a PlaceCard.
                               return (
                                   <PlaceCard
-                                      tag={travelSuggestion.location_coordinates[0].characteristic}
-                                      body={travelSuggestion.location_coordinates[0].location_name}
-                                      key={travelSuggestion.id}
-                                      highlight={clickedMarker ? travelSuggestion.id == clickedMarker : false}
+                                      tag={travelSuggestion["location_coordinates"]["characteristic"]}
+                                      body={travelSuggestion["location_coordinates"]["location_name"]}
+                                      key={`${travelSuggestion["location_coordinates"]["lat"]}-${travelSuggestion["location_coordinates"]["lng"]}`}
+                                      highlight={
+                                          clickedMarker
+                                              ? `${travelSuggestion["location_coordinates"]["lat"]}-${travelSuggestion["location_coordinates"]["lng"]}` ===
+                                                clickedMarker
+                                              : false
+                                      }
                                   />
                               );
                           }))}
