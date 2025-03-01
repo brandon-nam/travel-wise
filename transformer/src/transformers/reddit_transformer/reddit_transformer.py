@@ -12,6 +12,9 @@ from src.handlers.reddit.classify_suggestion_or_tip_handler import (
     ClassifySuggestionOrTipHandler,
 )
 from src.handlers.reddit.classify_temporal_handler import ClassifyTemporalHandler
+from src.handlers.reddit.location_deduplication_handler import (
+    LocationDeduplicationHandler,
+)
 from src.handlers.reddit.split_posts_and_comments_handler import (
     SplitPostsAndCommentsHandler,
 )
@@ -26,6 +29,7 @@ class RedditTransformer(BaseTransformer):
             SplitPostsAndCommentsHandler(),
             ClassifySuggestionOrTipHandler(openai_provider),
             ClassifyLocationCoordinatesHandler(openai_provider),
+            LocationDeduplicationHandler(),
             ClassifyTemporalHandler(openai_provider),
             SummarisePostsHandler(openai_provider),
         ]
