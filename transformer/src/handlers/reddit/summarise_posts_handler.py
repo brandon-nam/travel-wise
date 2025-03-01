@@ -2,6 +2,7 @@ import json
 
 from handlers.base_ai_handler import BaseAIHandler
 
+
 class SummarisePostsHandler(BaseAIHandler):
     def do_handle(self, input_data: str) -> str:
         prompt = f"""
