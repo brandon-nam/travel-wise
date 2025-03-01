@@ -36,6 +36,7 @@ def mock_json_data() -> dict[str, Any]:
                 "post_id": "1ipa23o",
                 "classification": "travel_suggestion",
                 "characteristic": "accommodation and activities",
+                "summary": "Ryokan for solo travellers, short term stay",
                 "locations": [
                     {
                         "lat": 36.7446,
@@ -60,6 +61,7 @@ def mock_json_data() -> dict[str, Any]:
                 "post_id": "1ipa23o",
                 "classification": "travel_tip",
                 "characteristic": "tech solution",
+                "summary": "Mobile Suica App on Android",
                 "locations": [],
                 "start_date": None,
                 "end_date": None,
@@ -170,6 +172,7 @@ def test_write_json(
             assert comment.classification.value == mock_comments[i]["classification"]
             assert comment.start_date == mock_comments[i]["start_date"]
             assert comment.end_date == mock_comments[i]["end_date"]
+            assert comment.summary == mock_comments[i]["summary"]
             for location in comment.locations:
                 locations.add(
                     (

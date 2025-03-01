@@ -47,6 +47,7 @@ def test_classification_type_enum(enum_member, expected_value):
                 "score": 1,
                 "classification": ClassificationType.travel_suggestion,
                 "characteristic": "Food",
+                "summary": "Restaurant quality in Japan",
                 "start_date": datetime.date(2025, 2, 1),
                 "end_date": datetime.date(2025, 2, 7),
             },
