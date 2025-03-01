@@ -71,6 +71,7 @@ def test_get_comments(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
             "start_date": datetime.date(2025, 2, 1),
             "end_date": datetime.date(2025, 2, 7),
             "characteristic": "transport",
+            "summary": "Best way to get to Yokohama in between Kamakura and Tokyo",
         },
         {
             "id": "mbr1lyf",
@@ -81,6 +82,7 @@ def test_get_comments(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
             "start_date": datetime.date(2025, 2, 1),
             "end_date": datetime.date(2025, 2, 7),
             "characteristic": "itinerary",
+            "summary": "Japan accommmodation recommendations in May",
         },
     ]
     locations = [

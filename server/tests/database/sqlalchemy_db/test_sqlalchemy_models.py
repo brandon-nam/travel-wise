@@ -49,6 +49,7 @@ def test_classification_type_enum(enum_member, expected_value):
                 "characteristic": "Food",
                 "start_date": datetime.date(2025, 2, 1),
                 "end_date": datetime.date(2025, 2, 7),
+                "summary": "Restaurant quality in Japan",
             },
         ),
         (
