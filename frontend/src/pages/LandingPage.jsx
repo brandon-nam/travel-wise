@@ -8,7 +8,7 @@ function LandingPage() {
 
     function handleClick() {
 
-        navigate("/suggestions");
+        navigate("/search");
     }
 
     return (
@@ -18,7 +18,7 @@ function LandingPage() {
             </div>
             <div className="flex w-full flex-col space-y-10 text-left">
                 <button onClick={handleClick} className="h-14 mx-30 bg-[#5cb7b7] text-white rounded-full hover:bg-[#50a0a0] shadow">
-                    Submit
+                    Start
                 </button>
             </div>
         </div>
