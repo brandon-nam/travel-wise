@@ -1,21 +1,22 @@
 import json
 import os
 
-from ai_provider.openai_provider.open_ai_provider import OpenAIProvider
 from fs_access.base_fs_access import BaseFSAccess
-from handlers.base_handler import BaseHandler
-from handlers.reddit.classify_location_coordinates_handler import (
+
+from src.ai_provider.openai_provider.open_ai_provider import OpenAIProvider
+from src.handlers.base_handler import BaseHandler
+from src.handlers.reddit.classify_location_coordinates_handler import (
     ClassifyLocationCoordinatesHandler,
 )
-from handlers.reddit.classify_suggestion_or_tip_handler import (
+from src.handlers.reddit.classify_suggestion_or_tip_handler import (
     ClassifySuggestionOrTipHandler,
 )
-from handlers.reddit.classify_temporal_handler import ClassifyTemporalHandler
-from handlers.reddit.split_posts_and_comments_handler import (
+from src.handlers.reddit.classify_temporal_handler import ClassifyTemporalHandler
+from src.handlers.reddit.split_posts_and_comments_handler import (
     SplitPostsAndCommentsHandler,
 )
-from handlers.reddit.summarise_posts_handler import SummarisePostsHandler
-from transformers.base_transformer import BaseTransformer
+from src.handlers.reddit.summarise_posts_handler import SummarisePostsHandler
+from src.transformers.base_transformer import BaseTransformer
 
 
 class RedditTransformer(BaseTransformer):

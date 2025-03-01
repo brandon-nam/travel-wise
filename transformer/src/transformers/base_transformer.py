@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 
 from fs_access.base_fs_access import BaseFSAccess
-from handlers.base_handler import BaseHandler
+
+from src.handlers.base_handler import BaseHandler
 
 
 class BaseTransformer(ABC):

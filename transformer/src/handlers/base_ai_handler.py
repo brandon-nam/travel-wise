@@ -1,8 +1,8 @@
 import json
 from abc import ABC
 
-from ai_provider.base_ai_provider import BaseAIProvider
-from handlers.base_handler import BaseHandler
+from src.ai_provider.base_ai_provider import BaseAIProvider
+from src.handlers.base_handler import BaseHandler
 
 
 class BaseAIHandler(BaseHandler, ABC):

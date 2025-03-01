@@ -2,7 +2,8 @@ import os
 from typing import Any
 import openai
 from dotenv import load_dotenv
-from ai_provider.base_ai_provider import BaseAIProvider
+
+from src.ai_provider.base_ai_provider import BaseAIProvider
 
 DEFAULT_OPENAI_PARAMS = {"max_tokens": 1000, "temperature": 0.5}
 

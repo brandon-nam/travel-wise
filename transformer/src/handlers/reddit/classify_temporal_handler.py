@@ -1,6 +1,6 @@
 import json
 
-from handlers.base_ai_handler import BaseAIHandler
+from src.handlers.base_ai_handler import BaseAIHandler
 
 
 class ClassifyTemporalHandler(BaseAIHandler):

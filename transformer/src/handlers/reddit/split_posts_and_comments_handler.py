@@ -1,7 +1,7 @@
 import json
 from collections import defaultdict
 
-from handlers.base_handler import BaseHandler
+from src.handlers.base_handler import BaseHandler
 
 
 class SplitPostsAndCommentsHandler(BaseHandler):
