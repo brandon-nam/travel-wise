@@ -8,7 +8,7 @@ import MapComponent from "../components/MapComponent";
 import PlaceCard from "../components/PlaceCard";
 
 import { useState, useContext } from "react";
-import { useQuery, useQueries } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import { fetchComments, fetchPosts } from "../lib/API";
 
@@ -19,15 +19,9 @@ function SuggestionsPage() {
     const [searchResults, setSearchResults] = useState([]);
 
 
-    const showPosts = (data) => {
-        console.log(data);
-        return data;
-    }
-
     const postQuery = useQuery({
         queryKey: ["posts"],
         queryFn: () => fetchPosts(),
-        select: (data) => showPosts(data),
         staleTime: Infinity,
         // enabled: !!suggestionQuery.data
     });
@@ -68,13 +62,12 @@ function SuggestionsPage() {
                         const locationKey = `${location.lat},${location.lng}`;
                         if (!locations[locationKey]) {
                             locations[locationKey] = appendIndex;
-                            // console.log(rest);
                             result[appendIndex] = {
                                 location_name: location.location_name,
                                 characteristic: location.characteristic,
                                 lat: location.lat,
                                 lng: location.lng,
-                                url: postURL[rest.post_id],
+                                postURL: postURL[rest.post_id],
                                 comments: [rest],
                             };
                             appendIndex++;
@@ -119,7 +112,6 @@ function SuggestionsPage() {
             setSearchResults([]);
         } else {
             const searchsearchResults = fuse.search(searchText).map((result) => result.item);
-            // console.log("searchsearchResults: ", searchsearchResults);
             setSearchResults(searchsearchResults);
         }
     };
@@ -163,7 +155,7 @@ function SuggestionsPage() {
                                                 : false
                                         }
                                         comments={travelSuggestion.comments}
-                                        posts={postData}
+                                        postURL={travelSuggestion.postURL}
                                     />
                                 );
                             })
@@ -181,7 +173,7 @@ function SuggestionsPage() {
                                                 : false
                                         }
                                         comments={travelSuggestion.comments}
-                                        posts={postData}
+                                        postURL={travelSuggestion.postURL}
                                     />
                                 );
                             })
