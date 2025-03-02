@@ -8,31 +8,42 @@ import MapComponent from "../components/MapComponent";
 import PlaceCard from "../components/PlaceCard";
 
 import { useState, useContext } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueries } from "@tanstack/react-query";
 
-import { fetchComments } from "../lib/API";
+import { fetchComments, fetchPosts } from "../lib/API";
 
 function SuggestionsPage() {
     const { clickedMarker } = useContext(ClickMarkerContext);
     const { clickedPlace, handleClickDetails } = useContext(ClickDetailsContext);
 
-    const [query, setQuery] = useState("");
     const [searchResults, setSearchResults] = useState([]);
+
+    // const postURLSet = () => {
+    //     const urlSet = {}; 
+    //     postData.forEach(post => {
+    //         urlSet[post.id] = post.url;
+    //     }); 
+
+    //     return urlSet; 
+    // }
 
     const filterAndFlattenLocations = (data) => {
         const locations = {};
         const result = [];
+        // const postURL = postData ? postURLSet() : {};
+
+
         let appendIndex = 0;
         data.forEach((suggestion) => {
-            // Intended data structure: {
+            // Transforms data into intended data structure: {
             //  location_name, characteristic, lat, lng,
-            //  comments : { id, post_id, body, score, start_date, end_date, summary
-            // }}
-            // right now: {
+            //  comments : { id, post_id, body, score, start_date, end_date, summary }
+            // }
+            // from this: {
             //   id, post_id, body, score, start_date, end_date, summary,
             //   location_coordinates: { lat, lng, location_name, characteristic }
-            //}
-            // rest: { id, post_id, body, score, start_date, end_date, summary }
+            // }
+
             try {
                 if (suggestion.classification === "travel_suggestion") {
                     const { location_coordinates, ...rest } = suggestion;
@@ -40,12 +51,13 @@ function SuggestionsPage() {
                         const locationKey = `${location.lat},${location.lng}`;
                         if (!locations[locationKey]) {
                             locations[locationKey] = appendIndex;
-
+                            console.log("rest: ", rest);
                             result[appendIndex] = {
                                 location_name: location.location_name,
                                 characteristic: location.characteristic,
                                 lat: location.lat,
                                 lng: location.lng,
+                                // url: postURL[rest[]],
                                 comments: [rest],
                             };
                             appendIndex++;
@@ -62,32 +74,51 @@ function SuggestionsPage() {
             }
         });
 
-        console.log(result);
+        // console.log(result);
         return result;
     };
 
-    const { isLoading, data, error } = useQuery({
+    const suggestionQuery = useQuery({
         queryKey: ["travelSuggestions"],
         queryFn: () => fetchComments(),
         select: (data) => filterAndFlattenLocations(data),
         staleTime: Infinity,
+       
     });
 
-    const fuse = new Fuse(data, {
+    const showPosts = (data) => {
+        console.log(data);
+        return data;
+    }
+
+    const postQuery = useQuery({
+        queryKey: ["posts"],
+        queryFn: () => fetchPosts(),
+        select: (data) => showPosts(data),
+        staleTime: Infinity,
+        enabled: !!suggestionQuery.data
+    });
+
+    const isSuggestionLoading = suggestionQuery.isLoading;
+    const suggestionData = suggestionQuery.data;
+
+    const isPostLoading = postQuery.isLoading;
+    const postData = postQuery.data;
+
+    const fuse = new Fuse(suggestionData, {
         keys: ["characteristic", "location_name"],
         threshold: 0.0, // Fuzzy match sensitivity
     });
 
     const handleSearch = (event) => {
-        handleClickDetails(null, null, null);
+        handleClickDetails(null, null, null, null);
         const searchText = event.target.value;
-        setQuery(searchText);
 
         if (searchText.trim() === "") {
             setSearchResults([]);
         } else {
             const searchsearchResults = fuse.search(searchText).map((result) => result.item);
-            console.log("searchsearchResults: ", searchsearchResults);
+            // console.log("searchsearchResults: ", searchsearchResults);
             setSearchResults(searchsearchResults);
         }
     };
@@ -95,11 +126,11 @@ function SuggestionsPage() {
     return (
         <div id="map-place-container" className="flex w-full h-full ">
             <div id="map-container" className="h-[calc(100vh-4rem)] w-3/5">
-                {!isLoading &&
+                {!isSuggestionLoading &&
                     (searchResults.length != 0 ? (
                         <MapComponent travelSuggestions={searchResults} />
                     ) : (
-                        <MapComponent travelSuggestions={data} />
+                        <MapComponent travelSuggestions={suggestionData} />
                     ))}
             </div>
             <div id="place-container" className="h-[calc(100vh-4rem)] w-2/5 flex flex-col">
@@ -114,13 +145,15 @@ function SuggestionsPage() {
                 <div id="search-place-tag-field-space" className="py-10"></div>
                 {clickedPlace && clickedPlace}
                 <div className="overflow-y-scroll">
-                    {!isLoading && !clickedPlace ? (
+                    {!isSuggestionLoading && !clickedPlace ? (
                         searchResults.length != 0 ? (
+                            // show only the searchResults
                             Object.entries(searchResults).map(([_, travelSuggestion], __) => {
                                 // location_name, characteristic, lat, lng, comments : { id, post_id, body, score, start_date, end_date, summary }
+                                
                                 return (
                                     <PlaceCard
-                                        tag={travelSuggestion.characteristic}
+                                        tag={`# ${travelSuggestion.characteristic}`}
                                         body={travelSuggestion.location_name}
                                         key={`${travelSuggestion.lat}-${travelSuggestion.lng}`}
                                         highlight={
@@ -128,16 +161,17 @@ function SuggestionsPage() {
                                                 ? `${travelSuggestion.lat}-${travelSuggestion.lng}` === clickedMarker
                                                 : false
                                         }
-                                        expanded={false}
                                         comments={travelSuggestion.comments}
+                                        posts={postData}
                                     />
                                 );
                             })
                         ) : (
-                            Object.entries(data).map(([_, travelSuggestion], __) => {
+                            // show all data
+                            Object.entries(suggestionData).map(([_, travelSuggestion], __) => {
                                 return (
                                     <PlaceCard
-                                        tag={travelSuggestion.characteristic}
+                                        tag={`# ${travelSuggestion.characteristic}`}
                                         body={travelSuggestion.location_name}
                                         key={`${travelSuggestion.lat}-${travelSuggestion.lng}`}
                                         highlight={
@@ -145,8 +179,8 @@ function SuggestionsPage() {
                                                 ? `${travelSuggestion.lat}-${travelSuggestion.lng}` === clickedMarker
                                                 : false
                                         }
-                                        expanded={false}
                                         comments={travelSuggestion.comments}
+                                        posts={postData}
                                     />
                                 );
                             })

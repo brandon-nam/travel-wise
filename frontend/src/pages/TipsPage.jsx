@@ -52,11 +52,11 @@ function TipsPage() {
                 {!isLoading &&
                     results.length != 0 ? (
                         results.map((travelTip) => {
-                            return <TipCard tag={travelTip.characteristic} body={travelTip.summary} key={travelTip.id} />;
+                            return <TipCard tag={`# ${travelTip.characteristic}`} body={travelTip.summary} key={travelTip.id} />;
                         })
                     ) : (
                         data.map((travelTip) => {
-                            return <TipCard tag={travelTip.characteristic} body={travelTip.summary} key={travelTip.id} />;
+                            return <TipCard tag={`# ${travelTip.characteristic}`} body={travelTip.summary} key={travelTip.id} />;
                         })
                     )
                 }
