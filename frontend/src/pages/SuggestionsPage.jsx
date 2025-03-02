@@ -18,19 +18,36 @@ function SuggestionsPage() {
 
     const [searchResults, setSearchResults] = useState([]);
 
-    // const postURLSet = () => {
-    //     const urlSet = {}; 
-    //     postData.forEach(post => {
-    //         urlSet[post.id] = post.url;
-    //     }); 
 
-    //     return urlSet; 
-    // }
+    const showPosts = (data) => {
+        console.log(data);
+        return data;
+    }
+
+    const postQuery = useQuery({
+        queryKey: ["posts"],
+        queryFn: () => fetchPosts(),
+        select: (data) => showPosts(data),
+        staleTime: Infinity,
+        // enabled: !!suggestionQuery.data
+    });
+
+    const postData = postQuery.data;
+
+    const postURLSet = () => {
+        const urlSet = {}; 
+        postData.forEach(post => {
+            urlSet[post.id] = post.url;
+        }); 
+
+        return urlSet; 
+    }
+
 
     const filterAndFlattenLocations = (data) => {
         const locations = {};
         const result = [];
-        // const postURL = postData ? postURLSet() : {};
+        const postURL = postData ? postURLSet() : {};
 
 
         let appendIndex = 0;
@@ -51,13 +68,13 @@ function SuggestionsPage() {
                         const locationKey = `${location.lat},${location.lng}`;
                         if (!locations[locationKey]) {
                             locations[locationKey] = appendIndex;
-                            console.log("rest: ", rest);
+                            // console.log(rest);
                             result[appendIndex] = {
                                 location_name: location.location_name,
                                 characteristic: location.characteristic,
                                 lat: location.lat,
                                 lng: location.lng,
-                                // url: postURL[rest[]],
+                                url: postURL[rest.post_id],
                                 comments: [rest],
                             };
                             appendIndex++;
@@ -74,7 +91,7 @@ function SuggestionsPage() {
             }
         });
 
-        // console.log(result);
+        console.log(result);
         return result;
     };
 
@@ -83,27 +100,11 @@ function SuggestionsPage() {
         queryFn: () => fetchComments(),
         select: (data) => filterAndFlattenLocations(data),
         staleTime: Infinity,
-       
+        enabled: !!postQuery.data
     });
 
-    const showPosts = (data) => {
-        console.log(data);
-        return data;
-    }
-
-    const postQuery = useQuery({
-        queryKey: ["posts"],
-        queryFn: () => fetchPosts(),
-        select: (data) => showPosts(data),
-        staleTime: Infinity,
-        enabled: !!suggestionQuery.data
-    });
-
-    const isSuggestionLoading = suggestionQuery.isLoading;
     const suggestionData = suggestionQuery.data;
-
-    const isPostLoading = postQuery.isLoading;
-    const postData = postQuery.data;
+    
 
     const fuse = new Fuse(suggestionData, {
         keys: ["characteristic", "location_name"],
@@ -126,7 +127,7 @@ function SuggestionsPage() {
     return (
         <div id="map-place-container" className="flex w-full h-full ">
             <div id="map-container" className="h-[calc(100vh-4rem)] w-3/5">
-                {!isSuggestionLoading &&
+                {suggestionData &&
                     (searchResults.length != 0 ? (
                         <MapComponent travelSuggestions={searchResults} />
                     ) : (
@@ -145,7 +146,7 @@ function SuggestionsPage() {
                 <div id="search-place-tag-field-space" className="py-10"></div>
                 {clickedPlace && clickedPlace}
                 <div className="overflow-y-scroll">
-                    {!isSuggestionLoading && !clickedPlace ? (
+                    {suggestionData && !clickedPlace ? (
                         searchResults.length != 0 ? (
                             // show only the searchResults
                             Object.entries(searchResults).map(([_, travelSuggestion], __) => {
