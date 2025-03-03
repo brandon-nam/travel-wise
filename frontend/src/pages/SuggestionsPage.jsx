@@ -14,7 +14,7 @@ import { fetchComments, fetchPosts } from "../lib/API";
 
 function SuggestionsPage() {
     const { clickedMarker } = useContext(ClickMarkerContext);
-    const { clickedPlace, handleClickDetails } = useContext(ClickDetailsContext);
+    const { expandedElement, handleClickPlaceDetails } = useContext(ClickDetailsContext);
 
     const [searchResults, setSearchResults] = useState([]);
 
@@ -105,7 +105,7 @@ function SuggestionsPage() {
     });
 
     const handleSearch = (event) => {
-        handleClickDetails(null, null, null, null);
+        handleClickPlaceDetails(null, null, null, null);
         const searchText = event.target.value;
 
         if (searchText.trim() === "") {
@@ -136,9 +136,9 @@ function SuggestionsPage() {
                     ></input>
                 </div>
                 <div id="search-place-tag-field-space" className="py-10"></div>
-                {clickedPlace && clickedPlace}
+                {expandedElement && expandedElement}
                 <div className="overflow-y-scroll">
-                    {suggestionData && !clickedPlace ? (
+                    {suggestionData && !expandedElement ? (
                         searchResults.length != 0 ? (
                             // show only the searchResults
                             Object.entries(searchResults).map(([_, travelSuggestion], __) => {
