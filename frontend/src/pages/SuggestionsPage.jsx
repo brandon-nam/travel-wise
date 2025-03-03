@@ -14,10 +14,9 @@ import { fetchComments, fetchPosts } from "../lib/API";
 
 function SuggestionsPage() {
     const { clickedMarker } = useContext(ClickMarkerContext);
-    const { expandedElement, handleClickPlaceDetails } = useContext(ClickDetailsContext);
+    const { expandedElement, clickedSuggestion, handleClickPlaceDetails } = useContext(ClickDetailsContext);
 
     const [searchResults, setSearchResults] = useState([]);
-
 
     const postQuery = useQuery({
         queryKey: ["posts"],
@@ -29,20 +28,18 @@ function SuggestionsPage() {
     const postData = postQuery.data;
 
     const postURLSet = () => {
-        const urlSet = {}; 
-        postData.forEach(post => {
+        const urlSet = {};
+        postData.forEach((post) => {
             urlSet[post.id] = post.url;
-        }); 
+        });
 
-        return urlSet; 
-    }
-
+        return urlSet;
+    };
 
     const filterAndFlattenLocations = (data) => {
         const locations = {};
         const result = [];
         const postURL = postData ? postURLSet() : {};
-
 
         let appendIndex = 0;
         data.forEach((suggestion) => {
@@ -93,11 +90,10 @@ function SuggestionsPage() {
         queryFn: () => fetchComments(),
         select: (data) => filterAndFlattenLocations(data),
         staleTime: Infinity,
-        enabled: !!postQuery.data
+        enabled: !!postQuery.data,
     });
 
     const suggestionData = suggestionQuery.data;
-    
 
     const fuse = new Fuse(suggestionData, {
         keys: ["characteristic", "location_name"],
@@ -120,7 +116,9 @@ function SuggestionsPage() {
         <div id="map-place-container" className="flex w-full h-full ">
             <div id="map-container" className="h-[calc(100vh-4rem)] w-3/5">
                 {suggestionData &&
-                    (searchResults.length != 0 ? (
+                    (clickedSuggestion.length > 0 ? (
+                        <MapComponent travelSuggestions={clickedSuggestion} />
+                    ) : searchResults.length != 0 ? (
                         <MapComponent travelSuggestions={searchResults} />
                     ) : (
                         <MapComponent travelSuggestions={suggestionData} />
@@ -143,37 +141,34 @@ function SuggestionsPage() {
                             // show only the searchResults
                             Object.entries(searchResults).map(([_, travelSuggestion], __) => {
                                 // location_name, characteristic, lat, lng, comments : { id, post_id, body, score, start_date, end_date, summary }
-                                
+                                const coordinate = `${travelSuggestion.lat}-${travelSuggestion.lng}`;
+
                                 return (
                                     <PlaceCard
                                         tag={`# ${travelSuggestion.characteristic}`}
                                         body={travelSuggestion.location_name}
-                                        key={`${travelSuggestion.lat}-${travelSuggestion.lng}`}
-                                        highlight={
-                                            clickedMarker
-                                                ? `${travelSuggestion.lat}-${travelSuggestion.lng}` === clickedMarker
-                                                : false
-                                        }
+                                        key={coordinate}
+                                        highlight={clickedMarker ? coordinate === clickedMarker : false}
                                         comments={travelSuggestion.comments}
                                         postURL={travelSuggestion.postURL}
+                                        suggestion={travelSuggestion}
                                     />
                                 );
                             })
                         ) : (
                             // show all data
                             Object.entries(suggestionData).map(([_, travelSuggestion], __) => {
+                                const coordinate = `${travelSuggestion.lat}-${travelSuggestion.lng}`;
+
                                 return (
                                     <PlaceCard
                                         tag={`# ${travelSuggestion.characteristic}`}
                                         body={travelSuggestion.location_name}
-                                        key={`${travelSuggestion.lat}-${travelSuggestion.lng}`}
-                                        highlight={
-                                            clickedMarker
-                                                ? `${travelSuggestion.lat}-${travelSuggestion.lng}` === clickedMarker
-                                                : false
-                                        }
+                                        key={coordinate}
+                                        highlight={clickedMarker ? coordinate === clickedMarker : false}
                                         comments={travelSuggestion.comments}
                                         postURL={travelSuggestion.postURL}
+                                        suggestion={travelSuggestion}
                                     />
                                 );
                             })

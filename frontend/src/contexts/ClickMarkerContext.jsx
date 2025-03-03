@@ -6,7 +6,6 @@ export function ClickMarkerProvider({ children }) {
     const [clickedMarker, setClickedMarker] = useState("");
 
     function handleClick(marker) {
-        console.log("clicked!")
         setClickedMarker(marker);
     }
 

@@ -4,8 +4,9 @@ const ClickDetailsContext = createContext();
 
 export function ClickDetailsProvider({ children }) {
     const [expandedElement, setExpandedElement] = useState(null);
+    const [clickedSuggestion, setClickedSuggestion] = useState([]); 
 
-    function handleClickPlaceDetails(body, tag, comments, postURL) {
+    function handleClickPlaceDetails(body, tag, comments, postURL, suggestion) {
         if (body) {
             const ConstructedHtml = () => (
                 <div className={`flex flex-col shadow items-center bg-white mx-3 mb-3 rounded h-full`}>
@@ -18,7 +19,7 @@ export function ClickDetailsProvider({ children }) {
                         <a className="break-all text-blue-300  hover:text-blue-500 transition" target="_blank" href={postURL}>Go to reddit post</a>
                     </div>
                     <div
-                        onClick={() => handleClickPlaceDetails(null, null, null)}
+                        onClick={() => handleClickPlaceDetails(null, null, null, null, null)}
                         className="w-full flex-none text-right px-3 py-2 text-blue-300 cursor-pointer hover:text-blue-500 transition"
                     >
                         See less
@@ -27,9 +28,11 @@ export function ClickDetailsProvider({ children }) {
             );
 
             setExpandedElement(ConstructedHtml);
+            setClickedSuggestion([suggestion]);
             console.log("clicked details!: ", expandedElement);
         } else {
             setExpandedElement(null);
+            setClickedSuggestion([]);
         }
     }
 
@@ -57,7 +60,7 @@ export function ClickDetailsProvider({ children }) {
         }
     }
 
-    return <ClickDetailsContext.Provider value={{ expandedElement, handleClickPlaceDetails, handleClickTipDetails }}>{children}</ClickDetailsContext.Provider>;
+    return <ClickDetailsContext.Provider value={{ expandedElement, clickedSuggestion, handleClickPlaceDetails, handleClickTipDetails }}>{children}</ClickDetailsContext.Provider>;
 }
 
 export default ClickDetailsContext;
