@@ -1,4 +1,4 @@
-from flask import Response, Flask
+from flask import Response, Flask, request
 
 from src.database.base_db import BaseDB
 
@@ -10,4 +10,5 @@ def create_routes(app: Flask, database: BaseDB) -> None:
 
     @app.route("/comments", methods=["GET"])
     def get_comments() -> Response:
-        return database.get_comments()
+        classification = request.args.get("classification")
+        return database.get_comments(classification=classification)

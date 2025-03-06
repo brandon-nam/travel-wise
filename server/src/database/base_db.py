@@ -19,5 +19,5 @@ class BaseDB(ABC):
         pass
 
     @abstractmethod
-    def get_comments(self) -> Response:
+    def get_comments(self, classification: str) -> Response:
         pass
