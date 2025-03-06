@@ -1,4 +1,4 @@
-from flask import Response, jsonify, Flask
+from flask import Response, jsonify, Flask, request
 from sqlalchemy.orm import joinedload
 
 from src.database.base_db import BaseDB
@@ -26,9 +26,14 @@ class SQLAlchemyDB(BaseDB):
         )
 
     def get_comments(self) -> Response:
-        comments = (
-            db.session.query(Comment).options(joinedload(Comment.locations)).all()
-        )
+        classification = request.args.get("classification")
+
+        query = db.session.query(Comment).options(joinedload(Comment.locations))
+
+        if classification in ("suggestion", "tip", "other"):
+            query = query.filter(Comment.classification == classification)
+
+        comments = query.all()
         return jsonify(
             [
                 {
