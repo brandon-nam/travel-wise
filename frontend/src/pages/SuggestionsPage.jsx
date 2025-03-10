@@ -143,12 +143,8 @@ function SuggestionsPage() {
 
                                 return (
                                     <PlaceCard
-                                        tag={`# ${travelSuggestion.characteristic}`}
-                                        body={travelSuggestion.location_name}
                                         key={coordinate}
                                         highlight={clickedMarker ? coordinate === clickedMarker : false}
-                                        comments={travelSuggestion.comments}
-                                        postURL={travelSuggestion.postURL}
                                         suggestion={travelSuggestion}
                                     />
                                 );
@@ -160,12 +156,8 @@ function SuggestionsPage() {
 
                                 return (
                                     <PlaceCard
-                                        tag={`# ${travelSuggestion.characteristic}`}
-                                        body={travelSuggestion.location_name}
                                         key={coordinate}
                                         highlight={clickedMarker ? coordinate === clickedMarker : false}
-                                        comments={travelSuggestion.comments}
-                                        postURL={travelSuggestion.postURL}
                                         suggestion={travelSuggestion}
                                     />
                                 );
