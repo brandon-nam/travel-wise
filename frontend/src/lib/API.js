@@ -18,6 +18,19 @@ export async function fetchTips() {
     return results.data
 }
 
+export async function fetchSuggestionsByCountry(country) {
+    const results = await axios.get(`http://localhost:3203/comments?classification=travel-suggestion?country=${country}`);
+
+    return results.data
+}
+
+export async function fetchTipsByCountry(country) {
+    const results = await axios.get(`http://localhost:3203/comments?classification=travel-suggestion?country=${country}`);
+
+    return results.data
+}
+
+
 export async function fetchPosts() {
     const results = await axios.get("http://localhost:3203/posts");
 
