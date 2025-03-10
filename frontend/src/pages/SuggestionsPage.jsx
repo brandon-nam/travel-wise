@@ -10,7 +10,7 @@ import PlaceCard from "../components/PlaceCard";
 import { useState, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchComments, fetchPosts } from "../lib/API";
+import { fetchSuggestions, fetchPosts } from "../lib/API";
 
 function SuggestionsPage() {
     const { clickedMarker } = useContext(ClickMarkerContext);
@@ -53,29 +53,27 @@ function SuggestionsPage() {
             // }
 
             try {
-                if (suggestion.classification === "travel_suggestion") {
-                    const { location_coordinates, ...rest } = suggestion;
-                    location_coordinates.forEach((location) => {
-                        const locationKey = `${location.lat},${location.lng}`;
-                        if (!locations[locationKey]) {
-                            locations[locationKey] = appendIndex;
-                            result[appendIndex] = {
-                                location_name: location.location_name,
-                                characteristic: location.characteristic,
-                                lat: location.lat,
-                                lng: location.lng,
-                                postURL: postURL[rest.post_id],
-                                comments: [rest],
-                            };
-                            appendIndex++;
-                        } else {
-                            const index = locations[locationKey];
-                            let { comments, ..._ } = result[index];
-                            comments = [...comments, rest];
-                            result[index]["comments"] = comments;
-                        }
-                    });
-                }
+                const { location_coordinates, ...rest } = suggestion;
+                location_coordinates.forEach((location) => {
+                    const locationKey = `${location.lat},${location.lng}`;
+                    if (!locations[locationKey]) {
+                        locations[locationKey] = appendIndex;
+                        result[appendIndex] = {
+                            location_name: location.location_name,
+                            characteristic: location.characteristic,
+                            lat: location.lat,
+                            lng: location.lng,
+                            postURL: postURL[rest.post_id],
+                            comments: [rest],
+                        };
+                        appendIndex++;
+                    } else {
+                        const index = locations[locationKey];
+                        let { comments, ..._ } = result[index];
+                        comments = [...comments, rest];
+                        result[index]["comments"] = comments;
+                    }
+                });
             } catch (e) {
                 console.log("error: ", e);
             }
@@ -87,7 +85,7 @@ function SuggestionsPage() {
 
     const suggestionQuery = useQuery({
         queryKey: ["travelSuggestions"],
-        queryFn: () => fetchComments(),
+        queryFn: () => fetchSuggestions(),
         select: (data) => filterAndFlattenLocations(data),
         staleTime: Infinity,
         enabled: !!postQuery.data,

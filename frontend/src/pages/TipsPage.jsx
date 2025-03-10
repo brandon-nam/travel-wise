@@ -4,7 +4,7 @@ import TipCard from "../components/TipCard";
 
 import { useState, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchComments, fetchPosts } from "../lib/API";
+import { fetchComments, fetchPosts, fetchTips } from "../lib/API";
 import ClickDetailsContext from "../contexts/ClickDetailsContext";
 
 function TipsPage() {
@@ -31,14 +31,12 @@ function TipsPage() {
 
     const filterTipsAndAddPostURL = (data) => {
         const postURL = postData ? postURLSet() : {};
-        const result = [] 
+        const result = [];
         console.log("postURLs: ", postURL);
         data.forEach((suggestion) => {
-            if (suggestion.classification === "travel_tip") {
-                let newTip = {...suggestion}; 
-                newTip["post_url"] = postURL[suggestion.post_id];
-                result.push(newTip);
-            }
+            let newTip = { ...suggestion };
+            newTip["post_url"] = postURL[suggestion.post_id];
+            result.push(newTip);
         });
 
         console.log("result:", result);
@@ -47,13 +45,13 @@ function TipsPage() {
 
     const tipsQuery = useQuery({
         queryKey: ["travelSuggestions"],
-        queryFn: () => fetchComments(),
+        queryFn: () => fetchTips(),
         select: (data) => filterTipsAndAddPostURL(data),
         staleTime: Infinity,
-        enalbed: !!postQuery.data
+        enalbed: !!postQuery.data,
     });
 
-    const tipsData = tipsQuery.data; 
+    const tipsData = tipsQuery.data;
 
     const fuse = new Fuse(tipsData, {
         keys: ["characteristic", "summary"],
@@ -87,16 +85,35 @@ function TipsPage() {
             <div id="search-tag-field-space" className="w-2/5 h-20"></div>
             {expandedElement && expandedElement}
             <div id="tip-container" className="grow-2">
-                {tipsData && !expandedElement ? 
-                    (results.length != 0
-                        ? results.map((travelTip) => {
-                            return <TipCard tag={`# ${travelTip.characteristic}`} summary={travelTip.summary} body={travelTip.body} postURL={travelTip.post_url} key={travelTip.id} />;
+                {tipsData && !expandedElement ? (
+                    results.length != 0 ? (
+                        results.map((travelTip) => {
+                            return (
+                                <TipCard
+                                    tag={`# ${travelTip.characteristic}`}
+                                    summary={travelTip.summary}
+                                    body={travelTip.body}
+                                    postURL={travelTip.post_url}
+                                    key={travelTip.id}
+                                />
+                            );
                         })
-                        : tipsData.map((travelTip) => {
-                            return <TipCard tag={`# ${travelTip.characteristic}`} summary={travelTip.summary} body={travelTip.body} postURL={travelTip.post_url} key={travelTip.id} />;
+                    ) : (
+                        tipsData.map((travelTip) => {
+                            return (
+                                <TipCard
+                                    tag={`# ${travelTip.characteristic}`}
+                                    summary={travelTip.summary}
+                                    body={travelTip.body}
+                                    postURL={travelTip.post_url}
+                                    key={travelTip.id}
+                                />
+                            );
                         })
-                    ) : <></>
-                }
+                    )
+                ) : (
+                    <></>
+                )}
             </div>
         </div>
     );
