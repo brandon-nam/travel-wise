@@ -63,15 +63,21 @@ function SuggestionsPage() {
                             characteristic: location.characteristic,
                             lat: location.lat,
                             lng: location.lng,
+                            score: rest.score, // score of the first comment
                             postURL: postURL[rest.post_id],
                             comments: [rest],
                         };
                         appendIndex++;
                     } else {
+                        // if two comments talk about the same location, append comment
                         const index = locations[locationKey];
-                        let { comments, ..._ } = result[index];
-                        comments = [...comments, rest];
+                        let { comments, score, ..._ } = result[index];
+                        if (score < rest.score) {
+                            score = rest.score;
+                        }
+                        comments = [...comments, rest]; // appending rest
                         result[index]["comments"] = comments;
+                        result[index]["score"] = score; 
                     }
                 });
             } catch (e) {
@@ -123,13 +129,17 @@ function SuggestionsPage() {
                     ))}
             </div>
             <div id="place-container" className="h-[calc(100vh-4rem)] w-2/5 flex flex-col">
-                <div id="search-place-tag-field" className="fixed w-2/5 bg-gray-100 h-20 py-5 px-3">
+                <div id="search-place-tag-field" className="fixed flex flex-row w-2/5 bg-gray-100 h-20 py-5 px-3">
                     <input
                         type="text"
-                        className="bg-white shadow rounded-full h-10 w-full px-5"
+                        className="bg-white shadow rounded-full h-10 w-full px-5 mr-3"
                         placeholder="Search for tags"
                         onChange={handleSearch}
                     ></input>
+                    <select name="sort">
+                        <option>Karma⇂</option>
+                        <option>Karma↿</option>
+                    </select>
                 </div>
                 <div id="search-place-tag-field-space" className="py-10"></div>
                 {expandedElement && expandedElement}
