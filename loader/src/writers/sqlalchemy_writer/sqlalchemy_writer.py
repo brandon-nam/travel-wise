@@ -3,6 +3,7 @@ from typing import Any
 
 from constants.reddit import ClassificationType
 from database.sqlalchemy.models import Base, Post, Comment, Location
+from database.sqlalchemy.repository import Repository
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session, sessionmaker
@@ -33,25 +34,22 @@ class SQLAlchemyWriter(BaseWriter):
             session.close()
 
     def write_json(self, json_data: dict[str, Any]) -> None:
-        # 3 sessions required because we need to insert Posts, Comments and Locations strictly in that order
         with self.create_session() as session:
-            session.add_all(
-                [
-                    Post(
-                        id=post["id"],
-                        title=post["title"],
-                        url=post["url"],
-                        score=post["score"],
-                        num_comments=post["num_comments"],
-                        country=post["country"],
-                    )
-                    for post in json_data["posts"]
-                ]
-            )
+            repo = Repository(session)
+            for post in json_data["posts"]:
+                repo.add(
+                    Post,
+                    id=post["id"],
+                    title=post["title"],
+                    url=post["url"],
+                    score=post["score"],
+                    num_comments=post["num_comments"],
+                    country=post["country"],
+                )
 
-        with self.create_session() as session:
-            session.add_all(
-                Comment(
+            for comment in json_data["comments"]:
+                repo.add(
+                    Comment,
                     id=comment["id"],
                     post_id=comment["post_id"],
                     body=comment["body"],
@@ -62,20 +60,14 @@ class SQLAlchemyWriter(BaseWriter):
                     characteristic=comment["characteristic"],
                     summary=comment["summary"],
                 )
-                for comment in json_data["comments"]
-            )
 
-        with self.create_session() as session:
-            session.add_all(
-                [
-                    Location(
+            for comment in json_data["comments"]:
+                for loc in comment["locations"]:
+                    repo.add(
+                        Location,
                         comment_id=comment["id"],
                         lat=loc["lat"],
                         lng=loc["lng"],
                         location_name=loc["location_name"],
                         characteristic=loc["characteristic"],
                     )
-                    for comment in json_data["comments"]
-                    for loc in comment["locations"]
-                ]
-            )
