@@ -47,16 +47,20 @@ class RedditCollector(Collector):
         reddit: Reddit, subreddit_name: str, limit: int
     ) -> list[dict[str, Any]]:
         subreddit = reddit.subreddit(subreddit_name)
-        posts = [
-            {
-                "title": post.title,
-                "id": post.id,
-                "url": post.url,
-                "score": post.score,
-                "comments": RedditCollector.fetch_comments_from_post(post),
-            }
-            for post in subreddit.hot(limit=limit)
-        ]
+        posts = []
+        for post in subreddit.hot(limit=limit):
+            comments = RedditCollector.fetch_comments_from_post(post)
+            if len(comments) > 0 and not getattr(post, "is_gallery", False):
+                posts.append(
+                    {
+                        "title": post.title,
+                        "id": post.id,
+                        "url": post.url,
+                        "score": post.score,
+                        "comments": comments,
+                    }
+                )
+
         return posts
 
     @staticmethod
