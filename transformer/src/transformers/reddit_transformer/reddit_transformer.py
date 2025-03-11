@@ -37,7 +37,7 @@ class RedditTransformer(BaseTransformer):
             LocationDeduplicationHandler(),
             ClassifyTemporalHandler(openai_provider),
             SummarisePostsHandler(openai_provider),
-            AddCountriesHandler(openai_provider),
+            AddCountriesHandler(),
         ]
         super().__init__(fs_access)
 

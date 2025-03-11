@@ -1,7 +1,7 @@
 import pytest
+from database.sqlalchemy.models import Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from writers.sqlalchemy_writer.sqlalchemy_models import Base
 
 
 @pytest.fixture(scope="function")

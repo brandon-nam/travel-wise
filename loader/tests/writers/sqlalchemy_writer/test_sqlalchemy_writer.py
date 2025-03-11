@@ -3,10 +3,10 @@ from typing import Any
 from unittest.mock import patch, MagicMock
 
 import pytest
+from database.sqlalchemy.models import Post, Comment
 from sqlalchemy.orm import Session
 
 import src.writers.sqlalchemy_writer.sqlalchemy_writer as writer
-from writers.sqlalchemy_writer.sqlalchemy_models import Post, Comment
 
 
 @pytest.fixture

@@ -1,18 +1,13 @@
 from contextlib import contextmanager
 from typing import Any
 
+from constants.reddit import ClassificationType
+from database.sqlalchemy.models import Base, Post, Comment, Location
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session, sessionmaker
 
 from src.writers.base_writer import BaseWriter
-from src.writers.sqlalchemy_writer.sqlalchemy_models import (
-    Base,
-    Post,
-    Comment,
-    ClassificationType,
-    Location,
-)
 
 
 class SQLAlchemyWriter(BaseWriter):
