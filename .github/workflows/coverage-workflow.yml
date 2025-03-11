@@ -1,3 +1,16 @@
+name: Test and Upload Coverage
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
