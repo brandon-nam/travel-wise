@@ -52,7 +52,7 @@ jobs:
   merge-and-deploy:
     needs: test
     runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout code
@@ -85,20 +85,20 @@ jobs:
           coverage combine
           coverage html -d ../coverage_html
 
-#      - name: Upload merged coverage report as artifact
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: merged-coverage
-#          path: coverage_html
-#          retention-days: 7
-#
-#      - name: Setup Pages
-#        uses: actions/configure-pages@v5
-#
-#      - name: Upload to GitHub Pages
-#        uses: actions/upload-pages-artifact@v3
-#        with:
-#          path: coverage_html
-#
-#      - name: Deploy
-#        uses: actions/deploy-pages@v4
+      - name: Upload merged coverage report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged-coverage
+          path: coverage_html
+          retention-days: 7
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: coverage_html
+
+      - name: Deploy
+        uses: actions/deploy-pages@v4
