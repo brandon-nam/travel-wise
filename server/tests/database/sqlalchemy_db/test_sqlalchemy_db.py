@@ -24,7 +24,7 @@ def mock_posts() -> list[dict[str, Any]]:
             "score": 12,
             "num_comments": 7,
             "country": "japan",
-        }, 
+        },
         {
             "id": "1ijug05",
             "title": "Weekly Korea Travel Information and Discussion Thread - February 07, 2025",
@@ -32,7 +32,7 @@ def mock_posts() -> list[dict[str, Any]]:
             "score": 12,
             "num_comments": 7,
             "country": "korea",
-        }
+        },
     ]
 
 
@@ -139,7 +139,7 @@ def mock_locations() -> list[dict[str, Any]]:
             "comment_id": "m123458",
             "location_name": "nowhere",
             "characteristic": "on earth",
-        }
+        },
     ]
 
 
@@ -225,7 +225,7 @@ def test_get_comments_returns_all_comments(
         for k, v in comment.items():
             assert comment_response[k] == v
         print(comment_response["location_coordinates"])
-        
+
         assert len(comment_response["location_coordinates"]) == 1
         location_response = comment_response["location_coordinates"][0]
         for coordinate_type in ("lat", "lng"):

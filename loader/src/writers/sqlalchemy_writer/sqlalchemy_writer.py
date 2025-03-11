@@ -48,7 +48,7 @@ class SQLAlchemyWriter(BaseWriter):
                         url=post["url"],
                         score=post["score"],
                         num_comments=post["num_comments"],
-                        country=post["country"]
+                        country=post["country"],
                     )
                     for post in json_data["posts"]
                 ]
