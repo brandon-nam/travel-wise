@@ -318,4 +318,4 @@ ruff = ">=0.9.7,<0.10.0"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "b7fafe7c0e606f796ff18b9aa27354e93ad36af3625a8a8f79e9e7ec9abbc769"
+content-hash = "98c9dfebedcf782c4b099ddf55c1f6d8e9a3d72d090f705b8261ba6544fa9693"

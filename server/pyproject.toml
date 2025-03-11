@@ -19,7 +19,8 @@ dependencies = [
     "cloud-sql-python-connector[pg8000] (>=1.17.0,<2.0.0)",
     "alembic (>=1.14.1,<2.0.0)",
     "travelwise-common (>=0.7.0,<0.8.0)",
-    "pytest-cov (>=6.0.0,<7.0.0)"
+    "pytest-cov (>=6.0.0,<7.0.0)",
+    "coverage (>=7.6.12,<8.0.0)"
 ]
 
 

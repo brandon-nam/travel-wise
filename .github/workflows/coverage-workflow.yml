@@ -5,6 +5,7 @@ on:
     branches:
       - main
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -37,58 +38,54 @@ jobs:
       - name: Run tests with coverage for ${{ matrix.module }}
         run: |
           cd ${{ matrix.module }}
-          poetry run pytest --cov=src --cov-report=xml --cov-report=html
+          poetry run coverage run --data-file=.coverage.${{ matrix.module }} -m pytest
+
 
       - name: Upload coverage report for ${{ matrix.module }}
         uses: actions/upload-artifact@v4
         with:
           name: coverage-${{ matrix.module }}
-          path: ${{ matrix.module }}/coverage.xml
+          path: ${{ matrix.module }}/.coverage.${{ matrix.module }}
           retention-days: 7
 
-  merge-and-deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+merge-and-deploy:
+  needs: test
+  runs-on: ubuntu-latest
+  if: github.ref == 'refs/heads/main'
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Download coverage reports
-        uses: actions/download-artifact@v4
-        with:
-          path: coverage_reports
+    - name: Download coverage reports
+      uses: actions/download-artifact@v4
+      with:
+        path: coverage_reports
 
-      - name: Install coverage package
-        run: |
-          pip install coverage
+    - name: Install coverage package
+      run: |
+        pip install coverage
 
-      - name: Merge coverage reports
-        run: |
-          # Create a directory to store the merged coverage
-          mkdir -p merged_coverage
-          
-          # Combine all coverage XML files into one
-          coverage combine coverage_reports/coverage-*/coverage.xml  # Combining the downloaded files
-          
-          # Generate the HTML report from the merged coverage data
-          coverage html -d merged_coverage
+    - name: Merge coverage reports
+      run: |          
+        cd coverage_reports
+        coverage combine
+        coverage html -d ../coverage_html
 
-      - name: Upload merged coverage report as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: merged-coverage
-          path: merged_coverage
-          retention-days: 7
+    - name: Upload merged coverage report as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: merged-coverage
+        path: coverage_html
+        retention-days: 7
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
 
-      - name: Upload to GitHub Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: merged_coverage
+    - name: Upload to GitHub Pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: coverage_html
 
-      - name: Deploy
-        uses: actions/deploy-pages@v4
+    - name: Deploy
+      uses: actions/deploy-pages@v4

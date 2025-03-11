@@ -15,7 +15,8 @@ dependencies = [
     "python-dotenv (>=1.0.1,<2.0.0)",
     "travelwise-common (>=0.7.0,<0.8.0)",
     "pytest (>=8.3.4,<9.0.0)",
-    "pytest-cov (>=6.0.0,<7.0.0)"
+    "pytest-cov (>=6.0.0,<7.0.0)",
+    "coverage (>=7.6.12,<8.0.0)"
 ]
 
 
