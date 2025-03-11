@@ -23,7 +23,15 @@ def mock_posts() -> list[dict[str, Any]]:
             "url": "https://www.reddit.com/r/JapanTravel/comments/1ijug04/weekly_japan_travel_information_and_discussion/",
             "score": 12,
             "num_comments": 7,
-            "country": "Japan",
+            "country": "japan",
+        }, 
+        {
+            "id": "1ijug05",
+            "title": "Weekly Korea Travel Information and Discussion Thread - February 07, 2025",
+            "url": "https://www.reddit.com/r/KoreaTravel/comments/1ijug04/weekly_korea_travel_information_and_discussion/",
+            "score": 12,
+            "num_comments": 7,
+            "country": "korea",
         }
     ]
 
@@ -64,6 +72,28 @@ def mock_comments() -> list[dict[str, Any]]:
             "characteristic": "random",
             "summary": "random comment",
         },
+        {
+            "id": "m123457",
+            "post_id": "1ijug05",
+            "body": "random comment",
+            "score": 2,
+            "classification": ClassificationType.travel_suggestion,
+            "start_date": datetime.date(2025, 2, 1),
+            "end_date": datetime.date(2025, 2, 7),
+            "characteristic": "random",
+            "summary": "random comment",
+        },
+        {
+            "id": "m123458",
+            "post_id": "1ijug05",
+            "body": "random comment",
+            "score": 3,
+            "classification": ClassificationType.travel_tip,
+            "start_date": datetime.date(2025, 2, 1),
+            "end_date": datetime.date(2025, 2, 7),
+            "characteristic": "random",
+            "summary": "random comment",
+        },
     ]
 
 
@@ -94,6 +124,22 @@ def mock_locations() -> list[dict[str, Any]]:
             "location_name": "Maihama",
             "characteristic": "Neighbourhood",
         },
+        {
+            "id": "loc4",
+            "lat": 32.111,
+            "lng": 123.4567,
+            "comment_id": "m123457",
+            "location_name": "Somewhere",
+            "characteristic": "on earth",
+        },
+        {
+            "id": "loc5",
+            "lat": 43.222,
+            "lng": 123.4567,
+            "comment_id": "m123458",
+            "location_name": "nowhere",
+            "characteristic": "on earth",
+        }
     ]
 
 
@@ -178,7 +224,8 @@ def test_get_comments_returns_all_comments(
         ).date()
         for k, v in comment.items():
             assert comment_response[k] == v
-
+        print(comment_response["location_coordinates"])
+        
         assert len(comment_response["location_coordinates"]) == 1
         location_response = comment_response["location_coordinates"][0]
         for coordinate_type in ("lat", "lng"):
@@ -189,7 +236,7 @@ def test_get_comments_returns_all_comments(
 
 @pytest.mark.parametrize(
     "classification, expected_count",
-    [("", 3), ("travel-tip", 1), ("travel-suggestion", 1), ("other", 1), ("blabla", 3)],
+    [("", 5), ("travel-tip", 2), ("travel-suggestion", 2), ("other", 1), ("blabla", 5)],
 )
 def test_get_comments_classification_filter(
     sqlalchemy_db: SQLAlchemyDB,
@@ -198,6 +245,25 @@ def test_get_comments_classification_filter(
     add_rows_to_db,
 ) -> None:
     response = sqlalchemy_db.get_comments(classification=classification, country="")
+
+    assert response.status_code == 200
+
+    data = response.get_json()
+
+    assert len(data) == expected_count
+
+
+@pytest.mark.parametrize(
+    "country, expected_count",
+    [("japan", 3), ("korea", 2)],
+)
+def test_get_comments_country_filter(
+    sqlalchemy_db: SQLAlchemyDB,
+    country: str,
+    expected_count: int,
+    add_rows_to_db,
+) -> None:
+    response = sqlalchemy_db.get_comments(classification="", country=country)
 
     assert response.status_code == 200
 
