@@ -18,7 +18,8 @@ dependencies = [
     "python-dotenv (>=1.0.1,<2.0.0)",
     "cloud-sql-python-connector[pg8000] (>=1.17.0,<2.0.0)",
     "alembic (>=1.14.1,<2.0.0)",
-    "travelwise-common (>=0.7.0,<0.8.0)"
+    "travelwise-common (>=0.7.0,<0.8.0)",
+    "pytest-cov (>=6.0.0,<7.0.0)"
 ]
 
 

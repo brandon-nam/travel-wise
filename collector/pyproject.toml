@@ -13,7 +13,8 @@ dependencies = [
     "ruff (>=0.9.4,<0.10.0)",
     "python-dotenv (>=1.0.1,<2.0.0)",
     "pytest (>=8.3.4,<9.0.0)",
-    "travelwise-common (==0.4.0)"
+    "travelwise-common (==0.4.0)",
+    "pytest-cov (>=6.0.0,<7.0.0)"
 ]
 
 
