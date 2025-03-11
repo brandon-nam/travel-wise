@@ -1,20 +1,36 @@
+import os
+
 from database.sqlalchemy.models import Comment, Post, metadata
+from database.sqlalchemy.repository import Repository
 from flask import Response, jsonify, Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import joinedload
 
-from src.database.base_db import BaseDB
 
 db = SQLAlchemy(metadata=metadata)
 
 
-class SQLAlchemyDB(BaseDB):
+class ServerRepository(Repository):
+    def __init__(self):
+        super().__init__(db.session)
+
     def setup_db(self, app: Flask) -> None:
-        app.config["SQLALCHEMY_DATABASE_URI"] = self.db_connection_uri
+        db_host, db_port, db_user, db_password, db_name, db_driver = (
+            os.getenv("DB_HOST") or "localhost",
+            os.getenv("DB_PORT") or "5432",
+            os.getenv("DB_USER") or "postgres",
+            os.getenv("DB_PASSWORD") or "",
+            os.getenv("DB_NAME") or "travelwise",
+            os.getenv("DB_DRIVER") or "postgresql",
+        )
+
+        app.config["SQLALCHEMY_DATABASE_URI"] = (
+            f"{db_driver}://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+        )
         db.init_app(app)
 
     def get_posts(self) -> Response:
-        posts = db.session.query(Post).all()
+        posts = self.get_all(Post)
         return jsonify(
             [
                 {
@@ -30,7 +46,7 @@ class SQLAlchemyDB(BaseDB):
         )
 
     def get_comments(self, classification: str = "", country: str = "") -> Response:
-        query = db.session.query(Comment).options(joinedload(Comment.locations))
+        query = self.session.query(Comment).options(joinedload(Comment.locations))
 
         if classification in ("travel-suggestion", "travel-tip", "other"):
             classification = classification.replace("-", "_")

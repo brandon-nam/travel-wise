@@ -1,7 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
 from flask import Flask
-from src.database.base_db import BaseDB
 from src.routes.routes import create_routes
 
 
@@ -12,7 +11,7 @@ mock_get_comments_resp = b"mocked comments response"
 @pytest.fixture
 def app():
     app = Flask(__name__)
-    database = MagicMock(spec=BaseDB)
+    database = MagicMock()
     database.get_posts.return_value = mock_get_posts_resp
     database.get_comments.return_value = mock_get_comments_resp
     create_routes(app, database)

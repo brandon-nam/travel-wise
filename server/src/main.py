@@ -1,39 +1,25 @@
-import os
-
 from dotenv import load_dotenv
 
 from flask import Flask
 from flask_cors import CORS
 
-from src.database.base_db import BaseDB
-from src.database.sqlalchemy_db.sqlalchemy_db import SQLAlchemyDB
+from src.repository.server_repository import ServerRepository
 from src.routes.routes import create_routes
 
 load_dotenv()
 
 
-def get_pg_connection_uri() -> str:
-    db_host, db_port, db_user, db_password, db_name, db_driver = (
-        os.getenv("DB_HOST") or "localhost",
-        os.getenv("DB_PORT") or "5432",
-        os.getenv("DB_USER") or "postgres",
-        os.getenv("DB_PASSWORD") or "",
-        os.getenv("DB_NAME") or "travelwise",
-        os.getenv("DB_DRIVER") or "postgresql",
-    )
-    return f"{db_driver}://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
-
-
-def create_app(database: BaseDB) -> Flask:
+def create_app() -> Flask:
+    repo = ServerRepository()
     app = Flask(__name__)
     CORS(app)
-    database.setup_db(app)
-    create_routes(app, database)
+    repo.setup_db(app)
+    create_routes(app, repo)
     return app
 
 
 def main() -> None:
-    app = create_app(SQLAlchemyDB(get_pg_connection_uri()))
+    app = create_app()
     app.run(host="0.0.0.0", port=3203)
 
 
