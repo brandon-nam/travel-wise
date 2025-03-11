@@ -1,26 +1,27 @@
-name: Manual RepoSense Report
+name: Deploy RepoSense report
 
 on:
-  workflow_dispatch:  # This makes it manual
+# For active deployment on push to main branch
+  push:
+    branches:
+      - main
+
+# For scheduled deployment with Cron Jobs.
+## Examples of cron schedule expressions:
+### '0 * * * *': hourly
+### '0 0 * * *': daily
+### '0 0 1 * *': monthly
+#   schedule:
+#     - cron:  '0 0 * * *'
 
 jobs:
-  generate-report:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Download RepoSense
-        run: |
-          wget https://github.com/reposense/RepoSense/releases/latest/download/reposense.jar
-
-      - name: Run RepoSense
-        run: |
-          java -jar reposense.jar --repos https://github.com/YOUR_USERNAME/YOUR_REPO.git --output ./report
-
-      - name: Upload Report as Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: reposense-report
-          path: ./report
+    - uses: reposense/reposense-action@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }} # Required
+        version: 'release' # Optional | Default: release | Other: master/tag v1.6.1/etc
+        configDirectory: 'configs' # Optional | Default: configs
+        service: 'gh-pages' # Optional | Default: gh-pages | Other: surge
+        domain: '' # Optional (Required if service = surge) | Default: '' | Other: '<subDomain>.surge.sh'
