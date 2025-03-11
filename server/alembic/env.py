@@ -8,9 +8,10 @@ import os
 import sys
 from pathlib import Path
 
+from src.database.sqlalchemy_db.sqlalchemy_db import db
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.database.sqlalchemy_db.sqlalchemy_models import db
 
 target_metadata = db.Model.metadata
 
