@@ -14,6 +14,7 @@ class AddCountriesHandler(BaseAIHandler):
         json_input_data = json.loads(input_data)
         for post in json_input_data["posts"]:
             # result_dict = query_result[comment["id"]]
-            comment["country"] = result_dict["classification"]
+            # post["country"] = result_dict["country"]
+            post["country"] = "Japan"
             
         return json.dumps(json_input_data)

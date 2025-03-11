@@ -18,6 +18,11 @@ from src.handlers.reddit.location_deduplication_handler import (
 from src.handlers.reddit.split_posts_and_comments_handler import (
     SplitPostsAndCommentsHandler,
 )
+
+from src.handlers.reddit.add_countries_handler import (
+    AddCountriesHandler,
+)
+
 from src.handlers.reddit.summarise_posts_handler import SummarisePostsHandler
 from src.transformers.base_transformer import BaseTransformer
 
@@ -32,6 +37,7 @@ class RedditTransformer(BaseTransformer):
             LocationDeduplicationHandler(),
             ClassifyTemporalHandler(openai_provider),
             SummarisePostsHandler(openai_provider),
+            AddCountriesHandler(openai_provider), 
         ]
         super().__init__(fs_access)
 
