@@ -1641,14 +1641,14 @@ sqlcipher = ["sqlcipher3_binary"]
 
 [[package]]
 name = "travelwise-common"
-version = "0.5.0"
+version = "0.7.0"
 description = ""
 optional = false
 python-versions = ">=3.12"
 groups = ["main"]
 files = [
-    {file = "travelwise_common-0.5.0-py3-none-any.whl", hash = "sha256:776fe1c110a81ecfd2a7dbfe9b9c3478378a65a32389a2b3d2c05e565e5996f3"},
-    {file = "travelwise_common-0.5.0.tar.gz", hash = "sha256:bc294fcda130730d76fd0734af84c2c160c7c8022fc947f1392bf28a2a0963a4"},
+    {file = "travelwise_common-0.7.0-py3-none-any.whl", hash = "sha256:15a53c31a0603f88b8f5092e5d1fb5dbfac61606ef2a01594ee1afc4d221f27c"},
+    {file = "travelwise_common-0.7.0.tar.gz", hash = "sha256:f2c825a29ac4350adfb30c51f12fe4e6a9a9d912cb7a1132127571f8acbd6405"},
 ]
 
 [package.dependencies]
@@ -1805,4 +1805,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "3f56677bf75fe364c6c50f6b12fa2de026ed512f03304a2b35a9c79a4ec1c5e9"
+content-hash = "21d4057c0f925f7adf3cd3688b9bcab1fac01b964a3469ffec547cd3d83b2f11"
