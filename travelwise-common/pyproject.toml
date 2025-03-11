@@ -10,7 +10,8 @@ requires-python = ">=3.12"
 dependencies = [
     "black (>=25.1.0,<26.0.0)",
     "ruff (>=0.9.7,<0.10.0)",
-    "pytest (>=8.3.4,<9.0.0)"
+    "pytest (>=8.3.4,<9.0.0)",
+    "sqlalchemy (>=2.0.38,<3.0.0)"
 ]
 
 
