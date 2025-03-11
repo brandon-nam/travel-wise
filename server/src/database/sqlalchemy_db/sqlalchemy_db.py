@@ -1,8 +1,11 @@
+from database.sqlalchemy.models import Comment, Post, metadata
 from flask import Response, jsonify, Flask
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import joinedload
 
 from src.database.base_db import BaseDB
-from src.database.sqlalchemy_db.sqlalchemy_models import Post, Comment, db
+
+db = SQLAlchemy(metadata=metadata)
 
 
 class SQLAlchemyDB(BaseDB):

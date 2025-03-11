@@ -2,8 +2,7 @@ import pytest
 from flask import Flask
 from flask_sqlalchemy.session import Session
 
-from src.database.sqlalchemy_db.sqlalchemy_db import SQLAlchemyDB
-from src.database.sqlalchemy_db.sqlalchemy_models import db
+from src.database.sqlalchemy_db.sqlalchemy_db import SQLAlchemyDB, db
 from src.main import create_app
 
 

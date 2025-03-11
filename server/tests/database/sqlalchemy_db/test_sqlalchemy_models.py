@@ -2,15 +2,11 @@ import datetime
 from typing import Any
 
 import pytest
+from constants.reddit import ClassificationType
+from database.sqlalchemy.models import Post, Comment, Location
 from flask_sqlalchemy.session import Session
 
-from src.database.sqlalchemy_db.sqlalchemy_models import (
-    Post,
-    db,
-    Comment,
-    ClassificationType,
-    Location,
-)
+from src.database.sqlalchemy_db.sqlalchemy_db import db
 
 
 @pytest.mark.parametrize(
@@ -69,8 +65,7 @@ def test_create_model(
     model_class: db.Model, row_dict: dict[str, Any], db_session: Session
 ) -> None:
     """
-    Test to ensure that created models are accurate. If a new model is added to sqlalchemy_models.py,
-    please test it here.
+    Test to ensure that created models are accurate.
 
     :param model_class: Class type which extends db.Model
     :param row_dict: A mapping containing for a single row's columns -> values

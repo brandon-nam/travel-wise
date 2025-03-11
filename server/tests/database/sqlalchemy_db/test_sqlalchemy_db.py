@@ -2,16 +2,11 @@ import datetime
 from typing import Any
 
 import pytest
+from constants.reddit import ClassificationType
+from database.sqlalchemy.models import Post, Comment, Location
 from flask_sqlalchemy.session import Session
 
-from src.database.sqlalchemy_db.sqlalchemy_db import SQLAlchemyDB
-from src.database.sqlalchemy_db.sqlalchemy_models import (
-    Post,
-    Comment,
-    Location,
-    db,
-    ClassificationType,
-)
+from src.database.sqlalchemy_db.sqlalchemy_db import SQLAlchemyDB, db
 
 
 @pytest.fixture
