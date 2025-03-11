@@ -424,20 +424,21 @@ sqlcipher = ["sqlcipher3_binary"]
 
 [[package]]
 name = "travelwise-common"
-version = "0.4.0"
+version = "0.5.0"
 description = ""
 optional = false
 python-versions = ">=3.12"
 groups = ["main"]
 files = [
-    {file = "travelwise_common-0.4.0-py3-none-any.whl", hash = "sha256:ee35ec5ffae7314ccc23eb6e340416658353cef22cac8fd231a8365ad8bab56e"},
-    {file = "travelwise_common-0.4.0.tar.gz", hash = "sha256:3312279cf73003fbbee22a36a2e2a78ad5c2463c810af43170d774882cbceaf7"},
+    {file = "travelwise_common-0.5.0-py3-none-any.whl", hash = "sha256:776fe1c110a81ecfd2a7dbfe9b9c3478378a65a32389a2b3d2c05e565e5996f3"},
+    {file = "travelwise_common-0.5.0.tar.gz", hash = "sha256:bc294fcda130730d76fd0734af84c2c160c7c8022fc947f1392bf28a2a0963a4"},
 ]
 
 [package.dependencies]
 black = ">=25.1.0,<26.0.0"
 pytest = ">=8.3.4,<9.0.0"
 ruff = ">=0.9.7,<0.10.0"
+sqlalchemy = ">=2.0.38,<3.0.0"
 
 [[package]]
 name = "typing-extensions"
@@ -454,4 +455,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "92945c0a6cdfb09d98ea46593faa11cdbb9221d284a83c592f2199fe6f8f437a"
+content-hash = "3d14a1f3e4541886b5d0983c00892e282e6f2c2dedae2ac4563f279995b85fa5"
