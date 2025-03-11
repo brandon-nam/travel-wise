@@ -11,7 +11,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 COLLECTORS = [
-    RedditCollector(subreddit_list=["askSingapore", "JapanTravel"], query_limit=3)
+    RedditCollector(subreddit_list=["KoreaTravel", "JapanTravel"], query_limit=3)
 ]
 
 

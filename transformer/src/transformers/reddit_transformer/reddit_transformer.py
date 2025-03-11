@@ -15,6 +15,7 @@ from src.handlers.reddit.classify_temporal_handler import ClassifyTemporalHandle
 from src.handlers.reddit.location_deduplication_handler import (
     LocationDeduplicationHandler,
 )
+from src.handlers.reddit.cleanup_comments_handler import CleanupCommentsHandler
 from src.handlers.reddit.split_posts_and_comments_handler import (
     SplitPostsAndCommentsHandler,
 )
@@ -32,6 +33,7 @@ class RedditTransformer(BaseTransformer):
         openai_provider = OpenAIProvider()
         self._chain = [
             SplitPostsAndCommentsHandler(),
+            CleanupCommentsHandler(),
             ClassifySuggestionOrTipHandler(openai_provider),
             ClassifyLocationCoordinatesHandler(openai_provider),
             LocationDeduplicationHandler(),
