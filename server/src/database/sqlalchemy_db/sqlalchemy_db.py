@@ -25,12 +25,15 @@ class SQLAlchemyDB(BaseDB):
             ]
         )
 
-    def get_comments(self, classification: str = "") -> Response:
+    def get_comments(self, classification: str = "", country: str = "") -> Response:
         query = db.session.query(Comment).options(joinedload(Comment.locations))
 
         if classification in ("travel-suggestion", "travel-tip", "other"):
             classification = classification.replace("-", "_")
             query = query.filter(Comment.classification == classification)
+        
+        if country is not None and country.lower() in ("japan"): 
+            query = query.join(Post, Comment.post_id == Post.id).filter(Post.country == country)
 
         comments = query.all()
         return jsonify(

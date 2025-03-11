@@ -11,4 +11,5 @@ def create_routes(app: Flask, database: BaseDB) -> None:
     @app.route("/comments", methods=["GET"])
     def get_comments() -> Response:
         classification = request.args.get("classification")
-        return database.get_comments(classification=classification)
+        country = request.args.get("country")
+        return database.get_comments(classification=classification, country=country)

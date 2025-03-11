@@ -21,6 +21,7 @@ class Post(db.Model):
     url = db.Column(db.Text, nullable=False)
     score = db.Column(db.Integer, nullable=False)
     num_comments = db.Column(db.Integer, nullable=False)
+    country = db.Column(db.Text, nullable=True)
 
 
 class Comment(db.Model):
@@ -38,6 +39,8 @@ class Comment(db.Model):
     locations = db.relationship(
         "Location", backref="comment", cascade="all, delete-orphan"
     )
+    
+    post = db.relationship("Post", backref="comments")
 
 
 class Location(db.Model):
