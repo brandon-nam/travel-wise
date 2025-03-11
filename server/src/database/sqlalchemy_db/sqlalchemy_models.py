@@ -21,7 +21,7 @@ class Post(db.Model):
     url = db.Column(db.Text, nullable=False)
     score = db.Column(db.Integer, nullable=False)
     num_comments = db.Column(db.Integer, nullable=False)
-    country = db.Column(db.Text, nullable=True)
+    country = db.Column(db.Text, nullable=False)
 
 
 class Comment(db.Model):
