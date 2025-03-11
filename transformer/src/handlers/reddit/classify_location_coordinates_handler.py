@@ -39,5 +39,5 @@ class ClassifyLocationCoordinatesHandler(BaseAIHandler):
         query_result = self.query_and_load_json(prompt)
         json_input_data = json.loads(input_data)
         for comment in json_input_data["comments"]:
-            comment["locations"] = query_result.get(comment["id"])
+            comment["locations"] = query_result.get(comment["id"], [])
         return json.dumps(json_input_data)

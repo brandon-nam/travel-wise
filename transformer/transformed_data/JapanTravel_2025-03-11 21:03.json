@@ -1,0 +1,764 @@
+{
+    "posts": [
+        {
+            "title": "Weekly Japan Travel Information and Discussion Thread - March 07, 2025",
+            "id": "1j5se26",
+            "url": "https://www.reddit.com/r/JapanTravel/comments/1j5se26/weekly_japan_travel_information_and_discussion/",
+            "score": 5,
+            "num_comments": 32,
+            "country": "japan"
+        },
+        {
+            "title": "What are your thoughts for a first timer here in april?",
+            "id": "1j8ojjv",
+            "url": "https://www.reddit.com/r/JapanTravel/comments/1j8ojjv/what_are_your_thoughts_for_a_first_timer_here_in/",
+            "score": 1,
+            "num_comments": 1,
+            "country": "japan"
+        },
+        {
+            "title": "18 Days Itenerary - Help",
+            "id": "1j8ml1h",
+            "url": "https://www.reddit.com/r/JapanTravel/comments/1j8ml1h/18_days_itenerary_help/",
+            "score": 1,
+            "num_comments": 2,
+            "country": "japan"
+        },
+        {
+            "title": "7 Day Itinerary | Need Help",
+            "id": "1j8idwo",
+            "url": "https://www.reddit.com/r/JapanTravel/comments/1j8idwo/7_day_itinerary_need_help/",
+            "score": 2,
+            "num_comments": 7,
+            "country": "japan"
+        }
+    ],
+    "comments": [
+        {
+            "id": "mgpbsm7",
+            "body": "We will be staying at Hotel Toranomon Hills. Easier to take the limo bus to the andaz and walk  or take the Narita Express to Tokyo Station and grab a taxi? We will arrive at 4:30pm on a Thursday.",
+            "score": 2,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "transport",
+            "locations": [
+                {
+                    "lat": 35.6655,
+                    "lng": 139.7414,
+                    "location_name": "Hotel Toranomon Hills",
+                    "characteristic": "hotel"
+                },
+                {
+                    "lat": 35.6804,
+                    "lng": 139.769,
+                    "location_name": "Tokyo Station",
+                    "characteristic": "train station"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "For transportation to Hotel Toranomon Hills from Narita Airport, options include taking a limo bus to Andaz and walking, or the Narita Express to Tokyo Station followed by a taxi."
+        },
+        {
+            "id": "mh4romq",
+            "body": "I'm going alone to Tokyo and Kyoto in a month, I'm a 30yo man and I'm starting to freak out about it, like what if I get lost, or something happens to me, please reassure me :(",
+            "score": 2,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "concerns",
+            "locations": [
+                {
+                    "lat": 35.6895,
+                    "lng": 139.6917,
+                    "location_name": "Tokyo",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Concerns about traveling alone to Tokyo and Kyoto include getting lost or encountering issues."
+        },
+        {
+            "id": "mgkvchv",
+            "body": "Will be staying in Hyatt House Shibuya, whats the best way to get to Hakone? Is it better to:\n\n- Go to Shinagawa, take Shinkansen or Shonan-Shinjuku line?\n- Go to Shinjuku, take Shinkensen or Romancec",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "transport",
+            "locations": [
+                {
+                    "lat": 35.6895,
+                    "lng": 139.6917,
+                    "location_name": "Shibuya",
+                    "characteristic": "district"
+                },
+                {
+                    "lat": 35.2993,
+                    "lng": 139.4814,
+                    "location_name": "Hakone",
+                    "characteristic": "town"
+                },
+                {
+                    "lat": 35.6285,
+                    "lng": 139.7389,
+                    "location_name": "Shinagawa",
+                    "characteristic": "district"
+                },
+                {
+                    "lat": 35.6938,
+                    "lng": 139.7034,
+                    "location_name": "Shinjuku",
+                    "characteristic": "district"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "To travel from Hyatt House Shibuya to Hakone, options include taking a train from Shinagawa via the Shinkansen or Shonan-Shinjuku line, or from Shinjuku via the Shinkansen or Romancecar."
+        },
+        {
+            "id": "mgkxl0u",
+            "body": "considering going to tokyo with 5 other adults and 5 total kids. Is there a inexpensive place around/in tokyo that we could all get reservations at? ages are between 40-50 for the adults and 13-18 for",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_suggestion",
+            "characteristic": "accommodation",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Seeking recommendations for budget-friendly accommodations in Tokyo for a group of 10, including adults and teenagers."
+        },
+        {
+            "id": "mgmul2k",
+            "body": "Thinking of planning a trip from Tampa to Tokyo in June since it's around my birthday (hitting the big 30). This would also be my first time leaving the country as an adult and I'm starting the passpo",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_suggestion",
+            "characteristic": "planning",
+            "locations": [
+                {
+                    "lat": 27.9506,
+                    "lng": -82.4572,
+                    "location_name": "Tampa",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 35.6895,
+                    "lng": 139.6917,
+                    "location_name": "Tokyo",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Planning a trip from Tampa to Tokyo around a birthday, involving international travel and passport considerations."
+        },
+        {
+            "id": "mgosbe2",
+            "body": "Am I able to ride the Hayabusa with no extra charges with a JR East South Hokkaido pass? Or am I only able to do that with a regular JR Pass?",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "transport_pass",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Inquiring about the JR East South Hokkaido pass eligibility for riding the Hayabusa train without extra charges."
+        },
+        {
+            "id": "mgqnqne",
+            "body": "Where do I go through customs? I'm flying from the USA to Haneda, and then after Haneda, I have a flight transfer to Hokkaido (Memanbetsu), which is my final stop. Am going to go through customs in Ha",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "customs",
+            "locations": [
+                {
+                    "lat": 35.5494,
+                    "lng": 139.7798,
+                    "location_name": "Haneda Airport",
+                    "characteristic": "airport"
+                },
+                {
+                    "lat": 43.8806,
+                    "lng": 144.1638,
+                    "location_name": "Memanbetsu Airport",
+                    "characteristic": "airport"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Questions about the customs process when flying from the USA to Haneda, then transferring to a flight to Memanbetsu."
+        },
+        {
+            "id": "mh14pkn",
+            "body": "Anyone have experience with expedited medication approval? Only found out about it a couple days ago and I'm leaving this Thursday. Tried to send in the documents and they replied that it was too soon",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "medication_approval",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Seeking advice on expedited medication approval for travel."
+        },
+        {
+            "id": "mh15r3f",
+            "body": "For a trip that starts/ends in Tokyo, where would you fit in Hiroshima? I do not want to go to Hiroshima upon landing or the next day. We are planning 5 nights in Tokyo upon arrival, then will go to e",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_suggestion",
+            "characteristic": "itinerary",
+            "locations": [
+                {
+                    "lat": 35.6895,
+                    "lng": 139.6917,
+                    "location_name": "Tokyo",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.3853,
+                    "lng": 132.4553,
+                    "location_name": "Hiroshima",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Planning a travel itinerary involving Tokyo and Hiroshima, seeking optimal scheduling advice."
+        },
+        {
+            "id": "mh3sngm",
+            "body": "Well I fucked up and didn't get on early enough and missed out the pass I wanted for USJ time to line up in the single person line and pray for the best",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "missed_booking",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Discussing missed booking opportunities for a USJ pass and considering alternatives."
+        },
+        {
+            "id": "mh6jrk4",
+            "body": "JESTA question (possibly another, sorry). I\u2019m from one of the 71 visa exempt countries and believe everything is still fine. I have seen the news about JESTA coming in to force in 2030 but now see 202",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "visa_information",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Discussing the upcoming JESTA visa requirements for travelers from visa-exempt countries."
+        },
+        {
+            "id": "mgvpdwl",
+            "body": "Has anyone successfully booked Cherry blossom boat tour in Kyoto?\n\nAll the tickets are gone in less than 2 minutes, I don't think it's humanely possible to get it done. So all those bookings are done",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "booking_difficulty",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Challenges faced when booking a Cherry blossom boat tour in Kyoto due to high demand and quick sell-out."
+        },
+        {
+            "id": "mgumcvn",
+            "body": "Hi I\u2019ll be heading to hirosaki and I heard that in the aomori prefecture, bears are eaten there so I would like to ask for recommendations as to where to go to try bear meat. I\u2019ve tried searching on g",
+            "score": 0,
+            "post_id": "1j5se26",
+            "classification": "travel_suggestion",
+            "characteristic": "cuisine",
+            "locations": [
+                {
+                    "lat": 40.6342,
+                    "lng": 140.4644,
+                    "location_name": "Hirosaki",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 40.8211,
+                    "lng": 140.7516,
+                    "location_name": "Aomori Prefecture",
+                    "characteristic": "prefecture"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Seeking recommendations for places to try bear meat in Hirosaki, Aomori Prefecture."
+        },
+        {
+            "id": "mgo8udo",
+            "body": "Due to the dumpster-fire that is the US government, I find myself in tokyo with 2 free days before my return trip. I dont know how many people can say that they learned about a vacation only upon step",
+            "score": -2,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "unexpected_travel",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Unexpected extra days in Tokyo due to unforeseen circumstances, discussing spontaneous travel opportunities."
+        },
+        {
+            "id": "mgww1b2",
+            "body": "Japan 2025 Trip Itinerary: Need Opinions and Advice!\n\nHey everyone! I\u2019m planning my Japan 2025 trip for May 4-19, and I\u2019d love some feedback on my itinerary. There\u2019s a lot I want to experience, but I\u2019",
+            "score": -4,
+            "post_id": "1j5se26",
+            "classification": "travel_suggestion",
+            "characteristic": "itinerary_planning",
+            "locations": [],
+            "start_date": "2025-05-04",
+            "end_date": "2025-05-19",
+            "summary": "Seeking feedback on a travel itinerary for Japan from May 4-19, 2025, including a range of experiences."
+        },
+        {
+            "id": "mh55a5v",
+            "body": "You will do great, I am going alone in a month as well, at the end of April. \n\nGoogle maps works amazing there and I suck at directions but was able to find my way around. Learn a few phrases. Google",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "navigation",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Tips for navigating Tokyo and Kyoto alone, including using Google Maps and learning basic phrases."
+        },
+        {
+            "id": "mgkxwww",
+            "body": "There's no Shinkansen at Shinjuku, but if you were going to that station, the Odakyu Line is the best choice overall and takes you directly to Hakone Yumoto. \n\nIf you go to Shinagawa, the Shinkansen i",
+            "score": 4,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "transport",
+            "locations": [
+                {
+                    "lat": 35.6812,
+                    "lng": 139.7671,
+                    "location_name": "Tokyo Station",
+                    "characteristic": "train station"
+                },
+                {
+                    "lat": 35.2993,
+                    "lng": 139.4814,
+                    "location_name": "Hakone Yumoto",
+                    "characteristic": "hot spring town"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Transport options to Hakone from Tokyo, discussing routes via Shinjuku and Shinagawa stations."
+        },
+        {
+            "id": "mgm0g1q",
+            "body": "Are you thinking of staying outside of Tokyo and commuting into the city each day? As the city is vast, that's probably a false economy as you'll spend a lot of time travelling.\n\nYou could look into Y",
+            "score": 2,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "accommodation",
+            "locations": [
+                {
+                    "lat": 35.4437,
+                    "lng": 139.638,
+                    "location_name": "Yokohama",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Discussing the practicality of commuting to Tokyo from outside the city and suggesting accommodation options in Yokohama."
+        },
+        {
+            "id": "mgp6bqp",
+            "body": "Are you talking about food or lodgings?",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "clarification",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Clarification sought on whether a discussion pertains to food or lodging."
+        },
+        {
+            "id": "mgpj81s",
+            "body": "Are you looking to get one room for 10 people? Or 2-3 rooms? \nTry OMO3 Asakusa",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_suggestion",
+            "characteristic": "accommodation",
+            "locations": [
+                {
+                    "lat": 35.7174,
+                    "lng": 139.7953,
+                    "location_name": "OMO3 Asakusa",
+                    "characteristic": "hotel"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Suggesting OMO3 Asakusa for accommodating a large group in Tokyo."
+        },
+        {
+            "id": "mgosg46",
+            "body": "If you\u2019re interested in climbing Mt. Fuji, it\u2019s available to from July-September usually.",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "seasonal_activity",
+            "locations": [
+                {
+                    "lat": 35.3606,
+                    "lng": 138.7274,
+                    "location_name": "Mt. Fuji",
+                    "characteristic": "mountain"
+                }
+            ],
+            "start_date": "2023-07-01",
+            "end_date": "2023-07-15",
+            "summary": "Information on the seasonal availability of climbing Mt. Fuji, typically from July to September."
+        },
+        {
+            "id": "mgp61dt",
+            "body": "You can ride the Hayabusa.",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "confirmation",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Confirmation that riding the Hayabusa train is possible."
+        },
+        {
+            "id": "mgrq744",
+            "body": "Haneda. In almost all circumstances, wherever you travel you need to pass through immigration and customs at the first airport in your destination country that you arrive at as you will then transfer",
+            "score": 3,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "customs",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Advice on customs procedures, emphasizing passing through customs at the first point of entry in the destination country."
+        },
+        {
+            "id": "mh3stzd",
+            "body": "I'd say the second one you can take a quick flight from Hiroshima back to Tokyo then straight home",
+            "score": 2,
+            "post_id": "1j5se26",
+            "classification": "travel_suggestion",
+            "characteristic": "itinerary",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Suggesting a quick flight from Hiroshima to Tokyo as part of a travel itinerary."
+        },
+        {
+            "id": "mh3t20y",
+            "body": "You and me both I've noticed this a lot tickets go up then bang nothing left them look has it for double plus price",
+            "score": 0,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "ticket_availability",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Discussing issues with ticket availability and pricing fluctuations."
+        },
+        {
+            "id": "mgy9n95",
+            "body": "The main reason that animal cafes exist in Japan is the country's lax animal welfare laws. Animals like owls obviously don't belong in cafes. Don't encourage these horrible businesses.\n\nThis also appe",
+            "score": 3,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "animal_welfare",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Critique of animal cafes in Japan due to lax animal welfare laws, advising against patronizing such establishments."
+        },
+        {
+            "id": "mgr9tn5",
+            "body": "ok so we've been looking today and mostly hostel's are available; however, with the adults being 40-50 do you think that will be an issue? Also we see there is a hotel that is inexpensive and just nor",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_suggestion",
+            "characteristic": "accommodation",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Inquiring about the suitability of hostels for middle-aged adults and considering budget-friendly hotel options in Tokyo."
+        },
+        {
+            "id": "mgpfyue",
+            "body": "Lodgings mostly but didn't think about food, that will get us too. \n\nLooking at Yokohama currently to try and lower costs",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "budgeting",
+            "locations": [
+                {
+                    "lat": 35.4437,
+                    "lng": 139.638,
+                    "location_name": "Yokohama",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Discussing budget considerations for accommodations and food in Yokohama to reduce costs."
+        },
+        {
+            "id": "mgppe1r",
+            "body": "3 couples with kids. 11 total people, I will look at it but don't think we can get 1 room. Just same building if possible.",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_suggestion",
+            "characteristic": "accommodation",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Accommodation planning for a large group, considering multiple rooms in the same building."
+        },
+        {
+            "id": "mh4xwvf",
+            "body": "Thank you so much!",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "other",
+            "characteristic": "gratitude",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Expression of gratitude for received travel advice."
+        },
+        {
+            "id": "mgrj80c",
+            "body": "I don't know I'm afraid. Lots of Japanese hotels have women-only floors, so the entire hotel could be women only.\n\nI'd suggest looking into business hotel chains like Dormy Inn. The rooms are tiny, bu",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_tip",
+            "characteristic": "accommodation",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Discussion on the availability of women-only floors in Japanese hotels and suggesting business hotel chains like Dormy Inn."
+        },
+        {
+            "id": "mgs3j2v",
+            "body": "Ty will check them after we get home. We've used vrbo here maybe there are vrbo listing or something like it out there too.",
+            "score": 1,
+            "post_id": "1j5se26",
+            "classification": "travel_suggestion",
+            "characteristic": "accommodation_options",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Considering alternative accommodation options similar to VRBO listings in Japan."
+        },
+        {
+            "id": "mh6oxc6",
+            "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+            "score": 1,
+            "post_id": "1j8ojjv",
+            "classification": "travel_tip",
+            "characteristic": "planning_resources",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Directing to a FAQ resource for trip planning tips on a travel-focused subreddit."
+        },
+        {
+            "id": "mh6a4sr",
+            "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+            "score": 1,
+            "post_id": "1j8ml1h",
+            "classification": "travel_tip",
+            "characteristic": "planning_resources",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Directing to a FAQ resource for trip planning tips on a travel-focused subreddit."
+        },
+        {
+            "id": "mh6v36o",
+            "body": "D2 and D3. Himeji does not require a full day. You'd only need about 3\\~4 hours if you're with a guide (you can search for free volunteer guides for Himeji Castle, but please apply only if you're real",
+            "score": 1,
+            "post_id": "1j8ml1h",
+            "classification": "travel_tip",
+            "characteristic": "itinerary_optimization",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Advice on optimizing a travel itinerary including Himeji, suggesting a shorter visit duration with a guide."
+        },
+        {
+            "id": "mh5ey2s",
+            "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+            "score": 1,
+            "post_id": "1j8idwo",
+            "classification": "travel_tip",
+            "characteristic": "planning_resources",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Directing to a FAQ resource for trip planning tips on a travel-focused subreddit."
+        },
+        {
+            "id": "mh66274",
+            "body": "I am no pro, but 2 shinkansen trips to a similar place - why not travel to kyoto, stay overnight, go to jara then return to tokyo.",
+            "score": 2,
+            "post_id": "1j8idwo",
+            "classification": "travel_suggestion",
+            "characteristic": "itinerary_planning",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.6851,
+                    "lng": 135.805,
+                    "location_name": "Nara",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Suggesting an itinerary involving overnight stays in Kyoto and a visit to Nara, with travel considerations."
+        },
+        {
+            "id": "mh6lanf",
+            "body": "Traveling from Tokyo to Kyoto and Tokyo to Nara on the 4th and 6th days is expensive. And you can't relax. If you go to Kyoto and Nara, it's better to spend a night in Osaka. But even if you don't go",
+            "score": 2,
+            "post_id": "1j8idwo",
+            "classification": "travel_tip",
+            "characteristic": "itinerary_optimization",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.6851,
+                    "lng": 135.805,
+                    "location_name": "Nara",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.6937,
+                    "lng": 135.5023,
+                    "location_name": "Osaka",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Advice on optimizing travel between Tokyo, Kyoto, and Nara, suggesting an overnight stay in Osaka to reduce costs and travel time."
+        },
+        {
+            "id": "mh6r940",
+            "body": "Your itinerary looks exciting but may be quite tiring and expensive. With long travel times between Tokyo, Kyoto, and Nara, as well as packed days with multiple activities, you\u2019ll likely feel rushed a",
+            "score": 1,
+            "post_id": "1j8idwo",
+            "classification": "travel_tip",
+            "characteristic": "itinerary_review",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.6851,
+                    "lng": 135.805,
+                    "location_name": "Nara",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Review of a travel itinerary involving Tokyo, Kyoto, and Nara, noting potential for high costs and a rushed experience."
+        },
+        {
+            "id": "mh6t36p",
+            "body": "On your second last day, you can stop at one of the hotels near the airport. They have free shuttles that would take you to the airport the next morning, the timings for the shuttle are mentioned at t",
+            "score": 1,
+            "post_id": "1j8idwo",
+            "classification": "travel_tip",
+            "characteristic": "accommodation",
+            "locations": [],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Suggesting accommodation near the airport with shuttle service for ease of airport transfer."
+        },
+        {
+            "id": "mh6ubtp",
+            "body": "This was our itinerary for Winter of 2023, you can pick and choose whatever you like! Hope it helps :)\n\nDay 1: Arrival in Tokyo (November 25)\nArrival and check-in at the hotel. Visit Roppongi Christma",
+            "score": 1,
+            "post_id": "1j8idwo",
+            "classification": "travel_suggestion",
+            "characteristic": "itinerary_example",
+            "locations": [
+                {
+                    "lat": 35.6895,
+                    "lng": 139.6917,
+                    "location_name": "Tokyo",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": "2023-11-25",
+            "end_date": "2023-11-25",
+            "summary": "Sharing a personal travel itinerary for Tokyo as an example, including specific activities and locations."
+        },
+        {
+            "id": "mh6ve9h",
+            "body": "I'd do an overnight in Kyoto and combine that with Nara. You can go to Fushimi Inari super early in the morning on the way to Nara",
+            "score": 1,
+            "post_id": "1j8idwo",
+            "classification": "travel_suggestion",
+            "characteristic": "itinerary_planning",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.6851,
+                    "lng": 135.805,
+                    "location_name": "Nara",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.9671,
+                    "lng": 135.7727,
+                    "location_name": "Fushimi Inari",
+                    "characteristic": "shrine"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Suggesting an overnight stay in Kyoto combined with a visit to Nara and Fushimi Inari for an optimized travel itinerary."
+        }
+    ]
+}
