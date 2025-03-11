@@ -79,25 +79,11 @@ jobs:
         run: |
           pip install poetry
           poetry install
-      - name: Check if pyproject.toml version changed
-        id: version_check
-        run: |
-          if git diff --name-only HEAD^ HEAD | grep -q "travelwise-common/pyproject.toml"; then
-            if git diff HEAD^ HEAD -- "travelwise-common/pyproject.toml" | grep -q '^\+version'; then
-              echo "version_changed=true" >> $GITHUB_ENV
-            else
-              echo "version_changed=false" >> $GITHUB_ENV
-            fi
-          else
-            echo "version_changed=false" >> $GITHUB_ENV
-          fi
       - name: Build package
-        if: env.version_changed == 'true'
         working-directory: ./travelwise-common
         run: |
           poetry build
       - name: Publish to PyPI
-        if: env.version_changed == 'true'
         working-directory: ./travelwise-common
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
