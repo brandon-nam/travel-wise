@@ -1,20 +1,22 @@
 import json
+import re
 
-from src.handlers.base_ai_handler import BaseAIHandler
+
+def extract_subreddit(url: str) -> str:
+    match = re.search(r"reddit\.com/r/([^/]+)/", url)
+    return match.group(1) if match else ""
 
 
-class AddCountriesHandler(BaseAIHandler):
+class AddCountriesHandler:
     def do_handle(self, input_data: str) -> str:
-        # prompt for adding countries
-        prompt = f"""
-        {input_data}
-        """
-        # query_result = self.query_and_load_json(prompt)
-        
         json_input_data = json.loads(input_data)
         for post in json_input_data["posts"]:
-            # result_dict = query_result[comment["id"]]
-            # post["country"] = result_dict["country"]
-            post["country"] = "japan"
-            
+            subreddit = extract_subreddit(post["url"]).lower()
+            if "japan" in subreddit:
+                post["country"] = "japan"
+            elif "korea" in subreddit:
+                post["country"] = "korea"
+            else:
+                post["country"] = "unknown"
+
         return json.dumps(json_input_data)

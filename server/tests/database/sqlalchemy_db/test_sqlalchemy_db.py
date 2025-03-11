@@ -224,7 +224,6 @@ def test_get_comments_returns_all_comments(
         ).date()
         for k, v in comment.items():
             assert comment_response[k] == v
-        print(comment_response["location_coordinates"])
 
         assert len(comment_response["location_coordinates"]) == 1
         location_response = comment_response["location_coordinates"][0]
