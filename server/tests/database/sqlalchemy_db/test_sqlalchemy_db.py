@@ -23,6 +23,7 @@ def mock_posts() -> list[dict[str, Any]]:
             "url": "https://www.reddit.com/r/JapanTravel/comments/1ijug04/weekly_japan_travel_information_and_discussion/",
             "score": 12,
             "num_comments": 7,
+            "country": "Japan",
         }
     ]
 
@@ -124,6 +125,7 @@ def test_get_posts(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
             "url": "https://www.reddit.com/r/JapanTravel/comments/1ijug04/weekly_japan_travel_information_and_discussion/",
             "score": 12,
             "num_comments": 7,
+            "country": "Japan",
         },
         {
             "id": "2ijug05",
@@ -131,6 +133,7 @@ def test_get_posts(sqlalchemy_db: SQLAlchemyDB, db_session: Session) -> None:
             "url": "https://www.reddit.com/r/JapanTravel/comments/2ijug05/japan_travel_tips_and_recommendations/",
             "score": 15,
             "num_comments": 10,
+            "country": "Japan",
         },
     ]
     add_rows_to_table(Post, posts, db_session)
@@ -194,7 +197,7 @@ def test_get_comments_classification_filter(
     expected_count: int,
     add_rows_to_db,
 ) -> None:
-    response = sqlalchemy_db.get_comments(classification=classification)
+    response = sqlalchemy_db.get_comments(classification=classification, country="")
 
     assert response.status_code == 200
 

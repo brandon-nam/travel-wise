@@ -39,7 +39,7 @@ class Comment(db.Model):
     locations = db.relationship(
         "Location", backref="comment", cascade="all, delete-orphan"
     )
-    
+
     post = db.relationship("Post", backref="comments")
 
 
