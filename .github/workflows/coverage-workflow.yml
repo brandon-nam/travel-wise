@@ -13,6 +13,10 @@ permissions:
   id-token: write
 
 jobs:
+  deploy:
+    environment:
+      name: github-pages
+
   test:
     runs-on: ubuntu-latest
     strategy:
