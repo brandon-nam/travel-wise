@@ -4,15 +4,12 @@ from sqlalchemy.orm import sessionmaker, Session
 
 from database.sqlalchemy.models import Base
 
-engine = create_engine("sqlite:///:memory:", echo=False)
 
-SessionLocal = sessionmaker(bind=engine)
-
-
-@pytest.fixture(scope="function")
+@pytest.fixture
 def db_session() -> Session:
+    engine = create_engine("sqlite:///:memory:", echo=False)
     Base.metadata.create_all(engine)
-    session = SessionLocal()
+    session = sessionmaker(bind=engine)()
     try:
         yield session
     finally:
