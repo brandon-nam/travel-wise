@@ -19,7 +19,7 @@ def mock_json_data() -> dict[str, Any]:
                 "url": "https://www.reddit.com/r/JapanTravel/comments/1ipa23o/weekly_japan_travel_information_and_discussion/",
                 "score": 3,
                 "num_comments": 11,
-                "country": "japan", 
+                "country": "japan",
             },
             {
                 "title": "Itinerary check, plus is Ito worth it?",
@@ -27,7 +27,7 @@ def mock_json_data() -> dict[str, Any]:
                 "url": "https://www.reddit.com/r/JapanTravel/comments/1iqp6jv/itinerary_check_plus_is_ito_worth_it/",
                 "score": 2,
                 "num_comments": 2,
-                "country": "japan", 
+                "country": "japan",
             },
         ],
         "comments": [

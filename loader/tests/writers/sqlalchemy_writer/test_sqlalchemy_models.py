@@ -36,7 +36,7 @@ def test_classification_type_enum(enum_member, expected_value):
                 "url": "https://www.reddit.com/r/JapanTravel/comments/1ijug04/weekly_japan_travel_information_and_discussion/",
                 "score": 12,
                 "num_comments": 7,
-                "country": "japan", 
+                "country": "japan",
             },
         ),
         (
