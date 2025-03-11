@@ -44,7 +44,7 @@ jobs:
       - name: Upload coverage report for ${{ matrix.module }}
         uses: actions/upload-artifact@v4
         with:
-          name: .coverage-${{ matrix.module }}
+          name: coverage-${{ matrix.module }}
           include-hidden-files: true
           path: ./${{ matrix.module }}/.coverage.${{ matrix.module }}
           retention-days: 7
@@ -52,7 +52,7 @@ jobs:
   merge-and-deploy:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+#    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout code
@@ -61,8 +61,17 @@ jobs:
       - name: Download coverage reports
         uses: actions/download-artifact@v4
         with:
-          include-hidden-files: true
-          path: coverage_reports
+          path: coverage_reports/
+
+      - name: Move coverage files and clean up directories
+        run: |
+          cd coverage_reports
+          for dir in coverage-*; do
+            if [ -d "$dir" ]; then
+              mv "$dir"/.* .  # Move all files to the current directory
+              rmdir "$dir"   # Remove the empty directory
+            fi
+          done
 
       - name: Install coverage package
         run: |
@@ -72,23 +81,24 @@ jobs:
         run: |          
           cd coverage_reports
           ls -l
+          pwd
           coverage combine
           coverage html -d ../coverage_html
 
-      - name: Upload merged coverage report as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: merged-coverage
-          path: coverage_html
-          retention-days: 7
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload to GitHub Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: coverage_html
-
-      - name: Deploy
-        uses: actions/deploy-pages@v4
+#      - name: Upload merged coverage report as artifact
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: merged-coverage
+#          path: coverage_html
+#          retention-days: 7
+#
+#      - name: Setup Pages
+#        uses: actions/configure-pages@v5
+#
+#      - name: Upload to GitHub Pages
+#        uses: actions/upload-pages-artifact@v3
+#        with:
+#          path: coverage_html
+#
+#      - name: Deploy
+#        uses: actions/deploy-pages@v4
