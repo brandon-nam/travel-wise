@@ -33,7 +33,7 @@ class SQLAlchemyDB(BaseDB):
             classification = classification.replace("-", "_")
             query = query.filter(Comment.classification == classification)
 
-        if country in ("Japan", ):
+        if country in ("Japan",):
             query = query.join(Post, Comment.post_id == Post.id).filter(
                 Post.country == country
             )
