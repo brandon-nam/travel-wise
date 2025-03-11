@@ -20,6 +20,7 @@ class SQLAlchemyDB(BaseDB):
                     "url": post.url,
                     "score": post.score,
                     "num_comments": post.num_comments,
+                    "country": post.country,
                 }
                 for post in posts
             ]
@@ -31,9 +32,11 @@ class SQLAlchemyDB(BaseDB):
         if classification in ("travel-suggestion", "travel-tip", "other"):
             classification = classification.replace("-", "_")
             query = query.filter(Comment.classification == classification)
-        
-        if country is not None and country.lower() in ("japan"): 
-            query = query.join(Post, Comment.post_id == Post.id).filter(Post.country == country)
+
+        if country is not None and country.lower() in ("japan"):
+            query = query.join(Post, Comment.post_id == Post.id).filter(
+                Post.country == country
+            )
 
         comments = query.all()
         return jsonify(
