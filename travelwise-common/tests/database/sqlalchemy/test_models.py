@@ -2,11 +2,10 @@ import datetime
 from typing import Any
 
 import pytest
+from sqlalchemy.orm import Session
+
 from constants.reddit import ClassificationType
 from database.sqlalchemy.models import Post, Comment, Location
-from flask_sqlalchemy.session import Session
-
-from src.database.sqlalchemy_db.sqlalchemy_db import db
 
 
 @pytest.mark.parametrize(
@@ -62,7 +61,9 @@ def test_classification_type_enum(enum_member, expected_value):
     ],
 )
 def test_create_model(
-    model_class: db.Model, row_dict: dict[str, Any], db_session: Session
+    model_class: Post.__class__ | Comment.__class__ | Location.__class__,
+    row_dict: dict[str, Any],
+    db_session: Session,
 ) -> None:
     """
     Test to ensure that created models are accurate.

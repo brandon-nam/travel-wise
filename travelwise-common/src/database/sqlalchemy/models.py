@@ -26,7 +26,7 @@ class Post(Base):
     url = Column(Text, nullable=False)
     score = Column(Integer, nullable=False)
     num_comments = Column(Integer, nullable=False)
-    country = Column(Text, nullable=False)
+    country = Column(Text, nullable=False, default="unknown")
 
 
 class Comment(Base):
