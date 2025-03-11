@@ -38,7 +38,7 @@ jobs:
       - name: Run tests with coverage for ${{ matrix.module }}
         run: |
           cd ${{ matrix.module }}
-          poetry run coverage run --data-file .coverage.${{ matrix.module }} -m pytest
+          poetry run coverage run --source . --data-file .coverage.${{ matrix.module }} -m pytest
           ls -l
 
       - name: Upload coverage report for ${{ matrix.module }}
@@ -52,7 +52,7 @@ jobs:
   merge-and-deploy:
     needs: test
     runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
 
