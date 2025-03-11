@@ -1,0 +1,26 @@
+name: Manual RepoSense Report
+
+on:
+  workflow_dispatch:  # This makes it manual
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download RepoSense
+        run: |
+          wget https://github.com/reposense/RepoSense/releases/latest/download/reposense.jar
+
+      - name: Run RepoSense
+        run: |
+          java -jar reposense.jar --repos https://github.com/YOUR_USERNAME/YOUR_REPO.git --output ./report
+
+      - name: Upload Report as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: reposense-report
+          path: ./report
