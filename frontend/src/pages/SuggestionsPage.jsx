@@ -15,8 +15,9 @@ import { fetchSuggestions, fetchPosts } from "../lib/API";
 function SuggestionsPage() {
     const { clickedMarker } = useContext(ClickMarkerContext);
     const { expandedElement, clickedSuggestion, handleClickPlaceDetails } = useContext(ClickDetailsContext);
-
+    const [totalResults, setTotalResults]  = useState([]);
     const [searchResults, setSearchResults] = useState([]);
+    const [sortBy, setSortBy] = useState('');
 
     const postQuery = useQuery({
         queryKey: ["posts"],
@@ -64,10 +65,8 @@ function SuggestionsPage() {
                         // if two comments talk about the same location, append comment
                         const index = locations[locationKey];
                         let { comments, score, ..._ } = result[index];
-                        // only keep the higher karma score
-                        if (score < rest.score) {
-                            score = rest.score;
-                        }
+                        // combine the karma scores
+                        score += rest.score;
                         comments = [...comments, rest]; // appending rest
                         result[index]["comments"] = comments;
                         result[index]["score"] = score; 
@@ -79,6 +78,7 @@ function SuggestionsPage() {
         });
 
         console.log(result);
+        setTotalResults(result); 
         return result;
     };
 
@@ -109,6 +109,38 @@ function SuggestionsPage() {
         }
     };
 
+    const sortSuggestions = (suggestions, sortOrder) => {
+        let sortedSuggestions = [...suggestions]; // Create a copy to avoid mutating the original array
+    
+        sortedSuggestions.sort((a, b) => {
+            if (sortOrder === 'ascending') {
+                return a[sortByValue] - b[sortByValue];
+            } else if (sortOrder === 'descending') {
+                return b[sortByValue] - a[sortByValue];
+            } else {
+                // No sorting
+                return 0;
+            }
+        })
+
+        return sortedSuggestions;
+    }
+
+    const handleSortClick = (e) => {
+        if (e.target.value === sortBy) {
+            return; // if the user clicks the same sort by, do nothing. 
+        }
+
+        setSortBy(e.target.value);
+        if (searchResults) {
+            const sortedCards = sortSuggestions(searchResults, e.target.value); // if the user has searched the tags, sort the results from the search. 
+            setSearchResults(sortedCards);
+        } else {
+            const sortedCards = sortSuggestions(totalResults, e.target.value); // else, sort the total result. 
+            setSearchResults(sortedCards);
+        }
+    };
+
     return (
         <div id="map-place-container" className="flex w-full h-full ">
             <div id="map-container" className="h-[calc(100vh-4rem)] w-3/5">
@@ -129,9 +161,9 @@ function SuggestionsPage() {
                         placeholder="Search for tags"
                         onChange={handleSearch}
                     ></input>
-                    <select name="sort">
-                        <option>Karma⇂</option>
-                        <option>Karma↿</option>
+                    <select value={sortBy} onChange={handleSortClick} name="sort">
+                        <option value="descending">Karma⇂</option>
+                        <option value="ascending">Karma↿</option>
                     </select>
                 </div>
                 <div id="search-place-tag-field-space" className="py-10"></div>
