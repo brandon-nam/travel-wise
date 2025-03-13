@@ -258,7 +258,7 @@ def test_delete(
     repository: Repository,
     db_session: Session,
 ) -> None:
-    deleted = repository.delete(Post, "1ijug04")
+    deleted = repository.delete(Location, "loc2")
     assert deleted
-    db_post = db_session.get(Post, "1ijug04")
-    assert db_post is None
+    db_location = db_session.get(Location, "loc2")
+    assert db_location is None

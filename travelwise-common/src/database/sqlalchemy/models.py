@@ -45,7 +45,7 @@ class Comment(Base):
     locations = relationship(
         "Location", backref="comment", cascade="all, delete-orphan"
     )
-    
+
     post = relationship("Post", backref="comments")
 
 
