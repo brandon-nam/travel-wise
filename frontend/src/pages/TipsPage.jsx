@@ -90,10 +90,8 @@ function TipsPage() {
                         results.map((travelTip) => {
                             return (
                                 <TipCard
-                                    tag={`# ${travelTip.characteristic}`}
-                                    summary={travelTip.summary}
-                                    body={travelTip.body}
                                     postURL={travelTip.post_url}
+                                    tip={travelTip}
                                     key={travelTip.id}
                                 />
                             );
@@ -102,10 +100,8 @@ function TipsPage() {
                         tipsData.map((travelTip) => {
                             return (
                                 <TipCard
-                                    tag={`# ${travelTip.characteristic}`}
-                                    summary={travelTip.summary}
-                                    body={travelTip.body}
                                     postURL={travelTip.post_url}
+                                    tip={travelTip}
                                     key={travelTip.id}
                                 />
                             );

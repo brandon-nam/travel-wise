@@ -36,16 +36,15 @@ export function ClickDetailsProvider({ children }) {
         }
     }
 
-    function handleClickTipDetails(body, tag, postURL) {
-        if (body) {
-            console.log("posturl, ", postURL)
+    function handleClickTipDetails(tip) {
+        if (tip) {
             const ConstructedHtml = () => (
                 <div className={`flex flex-col shadow items-center bg-white mx-3 mb-3 rounded`}>
-                    <div className="w-full flex-none px-3 py-2 text-gray-400">{tag}</div>
-                    <div className="w-full grow text-center py-5 px-3" >{body}</div>
-                    <a className="break-all text-blue-300  hover:text-blue-500 transition" target="_blank" href={postURL}>Go to reddit post</a>
+                    <div className="w-full flex-none px-3 py-2 text-gray-400">{tip.characteristic}</div>
+                    <div className="w-full grow text-center py-5 px-3" >{tip.body}</div>
+                    <a className="break-all text-blue-300  hover:text-blue-500 transition" target="_blank" href={tip.post_url}>Go to reddit post</a>
                     <div
-                        onClick={() => handleClickTipDetails(null, null, null)}
+                        onClick={() => handleClickTipDetails(null)}
                         className="w-full flex-none text-right px-3 py-2 text-blue-300 cursor-pointer hover:text-blue-500 transition"
                     >
                         See less
