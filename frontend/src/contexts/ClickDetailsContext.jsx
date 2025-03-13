@@ -10,7 +10,8 @@ export function ClickDetailsProvider({ children }) {
         if (suggestion) {
             const ConstructedHtml = () => (
                 <div className={`flex flex-col shadow items-center bg-white mx-3 mb-3 rounded h-full`}>
-                    <div className="w-full flex-none px-3 py-2 text-gray-400">{suggestion.tag}</div>
+                    <div className="w-full flex-none px-3 py-2 text-gray-400">{"# " + suggestion.characteristic}</div>
+                    <div>{suggestion.location_name}</div>
                     <div className="w-full flex-none text-center py-5" >{suggestion.body}</div>
                     <div className="w-full px-3 grow">
                         {suggestion.comments.map((comment) => {
