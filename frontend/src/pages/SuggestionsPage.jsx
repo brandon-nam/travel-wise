@@ -105,7 +105,7 @@ function SuggestionsPage() {
     });
 
     const handleSearch = (event) => {
-        handleClickPlaceDetails(null, null, null, null);
+        handleClickPlaceDetails(null);
         const searchText = event.target.value;
 
         if (searchText.trim() === "") {
