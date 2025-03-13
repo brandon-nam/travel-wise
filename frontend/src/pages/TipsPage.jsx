@@ -119,7 +119,7 @@ function TipsPage() {
             <div id="search-tips-tag-field" className="fixed flex flex-row w-full bg-gray-100 h-20 py-5 px-3">
                 <input
                     type="text"
-                    className="bg-white shadow rounded-full h-10 w-full px-5"
+                    className="bg-white shadow rounded-full h-10 w-full px-5 mr-3"
                     placeholder="Search for tags and summary"
                     onChange={handleSearch}
                 ></input>
