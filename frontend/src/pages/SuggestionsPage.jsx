@@ -7,7 +7,7 @@ import MapComponent from "../components/MapComponent";
 
 import PlaceCard from "../components/PlaceCard";
 
-import { useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchSuggestions, fetchPosts } from "../lib/API";
@@ -17,7 +17,8 @@ function SuggestionsPage() {
     const { expandedElement, clickedSuggestion, handleClickPlaceDetails } = useContext(ClickDetailsContext);
     const [totalResults, setTotalResults]  = useState([]);
     const [searchResults, setSearchResults] = useState([]);
-    const [sortBy, setSortBy] = useState('');
+    const [sortBy, setSortBy] = useState('descending');
+    const [totalSuggestions, setTotalSuggestions] = useState([]); 
 
     const postQuery = useQuery({
         queryKey: ["posts"],
@@ -78,7 +79,6 @@ function SuggestionsPage() {
         });
 
         console.log(result);
-        setTotalResults(result); 
         return result;
     };
 
@@ -91,6 +91,13 @@ function SuggestionsPage() {
     });
 
     const suggestionData = suggestionQuery.data;
+
+    useEffect(() => {
+        if (suggestionData) {
+            const sortedSuggestions = sortSuggestions(suggestionData, 'descending');
+            setTotalSuggestions(sortedSuggestions); 
+        }
+    }, [suggestionData]);
 
     const fuse = new Fuse(suggestionData, {
         keys: ["characteristic", "location_name"],
@@ -114,9 +121,9 @@ function SuggestionsPage() {
     
         sortedSuggestions.sort((a, b) => {
             if (sortOrder === 'ascending') {
-                return a[sortByValue] - b[sortByValue];
+                return a['score'] - b['score'];
             } else if (sortOrder === 'descending') {
-                return b[sortByValue] - a[sortByValue];
+                return b['score'] - a['score'];
             } else {
                 // No sorting
                 return 0;
@@ -126,18 +133,20 @@ function SuggestionsPage() {
         return sortedSuggestions;
     }
 
+
     const handleSortClick = (e) => {
         if (e.target.value === sortBy) {
             return; // if the user clicks the same sort by, do nothing. 
         }
 
         setSortBy(e.target.value);
-        if (searchResults) {
+        if (searchResults.length != 0) {
             const sortedCards = sortSuggestions(searchResults, e.target.value); // if the user has searched the tags, sort the results from the search. 
             setSearchResults(sortedCards);
         } else {
-            const sortedCards = sortSuggestions(totalResults, e.target.value); // else, sort the total result. 
-            setSearchResults(sortedCards);
+            console.log("suggestionData at handleSortClick: ", suggestionData);
+            const sortedCards = sortSuggestions(suggestionData, e.target.value); // else, sort the total result. 
+            setTotalSuggestions(sortedCards);
         }
     };
 
@@ -186,7 +195,7 @@ function SuggestionsPage() {
                             })
                         ) : (
                             // show all data
-                            Object.entries(suggestionData).map(([_, travelSuggestion], __) => {
+                            Object.entries(totalSuggestions).map(([_, travelSuggestion], __) => {
                                 const coordinate = `${travelSuggestion.lat}-${travelSuggestion.lng}`;
 
                                 return (
