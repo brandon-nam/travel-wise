@@ -43,15 +43,6 @@ function SuggestionsPage() {
 
         let appendIndex = 0;
         data.forEach((suggestion) => {
-            // Transforms data into intended data structure: {
-            //  location_name, characteristic, lat, lng,
-            //  comments : { id, post_id, body, score, start_date, end_date, summary }
-            // }
-            // from this: {
-            //   id, post_id, body, score, start_date, end_date, summary,
-            //   location_coordinates: { lat, lng, location_name, characteristic }
-            // }
-
             try {
                 const { location_coordinates, ...rest } = suggestion;
                 location_coordinates.forEach((location) => {
@@ -64,7 +55,8 @@ function SuggestionsPage() {
                             lat: location.lat,
                             lng: location.lng,
                             score: rest.score, // score of the first comment
-                            postURL: postURL[rest.post_id],
+                            postURL: postURL[rest.post_id], // url of the first comment,
+                            // but we'll need to decide if we want to keep every post url or the one with the highest karma
                             comments: [rest],
                         };
                         appendIndex++;
@@ -72,6 +64,7 @@ function SuggestionsPage() {
                         // if two comments talk about the same location, append comment
                         const index = locations[locationKey];
                         let { comments, score, ..._ } = result[index];
+                        // only keep the higher karma score
                         if (score < rest.score) {
                             score = rest.score;
                         }
