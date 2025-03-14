@@ -1,21 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
+import QueryParametersContext from "../contexts/QueryParametersContext";
 
 function SearchPage() {
-    const [country, setCountry] = useState("japan");
+    const { suggestionLink, updateLinks } = useContext(QueryParametersContext);
 
     let navigate = useNavigate();
 
     function handleClick() {
-        let searchURL = "/suggestions";
-        if (country) {
-            searchURL += `?country=${country}`;
-        }
-        navigate(searchURL);
+        navigate(suggestionLink);
     }
 
     const handleCountryChange = (e) => {
-        setCountry(e.target.value);
+        console.log("country: ", e.target.value)
+        updateLinks(e.target.value);
     };
 
     return (
@@ -30,6 +28,7 @@ function SearchPage() {
                         onChange={handleCountryChange}
                         className="w-full h-14 px-4 border shadow border-gray-300 rounded-full"
                     >
+                        <option value="">All</option>
                         <option value="japan">Japan</option>
                         <option value="korea">Korea</option>
                     </select>

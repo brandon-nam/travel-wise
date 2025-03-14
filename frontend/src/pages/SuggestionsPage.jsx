@@ -22,8 +22,7 @@ function SuggestionsPage() {
     const [totalSuggestions, setTotalSuggestions] = useState([]); 
 
     const [searchParams] = useSearchParams();
-    const country = searchParams.get("country").trim();
-    console.log("country: ", country)
+    const country = searchParams.get("country")
 
 
     const postQuery = useQuery({
