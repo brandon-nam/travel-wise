@@ -115,7 +115,7 @@ function TipsPage() {
     };
 
     return (
-        <div id="map-tip-container" className="flex flex-col w-full h-full min-h-screen">
+        <div id="map-tip-container" className="flex flex-col w-full ">
             <div id="search-tips-tag-field" className="fixed flex flex-row w-full bg-gray-100 h-20 py-5 px-3">
                 <input
                     type="text"

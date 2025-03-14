@@ -8,6 +8,7 @@ import MapComponent from "../components/MapComponent";
 import PlaceCard from "../components/PlaceCard";
 
 import { useEffect, useState, useContext } from "react";
+import { useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchSuggestions, fetchPosts } from "../lib/API";
@@ -20,9 +21,13 @@ function SuggestionsPage() {
     const [sortBy, setSortBy] = useState('descending');
     const [totalSuggestions, setTotalSuggestions] = useState([]); 
 
+    const [searchParams] = useSearchParams();
+    const country = searchParams.get("country");
+
+
     const postQuery = useQuery({
         queryKey: ["posts"],
-        queryFn: () => fetchPosts(),
+        queryFn: () => fetchPosts(country),
         staleTime: Infinity,
         // enabled: !!suggestionQuery.data
     });
@@ -84,7 +89,7 @@ function SuggestionsPage() {
 
     const suggestionQuery = useQuery({
         queryKey: ["travelSuggestions"],
-        queryFn: () => fetchSuggestions(),
+        queryFn: () => fetchSuggestions(country),
         select: (data) => filterAndFlattenLocations(data),
         staleTime: Infinity,
         enabled: !!postQuery.data,
@@ -151,7 +156,7 @@ function SuggestionsPage() {
     };
 
     return (
-        <div id="map-place-container" className="flex w-full h-full ">
+        <div id="map-place-container" className="flex w-full h-[calc(100vh-4rem)]">
             <div id="map-container" className="h-[calc(100vh-4rem)] w-3/5">
                 {suggestionData &&
                     (clickedSuggestion.length > 0 ? (

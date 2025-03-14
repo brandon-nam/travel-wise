@@ -12,7 +12,7 @@ function LandingPage() {
     }
 
     return (
-        <div className="flex flex-col items-center space-y-4 p-6 max-w-5xl mx-auto">
+        <div className="flex flex-col items-center space-y-4 max-w-5xl mx-auto">
             <div className="text-xl font-semibold text-center text-gray-800 w-full px-10 py-10 text-wrap ">
                 <h1 className="text-6xl font-bold leading-[1.2] ">Plan your One and Only Customized Trip with <p className="text-red-300">TravelWise</p></h1>
             </div>
