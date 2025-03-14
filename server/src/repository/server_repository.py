@@ -4,6 +4,7 @@ from database.sqlalchemy.models import Comment, Post, metadata
 from database.sqlalchemy.repository import Repository
 from flask import Response, jsonify, Flask
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func
 from sqlalchemy.orm import joinedload
 
 
@@ -52,12 +53,12 @@ class ServerRepository(Repository):
             classification = classification.replace("-", "_")
             query = query.filter(Comment.classification == classification)
 
-        if country in ("japan", "korea"):
+        if country.lower() in ("japan", "korea"):
             query = query.join(Post, Comment.post_id == Post.id).filter(
-                Post.country == country
+                func.lower(Post.country) == country.lower()
             )
-
         comments = query.all()
+        
         return jsonify(
             [
                 {
@@ -79,6 +80,7 @@ class ServerRepository(Repository):
                         }
                         for loc in comment.locations
                     ],
+                    "post_url": comment.post.url,
                 }
                 for comment in comments
             ]
