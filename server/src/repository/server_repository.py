@@ -83,3 +83,7 @@ class ServerRepository(Repository):
                 for comment in comments
             ]
         )
+
+    def get_countries(self) -> Response:
+        countries = self.session.query(Post.country).distinct().all()
+        return jsonify([country[0] for country in countries])
