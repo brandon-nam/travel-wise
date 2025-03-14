@@ -2,7 +2,8 @@ import Fuse from "fuse.js";
 
 import TipCard from "../components/TipCard";
 
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect  } from "react";
+import { useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { fetchComments, fetchPosts, fetchTips } from "../lib/API";
 import ClickDetailsContext from "../contexts/ClickDetailsContext";
@@ -13,44 +14,14 @@ function TipsPage() {
     const [sortBy, setSortBy] = useState('descending');
     const [totalTips, setTotalTips] = useState([]);
     const { expandedElement, handleClickTipDetails } = useContext(ClickDetailsContext);
+    const [searchParams] = useSearchParams();
+    const country = searchParams.get("country")
 
-    const postQuery = useQuery({
-        queryKey: ["posts"],
-        queryFn: () => fetchPosts(),
-        staleTime: Infinity,
-    });
-
-    const postData = postQuery.data;
-
-    const postURLSet = () => {
-        const urlSet = {};
-        postData.forEach((post) => {
-            urlSet[post.id] = post.url;
-        });
-
-        return urlSet;
-    };
-
-    const filterTipsAndAddPostURL = (data) => {
-        const postURL = postData ? postURLSet() : {};
-        const result = [];
-        console.log("postURLs: ", postURL);
-        data.forEach((suggestion) => {
-            let newTip = { ...suggestion };
-            newTip["post_url"] = postURL[suggestion.post_id];
-            result.push(newTip);
-        });
-
-        console.log("result:", result);
-        return result;
-    };
 
     const tipsQuery = useQuery({
-        queryKey: ["travelSuggestions"],
-        queryFn: () => fetchTips(),
-        select: (data) => filterTipsAndAddPostURL(data),
+        queryKey: ["travelSuggestions", country],
+        queryFn: () => fetchTipsByCountry(country),
         staleTime: Infinity,
-        enalbed: !!postQuery.data,
     });
 
     const tipsData = tipsQuery.data;
@@ -115,7 +86,7 @@ function TipsPage() {
     };
 
     return (
-        <div id="map-tip-container" className="flex flex-col w-full ">
+        <div id="map-tip-container" className="flex flex-col w-full">
             <div id="search-tips-tag-field" className="fixed flex flex-row w-full bg-gray-100 h-20 py-5 px-3">
                 <input
                     type="text"
