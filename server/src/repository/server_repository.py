@@ -53,12 +53,12 @@ class ServerRepository(Repository):
             classification = classification.replace("-", "_")
             query = query.filter(Comment.classification == classification)
 
-        if country.lower() in ("japan", "korea"):
+        if country in ("japan", "korea"):
             query = query.join(Post, Comment.post_id == Post.id).filter(
                 func.lower(Post.country) == country.lower()
             )
         comments = query.all()
-        
+
         return jsonify(
             [
                 {
