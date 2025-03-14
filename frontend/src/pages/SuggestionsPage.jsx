@@ -24,29 +24,9 @@ function SuggestionsPage() {
     const [searchParams] = useSearchParams();
     const country = searchParams.get("country")
 
-
-    const postQuery = useQuery({
-        queryKey: ["posts"],
-        queryFn: () => fetchPosts(),
-        staleTime: Infinity,
-        // enabled: !!suggestionQuery.data
-    });
-
-    const postData = postQuery.data;
-    
-    const postURLSet = () => {
-        const urlSet = {};
-        postData.forEach((post) => {
-            urlSet[post.id] = post.url;
-        });
-
-        return urlSet;
-    };
-
     const filterAndFlattenLocations = (data) => {
         const locations = {};
         const result = [];
-        const postURL = postData ? postURLSet() : {};
 
         let appendIndex = 0;
         data.forEach((suggestion) => {
@@ -62,7 +42,6 @@ function SuggestionsPage() {
                             lat: location.lat,
                             lng: location.lng,
                             score: rest.score, // score of the first comment
-                            postURL: postURL[rest.post_id], // url of the first comment,
                             // but we'll need to decide if we want to keep every post url or the one with the highest karma
                             comments: [rest],
                         };
@@ -92,7 +71,6 @@ function SuggestionsPage() {
         queryFn: () => fetchSuggestionsByCountry(country),
         select: (data) => filterAndFlattenLocations(data),
         staleTime: Infinity,
-        enabled: !!postQuery.data,
     });
 
     const suggestionData = suggestionQuery.data;
