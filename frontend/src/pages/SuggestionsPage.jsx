@@ -11,7 +11,7 @@ import { useEffect, useState, useContext } from "react";
 import { useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchSuggestions, fetchPosts } from "../lib/API";
+import { fetchSuggestions, fetchPosts, fetchSuggestionsByCountry } from "../lib/API";
 
 function SuggestionsPage() {
     const { clickedMarker } = useContext(ClickMarkerContext);
@@ -22,18 +22,19 @@ function SuggestionsPage() {
     const [totalSuggestions, setTotalSuggestions] = useState([]); 
 
     const [searchParams] = useSearchParams();
-    const country = searchParams.get("country");
+    const country = searchParams.get("country").trim();
+    console.log("country: ", country)
 
 
     const postQuery = useQuery({
         queryKey: ["posts"],
-        queryFn: () => fetchPosts(country),
+        queryFn: () => fetchPosts(),
         staleTime: Infinity,
         // enabled: !!suggestionQuery.data
     });
 
     const postData = postQuery.data;
-
+    
     const postURLSet = () => {
         const urlSet = {};
         postData.forEach((post) => {
@@ -88,8 +89,8 @@ function SuggestionsPage() {
     };
 
     const suggestionQuery = useQuery({
-        queryKey: ["travelSuggestions"],
-        queryFn: () => fetchSuggestions(country),
+        queryKey: ["travelSuggestions", country],
+        queryFn: () => fetchSuggestionsByCountry(country),
         select: (data) => filterAndFlattenLocations(data),
         staleTime: Infinity,
         enabled: !!postQuery.data,
