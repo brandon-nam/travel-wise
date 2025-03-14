@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 function SearchPage() {
-    const [country, setCountry] = useState("");
+    const [country, setCountry] = useState("japan");
 
     let navigate = useNavigate();
 
