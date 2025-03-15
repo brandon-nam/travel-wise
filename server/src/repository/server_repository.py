@@ -87,3 +87,14 @@ class ServerRepository(Repository):
     def get_countries(self) -> Response:
         countries = self.session.query(Post.country).distinct().all()
         return jsonify([country[0] for country in countries])
+
+    def get_characteristics(self, classification: str = "") -> Response:
+        query = self.session.query(Comment.characteristic)
+
+        if classification in ("travel-suggestion", "travel-tip", "other"):
+            classification = classification.replace("-", "_")
+            query = query.filter(Comment.classification == classification)
+
+        characteristics = query.distinct().all()
+
+        return jsonify([characteristic[0] for characteristic in characteristics])

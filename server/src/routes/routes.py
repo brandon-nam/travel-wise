@@ -17,3 +17,8 @@ def create_routes(app: Flask, repo: ServerRepository) -> None:
     @app.route("/countries", methods=["GET"])
     def get_countries() -> Response:
         return repo.get_countries()
+
+    @app.route("/characteristics", methods=["GET"])
+    def get_characteristics() -> Response:
+        classification = request.args.get("classification")
+        return repo.get_characteristics(classification=classification)
