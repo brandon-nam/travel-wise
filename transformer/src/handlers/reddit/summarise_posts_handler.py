@@ -13,6 +13,7 @@ class SummarisePostsHandler(BaseAIHandler):
             - If the comment only mentions a place, item name or object, state what it is and why it might be useful for travelers.
         Respond by giving a json object with the comment id as the key and the summarised text as the value, 
         stripped of any ```json``` or trailing and leading quotes.
+        Ensure a summary is generated for every comment. 
 
 
         Comments:
