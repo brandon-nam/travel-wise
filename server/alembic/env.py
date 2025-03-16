@@ -8,7 +8,7 @@ import os
 import sys
 from pathlib import Path
 
-from src.database.sqlalchemy_db.sqlalchemy_db import db
+from repository.server_repository import db
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
