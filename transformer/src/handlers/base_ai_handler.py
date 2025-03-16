@@ -17,6 +17,6 @@ class BaseAIHandler(BaseHandler, ABC):
         """
         query_result = self.ai_provider.prompt(prompt)
         cleaned_result = re.sub(
-            r"^```json\s*|\s*```$", "", query_result.strip(), flags=re.MULTILINE)
+            r"^```json\s*|\s*```$", "", query_result.strip(), flags=re.MULTILINE
+        )
         return json.loads(cleaned_result)
-
