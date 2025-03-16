@@ -1,5 +1,4 @@
 import datetime
-from typing import Any
 from unittest.mock import patch, MagicMock
 
 import pytest
@@ -10,66 +9,68 @@ import src.writers.sqlalchemy_writer.sqlalchemy_writer as writer
 
 
 @pytest.fixture
-def mock_json_data() -> dict[str, Any]:
-    return {
-        "posts": [
-            {
-                "title": "Weekly Japan Travel Information and Discussion Thread - February 14, 2025",
-                "id": "1ipa23o",
-                "url": "https://www.reddit.com/r/JapanTravel/comments/1ipa23o/weekly_japan_travel_information_and_discussion/",
-                "score": 3,
-                "num_comments": 11,
-                "country": "japan",
-            },
-            {
-                "title": "Itinerary check, plus is Ito worth it?",
-                "id": "1iqp6jv",
-                "url": "https://www.reddit.com/r/JapanTravel/comments/1iqp6jv/itinerary_check_plus_is_ito_worth_it/",
-                "score": 2,
-                "num_comments": 2,
-                "country": "japan",
-            },
-        ],
-        "comments": [
-            {
-                "id": "mcx473k",
-                "body": "I\u2019ll be in Tokyo Feb 27 - March 2 ahead of some work travel. I\u2019m hoping to see some snow and trying to figure out a good 1-2 night trip to do so. Yudanaka or Shibu onsen look promising, especially with the monkeys. I\u2019m curious about:\n\n1. Other good options to consider? Ideally within ~3 hours train, and a little more to do than *just* hang around the ryokan\n2. Any advice for finding ryokan that take solo travelers?",
-                "score": 1,
-                "post_id": "1ipa23o",
-                "classification": "travel_suggestion",
-                "characteristic": "accommodation and activities",
-                "summary": "Ryokan for solo travellers, short term stay",
-                "locations": [
-                    {
-                        "lat": 36.7446,
-                        "lng": 138.4264,
-                        "location_name": "Yudanaka",
-                        "characteristic": "hot spring town",
-                    },
-                    {
-                        "lat": 36.7399,
-                        "lng": 138.4393,
-                        "location_name": "Shibu Onsen",
-                        "characteristic": "hot spring town",
-                    },
-                ],
-                "start_date": datetime.date(2024, 2, 27),
-                "end_date": datetime.date(2024, 3, 2),
-            },
-            {
-                "id": "md20b1m",
-                "body": 'Has anyone done the "**Mobile Suica APK**" thing to get around Android limitations for the Suica? Is it safe/working? Thanks',
-                "score": 1,
-                "post_id": "1ipa23o",
-                "classification": "travel_tip",
-                "characteristic": "tech solution",
-                "summary": "Mobile Suica App on Android",
-                "locations": [],
-                "start_date": None,
-                "end_date": None,
-            },
-        ],
-    }
+def mock_posts() -> list[dict]:
+    return [
+        {
+            "title": "Weekly Japan Travel Information and Discussion Thread - February 14, 2025",
+            "id": "1ipa23o",
+            "url": "https://www.reddit.com/r/JapanTravel/comments/1ipa23o/weekly_japan_travel_information_and_discussion/",
+            "score": 3,
+            "num_comments": 11,
+            "country": "japan",
+        },
+        {
+            "title": "Itinerary check, plus is Ito worth it?",
+            "id": "1iqp6jv",
+            "url": "https://www.reddit.com/r/JapanTravel/comments/1iqp6jv/itinerary_check_plus_is_ito_worth_it/",
+            "score": 2,
+            "num_comments": 2,
+            "country": "japan",
+        },
+    ]
+
+
+@pytest.fixture
+def mock_comments() -> list[dict]:
+    return [
+        {
+            "id": "mcx473k",
+            "body": "I\u2019ll be in Tokyo Feb 27 - March 2 ahead of some work travel. I\u2019m hoping to see some snow and trying to figure out a good 1-2 night trip to do so. Yudanaka or Shibu onsen look promising, especially with the monkeys. I\u2019m curious about:\n\n1. Other good options to consider? Ideally within ~3 hours train, and a little more to do than *just* hang around the ryokan\n2. Any advice for finding ryokan that take solo travelers?",
+            "score": 1,
+            "post_id": "1ipa23o",
+            "classification": "travel_suggestion",
+            "characteristic": "accommodation and activities",
+            "summary": "Ryokan for solo travellers, short term stay",
+            "locations": [
+                {
+                    "lat": 36.7446,
+                    "lng": 138.4264,
+                    "location_name": "Yudanaka",
+                    "characteristic": "hot spring town",
+                },
+                {
+                    "lat": 36.7399,
+                    "lng": 138.4393,
+                    "location_name": "Shibu Onsen",
+                    "characteristic": "hot spring town",
+                },
+            ],
+            "start_date": datetime.date(2024, 2, 27),
+            "end_date": datetime.date(2024, 3, 2),
+        },
+        {
+            "id": "md20b1m",
+            "body": 'Has anyone done the "**Mobile Suica APK**" thing to get around Android limitations for the Suica? Is it safe/working? Thanks',
+            "score": 1,
+            "post_id": "1ipa23o",
+            "classification": "travel_tip",
+            "characteristic": "tech solution",
+            "summary": "Mobile Suica App on Android",
+            "locations": [],
+            "start_date": None,
+            "end_date": None,
+        },
+    ]
 
 
 @pytest.fixture
@@ -135,10 +136,11 @@ def test_create_session_raises(
         mock_session.close.assert_called_once()
 
 
-def test_write_json(
+def test_write_posts(
     mock_writer: writer.SQLAlchemyWriter,
     db_session: Session,
-    mock_json_data: dict[str, Any],
+    mock_posts: list[dict],
+    mock_comments: list[dict],
 ) -> None:
 
     with patch(
@@ -146,13 +148,12 @@ def test_write_json(
     ) as mock_session_maker:
         mock_session_maker.return_value = lambda: db_session
 
-        mock_writer.write_json(mock_json_data)
+        mock_writer.write_posts(mock_posts)
+        mock_writer.write_comments(mock_comments)
 
-        mock_posts = mock_json_data["posts"]
-        mock_comments = mock_json_data["comments"]
         mock_locations = {
             (loc["lat"], loc["lng"], loc["location_name"], loc["characteristic"])
-            for comment in mock_json_data["comments"]
+            for comment in mock_comments
             for loc in comment.get("locations", [])
         }
         posts = db_session.query(Post).all()

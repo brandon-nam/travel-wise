@@ -1,5 +1,4 @@
 from contextlib import contextmanager
-from typing import Any
 
 from constants.reddit import ClassificationType
 from database.sqlalchemy.models import Base, Post, Comment, Location
@@ -33,10 +32,10 @@ class SQLAlchemyWriter(BaseWriter):
         finally:
             session.close()
 
-    def write_json(self, json_data: dict[str, Any]) -> None:
+    def write_posts(self, json_data: list[dict]) -> None:
         with self.create_session() as session:
             repo = Repository(session)
-            for post in json_data["posts"]:
+            for post in json_data:
                 repo.add(
                     Post,
                     id=post["id"],
@@ -47,7 +46,10 @@ class SQLAlchemyWriter(BaseWriter):
                     country=post["country"],
                 )
 
-            for comment in json_data["comments"]:
+    def write_comments(self, json_data: list[dict]) -> None:
+        with self.create_session() as session:
+            repo = Repository(session)
+            for comment in json_data:
                 repo.add(
                     Comment,
                     id=comment["id"],
@@ -61,7 +63,7 @@ class SQLAlchemyWriter(BaseWriter):
                     summary=comment["summary"],
                 )
 
-            for comment in json_data["comments"]:
+            for comment in json_data:
                 for loc in comment["locations"]:
                     repo.add(
                         Location,
