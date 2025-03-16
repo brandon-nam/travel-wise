@@ -29,7 +29,7 @@ class ClassifyTemporalHandler(BaseAIHandler):
 
         query_result = self.query_and_load_json(prompt)
         json_input_data = json.loads(input_data)
-        for comment in json_input_data["comments"]:
+        for comment in json_input_data:
             date_dict = query_result.get(comment["id"])
             start_date, end_date = None, None
             if date_dict:

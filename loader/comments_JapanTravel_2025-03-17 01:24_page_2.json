@@ -1,0 +1,196 @@
+[
+    {
+        "id": "mi10juv",
+        "body": "Hire a photographer rather than expect random people to offer to do this for you for free",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "other",
+        "characteristic": "service suggestion",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Consider hiring a photographer rather than expecting free photography services."
+    },
+    {
+        "id": "mht0kns",
+        "body": "This is very helpful, thank you so much! Welcome Suica app it is!",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "app recommendation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "The Welcome Suica app is recommended for convenience."
+    },
+    {
+        "id": "mhs2dn2",
+        "body": "I tried this through the JAL site and it just didn't want to let me book anything that was domestic in Japan.",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "booking issue",
+        "locations": [
+            {
+                "lat": 35.6895,
+                "lng": 139.6917,
+                "location_name": "Japan",
+                "characteristic": "country"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Booking domestic flights in Japan through the JAL site may encounter issues."
+    },
+    {
+        "id": "mhy3msz",
+        "body": "I actually figured it out. It seems like it\u2019s a bank authentication issue rather than visa thing. I switched from using my Chase card to Bank of America and it worked!",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "payment solution",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Switching credit cards can resolve bank authentication issues during payment."
+    },
+    {
+        "id": "mhxp53c",
+        "body": "Thank you very much!",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "other",
+        "characteristic": "gratitude expression",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": ""
+    },
+    {
+        "id": "mi1l6n5",
+        "body": "That's an excellent suggestion and I don't know why I didn't think of it that way. Thanks!",
+        "score": 2,
+        "post_id": "1jb28og",
+        "classification": "other",
+        "characteristic": "appreciation of advice",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": ""
+    },
+    {
+        "id": "mhtrjs1",
+        "body": "I was looking at $5000 to travel by myself.  Looks like it's $7K through the travel agency.  And I admit I want to enjoy myself while I'm in japan.  But 7K does feel expensive to me.",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_suggestion",
+        "characteristic": "cost comparison",
+        "locations": [
+            {
+                "lat": 35.6895,
+                "lng": 139.6917,
+                "location_name": "Japan",
+                "characteristic": "country"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Traveling solo in Japan might cost around $5000, but using a travel agency could increase the expense to $7000."
+    },
+    {
+        "id": "mi19ln4",
+        "body": "He said he'd be happy to pay for their time.",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "other",
+        "characteristic": "personal interaction",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": ""
+    },
+    {
+        "id": "mhs2sep",
+        "body": "Were you on the .jp site? If not, try that.",
+        "score": 2,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "website suggestion",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For booking issues, ensure you are using the .jp version of the site."
+    },
+    {
+        "id": "mhw6dm9",
+        "body": "i was able to book through the JAL site just a couple weeks ago for this coming week. you must be looking at the wrong site.",
+        "score": 0,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "booking confirmation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Booking through the JAL site is possible; ensure you are on the correct site."
+    },
+    {
+        "id": "mi19gz9",
+        "body": "After flight tickets and hotel rooms for 2 weeks (splitting hotel room costs), I am still spending under half of that. For you, it shouldn't be over $3,000 for those alone, unless you are staying in n",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_suggestion",
+        "characteristic": "budgeting advice",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For a two-week stay in Japan, expenses for flight tickets and hotel rooms should not exceed $3000 when sharing costs."
+    },
+    {
+        "id": "mhsao1x",
+        "body": "Hmm, I think I found the problem - I was trying to book too far in advance.  I tried with some closer dates and it appears to be working as intended!",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "booking adjustment",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Booking issues may be resolved by selecting closer dates."
+    },
+    {
+        "id": "mi3vuuf",
+        "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "planning resource",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For trip planning tips and updated information, refer to the Japan Travel FAQ."
+    },
+    {
+        "id": "mi37leg",
+        "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+        "score": 1,
+        "post_id": "1jcm71e",
+        "classification": "travel_tip",
+        "characteristic": "planning resource",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For trip planning tips and updated information, refer to the Japan Travel FAQ."
+    },
+    {
+        "id": "mi36efi",
+        "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+        "score": 1,
+        "post_id": "1jcm1lh",
+        "classification": "travel_tip",
+        "characteristic": "planning resource",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For trip planning tips and updated information, refer to the Japan Travel FAQ."
+    }
+]

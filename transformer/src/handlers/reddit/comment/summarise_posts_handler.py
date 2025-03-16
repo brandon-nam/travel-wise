@@ -21,6 +21,6 @@ class SummarisePostsHandler(BaseAIHandler):
 
         query_result = self.query_and_load_json(prompt)
         json_input_data = json.loads(input_data)
-        for comment in json_input_data["comments"]:
+        for comment in json_input_data:
             comment["summary"] = query_result.get(comment["id"], "")
         return json.dumps(json_input_data)

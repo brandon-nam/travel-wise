@@ -20,7 +20,7 @@ class LocationDeduplicationHandler(BaseHandler):
 
         location_mapping = {}
 
-        for comment in json_data["comments"]:
+        for comment in json_data:
             location_list = comment.get("locations", [])
             for location in location_list:
                 if location["location_name"] not in location_mapping:

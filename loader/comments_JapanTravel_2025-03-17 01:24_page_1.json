@@ -1,0 +1,413 @@
+[
+    {
+        "id": "mhsrrkt",
+        "body": "# Apple Wallet Suica vs New Welcome Suica Mobile\n\nTraveling to Japan soon and trying to figure out which one we'd be better off using. So far, the only difference I see is that the new mobile app let'",
+        "score": 2,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "transport",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "When traveling to Japan, consider the differences between Apple Wallet Suica and the new Welcome Suica Mobile for transit payments."
+    },
+    {
+        "id": "mhwc6o5",
+        "body": "Hey! Not sure if this is the right place to ask. I'm planning to get a JR Kansai-Hiroshima area pass for my trip between Osaka, Kyoto, Hiroshima and Nara. But I'm arriving to Osaka from Hakone, and fr",
+        "score": 2,
+        "post_id": "1jb28og",
+        "classification": "travel_suggestion",
+        "characteristic": "transport",
+        "locations": [
+            {
+                "lat": 34.6937,
+                "lng": 135.5023,
+                "location_name": "Osaka",
+                "characteristic": "city"
+            },
+            {
+                "lat": 35.0116,
+                "lng": 135.7681,
+                "location_name": "Kyoto",
+                "characteristic": "city"
+            },
+            {
+                "lat": 34.3853,
+                "lng": 132.4553,
+                "location_name": "Hiroshima",
+                "characteristic": "city"
+            },
+            {
+                "lat": 34.6851,
+                "lng": 135.805,
+                "location_name": "Nara",
+                "characteristic": "city"
+            },
+            {
+                "lat": 35.2332,
+                "lng": 139.1036,
+                "location_name": "Hakone",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For travel between Osaka, Kyoto, Hiroshima, Nara, and arriving from Hakone, consider obtaining a JR Kansai-Hiroshima area pass."
+    },
+    {
+        "id": "mhre2an",
+        "body": "Does anyone have any recommendations for Golf Courses near Sapporo that is tourist friendly?",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_suggestion",
+        "characteristic": "leisure",
+        "locations": [
+            {
+                "lat": 43.0618,
+                "lng": 141.3545,
+                "location_name": "Sapporo",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For tourist-friendly golf courses, explore options near Sapporo."
+    },
+    {
+        "id": "mhruwyk",
+        "body": "I'm looking to do a trip down to Fukuoka/Kyushu in November.  The trip will start and end in Tokyo, but searching for options on how best to get from Tokyo to Fukuoka.  The way back will likely be via",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_suggestion",
+        "characteristic": "transport",
+        "locations": [
+            {
+                "lat": 33.5904,
+                "lng": 130.4017,
+                "location_name": "Fukuoka",
+                "characteristic": "city"
+            },
+            {
+                "lat": 35.6895,
+                "lng": 139.6917,
+                "location_name": "Tokyo",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": "2023-11-01",
+        "end_date": "2023-11-30",
+        "summary": "Explore travel options from Tokyo to Fukuoka for a trip in November, considering both starting and ending the journey in Tokyo."
+    },
+    {
+        "id": "mhtoitm",
+        "body": "Anybody know how to by pass \u201c3D Secure\u201d authentication on SmartEX? Trying to book Shinkansen tickets but it keeps giving me an error. My bank isn\u2019t able to help.",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "booking",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Issues with '3D Secure' authentication on SmartEX can affect booking Shinkansen tickets; alternatives may need to be considered."
+    },
+    {
+        "id": "mhu3mvh",
+        "body": "Do I need JESTA when visiting japan? I just watched a Youtube video, about how it was recently passed as of March.",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "other",
+        "characteristic": "regulatory",
+        "locations": [],
+        "start_date": "2023-03-01",
+        "end_date": "2023-03-31",
+        "summary": "Verify if JESTA is required for visiting Japan as of March."
+    },
+    {
+        "id": "mi0czo2",
+        "body": "Okay a few questions about arrival tasks: \n\n1. We are landing at Kansai International Airport. As English only speakers will it be easy to find a 7/11 atm to get cash out,  the counter to buy IC cards",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "navigation",
+        "locations": [
+            {
+                "lat": 34.4273,
+                "lng": 135.244,
+                "location_name": "Kansai International Airport",
+                "characteristic": "airport"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Upon arrival at Kansai International Airport, facilities like 7/11 ATMs and counters for purchasing IC cards are available."
+    },
+    {
+        "id": "mi18x90",
+        "body": "Hi Guys! It's my first time visiting Japan, looking for feedback on general locations! Going for two weeks.\n\nI'm going in early June and was planning on spending 7 days, 6 nights in Tokyo. After that,",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_suggestion",
+        "characteristic": "itinerary planning",
+        "locations": [
+            {
+                "lat": 35.6895,
+                "lng": 139.6917,
+                "location_name": "Tokyo",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": "2023-06-01",
+        "end_date": "2023-06-14",
+        "summary": "Consider spending 7 days in Tokyo and exploring other locations in Japan over a two-week trip starting early June."
+    },
+    {
+        "id": "mi1xbjm",
+        "body": "Asking for a friend currently. They just got denied a rental car, and we're unsure why.\n\nThey are in Japan for around 9 months, has a translation of their license. And has been using it. It's about 7",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "other",
+        "characteristic": "car rental",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Issues with car rental denials in Japan may relate to licensing translations and duration of stay."
+    },
+    {
+        "id": "mi2dxhv",
+        "body": "Meds question\n\nMy standard travel kit is always\n\n1. ibuprofen\n2. Paracetamol\n3. Loperamide\n4. Loratadine\n5. Melatonin (3mg)\n\nNow according to the list of the ministry none of this is prohibited, I thi",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "other",
+        "characteristic": "health",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Travelers can bring common medications like ibuprofen and paracetamol to Japan as they are not prohibited."
+    },
+    {
+        "id": "mi33249",
+        "body": "Hello, I'm planning a trip to Japan for the 3 weeks in the beginning of october.\nCurrently these are my plans for where to go and the amount of days I'll stay in each city.\nArrive in Tokyo and stay th",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_suggestion",
+        "characteristic": "itinerary planning",
+        "locations": [
+            {
+                "lat": 35.6895,
+                "lng": 139.6917,
+                "location_name": "Tokyo",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": "2023-10-01",
+        "end_date": "2023-10-21",
+        "summary": "Plan a three-week trip to Japan starting in Tokyo in early October, considering stays in multiple cities."
+    },
+    {
+        "id": "mhsvhol",
+        "body": "Looking to travel to Japan in November.  Was looking at a travel agency, but it's more expensive than I want to afford.  Especially after signing up for classes.\n\nLooking for advice on how to do this",
+        "score": 0,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "cost management",
+        "locations": [],
+        "start_date": "2023-11-01",
+        "end_date": "2023-11-30",
+        "summary": "Consider planning a trip to Japan in November more cost-effectively by organizing it independently rather than using a travel agency."
+    },
+    {
+        "id": "mi0i401",
+        "body": "[removed]",
+        "score": -1,
+        "post_id": "1jb28og",
+        "classification": "other",
+        "characteristic": "content removed",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "[removed]"
+    },
+    {
+        "id": "mhsvxzh",
+        "body": "The tourist app is very new, but for normal tourists, it probably makes more sense than getting the regular card via Apple Wallet now. Note the card is only valid for 180 days. Not a big deal ultimate",
+        "score": 5,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "transport",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "The new tourist app may be more suitable than the regular card via Apple Wallet for short stays as it is valid for 180 days."
+    },
+    {
+        "id": "mhx1y7c",
+        "body": "Where did you read that? Odawara is nowhere near Kansai. That pass only covers the Shinkansen southbound from Osaka, and the coverage of non-shinkansen trains falls way short of Odawara by several hun",
+        "score": 3,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "transport",
+        "locations": [
+            {
+                "lat": 35.2332,
+                "lng": 139.1036,
+                "location_name": "Odawara",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "The JR Kansai-Hiroshima area pass covers Shinkansen southbound from Osaka but not non-Shinkansen trains to Odawara."
+    },
+    {
+        "id": "mhs06xz",
+        "body": "You book the flight like any other flight. I booked ANA out of Haneda to Kagoshima airport for my trip next month. You can easily book to Fukuoka from Haneda, just load up google flights, who flies th",
+        "score": 2,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "transport",
+        "locations": [
+            {
+                "lat": 35.5494,
+                "lng": 139.7798,
+                "location_name": "Haneda",
+                "characteristic": "city"
+            },
+            {
+                "lat": 31.8034,
+                "lng": 130.7079,
+                "location_name": "Kagoshima",
+                "characteristic": "city"
+            },
+            {
+                "lat": 33.5904,
+                "lng": 130.4017,
+                "location_name": "Fukuoka",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Book flights from Haneda to Kagoshima or Fukuoka using services like Google flights to find available routes."
+    },
+    {
+        "id": "mhy2koo",
+        "body": "This heavily affects Visa cards and your bank won\u2019t be able to do anything. Mastercard and Amex are usually OK.\n\nAlternatively, use the JR West site.",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "booking",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For issues with '3D Secure' on Visa cards, consider using Mastercard, Amex, or the JR West site for bookings."
+    },
+    {
+        "id": "mhwasj4",
+        "body": "It\u2019s not going to be in place until 2030: [https://www.news.com.au/travel/destinations/asia/major-change-for-tourists-visiting-japan/news-story/3f3cda0f5ac2edbd4fe218f199df2f4e](https://www.news.com.a",
+        "score": 3,
+        "post_id": "1jb28og",
+        "classification": "other",
+        "characteristic": "regulatory",
+        "locations": [],
+        "start_date": "2030-01-01",
+        "end_date": "2030-12-31",
+        "summary": "A regulatory change affecting tourists visiting Japan will not be in place until 2030."
+    },
+    {
+        "id": "mi11y2w",
+        "body": "There\u2019s English language signage throughout airports and train stations in Japan.",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "navigation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Airports and train stations in Japan feature English language signage."
+    },
+    {
+        "id": "mi1lb4k",
+        "body": "Q1 You'll have plenty of English signs, and often even English speaking staff at major transport hubs in all the large cities.\n\nQ2 There are machines where you might be able to buy an IC card with cre",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "navigation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Major transport hubs in large cities in Japan often have English signs and English-speaking staff. IC cards can be purchased at machines with credit cards."
+    },
+    {
+        "id": "mi1ja83",
+        "body": "I'd suggest staying overnight in Hiroshima and visiting Himeji on your way there or back. There's lots to see in Hiroshima. Kobe looks pretty uninteresting compared to Osaka and Hiroshima.",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_suggestion",
+        "characteristic": "itinerary planning",
+        "locations": [
+            {
+                "lat": 34.3853,
+                "lng": 132.4553,
+                "location_name": "Hiroshima",
+                "characteristic": "city"
+            },
+            {
+                "lat": 34.8151,
+                "lng": 134.6853,
+                "location_name": "Himeji",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Consider staying overnight in Hiroshima and visiting Himeji during the trip; Hiroshima offers numerous attractions."
+    },
+    {
+        "id": "mht33dr",
+        "body": "Yes, you can travel more cheaply if you organise everything yourself. And it's not hard; pretty much everyone on the sub is an independent traveller.\n\nHow much can you afford and what do you intend to",
+        "score": 4,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "cost management",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Traveling independently can be more cost-effective than using organized tours or classes."
+    },
+    {
+        "id": "mhthkqn",
+        "body": "Doing classes and organised tours always add a lot to the cost of travel.\n\nJapan is an advanced economy, so the overall costs of visiting are going to be substantial even if you\u2019re from a country with",
+        "score": 3,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "cost management",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Travel costs in Japan can be high due to its advanced economy, regardless of the traveler's home country's economic status."
+    },
+    {
+        "id": "mhzuzvc",
+        "body": "There are a bunch of guides available - I'd personally start with [japan-guide.com](http://japan-guide.com) and look at their recommended itineraries. You can easily spend less than $7,000 (or even $5",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "itinerary planning",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Consult guides like japan-guide.com for recommended itineraries to help plan a cost-effective trip to Japan."
+    },
+    {
+        "id": "mi0c981",
+        "body": "Just look at an example itinerary and book it yourself. I find this was half the price. Obviously it takes more of your time, that's why it costs more to pay an agency to do it for you.",
+        "score": 1,
+        "post_id": "1jb28og",
+        "classification": "travel_tip",
+        "characteristic": "cost management",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Planning and booking your own itinerary can be more economical than using a travel agency."
+    }
+]

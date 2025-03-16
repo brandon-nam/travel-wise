@@ -1,11 +1,30 @@
+import logging
+
 from fs_access.local_fs_access.local_fs_access import LocalFSAccess
 
-from transformers.reddit_transformer.reddit_transformer import RedditTransformer
+from src.transformers.reddit.comment.reddit_comment_transformer import (
+    RedditCommentTransformer,
+)
+from src.transformers.reddit.post.reddit_post_transformer import RedditPostTransformer
+
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(name)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
 
 
 def main() -> None:
-    transformer = RedditTransformer(LocalFSAccess())
-    transformer.transform()
+    fs_access = LocalFSAccess()
+    post_transformer = RedditPostTransformer(fs_access)
+    logger.info(
+        f"Running RedditPostTransformer, with handler chain {post_transformer.chain}"
+    )
+    post_transformer.transform()
+    comment_transformer = RedditCommentTransformer(fs_access)
+    logger.info(
+        f"Running RedditCommentTransformer, with handler chain {comment_transformer.chain}"
+    )
+    comment_transformer.transform()
 
 
 if __name__ == "__main__":

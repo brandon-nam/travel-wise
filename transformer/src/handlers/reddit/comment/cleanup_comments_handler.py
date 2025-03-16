@@ -16,7 +16,7 @@ class CleanupCommentsHandler(BaseHandler):
     def do_handle(self, input_data: str) -> str:
         json_data = json.loads(input_data)
 
-        for comment in json_data["comments"]:
+        for comment in json_data:
             if len(comment["body"]) > 200:
                 comment["body"] = comment["body"][:200]
             comment["body"] = clean_string(comment["body"])

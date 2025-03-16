@@ -12,7 +12,7 @@ def extract_subreddit(url: str) -> str:
 class AddCountriesHandler(BaseHandler):
     def do_handle(self, input_data: str) -> str:
         json_input_data = json.loads(input_data)
-        for post in json_input_data["posts"]:
+        for post in json_input_data:
             subreddit = extract_subreddit(post["url"]).lower()
             if "japan" in subreddit:
                 post["country"] = "japan"
