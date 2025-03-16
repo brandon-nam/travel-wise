@@ -49,6 +49,8 @@ class RedditCollector(Collector):
         subreddit = reddit.subreddit(subreddit_name)
         posts = []
         for post in subreddit.hot(limit=limit):
+            if "meet-up" in post.title.lower() or "meetup" in post.title.lower():
+                continue
             comments = RedditCollector.fetch_comments_from_post(post)
             if len(comments) > 0 and not getattr(post, "is_gallery", False):
                 posts.append(
