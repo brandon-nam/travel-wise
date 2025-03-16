@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 from src.ai_provider.base_ai_provider import BaseAIProvider
 
-DEFAULT_OPENAI_PARAMS = {"max_tokens": 3000, "temperature": 0.5}
+DEFAULT_OPENAI_PARAMS = {"max_tokens": 4000, "temperature": 0.5}
 
 
 class OpenAIProvider(BaseAIProvider):
