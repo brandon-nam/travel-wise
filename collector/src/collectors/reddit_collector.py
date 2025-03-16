@@ -8,9 +8,10 @@ from dotenv import load_dotenv
 from praw import Reddit
 from praw.models import Submission
 
-from collectors.collector import Collector
+from src.collectors.collector import Collector
 
 logger = logging.getLogger(__name__)
+BATCH_SIZE = 25
 
 
 class RedditCollector(Collector):
@@ -26,44 +27,58 @@ class RedditCollector(Collector):
 
     def collect(self) -> Generator[tuple[str, list], None, None]:
         for subreddit_name in self.subreddit_list:
-            logger.info(
-                f"Attempting to fetch data from subreddit r/{subreddit_name}..."
-            )
-            posts = RedditCollector.fetch_hot_posts(
+            posts, comments = RedditCollector.fetch_hot_posts_and_comments(
                 reddit=self.reddit,
                 subreddit_name=subreddit_name,
                 limit=self.query_limit,
             )
-            logger.info(
-                f"Successfully fetched {len(posts)} posts and "
-                f"{sum(len(post['comments']) for post in posts)} comments from r/{subreddit_name}..."
+
+            yield from RedditCollector.save_data_paginated(
+                subreddit_name, posts, "posts"
             )
-            current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-            file_path = f"{subreddit_name}_{current_date}.json"
-            yield file_path, posts
+            yield from RedditCollector.save_data_paginated(
+                subreddit_name, comments, "comments"
+            )
+            logger.info(
+                f"Saving {len(posts)} posts and "
+                f"{len(comments)} comments from r/{subreddit_name}..."
+            )
 
     @staticmethod
-    def fetch_hot_posts(
+    def save_data_paginated(
+        subreddit_name: str, data: list, prefix: str
+    ) -> Generator[tuple[str, list], None, None]:
+        for page_number, i in enumerate(range(0, len(data), BATCH_SIZE), start=1):
+            batch_comments = data[i : i + BATCH_SIZE]
+            current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+            file_path = (
+                f"{prefix}_{subreddit_name}_{current_date}_page_{page_number}.json"
+            )
+            yield file_path, batch_comments
+
+    @staticmethod
+    def fetch_hot_posts_and_comments(
         reddit: Reddit, subreddit_name: str, limit: int
-    ) -> list[dict[str, Any]]:
+    ) -> tuple[list, list]:
         subreddit = reddit.subreddit(subreddit_name)
-        posts = []
+        all_posts = []
+        all_comments = []
         for post in subreddit.hot(limit=limit):
             if "meet-up" in post.title.lower() or "meetup" in post.title.lower():
                 continue
             comments = RedditCollector.fetch_comments_from_post(post)
             if len(comments) > 0 and not getattr(post, "is_gallery", False):
-                posts.append(
+                all_posts.append(
                     {
                         "title": post.title,
                         "id": post.id,
                         "url": post.url,
                         "score": post.score,
-                        "comments": comments,
                     }
                 )
+                all_comments.extend(comments)
 
-        return posts
+        return all_posts, all_comments
 
     @staticmethod
     def fetch_comments_from_post(post: Submission) -> list[dict[str, Any]]:
@@ -73,6 +88,7 @@ class RedditCollector(Collector):
                 "id": comment.id,
                 "body": comment.body,
                 "score": comment.score,
+                "post_id": post.id,
             }
             for comment in post.comments.list()
         ]
