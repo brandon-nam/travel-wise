@@ -43,27 +43,21 @@
             "characteristic": "transport",
             "locations": [
                 {
-                    "lat": 35.6634,
-                    "lng": 139.7323,
+                    "lat": 35.6655,
+                    "lng": 139.7414,
                     "location_name": "Hotel Toranomon Hills",
                     "characteristic": "hotel"
                 },
                 {
-                    "lat": 35.6285,
-                    "lng": 139.7389,
-                    "location_name": "Andaz Tokyo",
-                    "characteristic": "hotel"
-                },
-                {
-                    "lat": 35.6812,
-                    "lng": 139.7671,
+                    "lat": 35.6804,
+                    "lng": 139.769,
                     "location_name": "Tokyo Station",
                     "characteristic": "train station"
                 }
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "For transport from Narita Airport to Hotel Toranomon Hills, you can take the limo bus to Andaz Tokyo then walk, or take the Narita Express to Tokyo Station and then a taxi. Both routes are feasible."
+            "summary": "For transportation to Hotel Toranomon Hills from Narita Airport, options include taking a limo bus to Andaz and walking, or the Narita Express to Tokyo Station followed by a taxi."
         },
         {
             "id": "mh4romq",
@@ -71,7 +65,7 @@
             "score": 2,
             "post_id": "1j5se26",
             "classification": "other",
-            "characteristic": "personal concerns",
+            "characteristic": "concerns",
             "locations": [
                 {
                     "lat": 35.6895,
@@ -88,7 +82,7 @@
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "Traveling alone to Tokyo and Kyoto can be intimidating, but modern tools like Google Maps are reliable for navigation, and both cities are generally safe and tourist-friendly."
+            "summary": "Concerns about traveling alone to Tokyo and Kyoto include getting lost or encountering issues."
         },
         {
             "id": "mgkvchv",
@@ -99,33 +93,33 @@
             "characteristic": "transport",
             "locations": [
                 {
-                    "lat": 35.6591,
-                    "lng": 139.7006,
-                    "location_name": "Hyatt House Shibuya",
-                    "characteristic": "hotel"
+                    "lat": 35.6895,
+                    "lng": 139.6917,
+                    "location_name": "Shibuya",
+                    "characteristic": "district"
                 },
                 {
-                    "lat": 35.5079,
-                    "lng": 139.6177,
+                    "lat": 35.2993,
+                    "lng": 139.4814,
                     "location_name": "Hakone",
                     "characteristic": "town"
                 },
                 {
-                    "lat": 35.6302,
-                    "lng": 139.74,
-                    "location_name": "Shinagawa Station",
-                    "characteristic": "train station"
+                    "lat": 35.6285,
+                    "lng": 139.7389,
+                    "location_name": "Shinagawa",
+                    "characteristic": "district"
                 },
                 {
-                    "lat": 35.6896,
-                    "lng": 139.7004,
-                    "location_name": "Shinjuku Station",
-                    "characteristic": "train station"
+                    "lat": 35.6938,
+                    "lng": 139.7034,
+                    "location_name": "Shinjuku",
+                    "characteristic": "district"
                 }
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "To travel from Hyatt House Shibuya to Hakone, options include taking a train from Shinagawa via Shinkansen or Shonan-Shinjuku line, or from Shinjuku via Shinkansen or the Odakyu Line."
+            "summary": "To travel from Hyatt House Shibuya to Hakone, options include taking a train from Shinagawa via the Shinkansen or Shonan-Shinjuku line, or from Shinjuku via the Shinkansen or Romancecar."
         },
         {
             "id": "mgkxl0u",
@@ -137,7 +131,7 @@
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "For a group of 11 people, finding budget-friendly accommodation in Tokyo might be challenging. Consider looking for family rooms or adjacent rooms in budget hotels or hostels."
+            "summary": "Seeking recommendations for budget-friendly accommodations in Tokyo for a group of 10, including adults and teenagers."
         },
         {
             "id": "mgmul2k",
@@ -145,7 +139,7 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "travel_suggestion",
-            "characteristic": "trip planning",
+            "characteristic": "planning",
             "locations": [
                 {
                     "lat": 27.9506,
@@ -160,9 +154,9 @@
                     "characteristic": "city"
                 }
             ],
-            "start_date": "2023-06-01",
-            "end_date": "2023-06-30",
-            "summary": "Planning a trip from Tampa to Tokyo around June could be a memorable way to celebrate a milestone birthday. Start the passport application process early to avoid delays."
+            "start_date": null,
+            "end_date": null,
+            "summary": "Planning a trip from Tampa to Tokyo around a birthday, involving international travel and passport considerations."
         },
         {
             "id": "mgosbe2",
@@ -170,18 +164,11 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "travel_tip",
-            "characteristic": "transport",
-            "locations": [
-                {
-                    "lat": 35.3606,
-                    "lng": 138.7274,
-                    "location_name": "Mount Fuji",
-                    "characteristic": "mountain"
-                }
-            ],
+            "characteristic": "transport_pass",
+            "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "The JR East South Hokkaido Pass allows travel on the Hayabusa train with no extra charges, offering a convenient way to explore the region."
+            "summary": "Inquiring about the JR East South Hokkaido pass eligibility for riding the Hayabusa train without extra charges."
         },
         {
             "id": "mgqnqne",
@@ -189,7 +176,7 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "travel_tip",
-            "characteristic": "customs process",
+            "characteristic": "customs",
             "locations": [
                 {
                     "lat": 35.5494,
@@ -199,14 +186,14 @@
                 },
                 {
                     "lat": 43.8806,
-                    "lng": 144.1639,
+                    "lng": 144.1638,
                     "location_name": "Memanbetsu Airport",
                     "characteristic": "airport"
                 }
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "Upon arrival in Japan at Haneda Airport, you'll go through customs and immigration there before your domestic flight to Hokkaido."
+            "summary": "Questions about the customs process when flying from the USA to Haneda, then transferring to a flight to Memanbetsu."
         },
         {
             "id": "mh14pkn",
@@ -214,11 +201,11 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "other",
-            "characteristic": "medication approval",
+            "characteristic": "medication_approval",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Expedited medication approval requires submitting documents in advance; last-minute submissions might be too late, so plan accordingly."
+            "summary": "Seeking advice on expedited medication approval for travel."
         },
         {
             "id": "mh15r3f",
@@ -226,7 +213,7 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "travel_suggestion",
-            "characteristic": "itinerary planning",
+            "characteristic": "itinerary",
             "locations": [
                 {
                     "lat": 35.6895,
@@ -243,7 +230,7 @@
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "For a trip starting and ending in Tokyo, consider visiting Hiroshima in between other destinations to fit it smoothly into your itinerary."
+            "summary": "Planning a travel itinerary involving Tokyo and Hiroshima, seeking optimal scheduling advice."
         },
         {
             "id": "mh3sngm",
@@ -251,11 +238,11 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "other",
-            "characteristic": "event access",
+            "characteristic": "missed_booking",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "If you missed purchasing a pass for USJ, you might try lining up early at the venue for a chance to buy a ticket."
+            "summary": "Discussing missed booking opportunities for a USJ pass and considering alternatives."
         },
         {
             "id": "mh6jrk4",
@@ -263,11 +250,11 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "other",
-            "characteristic": "visa information",
+            "characteristic": "visa_information",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "The introduction of JESTA in 2030 will affect visa processes for visitors from visa-exempt countries; stay updated with the latest travel regulations."
+            "summary": "Discussing the upcoming JESTA visa requirements for travelers from visa-exempt countries."
         },
         {
             "id": "mgvpdwl",
@@ -275,11 +262,18 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "other",
-            "characteristic": "event access",
-            "locations": [],
-            "start_date": "2023-03-15",
-            "end_date": "2023-03-31",
-            "summary": "Booking a Cherry Blossom boat tour in Kyoto can be challenging due to high demand. Tickets sell out quickly, often in minutes."
+            "characteristic": "booking_difficulty",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                }
+            ],
+            "start_date": null,
+            "end_date": null,
+            "summary": "Challenges faced when booking a Cherry blossom boat tour in Kyoto due to high demand and quick sell-out."
         },
         {
             "id": "mgumcvn",
@@ -287,24 +281,24 @@
             "score": 0,
             "post_id": "1j5se26",
             "classification": "travel_suggestion",
-            "characteristic": "culinary experience",
+            "characteristic": "cuisine",
             "locations": [
                 {
-                    "lat": 40.8244,
-                    "lng": 140.74,
+                    "lat": 40.6342,
+                    "lng": 140.4644,
                     "location_name": "Hirosaki",
                     "characteristic": "city"
                 },
                 {
-                    "lat": 40.8222,
-                    "lng": 140.7474,
+                    "lat": 40.8211,
+                    "lng": 140.7516,
                     "location_name": "Aomori Prefecture",
-                    "characteristic": "region"
+                    "characteristic": "prefecture"
                 }
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "In Hirosaki and Aomori Prefecture, bear meat is a local delicacy. For recommendations on where to try it, local forums or travel guides may offer insights."
+            "summary": "Seeking recommendations for places to try bear meat in Hirosaki, Aomori Prefecture."
         },
         {
             "id": "mgo8udo",
@@ -312,11 +306,11 @@
             "score": -2,
             "post_id": "1j5se26",
             "classification": "other",
-            "characteristic": "unexpected travel opportunity",
+            "characteristic": "unexpected_travel",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "If you unexpectedly find yourself with free days in Tokyo, consider exploring local attractions or day trips nearby to maximize your unexpected travel time."
+            "summary": "Unexpected extra days in Tokyo due to unforeseen circumstances, discussing spontaneous travel opportunities."
         },
         {
             "id": "mgww1b2",
@@ -324,11 +318,11 @@
             "score": -4,
             "post_id": "1j5se26",
             "classification": "travel_suggestion",
-            "characteristic": "itinerary planning",
+            "characteristic": "itinerary_planning",
             "locations": [],
             "start_date": "2025-05-04",
             "end_date": "2025-05-19",
-            "summary": "When planning a trip to Japan, consider seeking feedback on your itinerary to ensure a balanced and enjoyable visit."
+            "summary": "Seeking feedback on a travel itinerary for Japan from May 4-19, 2025, including a range of experiences."
         },
         {
             "id": "mh55a5v",
@@ -340,7 +334,7 @@
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Using Google Maps can greatly assist in navigating Tokyo. Learning a few basic Japanese phrases may also enhance your travel experience."
+            "summary": "Tips for navigating Tokyo and Kyoto alone, including using Google Maps and learning basic phrases."
         },
         {
             "id": "mgkxwww",
@@ -351,15 +345,21 @@
             "characteristic": "transport",
             "locations": [
                 {
-                    "lat": 35.5079,
-                    "lng": 139.6177,
+                    "lat": 35.6812,
+                    "lng": 139.7671,
+                    "location_name": "Tokyo Station",
+                    "characteristic": "train station"
+                },
+                {
+                    "lat": 35.2993,
+                    "lng": 139.4814,
                     "location_name": "Hakone Yumoto",
-                    "characteristic": "town"
+                    "characteristic": "hot spring town"
                 }
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "For travel to Hakone from Shinjuku, the Odakyu Line is the most direct route, taking you to Hakone Yumoto."
+            "summary": "Transport options to Hakone from Tokyo, discussing routes via Shinjuku and Shinagawa stations."
         },
         {
             "id": "mgm0g1q",
@@ -367,11 +367,18 @@
             "score": 2,
             "post_id": "1j5se26",
             "classification": "travel_tip",
-            "characteristic": "accommodation advice",
-            "locations": [],
+            "characteristic": "accommodation",
+            "locations": [
+                {
+                    "lat": 35.4437,
+                    "lng": 139.638,
+                    "location_name": "Yokohama",
+                    "characteristic": "city"
+                }
+            ],
             "start_date": null,
             "end_date": null,
-            "summary": "Staying outside of Tokyo and commuting into the city is not cost-effective due to long travel times. Consider accommodations within Tokyo to save time and money."
+            "summary": "Discussing the practicality of commuting to Tokyo from outside the city and suggesting accommodation options in Yokohama."
         },
         {
             "id": "mgp6bqp",
@@ -379,11 +386,11 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "other",
-            "characteristic": "clarification question",
+            "characteristic": "clarification",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Clarification needed on whether the inquiry is about food or lodging."
+            "summary": "Clarification sought on whether a discussion pertains to food or lodging."
         },
         {
             "id": "mgpj81s",
@@ -392,29 +399,36 @@
             "post_id": "1j5se26",
             "classification": "travel_suggestion",
             "characteristic": "accommodation",
-            "locations": [],
+            "locations": [
+                {
+                    "lat": 35.7174,
+                    "lng": 139.7953,
+                    "location_name": "OMO3 Asakusa",
+                    "characteristic": "hotel"
+                }
+            ],
             "start_date": null,
             "end_date": null,
-            "summary": "For a group of 10 people, consider booking multiple rooms in the same hotel, such as OMO3 Asakusa, to accommodate everyone comfortably."
+            "summary": "Suggesting OMO3 Asakusa for accommodating a large group in Tokyo."
         },
         {
             "id": "mgosg46",
             "body": "If you\u2019re interested in climbing Mt. Fuji, it\u2019s available to from July-September usually.",
             "score": 1,
             "post_id": "1j5se26",
-            "classification": "travel_suggestion",
-            "characteristic": "activity suggestion",
+            "classification": "travel_tip",
+            "characteristic": "seasonal_activity",
             "locations": [
                 {
                     "lat": 35.3606,
                     "lng": 138.7274,
-                    "location_name": "Mount Fuji",
+                    "location_name": "Mt. Fuji",
                     "characteristic": "mountain"
                 }
             ],
             "start_date": "2023-07-01",
-            "end_date": "2023-09-30",
-            "summary": "Mount Fuji is open for climbing from July to September, offering a seasonal opportunity for this activity."
+            "end_date": "2023-07-15",
+            "summary": "Information on the seasonal availability of climbing Mt. Fuji, typically from July to September."
         },
         {
             "id": "mgp61dt",
@@ -422,11 +436,11 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "other",
-            "characteristic": "transport confirmation",
+            "characteristic": "confirmation",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Confirmation that you can ride the Hayabusa train."
+            "summary": "Confirmation that riding the Hayabusa train is possible."
         },
         {
             "id": "mgrq744",
@@ -434,18 +448,11 @@
             "score": 3,
             "post_id": "1j5se26",
             "classification": "travel_tip",
-            "characteristic": "customs process",
-            "locations": [
-                {
-                    "lat": 35.5494,
-                    "lng": 139.7798,
-                    "location_name": "Haneda Airport",
-                    "characteristic": "airport"
-                }
-            ],
+            "characteristic": "customs",
+            "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Customs and immigration procedures are typically completed at the first point of entry into a country, which would be Haneda Airport for a flight arriving from the USA."
+            "summary": "Advice on customs procedures, emphasizing passing through customs at the first point of entry in the destination country."
         },
         {
             "id": "mh3stzd",
@@ -453,11 +460,11 @@
             "score": 2,
             "post_id": "1j5se26",
             "classification": "travel_suggestion",
-            "characteristic": "itinerary planning",
+            "characteristic": "itinerary",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "For a trip involving Tokyo and Hiroshima, consider flying back to Tokyo from Hiroshima before your return flight home for efficient travel."
+            "summary": "Suggesting a quick flight from Hiroshima to Tokyo as part of a travel itinerary."
         },
         {
             "id": "mh3t20y",
@@ -465,11 +472,11 @@
             "score": 0,
             "post_id": "1j5se26",
             "classification": "other",
-            "characteristic": "event ticketing issue",
+            "characteristic": "ticket_availability",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Issues with ticket availability and pricing for events can occur, sometimes requiring purchase at higher prices."
+            "summary": "Discussing issues with ticket availability and pricing fluctuations."
         },
         {
             "id": "mgy9n95",
@@ -477,11 +484,11 @@
             "score": 3,
             "post_id": "1j5se26",
             "classification": "other",
-            "characteristic": "animal welfare",
+            "characteristic": "animal_welfare",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Animal cafes in Japan, such as those with owls, are controversial due to animal welfare concerns. Consider the ethical implications before patronizing such establishments."
+            "summary": "Critique of animal cafes in Japan due to lax animal welfare laws, advising against patronizing such establishments."
         },
         {
             "id": "mgr9tn5",
@@ -493,7 +500,7 @@
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Hostels are available for budget accommodations in Tokyo, suitable for adults in the 40-50 age range. Alternatively, inexpensive hotels just north of central areas can be considered."
+            "summary": "Inquiring about the suitability of hostels for middle-aged adults and considering budget-friendly hotel options in Tokyo."
         },
         {
             "id": "mgpfyue",
@@ -501,7 +508,7 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "travel_tip",
-            "characteristic": "cost management",
+            "characteristic": "budgeting",
             "locations": [
                 {
                     "lat": 35.4437,
@@ -512,7 +519,7 @@
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "Staying in Yokohama may help lower accommodation and food costs when visiting Tokyo, though it involves some commuting."
+            "summary": "Discussing budget considerations for accommodations and food in Yokohama to reduce costs."
         },
         {
             "id": "mgppe1r",
@@ -524,7 +531,7 @@
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "For a large group, securing accommodations in the same building but in multiple rooms may be necessary, as a single room will not suffice."
+            "summary": "Accommodation planning for a large group, considering multiple rooms in the same building."
         },
         {
             "id": "mh4xwvf",
@@ -536,7 +543,7 @@
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Expression of gratitude, likely in response to helpful travel advice."
+            "summary": "Expression of gratitude for received travel advice."
         },
         {
             "id": "mgrj80c",
@@ -544,23 +551,23 @@
             "score": 1,
             "post_id": "1j5se26",
             "classification": "travel_tip",
-            "characteristic": "accommodation advice",
+            "characteristic": "accommodation",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "In Japan, some hotels offer women-only floors, and business hotel chains like Dormy Inn might provide small but functional rooms."
+            "summary": "Discussion on the availability of women-only floors in Japanese hotels and suggesting business hotel chains like Dormy Inn."
         },
         {
             "id": "mgs3j2v",
             "body": "Ty will check them after we get home. We've used vrbo here maybe there are vrbo listing or something like it out there too.",
             "score": 1,
             "post_id": "1j5se26",
-            "classification": "travel_tip",
-            "characteristic": "accommodation booking",
+            "classification": "travel_suggestion",
+            "characteristic": "accommodation_options",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "For accommodations, consider checking VRBO listings or similar platforms for options that might be available in your destination."
+            "summary": "Considering alternative accommodation options similar to VRBO listings in Japan."
         },
         {
             "id": "mh6oxc6",
@@ -568,11 +575,11 @@
             "score": 1,
             "post_id": "1j8ojjv",
             "classification": "travel_tip",
-            "characteristic": "trip planning resources",
+            "characteristic": "planning_resources",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "For those planning a trip to Japan, starting with the updated FAQ on the JapanTravel subreddit can provide valuable tips and information."
+            "summary": "Directing to a FAQ resource for trip planning tips on a travel-focused subreddit."
         },
         {
             "id": "mh6a4sr",
@@ -580,11 +587,11 @@
             "score": 1,
             "post_id": "1j8ml1h",
             "classification": "travel_tip",
-            "characteristic": "trip planning resources",
+            "characteristic": "planning_resources",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Refer to the continuously updated FAQ section on the JapanTravel subreddit for comprehensive trip planning information."
+            "summary": "Directing to a FAQ resource for trip planning tips on a travel-focused subreddit."
         },
         {
             "id": "mh6v36o",
@@ -592,11 +599,11 @@
             "score": 1,
             "post_id": "1j8ml1h",
             "classification": "travel_tip",
-            "characteristic": "itinerary advice",
+            "characteristic": "itinerary_optimization",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "For visiting Himeji, a full day is not necessary; about 3-4 hours should suffice, especially if using a guide. Consider applying for a free volunteer guide to enhance your visit."
+            "summary": "Advice on optimizing a travel itinerary including Himeji, suggesting a shorter visit duration with a guide."
         },
         {
             "id": "mh5ey2s",
@@ -604,23 +611,36 @@
             "score": 1,
             "post_id": "1j8idwo",
             "classification": "travel_tip",
-            "characteristic": "trip planning resources",
+            "characteristic": "planning_resources",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "For trip planning in Japan, the FAQ section of the JapanTravel subreddit is a valuable resource that is regularly updated."
+            "summary": "Directing to a FAQ resource for trip planning tips on a travel-focused subreddit."
         },
         {
             "id": "mh66274",
             "body": "I am no pro, but 2 shinkansen trips to a similar place - why not travel to kyoto, stay overnight, go to jara then return to tokyo.",
             "score": 2,
             "post_id": "1j8idwo",
-            "classification": "travel_tip",
-            "characteristic": "itinerary suggestion",
-            "locations": [],
+            "classification": "travel_suggestion",
+            "characteristic": "itinerary_planning",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.6851,
+                    "lng": 135.805,
+                    "location_name": "Nara",
+                    "characteristic": "city"
+                }
+            ],
             "start_date": null,
             "end_date": null,
-            "summary": "Suggesting a travel plan involving overnight stays in Kyoto to efficiently visit nearby locations."
+            "summary": "Suggesting an itinerary involving overnight stays in Kyoto and a visit to Nara, with travel considerations."
         },
         {
             "id": "mh6lanf",
@@ -628,11 +648,30 @@
             "score": 2,
             "post_id": "1j8idwo",
             "classification": "travel_tip",
-            "characteristic": "cost and travel efficiency",
-            "locations": [],
+            "characteristic": "itinerary_optimization",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.6851,
+                    "lng": 135.805,
+                    "location_name": "Nara",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.6937,
+                    "lng": 135.5023,
+                    "location_name": "Osaka",
+                    "characteristic": "city"
+                }
+            ],
             "start_date": null,
             "end_date": null,
-            "summary": "Traveling between Tokyo, Kyoto, and Nara can be costly and time-consuming; consider staying overnight in Osaka to break the journey and reduce travel stress."
+            "summary": "Advice on optimizing travel between Tokyo, Kyoto, and Nara, suggesting an overnight stay in Osaka to reduce costs and travel time."
         },
         {
             "id": "mh6r940",
@@ -640,11 +679,24 @@
             "score": 1,
             "post_id": "1j8idwo",
             "classification": "travel_tip",
-            "characteristic": "itinerary advice",
-            "locations": [],
+            "characteristic": "itinerary_review",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.6851,
+                    "lng": 135.805,
+                    "location_name": "Nara",
+                    "characteristic": "city"
+                }
+            ],
             "start_date": null,
             "end_date": null,
-            "summary": "The proposed itinerary involving multiple cities and activities may be exciting but potentially tiring and expensive due to long travel times."
+            "summary": "Review of a travel itinerary involving Tokyo, Kyoto, and Nara, noting potential for high costs and a rushed experience."
         },
         {
             "id": "mh6t36p",
@@ -652,11 +704,11 @@
             "score": 1,
             "post_id": "1j8idwo",
             "classification": "travel_tip",
-            "characteristic": "accommodation and transport",
+            "characteristic": "accommodation",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Consider staying at a hotel near the airport on your last day, which offers shuttle services to the airport, for convenience."
+            "summary": "Suggesting accommodation near the airport with shuttle service for ease of airport transfer."
         },
         {
             "id": "mh6ubtp",
@@ -664,11 +716,18 @@
             "score": 1,
             "post_id": "1j8idwo",
             "classification": "travel_suggestion",
-            "characteristic": "itinerary sharing",
-            "locations": [],
+            "characteristic": "itinerary_example",
+            "locations": [
+                {
+                    "lat": 35.6895,
+                    "lng": 139.6917,
+                    "location_name": "Tokyo",
+                    "characteristic": "city"
+                }
+            ],
             "start_date": "2023-11-25",
             "end_date": "2023-11-25",
-            "summary": "Sharing a personal travel itinerary for Tokyo, including arrival and initial activities, to help others plan their trips."
+            "summary": "Sharing a personal travel itinerary for Tokyo as an example, including specific activities and locations."
         },
         {
             "id": "mh6ve9h",
@@ -676,11 +735,30 @@
             "score": 1,
             "post_id": "1j8idwo",
             "classification": "travel_suggestion",
-            "characteristic": "itinerary suggestion",
-            "locations": [],
+            "characteristic": "itinerary_planning",
+            "locations": [
+                {
+                    "lat": 35.0116,
+                    "lng": 135.7681,
+                    "location_name": "Kyoto",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.6851,
+                    "lng": 135.805,
+                    "location_name": "Nara",
+                    "characteristic": "city"
+                },
+                {
+                    "lat": 34.9671,
+                    "lng": 135.7727,
+                    "location_name": "Fushimi Inari",
+                    "characteristic": "shrine"
+                }
+            ],
             "start_date": null,
             "end_date": null,
-            "summary": "Suggest combining a visit to Kyoto with Nara, including an early morning visit to Fushimi Inari before heading to Nara."
+            "summary": "Suggesting an overnight stay in Kyoto combined with a visit to Nara and Fushimi Inari for an optimized travel itinerary."
         }
     ]
 }

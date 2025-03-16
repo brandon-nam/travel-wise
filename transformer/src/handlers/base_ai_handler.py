@@ -16,7 +16,5 @@ class BaseAIHandler(BaseHandler, ABC):
         tells the model to return a JSON object.
         """
         query_result = self.ai_provider.prompt(prompt)
-        cleaned_result = re.sub(
-            r"^```json\s*|\s*```$", "", query_result.strip(), flags=re.MULTILINE
-        )
+        cleaned_result = re.sub(r"^```json\s*|\s*```$", "", query_result.strip(), flags=re.MULTILINE)
         return json.loads(cleaned_result)

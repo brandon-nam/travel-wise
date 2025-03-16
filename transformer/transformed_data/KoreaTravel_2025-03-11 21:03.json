@@ -31,24 +31,24 @@
             "body": "* Join other travelers on Discord: [https://discord.gg/HfsGHkr9WT](https://discord.gg/HfsGHkr9WT) \n* See who's visiting when: [https://koreatravel.notion.site](https://koreatravel.notion.site)",
             "score": 1,
             "post_id": "1ivhtzh",
-            "classification": "travel_tip",
-            "characteristic": "meeting other travelers",
+            "classification": "other",
+            "characteristic": "communication platform",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Travelers can join a Discord community and check a Notion site to connect with others visiting Korea."
+            "summary": "Join other travelers on Discord and see who's visiting when via provided links."
         },
         {
             "id": "mf4zxls",
             "body": "As always, looking for concerts later than March? Check out the ticket sites directly! :) My summary post will be up in the end of the previous month.  \n[Global Interpark](https://www.globalinterpark.",
             "score": 20,
             "post_id": "1izqhir",
-            "classification": "travel_tip",
-            "characteristic": "event information",
+            "classification": "travel_suggestion",
+            "characteristic": "event",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "For concerts happening in Seoul after March, visitors can check ticket sites directly."
+            "summary": "For concerts beyond March in Seoul, check ticket sites directly at the end of the previous month."
         },
         {
             "id": "mf5487h",
@@ -56,11 +56,11 @@
             "score": 5,
             "post_id": "1izqhir",
             "classification": "other",
-            "characteristic": "gratitude expression",
+            "characteristic": "appreciation",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment expresses gratitude."
+            "summary": ""
         },
         {
             "id": "mf8lkg4",
@@ -68,23 +68,23 @@
             "score": 3,
             "post_id": "1izqhir",
             "classification": "other",
-            "characteristic": "celebrity controversy",
+            "characteristic": "controversy",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment discusses a celebrity controversy."
+            "summary": ""
         },
         {
             "id": "mfbnt72",
             "body": "Thank you so much for compiling this! I am traveling to Korea in March for vacation and had no idea about the Lee Minho fan meet! I managed to snag the second to last ticket!!",
             "score": 3,
             "post_id": "1izqhir",
-            "classification": "other",
-            "characteristic": "gratitude expression",
+            "classification": "travel_suggestion",
+            "characteristic": "event",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment expresses gratitude for information about a fan meet event."
+            "summary": ""
         },
         {
             "id": "mffj90m",
@@ -92,23 +92,23 @@
             "score": 3,
             "post_id": "1izqhir",
             "classification": "other",
-            "characteristic": "gratitude expression",
+            "characteristic": "appreciation",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment expresses appreciation."
+            "summary": ""
         },
         {
             "id": "mflfqga",
             "body": "Currently in Korea. Thanks for this!",
             "score": 3,
             "post_id": "1izqhir",
-            "classification": "other",
-            "characteristic": "current status update",
+            "classification": "travel_suggestion",
+            "characteristic": "current location",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment provides a current status update from a traveler in Korea."
+            "summary": ""
         },
         {
             "id": "mf9giqy",
@@ -116,11 +116,11 @@
             "score": 1,
             "post_id": "1izqhir",
             "classification": "travel_tip",
-            "characteristic": "administrative procedure",
+            "characteristic": "documentation",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Foreign visitors in Korea need a certificate of alien registration to claim physical tickets from Melon Ticket."
+            "summary": "To claim physical tickets from Melon Ticket, a 'certificate of alien registration' is needed."
         },
         {
             "id": "mfmbmar",
@@ -128,18 +128,11 @@
             "score": 1,
             "post_id": "1izqhir",
             "classification": "travel_suggestion",
-            "characteristic": "event inquiry",
-            "locations": [
-                {
-                    "lat": 37.5665,
-                    "lng": 126.978,
-                    "location_name": "Seoul",
-                    "characteristic": "city"
-                }
-            ],
-            "start_date": "2023-04-29",
-            "end_date": "2023-05-03",
-            "summary": "For concerts in Seoul between April 29 and May 3, check local event listings."
+            "characteristic": "event",
+            "locations": [],
+            "start_date": "2025-04-29",
+            "end_date": "2025-05-03",
+            "summary": "Inquire about concerts in Seoul from April 29 to May 3, 2025."
         },
         {
             "id": "mf6uuqn",
@@ -148,17 +141,10 @@
             "post_id": "1izqhir",
             "classification": "travel_tip",
             "characteristic": "ticket acquisition",
-            "locations": [
-                {
-                    "lat": 37.5665,
-                    "lng": 126.978,
-                    "location_name": "Seoul",
-                    "characteristic": "city"
-                }
-            ],
+            "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "To acquire tickets for sold-out events in Seoul, checking ticket resale sites is recommended."
+            "summary": "For acquiring tickets to sold-out events in Seoul, recommendations are given."
         },
         {
             "id": "mf9gwek",
@@ -166,11 +152,11 @@
             "score": 1,
             "post_id": "1izqhir",
             "classification": "travel_tip",
-            "characteristic": "ticket acquisition",
+            "characteristic": "documentation",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "For ticket collection from Melon Global, use your passport as identification."
+            "summary": "Use a passport as identification when buying from Melon Global."
         },
         {
             "id": "mfmcbir",
@@ -178,18 +164,11 @@
             "score": 2,
             "post_id": "1izqhir",
             "classification": "travel_suggestion",
-            "characteristic": "event timing",
-            "locations": [
-                {
-                    "lat": 37.5665,
-                    "lng": 126.978,
-                    "location_name": "Seoul",
-                    "characteristic": "city"
-                }
-            ],
-            "start_date": "2023-05-02",
-            "end_date": "2023-05-03",
-            "summary": "Most concerts in Korea occur on weekends; check event sites for specific dates."
+            "characteristic": "event",
+            "locations": [],
+            "start_date": "2025-05-02",
+            "end_date": "2025-05-03",
+            "summary": "Most concerts in Korea occur over the weekend; check specific sites for events around May 2-3, 2025."
         },
         {
             "id": "mf77n86",
@@ -198,17 +177,10 @@
             "post_id": "1izqhir",
             "classification": "travel_tip",
             "characteristic": "ticket acquisition",
-            "locations": [
-                {
-                    "lat": 37.5665,
-                    "lng": 126.978,
-                    "location_name": "Seoul",
-                    "characteristic": "city"
-                }
-            ],
+            "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Monitor ticket websites for cancellations to purchase tickets for sold-out events."
+            "summary": "Monitor ticket websites for cancellations as a method to acquire tickets."
         },
         {
             "id": "mf81btm",
@@ -217,17 +189,10 @@
             "post_id": "1izqhir",
             "classification": "travel_tip",
             "characteristic": "ticket acquisition",
-            "locations": [
-                {
-                    "lat": 37.5665,
-                    "lng": 126.978,
-                    "location_name": "Seoul",
-                    "characteristic": "city"
-                }
-            ],
+            "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Check for ticket cancellations especially close to the event date to find available tickets."
+            "summary": "Pay attention to ticket cancellation deadlines to potentially acquire tickets."
         },
         {
             "id": "mf71625",
@@ -239,7 +204,7 @@
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Consider using a proxy service to acquire event tickets."
+            "summary": "Consider using a proxy service for ticket acquisition."
         },
         {
             "id": "mfbzems",
@@ -247,11 +212,11 @@
             "score": 1,
             "post_id": "1izqhir",
             "classification": "other",
-            "characteristic": "clarification",
+            "characteristic": "documentation clarification",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment provides clarification on identification required for ticket collection."
+            "summary": "Clarification on documentation required for ticket collection: passport or alien certificate."
         },
         {
             "id": "mfmiocl",
@@ -259,11 +224,11 @@
             "score": 1,
             "post_id": "1izqhir",
             "classification": "other",
-            "characteristic": "gratitude expression",
+            "characteristic": "appreciation",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment expresses gratitude for helpful information."
+            "summary": ""
         },
         {
             "id": "mfv30zn",
@@ -287,7 +252,7 @@
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "A proxy service called kstairway.music on Instagram is recommended."
+            "summary": "Recommendation for a proxy service via Instagram."
         },
         {
             "id": "mfxc0ih",
@@ -299,7 +264,7 @@
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment shares a personal connection with an owner of a recommended Instagram service."
+            "summary": ""
         },
         {
             "id": "mh5r9nb",
@@ -307,23 +272,23 @@
             "score": 23,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Purse and bag charms are suggested as souvenirs from Seoul."
+            "summary": "Purchase purse and bag charms as gifts."
         },
         {
             "id": "mh5sauh",
             "body": "hangover cures",
             "score": 16,
             "post_id": "1j8js3k",
-            "classification": "travel_suggestion",
-            "characteristic": "product suggestion",
+            "classification": "other",
+            "characteristic": "product type",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Hangover cures are suggested as useful items to buy in Seoul."
+            "summary": "Suggest purchasing hangover cures."
         },
         {
             "id": "mh5skp6",
@@ -331,18 +296,11 @@
             "score": 14,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
-            "locations": [
-                {
-                    "lat": 37.5665,
-                    "lng": 126.978,
-                    "location_name": "Seoul",
-                    "characteristic": "city"
-                }
-            ],
+            "characteristic": "shopping",
+            "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Snacks and tea from open-air markets in Seoul are recommended as souvenirs."
+            "summary": "Recommend buying snacks and tea from small, open-air markets in Seoul."
         },
         {
             "id": "mh62z1l",
@@ -350,11 +308,11 @@
             "score": 9,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Skin care items and small souvenirs from a palace museum in Seoul are recommended."
+            "summary": "Suggest purchasing skincare items, bookmarks, and scarves as gifts."
         },
         {
             "id": "mh6evhp",
@@ -362,11 +320,11 @@
             "score": 7,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "HBAF from duty-free shops is suggested as a popular item among friends."
+            "summary": "Recommend stocking up on HBAF from duty-free."
         },
         {
             "id": "mh5rj07",
@@ -374,11 +332,11 @@
             "score": 18,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Jewelry, especially from places like Nyunyu in Seoul, is recommended for its quality."
+            "summary": "Advise buying jewelry from specific stores in Seoul."
         },
         {
             "id": "mh5xq0p",
@@ -386,11 +344,11 @@
             "score": 5,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "product suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Contact lenses are noted as being much cheaper in Korea."
+            "summary": "Highlight the affordability of contact lenses in Korea."
         },
         {
             "id": "mh64zhs",
@@ -398,11 +356,11 @@
             "score": 4,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Skincare products, freeze-dried fruit, and leather purses are suggested as souvenirs."
+            "summary": "Recommend purchasing skincare products, freeze-dried fruit, socks, and leather purses."
         },
         {
             "id": "mh5r35x",
@@ -410,11 +368,11 @@
             "score": 18,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "service suggestion",
+            "characteristic": "cosmetic procedure",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Double eyelid surgery is mentioned as a service to consider in Seoul."
+            "summary": "Suggest considering double eyelid surgery."
         },
         {
             "id": "mh66qep",
@@ -422,11 +380,11 @@
             "score": 3,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Kakao Friends alpaca plush toys are suggested as ideal personal items for flights."
+            "summary": "Recommend purchasing Kakao Friends alpaca as a personal item on flights."
         },
         {
             "id": "mh69u1t",
@@ -434,11 +392,11 @@
             "score": 3,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Fruit gummies, skincare products, and HBAF are recommended as souvenirs."
+            "summary": "Recommend purchasing HBAF, fruit gummies, and skincare products."
         },
         {
             "id": "mh6tzyi",
@@ -446,11 +404,11 @@
             "score": 3,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "A variety of souvenirs including face masks, jewelry, and Makgeolli from Yeosu are suggested."
+            "summary": "List of recommended items to bring back from Korea, including face masks and souvenirs."
         },
         {
             "id": "mh638xx",
@@ -458,30 +416,30 @@
             "score": 3,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [
                 {
-                    "lat": 37.5665,
-                    "lng": 126.978,
-                    "location_name": "Seoul",
-                    "characteristic": "city"
+                    "lat": 37.5115,
+                    "lng": 127.0593,
+                    "location_name": "Shinsegae Mall",
+                    "characteristic": "shopping mall"
                 }
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "Seoul edition t-shirts available at New Balance and Adidas stores in Shinsegae Mall are recommended."
+            "summary": "Recommend purchasing Seoul edition t-shirts from specific stores in Shinsegae Mall."
         },
         {
             "id": "mh5vnxy",
             "body": "Rejuran",
             "score": 1,
             "post_id": "1j8js3k",
-            "classification": "travel_suggestion",
-            "characteristic": "service suggestion",
+            "classification": "other",
+            "characteristic": "cosmetic product",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Rejuran, a skin treatment, is mentioned as a service available in Seoul."
+            "summary": "Mention of 'Rejuran' as a cosmetic product."
         },
         {
             "id": "mh6bfn1",
@@ -489,11 +447,11 @@
             "score": 1,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Maxim Coffee and other food items are suggested as souvenirs."
+            "summary": "Suggest buying food and Maxim Coffee."
         },
         {
             "id": "mh6dg25",
@@ -501,23 +459,23 @@
             "score": 1,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Artbox is recommended for shopping in Seoul."
+            "summary": "Recommend visiting Artbox for shopping."
         },
         {
             "id": "mh6gzhn",
             "body": "swing chip lol",
             "score": 1,
             "post_id": "1j8js3k",
-            "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "classification": "other",
+            "characteristic": "product type",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Swing chips are mentioned as a light-hearted souvenir suggestion."
+            "summary": "Mention of 'swing chip' as a product type."
         },
         {
             "id": "mh6mgww",
@@ -525,11 +483,11 @@
             "score": 1,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Choonsik and other Kakao Friends items are recommended as souvenirs."
+            "summary": "Recommend purchasing Choonsik and other Kakao friends."
         },
         {
             "id": "mh6mt9q",
@@ -537,11 +495,11 @@
             "score": 1,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Glasses are suggested as a practical purchase in Seoul."
+            "summary": "Suggest buying glasses."
         },
         {
             "id": "mh6v53q",
@@ -549,11 +507,11 @@
             "score": 1,
             "post_id": "1j8js3k",
             "classification": "other",
-            "characteristic": "inquiry",
+            "characteristic": "shopping inquiry",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment is an inquiry about where to buy certain items."
+            "summary": "Inquiry about where to purchase certain items."
         },
         {
             "id": "mh6smnp",
@@ -561,11 +519,11 @@
             "score": 1,
             "post_id": "1j8js3k",
             "classification": "other",
-            "characteristic": "transportation regulation inquiry",
+            "characteristic": "travel logistics",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment inquires about transportation regulations for skincare products."
+            "summary": "Discuss travel logistics related to carrying skincare products on planes."
         },
         {
             "id": "mh707r1",
@@ -577,7 +535,7 @@
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment inquires about the time required to get prescription lenses."
+            "summary": "Inquire about the time required to get prescription lenses."
         },
         {
             "id": "mh5xmvq",
@@ -585,11 +543,11 @@
             "score": 6,
             "post_id": "1j8js3k",
             "classification": "other",
-            "characteristic": "expression",
+            "characteristic": "emotional expression",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment contains an emoticon expression."
+            "summary": ""
         },
         {
             "id": "mh65l43",
@@ -597,18 +555,11 @@
             "score": 3,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
-            "locations": [
-                {
-                    "lat": 37.5665,
-                    "lng": 126.978,
-                    "location_name": "Seoul",
-                    "characteristic": "city"
-                }
-            ],
+            "characteristic": "shopping",
+            "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "Custom prints exclusive to Seoul are available at some Nike stores."
+            "summary": "Mention of custom prints available at one of the Nike stores in Seoul."
         },
         {
             "id": "mh6zkj5",
@@ -616,18 +567,18 @@
             "score": 1,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [
                 {
-                    "lat": 37.5611,
-                    "lng": 126.985,
+                    "lat": 37.5638,
+                    "lng": 126.9852,
                     "location_name": "Myeongdong",
                     "characteristic": "shopping district"
                 }
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "The North Face store in Myeongdong offers Seoul exclusive items and custom patches."
+            "summary": "Recommend visiting The North Face store in Myeongdong for Seoul exclusive additions and patches."
         },
         {
             "id": "mh6u4zb",
@@ -635,11 +586,11 @@
             "score": 2,
             "post_id": "1j8js3k",
             "classification": "other",
-            "characteristic": "travel regulation clarification",
+            "characteristic": "travel logistics",
             "locations": [],
             "start_date": null,
             "end_date": null,
-            "summary": "This comment clarifies travel regulations regarding checking skincare products."
+            "summary": "Discuss travel logistics concerning checking skincare products on flights."
         },
         {
             "id": "mh66u1l",
@@ -647,18 +598,18 @@
             "score": 4,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [
                 {
-                    "lat": 37.5704,
-                    "lng": 127.0101,
+                    "lat": 37.5714,
+                    "lng": 127.0107,
                     "location_name": "Dongdaemun",
                     "characteristic": "shopping district"
                 }
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "A store in Dongdaemun is noted for offering exclusive prints and patches."
+            "summary": "Mention custom prints and patches available at a store in Dongdaemun."
         },
         {
             "id": "mh6cegm",
@@ -666,24 +617,18 @@
             "score": 3,
             "post_id": "1j8js3k",
             "classification": "travel_suggestion",
-            "characteristic": "souvenir suggestion",
+            "characteristic": "shopping",
             "locations": [
                 {
-                    "lat": 37.5611,
-                    "lng": 126.985,
-                    "location_name": "Myeongdong",
-                    "characteristic": "shopping district"
-                },
-                {
-                    "lat": 37.5563,
-                    "lng": 126.9228,
+                    "lat": 37.5535,
+                    "lng": 126.9219,
                     "location_name": "Hongdae",
-                    "characteristic": "shopping district"
+                    "characteristic": "neighborhood"
                 }
             ],
             "start_date": null,
             "end_date": null,
-            "summary": "Stores in Myeongdong and Hongdae offer location-specific patches on caps."
+            "summary": "Recommend stores in Myeongdong and Hongdae for specific Seoul-themed patches."
         }
     ]
 }
