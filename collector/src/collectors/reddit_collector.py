@@ -74,6 +74,7 @@ class RedditCollector(Collector):
                         "id": post.id,
                         "url": post.url,
                         "score": post.score,
+                        "num_comments": len(comments),
                     }
                 )
                 all_comments.extend(comments)
