@@ -5,7 +5,6 @@ import TipCard from "../components/TipCard";
 import { useState, useContext, useEffect  } from "react";
 import { useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
-import { fetchComments, fetchPosts, fetchTips } from "../lib/API";
 import ClickDetailsContext from "../contexts/ClickDetailsContext";
 
 function TipsPage() {

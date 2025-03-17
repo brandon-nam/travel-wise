@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { useNavigate } from "react-router";
 
 function LandingPage() {
-    const [text, setText] = useState("");
-    const [result, setResult] = useState("");
     let navigate = useNavigate();
 
     function handleClick() {

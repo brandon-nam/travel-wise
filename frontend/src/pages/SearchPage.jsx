@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router";
 import QueryParametersContext from "../contexts/QueryParametersContext";
 
