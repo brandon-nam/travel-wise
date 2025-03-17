@@ -143,7 +143,7 @@ function SuggestionsPage() {
             </div>
 
             <div id="place-container" className="h-[calc(100vh-4rem)] w-2/5 flex flex-col">
-                <div id="search-place-tag-field" className="fixed flex flex-row w-2/5 bg-gray-100 h-20 py-5 px-3">
+                <div id="search-place-tag-field" className="fixed flex flex-row w-2/5 justify-between bg-gray-100 h-20 py-5 px-3">
 
                     <CharacteristicsFilterContainer
                         handleSearch={handleSearch}

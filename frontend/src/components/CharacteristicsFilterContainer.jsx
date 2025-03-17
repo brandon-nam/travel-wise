@@ -13,7 +13,7 @@ export default function CharacteristicsFilterContainer({
     rotation,
 }) {
     return (
-        <div className="h-full bg-white rounded-full shadow flex items-center relative">
+        <div className="h-full bg-white rounded-full shadow flex items-center w-2/3 relative">
             <input
                 className="h-full px-3 flex-grow border-none outline-none"
                 type="text"
