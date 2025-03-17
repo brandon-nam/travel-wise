@@ -3,16 +3,19 @@ import ClickMarkerContext from "../contexts/ClickMarkerContext";
 import ClickDetailsContext from "../contexts/ClickDetailsContext";
 import MapComponent from "../components/MapComponent";
 import PlaceCard from "../components/PlaceCard";
+
 import { useEffect, useState, useContext, useRef } from "react";
 import { useSearchParams } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import { fetchSuggestionsByCountry, fetchCharacteristics } from "../lib/API";
+import { useSuggestions } from "../hooks/useSuggestionsData";
+import { useLocationCharacteristics } from "../hooks/useLocationCharacteristics";
+import { sortSuggestions } from "../utils/sorting";
+import SortDropdown from "../components/SortDropdown";
+import CharacteristicsFilter from "../components/CharacteristicsFilter";
 
 function SuggestionsPage() {
     const { clickedMarker } = useContext(ClickMarkerContext);
     const { expandedElement, clickedSuggestion } = useContext(ClickDetailsContext);
     const [searchCharacteristicsResults, setSearchCharacteristicsResults] = useState([]);
-    const [sortBy, setSortBy] = useState("descending");
     const [totalSuggestions, setTotalSuggestions] = useState([]);
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [showAllPopup, setShowAllPopup] = useState(false);
@@ -22,89 +25,7 @@ function SuggestionsPage() {
 
     const country = searchParams.get("country");
 
-    const filterAndFlattenLocations = (data) => {
-        const locations = {};
-        const result = [];
-        let appendIndex = 0;
-
-        data.forEach((suggestion) => {
-            try {
-                const { location_coordinates, ...rest } = suggestion;
-                location_coordinates.forEach((location) => {
-                    const locationKey = `${location.lat},${location.lng}`;
-                    if (!locations[locationKey]) {
-                        locations[locationKey] = appendIndex;
-                        result[appendIndex] = {
-                            location_name: location.location_name,
-                            characteristic: location.characteristic,
-                            lat: location.lat,
-                            lng: location.lng,
-                            score: rest.score, // score of the first comment
-                            // but we'll need to decide if we want to keep every post url or the one with the highest karma
-                            comments: [rest],
-                        };
-
-                        appendIndex++;
-                    } else {
-                        // if two comments talk about the same location, append comment
-                        const index = locations[locationKey];
-                        let { comments, score, ..._ } = result[index];
-                        // combine the karma scores
-                        score += rest.score;
-                        comments = [...comments, rest]; // appending rest
-                        result[index]["comments"] = comments;
-                        result[index]["score"] = score;
-                    }
-                });
-            } catch (e) {
-                console.log("error: ", e);
-            }
-        });
-
-        console.log(result);
-        return result;
-    };
-
-    const suggestionQuery = useQuery({
-        queryKey: ["travelSuggestions", country],
-        queryFn: () => fetchSuggestionsByCountry(country),
-        select: (data) => filterAndFlattenLocations(data),
-        staleTime: Infinity,
-    });
-
-    const suggestionData = suggestionQuery.data;
-
-    const sortSuggestions = (suggestions, sortOrder) => {
-        let sortedSuggestions = [...suggestions]; // Create a copy to avoid mutating the original array
-        sortedSuggestions.sort((a, b) => {
-            if (sortOrder === "ascending") {
-                return a["score"] - b["score"];
-            } else if (sortOrder === "descending") {
-                return b["score"] - a["score"];
-            } else {
-                // No sorting
-
-                return 0;
-            }
-        });
-
-        return sortedSuggestions;
-    };
-
-    const handleSortClick = (e) => {
-        if (e.target.value === sortBy) {
-            return; // if the user clicks the same sort by, do nothing.
-        }
-        setSortBy(e.target.value);
-        if (searchResults.length != 0) {
-            const sortedSuggestions = sortSuggestions(searchResults, e.target.value); // if the user has searched the tags, sort the results from the search.
-            setSearchResults(sortedSuggestions);
-        } else {
-            console.log("suggestionData at handleSortClick: ", suggestionData);
-            const sortedSuggestions = sortSuggestions(suggestionData, e.target.value); // else, sort the total result.
-            setTotalSuggestions(sortedSuggestions);
-        }
-    };
+    const suggestionData = useSuggestions(country).data;
 
     const [isOpen, setIsOpen] = useState(false);
     const [rotation, setRotation] = useState(0);
@@ -113,13 +34,7 @@ function SuggestionsPage() {
 
     const [characteristics, setCharacteristics] = useState([]);
 
-    const characteristicQuery = useQuery({
-        queryKey: ["suggestionsCharacteristics"],
-        queryFn: () => fetchCharacteristics("travel-suggestion"),
-        staleTime: Infinity,
-    });
-
-    const characteristicData = characteristicQuery.data;
+    const characteristicData = useLocationCharacteristics().data;
 
     useEffect(() => {
         if (suggestionData) {
@@ -244,41 +159,19 @@ function SuggestionsPage() {
                                 className="absolute top-full left-0 w-full bg-white rounded-[10%] shadow-md mt-1 overflow-hidden"
                             >
                                 <ul className="overflow-y-auto max-h-[200px]">
-                                    {searchCharacteristicsResults.length > 0
-                                        ? searchCharacteristicsResults.map((option) => (
-                                            <div onClick={() => handleOptionSelect(option)}>
-                                                <li
-                                                    key={option}
-                                                    className="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        id={option}
-                                                        checked={selectedOptions.includes(option)}
-                                                        onChange={() => {}}
-                                                        className="mr-2"
-                                                    />
-                                                    <div className="cursor-pointer">{option}</div>
-                                                </li>
-                                            </div>
-                                        ))
-                                        : characteristics.map((option) => (
-                                            <div onClick={() => handleOptionSelect(option)}>
-                                                <li
-                                                    key={option}
-                                                    className="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        id={option}
-                                                        checked={selectedOptions.includes(option)}
-                                                        onChange={() => {}}
-                                                        className="mr-2"
-                                                    />
-                                                    <div className="cursor-pointer">{option}</div>
-                                                </li>
-                                            </div>
-                                        ))}
+                                    {
+                                        searchCharacteristicsResults.length > 0 ? (
+                                            <CharacteristicsFilter
+                                                characteristics={searchCharacteristicsResults}
+                                                handleOptionSelect={handleOptionSelect}
+                                                selectedOptions={selectedOptions}
+                                            />
+                                        ) : <CharacteristicsFilter
+                                                characteristics={characteristics}
+                                                handleOptionSelect={handleOptionSelect}
+                                                selectedOptions={selectedOptions}
+                                            />
+                                    }
                                 </ul>
 
                                 <div
@@ -333,10 +226,14 @@ function SuggestionsPage() {
                         </div>
                     )}
 
-                    <select value={sortBy} onChange={handleSortClick} name="sort" className="ml-5">
+                    {/* <select value={sortBy} onChange={handleSortClick} name="sort" className="ml-5">
                         <option value="descending">Popularity⇂</option>
                         <option value="ascending">Popularity↿</option>
-                    </select>
+                    </select> */}
+                    <SortDropdown
+                        suggestions={searchResults.length > 0 ? searchResults : totalSuggestions}
+                        setSortedSuggestions={setSearchResults}
+                    />
                 </div>
                 <div id="search-place-tag-field-space" className="py-10"></div>
                 {expandedElement && expandedElement}
