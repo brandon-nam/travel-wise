@@ -1,0 +1,335 @@
+[
+    {
+        "id": "mi854no",
+        "body": "[deleted]",
+        "score": -1,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "content_deleted",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Content deleted."
+    },
+    {
+        "id": "mi85huo",
+        "body": "AFAIK, if you have an American Visa/Passport you're considered a tourist and can visit for up to 90 days. If you attempt to reinstate your Korean Citizenship or failed to renounce it and want to *live",
+        "score": -6,
+        "post_id": "1jd7d0b",
+        "classification": "travel_suggestion",
+        "characteristic": "visa_information",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Holders of an American Visa/Passport can visit as tourists for up to 90 days. Issues may arise if attempting to reinstate or have failed to renounce Korean Citizenship."
+    },
+    {
+        "id": "mi8e7x7",
+        "body": "Just to add, this page (Korean Embassy in Washington DC) has info on military service for Korean Nationals residing overseas.\n\n[2024 Military Service Information for Korean Nationals Residing Overseas",
+        "score": 3,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "legal_information",
+        "locations": [
+            {
+                "lat": 38.9161,
+                "lng": -77.0486,
+                "location_name": "Korean Embassy in Washington DC",
+                "characteristic": "embassy"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "The Korean Embassy in Washington DC provides information on military service obligations for Korean Nationals residing overseas."
+    },
+    {
+        "id": "mi8ekpm",
+        "body": "Are you looking to register/claim your Korean Citizenship?  And are you above or below 22 years of age?",
+        "score": 1,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "citizenship_inquiry",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Inquiries about registering or claiming Korean Citizenship should consider the individual's age, as different rules may apply above or below the age of 22."
+    },
+    {
+        "id": "mi8gvoc",
+        "body": "This! Also check in with your nearest Korean Conulate or embassy. Ultimately comes down to if are registered to the National registry. You can have your parents inquire too I think.",
+        "score": 1,
+        "post_id": "1jd7d0b",
+        "classification": "travel_tip",
+        "characteristic": "consulate_contact",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For issues related to Korean citizenship registration, contacting the nearest Korean consulate or embassy is advisable. Family members may also assist in the inquiry."
+    },
+    {
+        "id": "mi87sgf",
+        "body": "Korea does allow dual citizenship under a few special circumstances (with \"being born to Korean parent(s) overseas\" being one).",
+        "score": 3,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "citizenship_information",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Korea permits dual citizenship under specific conditions, such as being born overseas to Korean parents."
+    },
+    {
+        "id": "mi85oub",
+        "body": "I have an American citizenship since I was born here but the worry is what if I have a Korean citizenship that I don\u2019t know about because my parents had me when they were still not us citizens. I woul",
+        "score": 1,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "citizenship_concern",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Concerns about unrecognized Korean citizenship may arise if born in the U.S. to parents who were not yet U.S. citizens."
+    },
+    {
+        "id": "mi8doqw",
+        "body": "This is wrong because it depends if OPs parents registered him as a Korean citizen when he was born hence will have dual citizenship. It specifically says this in the official korean/US embassy websit",
+        "score": 1,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "citizenship_registration",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Dual citizenship depends on whether one's birth was registered in Korea by their parents."
+    },
+    {
+        "id": "mi8fng7",
+        "body": "I know that I already missed the deadline to claim mine, unfortunately. I'm over 22, so I can only \uad6d\uc801\uc774\ud0c8\uc2e0\uace0 at this point. The problem with that is that it can take more than a year to process, and I al",
+        "score": 1,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "citizenship_process",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Claiming Korean citizenship after age 22 involves a lengthy process that can exceed a year."
+    },
+    {
+        "id": "mi8h78a",
+        "body": "Sorry to hear.  A while back, there was some discussion about what happens at age 23; is the Korean Citizenship automatically lost or does Korea need to serve the individual with a choice of nationali",
+        "score": 1,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "citizenship_status",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Clarification needed on whether Korean Citizenship is automatically lost or requires a choice of nationality at age 23."
+    },
+    {
+        "id": "mi8hz7e",
+        "body": "I've found through multiple calls to the consulate that the Korean citizenship is never automatically lost. Even though my birth had not been registered, and I had passed the age-22 deadline, they sai",
+        "score": 1,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "citizenship_clarification",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Korean citizenship is not automatically lost with age, even if the birth was not registered in Korea."
+    },
+    {
+        "id": "mi8jzpf",
+        "body": "Interesting, thanks for the clarification.  I had a feeling this was the case, as especially with the males it allows them to prosecute claims if the person comes back to Korea (from Korea's standpoin",
+        "score": 1,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "legal_implications",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Legal implications of unclaimed Korean citizenship can affect males, particularly regarding military service obligations."
+    },
+    {
+        "id": "mi8molg",
+        "body": "I've deferred my original study term, so I'll hopefully have everything ready before then. And thanks, fingers crossed.",
+        "score": 1,
+        "post_id": "1jd7d0b",
+        "classification": "other",
+        "characteristic": "study_preparation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Preparation for study terms can be strategically planned to align with resolving citizenship or legal issues."
+    },
+    {
+        "id": "mi8sl2e",
+        "body": "You can always contact them to know for sure, but I\u2019ve never been turned away for my tattoos. It\u2019s not like Japan.",
+        "score": 2,
+        "post_id": "1jdaf2h",
+        "classification": "travel_tip",
+        "characteristic": "cultural_advice",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "In Korea, tattoos are generally more socially accepted compared to Japan, and contacting specific venues for their policies is recommended."
+    },
+    {
+        "id": "mi90xye",
+        "body": "When you searched this sub for tattoos and saunas or jjimjilbang what came up??",
+        "score": 1,
+        "post_id": "1jdaf2h",
+        "classification": "other",
+        "characteristic": "forum_search",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Searching online forums like Reddit can provide insights into cultural norms around tattoos in places like saunas or jjimjilbangs in Korea."
+    },
+    {
+        "id": "mi8vo2f",
+        "body": "Thanks! Have you been there?",
+        "score": 1,
+        "post_id": "1jdaf2h",
+        "classification": "travel_suggestion",
+        "characteristic": "location_inquiry",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Direct inquiries about specific locations or experiences can provide personalized travel advice."
+    },
+    {
+        "id": "mi6r950",
+        "body": "Protests here are controlled. They just stay in their lane and police handle them efficiently 99% of the time. There was only that one time where it turned nasty and it happened in the wee hours. Anyw",
+        "score": 25,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "protest_management",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Protests in Korea are generally well-managed and controlled, rarely affecting public services or safety."
+    },
+    {
+        "id": "mi6or5m",
+        "body": "Meh should be fine. There are protests every weekend if not minor ones every day. The city deals with it pretty efficiently.",
+        "score": 15,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "protest_frequency",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Protests are a frequent occurrence in Korea but are handled efficiently by the city."
+    },
+    {
+        "id": "mi6t0pt",
+        "body": "I was staying in front of Anguk station few weeks ago and every evening on Fridays, Saturdays and Sundays was a protest directly in front of my Airbnb. It was a little noisy if I was taking a nap befo",
+        "score": 5,
+        "post_id": "1jd0kr2",
+        "classification": "travel_tip",
+        "characteristic": "accommodation_choice",
+        "locations": [
+            {
+                "lat": 37.5765,
+                "lng": 126.9856,
+                "location_name": "Anguk Station",
+                "characteristic": "subway station"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Choosing accommodations near protest areas like Anguk Station may involve noise disruptions during protest activities."
+    },
+    {
+        "id": "mi6ydb6",
+        "body": "I was there during the protests and martial law was declared. Never had disruptions to public transport or access to anything. The people protesting were there to make their point but at no point did",
+        "score": 6,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "protest_experience",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Even during martial law, protests in Korea do not typically disrupt public transport or access to services."
+    },
+    {
+        "id": "mi766he",
+        "body": "There\u2019s something going on every day but mostly l more people turn up at rallies over the weekends. I just got back from Seoul. It\u2019s non violent. There was even a split of groups demonstrating between",
+        "score": 3,
+        "post_id": "1jd0kr2",
+        "classification": "travel_tip",
+        "characteristic": "event_timing",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Protests in Seoul are non-violent and more frequent on weekends, allowing for peaceful participation or observation."
+    },
+    {
+        "id": "mi79q09",
+        "body": "It\u2019s safe, don\u2019t worry.",
+        "score": 4,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "safety_reassurance",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Travelers can be reassured of safety in Korea, even during frequent protests."
+    },
+    {
+        "id": "mi7h6mj",
+        "body": "The two camps are always either at Gwanghwamun or Anguk/Jonggak area. They won't impede your activities but there will be some noise during the day.",
+        "score": 2,
+        "post_id": "1jd0kr2",
+        "classification": "travel_tip",
+        "characteristic": "activity_impact",
+        "locations": [
+            {
+                "lat": 37.571,
+                "lng": 126.9768,
+                "location_name": "Gwanghwamun",
+                "characteristic": "city area"
+            },
+            {
+                "lat": 37.5765,
+                "lng": 126.9856,
+                "location_name": "Anguk",
+                "characteristic": "city area"
+            },
+            {
+                "lat": 37.5704,
+                "lng": 126.983,
+                "location_name": "Jonggak",
+                "characteristic": "city area"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Protest activities in areas like Gwanghwamun, Anguk, and Jonggak are noticeable but do not impede day-to-day activities."
+    },
+    {
+        "id": "mi6vxsg",
+        "body": "Protests in Korea have been strictly non-violent cultural protests since the 2000s. The possibility of protests turning violent is slim because both the protest organizers, civic groups, and the polic",
+        "score": 3,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "protest_nature",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Cultural protests in Korea have been non-violent since the 2000s, with a low risk of violence due to organized and policed events."
+    },
+    {
+        "id": "mi83udn",
+        "body": "I just walked by the protest today. I did not feel unsafe at all. Pretty organized and lots of police to manage it all.",
+        "score": 1,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "protest_observation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Protests in Korea are well-organized and do not pose safety risks to bystanders, with ample police presence."
+    }
+]

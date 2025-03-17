@@ -1,0 +1,421 @@
+[
+    {
+        "id": "mi2lab7",
+        "body": "Please carry and wear a face mask during a cherry blossom season. Yellow dust (\ud669\uc0ac) and ultra-fine dust (\ucd08\ubbf8\uc138\uba3c\uc9c0) are insane during the season and they cause pulmonary inflammation and are retained longe",
+        "score": 35,
+        "post_id": "1jcj1s6",
+        "classification": "travel_tip",
+        "characteristic": "health",
+        "locations": [],
+        "start_date": "2023-03-30",
+        "end_date": "2023-04-13",
+        "summary": "During cherry blossom season, it is advisable to carry and wear a face mask due to high levels of yellow dust and ultra-fine dust, which can cause pulmonary inflammation."
+    },
+    {
+        "id": "mi3o3j2",
+        "body": "We will arrive in Jeju March 24th. I will try to update here.",
+        "score": 7,
+        "post_id": "1jcj1s6",
+        "classification": "travel_suggestion",
+        "characteristic": "location update",
+        "locations": [
+            {
+                "lat": 33.489,
+                "lng": 126.4983,
+                "location_name": "Jeju",
+                "characteristic": "island"
+            }
+        ],
+        "start_date": "2023-03-24",
+        "end_date": "2023-03-24",
+        "summary": "Travelers will be arriving in Jeju on March 24th."
+    },
+    {
+        "id": "mi3dks9",
+        "body": "Awesome. Looks like the expected peak blooming is around the same time I'll be in Seoul",
+        "score": 3,
+        "post_id": "1jcj1s6",
+        "classification": "travel_suggestion",
+        "characteristic": "location timing",
+        "locations": [
+            {
+                "lat": 37.5665,
+                "lng": 126.978,
+                "location_name": "Seoul",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": "2023-03-30",
+        "end_date": "2023-04-03",
+        "summary": "The peak cherry blossom bloom in Seoul is expected to coincide with a traveler's visit from March 30th to April 3rd."
+    },
+    {
+        "id": "mi3oc2z",
+        "body": "Hi travelling to Seoul from March 30th to April 3 for cherry blossom season. We will hit up all the usual cherry blossom spots in Seoul like Yeouido, Seokchon Lake, Seoul Forest etc.\n\nBUT one of the d",
+        "score": 3,
+        "post_id": "1jcj1s6",
+        "classification": "travel_suggestion",
+        "characteristic": "itinerary planning",
+        "locations": [
+            {
+                "lat": 37.5665,
+                "lng": 126.978,
+                "location_name": "Seoul",
+                "characteristic": "city"
+            },
+            {
+                "lat": 37.5207,
+                "lng": 126.9341,
+                "location_name": "Yeouido",
+                "characteristic": "park"
+            },
+            {
+                "lat": 37.5153,
+                "lng": 127.104,
+                "location_name": "Seokchon Lake",
+                "characteristic": "lake"
+            },
+            {
+                "lat": 37.5448,
+                "lng": 127.0386,
+                "location_name": "Seoul Forest",
+                "characteristic": "forest"
+            }
+        ],
+        "start_date": "2023-03-30",
+        "end_date": "2023-04-03",
+        "summary": "Travel itinerary for Seoul from March 30th to April 3rd includes visiting popular cherry blossom spots such as Yeouido, Seokchon Lake, and Seoul Forest."
+    },
+    {
+        "id": "mi7wf8r",
+        "body": "Hi! Is there a website where people post photos of cherry blossom sites real time? \ud83e\udd7a planning to go to Busan on the 26th! Hopefully I find some blooms by then",
+        "score": 2,
+        "post_id": "1jcj1s6",
+        "classification": "travel_suggestion",
+        "characteristic": "information seeking",
+        "locations": [
+            {
+                "lat": 35.1796,
+                "lng": 129.0756,
+                "location_name": "Busan",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": "2023-03-26",
+        "end_date": "2023-03-26",
+        "summary": "For real-time cherry blossom photos, travelers can search locations on Instagram, filtering by recent posts. This is useful for planning a visit to Busan on March 26th."
+    },
+    {
+        "id": "mi8g7ph",
+        "body": "I\u2019ll be in Jeju 3/20-3/23. Will let you all know what I see",
+        "score": 2,
+        "post_id": "1jcj1s6",
+        "classification": "travel_suggestion",
+        "characteristic": "location update",
+        "locations": [
+            {
+                "lat": 33.489,
+                "lng": 126.4983,
+                "location_name": "Jeju",
+                "characteristic": "island"
+            }
+        ],
+        "start_date": "2023-03-20",
+        "end_date": "2023-03-23",
+        "summary": "A traveler will be in Jeju from March 20th to 23rd and plans to share updates."
+    },
+    {
+        "id": "mi39wbo",
+        "body": "I'll be in South Korea from Apr 14th to 20th visiting Seoul, DMZ, and Nami Island. What are my chances to see cherry blossoms?",
+        "score": 2,
+        "post_id": "1jcj1s6",
+        "classification": "travel_suggestion",
+        "characteristic": "itinerary planning",
+        "locations": [
+            {
+                "lat": 37.5665,
+                "lng": 126.978,
+                "location_name": "Seoul",
+                "characteristic": "city"
+            },
+            {
+                "lat": 38.3731,
+                "lng": 127.2028,
+                "location_name": "DMZ",
+                "characteristic": "military zone"
+            },
+            {
+                "lat": 37.7913,
+                "lng": 127.5251,
+                "location_name": "Nami Island",
+                "characteristic": "island"
+            }
+        ],
+        "start_date": "2023-04-14",
+        "end_date": "2023-04-20",
+        "summary": "A traveler visiting Seoul, DMZ, and Nami Island from April 14th to 20th inquires about the likelihood of seeing cherry blossoms during their visit."
+    },
+    {
+        "id": "mi3i18d",
+        "body": "Will be there only on 20th \ud83d\ude2d\ud83d\ude2d\ud83d\ude2d\ud83d\ude2d",
+        "score": 1,
+        "post_id": "1jcj1s6",
+        "classification": "other",
+        "characteristic": "general statement",
+        "locations": [],
+        "start_date": "2023-04-20",
+        "end_date": "2023-04-20",
+        "summary": "A traveler expresses disappointment about being in a location only on April 20th."
+    },
+    {
+        "id": "mi6yhkd",
+        "body": "We only arrive on the 22nd. How\u2019s it like then?",
+        "score": 1,
+        "post_id": "1jcj1s6",
+        "classification": "other",
+        "characteristic": "general inquiry",
+        "locations": [],
+        "start_date": "2023-04-22",
+        "end_date": "2023-04-22",
+        "summary": "A traveler inquires about the conditions expected on April 22nd."
+    },
+    {
+        "id": "mi4pxok",
+        "body": "I am traveling in 3 weeks and found this site tracking air quality https://aqicn.org/city/seoul/",
+        "score": 6,
+        "post_id": "1jcj1s6",
+        "classification": "travel_tip",
+        "characteristic": "health",
+        "locations": [
+            {
+                "lat": 37.5665,
+                "lng": 126.978,
+                "location_name": "Seoul",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Travelers can track air quality in Seoul using the website https://aqicn.org/city/seoul/, which is useful for health considerations."
+    },
+    {
+        "id": "mi6bmyu",
+        "body": "Is that because of the cherry blossoms or because of things just blooming in general? Is that dust or pollen the same as other parts of the world? Is there anything about the pollen in Korea that make",
+        "score": 3,
+        "post_id": "1jcj1s6",
+        "classification": "other",
+        "characteristic": "general inquiry",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "A traveler inquires whether the dust during cherry blossom season in Korea is similar to other parts of the world and if it is related to pollen or general blooming."
+    },
+    {
+        "id": "mi5hohp",
+        "body": "Sounds good \ud83d\udc4c",
+        "score": 3,
+        "post_id": "1jcj1s6",
+        "classification": "other",
+        "characteristic": "general response",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "A traveler agrees or confirms a statement positively."
+    },
+    {
+        "id": "mi8nof0",
+        "body": "Check on schedule festival, I've visit Jinhae long time ago. At that time there were Festival Host by Marine Corps and Shinee are the guest performance. I decided to watch and stay overnight there, ba",
+        "score": 1,
+        "post_id": "1jcj1s6",
+        "classification": "travel_suggestion",
+        "characteristic": "event planning",
+        "locations": [
+            {
+                "lat": 35.1333,
+                "lng": 128.71,
+                "location_name": "Jinhae",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Travelers can check festival schedules for events, such as the one in Jinhae, which may include performances and overnight stays."
+    },
+    {
+        "id": "mi8rqli",
+        "body": "I search locations on Instagram and sort by recent posts to see if cherry blossoms are at their peak",
+        "score": 1,
+        "post_id": "1jcj1s6",
+        "classification": "travel_tip",
+        "characteristic": "information seeking",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Travelers can use Instagram to check if cherry blossoms are at their peak by sorting posts by recent uploads."
+    },
+    {
+        "id": "mi8rjcs",
+        "body": "I'm afraid the chance is very low:(",
+        "score": 1,
+        "post_id": "1jcj1s6",
+        "classification": "other",
+        "characteristic": "general response",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "A traveler expresses a low expectation regarding an unspecified event or occurrence."
+    },
+    {
+        "id": "mi8cs2a",
+        "body": "No it's not because of pollen. It is mostly because of pollution and desert sand blowing over from China/Mongolia during this time of the year.",
+        "score": 2,
+        "post_id": "1jcj1s6",
+        "classification": "other",
+        "characteristic": "explanation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "The dust during cherry blossom season in Korea is primarily due to pollution and desert sand from China/Mongolia, not pollen."
+    },
+    {
+        "id": "mi8szy1",
+        "body": "It's like less than 45 mins on the KTX..I would do a day trip.",
+        "score": 3,
+        "post_id": "1jdakms",
+        "classification": "travel_tip",
+        "characteristic": "transport",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Traveling to a destination by KTX takes less than 45 minutes, making it feasible for a day trip."
+    },
+    {
+        "id": "mi8u0ib",
+        "body": "Yes, you can do a day trip there.  But you'll miss a lot of stuff.",
+        "score": 2,
+        "post_id": "1jdakms",
+        "classification": "travel_tip",
+        "characteristic": "travel planning",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "While a destination is reachable for a day trip, staying longer might allow for a more thorough exploration."
+    },
+    {
+        "id": "mi8tq04",
+        "body": "It is doable if you are willing to start early. I would recommend taking a taxi to see Bulguksa. Otherwise, all of the sites in Gyeongju are in close proximity. I would still recommend taking a taxi t",
+        "score": 1,
+        "post_id": "1jdakms",
+        "classification": "travel_tip",
+        "characteristic": "transport",
+        "locations": [
+            {
+                "lat": 35.8562,
+                "lng": 129.2247,
+                "location_name": "Gyeongju",
+                "characteristic": "city"
+            },
+            {
+                "lat": 35.7898,
+                "lng": 129.3319,
+                "location_name": "Bulguksa",
+                "characteristic": "temple"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For visiting Gyeongju and Bulguksa, starting early and using taxis is recommended due to the proximity of sites."
+    },
+    {
+        "id": "mi8v3j6",
+        "body": "Worked for me. Arrived there at around 11 am. Had a hard time spending the rest of the time for my train at 10 pm",
+        "score": 1,
+        "post_id": "1jdakms",
+        "classification": "other",
+        "characteristic": "personal experience",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "A traveler shares a personal experience of visiting a location and managing time until a late train departure."
+    },
+    {
+        "id": "mi8wque",
+        "body": "If you have a particular interest in history I'd say stay the night. It's probably doable as a day trip if you're highly organised, but if you're taking public transport, and spending time in the muse",
+        "score": 1,
+        "post_id": "1jdakms",
+        "classification": "travel_tip",
+        "characteristic": "travel planning",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For those interested in history, an overnight stay is recommended to fully experience the destination and its museums, especially if using public transport."
+    },
+    {
+        "id": "mi8vfh5",
+        "body": "What taksi pp should i use in Korea? Uber? How easy it is to get taxi using the app, and what is the general level of english spoken in Busan and Seoul?",
+        "score": 0,
+        "post_id": "1jdakms",
+        "classification": "travel_tip",
+        "characteristic": "transport",
+        "locations": [
+            {
+                "lat": 35.1796,
+                "lng": 129.0756,
+                "location_name": "Busan",
+                "characteristic": "city"
+            },
+            {
+                "lat": 37.5665,
+                "lng": 126.978,
+                "location_name": "Seoul",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "In Korea, taxis can be hailed via apps like Uber, but the level of English spoken by drivers in cities like Busan and Seoul may be limited."
+    },
+    {
+        "id": "mi8x0q2",
+        "body": "You can hail one from the street or take it from\nThe stand. Never had an issue with this. I find that English is not spoken much. I always had a hotel card with me indicating where I wanted to go.",
+        "score": 1,
+        "post_id": "1jdakms",
+        "classification": "travel_tip",
+        "characteristic": "transport",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Hailing taxis from the street or stands is generally easy, and carrying a hotel card with the destination written in Korean can help overcome language barriers."
+    },
+    {
+        "id": "mi8zi0j",
+        "body": "\ubd80\uc0b0\ub3d9\ubd80\ud130\ubbf8\ub110\n\n[https://naver.me/5FmdcojQ](https://naver.me/5FmdcojQ)",
+        "score": 2,
+        "post_id": "1jdbi2p",
+        "classification": "other",
+        "characteristic": "link sharing",
+        "locations": [
+            {
+                "lat": 35.1796,
+                "lng": 129.0756,
+                "location_name": "Busan Dongbu Inter-city Bus Terminal",
+                "characteristic": "bus terminal"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Link to Busan Dongbu Inter-city Bus Terminal: https://naver.me/5FmdcojQ"
+    },
+    {
+        "id": "mi90tit",
+        "body": "Thank you SO much!!! \nIs there any way you can figure out what time she is arriving? \nI can\u2019t find it on the ticket and it\u2019s all I have",
+        "score": 1,
+        "post_id": "1jdbi2p",
+        "classification": "other",
+        "characteristic": "information seeking",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "A traveler seeks help to determine the arrival time of a person as it is not indicated on the ticket."
+    }
+]

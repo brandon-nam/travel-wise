@@ -1,0 +1,279 @@
+[
+    {
+        "id": "mi7bo8j",
+        "body": "I live in Japan and have well more than 35 years of experience as a pescatarian here. I have decades of experience in long-drawn out conversations in Japanese in restaurants and in other settings abou",
+        "score": 0,
+        "post_id": "1jcozzc",
+        "classification": "other",
+        "characteristic": "personal experience",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For pescatarians in Japan, communication with restaurant staff is crucial to ensure dietary needs are met."
+    },
+    {
+        "id": "mi5mpdi",
+        "body": "That\u2019s very helpful, thank you!",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "other",
+        "characteristic": "gratitude",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Acknowledgment of helpful information."
+    },
+    {
+        "id": "mi7d9qt",
+        "body": "I\u2019m a native and haven\u2019t had any issues helping traveler friends at restaurants around Japan.  I mean sure, it can be limiting depending on the menu/restaurant but that\u2019s the same anywhere.",
+        "score": 2,
+        "post_id": "1jcozzc",
+        "classification": "other",
+        "characteristic": "personal experience",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Dining out in Japan may have limitations depending on the restaurant's menu, similar to other locations."
+    },
+    {
+        "id": "mi8htzh",
+        "body": "I am glad you have not had many troubles. I have had enough to always keep me alert and thorough when talking with food servers.",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "other",
+        "characteristic": "personal caution",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "It is important to communicate clearly with food servers to avoid dietary issues."
+    },
+    {
+        "id": "mi7fxnd",
+        "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+        "score": 1,
+        "post_id": "1jd4042",
+        "classification": "travel_tip",
+        "characteristic": "trip planning",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For trip planning tips in Japan, refer to the continuously updated FAQ section on the JapanTravel subreddit."
+    },
+    {
+        "id": "mi8cpdm",
+        "body": "Your first and second days look overly busy.",
+        "score": 1,
+        "post_id": "1jd4042",
+        "classification": "other",
+        "characteristic": "itinerary feedback",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "The itinerary for the first and second days may be too busy."
+    },
+    {
+        "id": "mi470mt",
+        "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+        "score": 1,
+        "post_id": "1jcqaov",
+        "classification": "travel_tip",
+        "characteristic": "trip planning",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For trip planning tips in Japan, refer to the continuously updated FAQ section on the JapanTravel subreddit."
+    },
+    {
+        "id": "mi64wju",
+        "body": "What time do you arrive ?\n\nThat's very, very, very overpacked. You'll be dead tired, quickly. Cut by half, leave a bit of slack, and visit an additional spot if you have time.\n\nDay 1, you won't have e",
+        "score": 2,
+        "post_id": "1jcqaov",
+        "classification": "travel_tip",
+        "characteristic": "itinerary advice",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "An overpacked itinerary can lead to fatigue; consider reducing activities by half for a more relaxed schedule."
+    },
+    {
+        "id": "mi1ilzl",
+        "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+        "score": 1,
+        "post_id": "1jce3yu",
+        "classification": "travel_tip",
+        "characteristic": "trip planning",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For trip planning tips in Japan, refer to the continuously updated FAQ section on the JapanTravel subreddit."
+    },
+    {
+        "id": "mi2lje5",
+        "body": "if you MUST pick one of these, pick #3 (and dont skip the garden at heian jingu, its the only reason to go there)\n\nif there are sakura flowers, #2 may sound great, but #3 still is the better choice AN",
+        "score": 4,
+        "post_id": "1jce3yu",
+        "classification": "travel_suggestion",
+        "characteristic": "destination choice",
+        "locations": [
+            {
+                "lat": 35.0159,
+                "lng": 135.7828,
+                "location_name": "Heian Shrine",
+                "characteristic": "place of worship"
+            }
+        ],
+        "start_date": "2023-03-30",
+        "end_date": "2023-04-13",
+        "summary": "Heian Shrine in Kyoto is recommended for its garden, especially during the cherry blossom season."
+    },
+    {
+        "id": "mi24xyk",
+        "body": "If cherry blossoms are out then Higashiyama and Philosophers Path. Start early to avoid the worst of crowds. Alao Heian-jingu has cherry blossoms",
+        "score": 2,
+        "post_id": "1jce3yu",
+        "classification": "travel_suggestion",
+        "characteristic": "destination timing and tips",
+        "locations": [
+            {
+                "lat": 35.0159,
+                "lng": 135.7828,
+                "location_name": "Heian Shrine",
+                "characteristic": "place of worship"
+            },
+            {
+                "lat": 35.0115,
+                "lng": 135.7982,
+                "location_name": "Philosopher's Path",
+                "characteristic": "tourist attraction"
+            }
+        ],
+        "start_date": "2023-03-30",
+        "end_date": "2023-04-13",
+        "summary": "Visiting Higashiyama and the Philosopher's Path in Kyoto during cherry blossom season is advised; start early to avoid crowds."
+    },
+    {
+        "id": "mi5jq5v",
+        "body": "If you do #3, the Philosopher\u2019s path is quite close.",
+        "score": 1,
+        "post_id": "1jce3yu",
+        "classification": "travel_suggestion",
+        "characteristic": "destination proximity",
+        "locations": [
+            {
+                "lat": 35.0115,
+                "lng": 135.7982,
+                "location_name": "Philosopher's Path",
+                "characteristic": "tourist attraction"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "The Philosopher's Path is conveniently located near other attractions in Kyoto."
+    },
+    {
+        "id": "mi7mdg2",
+        "body": "I think option 3 is probably the best, but I am very partial to Nanzen-ji. If you have any spare time you can always take a wander up the Philosopher's Path afterwards. I love that part of Kyoto.\n\nIf",
+        "score": 1,
+        "post_id": "1jce3yu",
+        "classification": "travel_suggestion",
+        "characteristic": "destination recommendation",
+        "locations": [
+            {
+                "lat": 35.0119,
+                "lng": 135.7945,
+                "location_name": "Nanzen-ji",
+                "characteristic": "place of worship"
+            },
+            {
+                "lat": 35.0115,
+                "lng": 135.7982,
+                "location_name": "Philosopher's Path",
+                "characteristic": "tourist attraction"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Nanzen-ji and the Philosopher's Path in Kyoto are highly recommended, with the possibility to explore additional nearby spots if time allows."
+    },
+    {
+        "id": "mi49m4u",
+        "body": "Honestly heian-jingu gardens are awesome regardless, and much easier to get to.",
+        "score": 2,
+        "post_id": "1jce3yu",
+        "classification": "travel_suggestion",
+        "characteristic": "destination praise",
+        "locations": [
+            {
+                "lat": 35.0159,
+                "lng": 135.7828,
+                "location_name": "Heian Shrine",
+                "characteristic": "place of worship"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Heian Shrine's gardens in Kyoto are highly praised and easily accessible."
+    },
+    {
+        "id": "mi7u3u6",
+        "body": "Yeahhhhh, and it's not too far to Nanzen-ji and Keage Incline which are famous cherry blossom spots. At least at Nanzen-ji there's also a lot of space, and many trees so crowds disperse a bit",
+        "score": 1,
+        "post_id": "1jce3yu",
+        "classification": "travel_suggestion",
+        "characteristic": "destination details",
+        "locations": [
+            {
+                "lat": 35.0119,
+                "lng": 135.7945,
+                "location_name": "Nanzen-ji",
+                "characteristic": "place of worship"
+            },
+            {
+                "lat": 35.0115,
+                "lng": 135.7982,
+                "location_name": "Philosopher's Path",
+                "characteristic": "tourist attraction"
+            },
+            {
+                "lat": 35.0117,
+                "lng": 135.7848,
+                "location_name": "Keage Incline",
+                "characteristic": "tourist attraction"
+            }
+        ],
+        "start_date": "2023-03-30",
+        "end_date": "2023-04-13",
+        "summary": "Nanzen-ji and Keage Incline in Kyoto are notable for cherry blossoms and offer spacious areas that help disperse crowds."
+    },
+    {
+        "id": "mi8bbr5",
+        "body": "Yeah Nanzenji is huge. When we were there there was a convention of some sorts and it was still incredibly easy to navigate.",
+        "score": 1,
+        "post_id": "1jce3yu",
+        "classification": "travel_suggestion",
+        "characteristic": "destination experience",
+        "locations": [
+            {
+                "lat": 35.0119,
+                "lng": 135.7945,
+                "location_name": "Nanzen-ji",
+                "characteristic": "place of worship"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Nanzen-ji in Kyoto is spacious enough to navigate easily, even during events."
+    },
+    {
+        "id": "mi4234l",
+        "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+        "score": 1,
+        "post_id": "1jcppyy",
+        "classification": "travel_tip",
+        "characteristic": "trip planning",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For trip planning tips in Japan, refer to the continuously updated FAQ section on the JapanTravel subreddit."
+    }
+]

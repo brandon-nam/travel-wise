@@ -1,0 +1,351 @@
+[
+    {
+        "id": "mi8c0kc",
+        "body": "Not an issue at all",
+        "score": 1,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "general_comment",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "No specific travel-related information provided."
+    },
+    {
+        "id": "mi8hkk3",
+        "body": "Just got back from seoul- stayed at the four seasons. Stayed 3 weeknights (not weekend) there was a bit of noise but could barely hear it in our room, it didn\u2019t bother us at all",
+        "score": 1,
+        "post_id": "1jd0kr2",
+        "classification": "travel_suggestion",
+        "characteristic": "accommodation_experience",
+        "locations": [
+            {
+                "lat": 37.5665,
+                "lng": 126.978,
+                "location_name": "Seoul",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "The Four Seasons in Seoul offers a relatively quiet accommodation experience even during weekdays."
+    },
+    {
+        "id": "mi8iz9h",
+        "body": "I wouldn't worry. I stayed at the Four Seasons last June (just around the corner from Koreana) and there were major protests on 1 of the days. Traffic was a bit jammed, definitely noisy but overall th",
+        "score": 1,
+        "post_id": "1jd0kr2",
+        "classification": "travel_suggestion",
+        "characteristic": "accommodation_experience",
+        "locations": [
+            {
+                "lat": 37.5665,
+                "lng": 126.978,
+                "location_name": "Seoul",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": "2022-06-01",
+        "end_date": "2022-06-30",
+        "summary": "During a stay at the Four Seasons in Seoul, nearby protests may cause noise and traffic jams but generally do not disrupt hotel stays significantly."
+    },
+    {
+        "id": "mi8ryww",
+        "body": "Just now leaving Korea after 7days of vacation. \n\nExperienced protests twice in 5 days in Seoul, mostly near Gwanghwamun. They are setup around the palace during the day but they are off to the side o",
+        "score": 1,
+        "post_id": "1jd0kr2",
+        "classification": "travel_suggestion",
+        "characteristic": "vacation_experience",
+        "locations": [
+            {
+                "lat": 37.5665,
+                "lng": 126.978,
+                "location_name": "Seoul",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Protests in Seoul, especially near Gwanghwamun and the palace, are mostly contained and do not majorly disrupt daily activities."
+    },
+    {
+        "id": "mi6vtz8",
+        "body": "I was down there on Saturday and it was incredibly loud.  I was talking to my gf about how pissed I would be if I had shelled out for a room at the Four Seasons.  Koreana is right there, too.  The guy",
+        "score": -8,
+        "post_id": "1jd0kr2",
+        "classification": "travel_suggestion",
+        "characteristic": "accommodation_noise",
+        "locations": [
+            {
+                "lat": 37.5665,
+                "lng": 126.978,
+                "location_name": "Seoul",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Noise levels can be high around the Four Seasons and Koreana hotels in Seoul during protests."
+    },
+    {
+        "id": "mi7kh1i",
+        "body": "Safe wasn't my concern as much as whether I'd be able to even make it to the hotel. Or leave it.",
+        "score": 0,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "travel_concern",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Concerns about reaching or leaving hotels during protests in Seoul are noted but not elaborated on."
+    },
+    {
+        "id": "mi8x7en",
+        "body": "I stayed at the four seasons during the protests. Not an issue whatsoever.",
+        "score": 1,
+        "post_id": "1jd0kr2",
+        "classification": "travel_suggestion",
+        "characteristic": "accommodation_experience",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Staying at the Four Seasons during protests in Seoul did not pose any issues."
+    },
+    {
+        "id": "mi74t1k",
+        "body": "Sir, this is a protest. You know because the citizens of the country are pissed at the cluster fuck that is their govt. Yall should try it some time.",
+        "score": 18,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "political_comment",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Comment discusses political dissatisfaction in an unspecified location."
+    },
+    {
+        "id": "mi7k5is",
+        "body": "Let's be clear here: I'm looking for all opinions, and this one is noted just as much as anyone else's. I appreciate the thoughts, experiences and perceptions of what's happening in Seoul and how it m",
+        "score": 3,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "discussion_request",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "General request for opinions about experiences in Seoul."
+    },
+    {
+        "id": "mi7a70a",
+        "body": "I don't care about getting down voted but I am curious as to how simply describing Gwanghamun on a Saturday is considered innaccurate by some?  If I had paid big money for a hotel room should I be mol",
+        "score": 1,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "discussion_about_accommodation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Discussion about the accuracy of describing noise levels in Gwanghamun on weekends."
+    },
+    {
+        "id": "mi8xd7b",
+        "body": "I stayed at the four seasons in a suite and the noise was not an issue.",
+        "score": 1,
+        "post_id": "1jd0kr2",
+        "classification": "travel_suggestion",
+        "characteristic": "accommodation_experience",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Noise was not an issue during a stay in a suite at the Four Seasons."
+    },
+    {
+        "id": "mi7e14q",
+        "body": "Because people are ridiculous. OP is asking for a suggestion about their hotel booking location considering protests, and you are giving your experience having witnessed a protest near the location th",
+        "score": 8,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "discussion_about_experience",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Discussion emphasizes sharing personal experiences regarding hotel bookings near protest areas."
+    },
+    {
+        "id": "mi7h4ej",
+        "body": "Ack. I paid big money for a room at the Four Seasons. We arrive next Sunday. Was it so loud? Should I look for another hotel?",
+        "score": 1,
+        "post_id": "1jd0kr2",
+        "classification": "travel_tip",
+        "characteristic": "accommodation_inquiry",
+        "locations": [
+            {
+                "lat": 37.5763,
+                "lng": 126.9768,
+                "location_name": "Gwanghwamun",
+                "characteristic": "city area"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Inquiry about potential noise issues at the Four Seasons near Gwanghwamun, considering changing hotels."
+    },
+    {
+        "id": "mi7fs6v",
+        "body": "Thanks.  That's what I was doing.  Giving them some info as it pertained to that location.  I like that general area and probably go once a month, weather permitting.  There is always something loud g",
+        "score": 7,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "discussion_about_location",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "General discussion about the noise and activity in the Gwanghwamun area."
+    },
+    {
+        "id": "mi7hf4p",
+        "body": "Request a room facing away from Gwanghamun, but if you arrive Sunday and are staying a few nights there shouldn't be anything unusual going on during the work week.  It's a nice and interesting part o",
+        "score": 3,
+        "post_id": "1jd0kr2",
+        "classification": "travel_tip",
+        "characteristic": "accommodation_advice",
+        "locations": [
+            {
+                "lat": 37.5665,
+                "lng": 126.978,
+                "location_name": "Seoul",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Advice to request a room facing away from Gwanghwamun when staying at a hotel in Seoul during the work week."
+    },
+    {
+        "id": "mi7krow",
+        "body": "Sending you a DM, please let me know what the plans are and how it goes, since we're booked in the same vicinity.",
+        "score": 0,
+        "post_id": "1jd0kr2",
+        "classification": "other",
+        "characteristic": "personal_message",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Personal message regarding travel plans in the vicinity of a previous commenter."
+    },
+    {
+        "id": "mi8noq9",
+        "body": "Korean temple food is close to vegan food.  \nThere are also bean restaurants that specialize in bean dishes with beans and tofu as the main ingredients.\n\nOther foods that come to mind are...  \nVegetab",
+        "score": 5,
+        "post_id": "1jd9th6",
+        "classification": "travel_suggestion",
+        "characteristic": "food_recommendation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Korean temple food and bean restaurants are good options for vegan food in Korea."
+    },
+    {
+        "id": "mi8mpxb",
+        "body": "Bibimbop is traditionally served vegan. Get the stone bowl kind.  Ssambop can be vegan, just tell the server you want vegan.",
+        "score": 3,
+        "post_id": "1jd9th6",
+        "classification": "travel_suggestion",
+        "characteristic": "food_recommendation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Bibimbop can be served vegan by requesting it without animal products."
+    },
+    {
+        "id": "mi8zc6s",
+        "body": "Sanchon in Insadong! It's a whole experience, and the owner is friendly as well  [Sanchon](https://maps.app.goo.gl/wpbeBs52xfPwfPhaA)",
+        "score": 1,
+        "post_id": "1jd9th6",
+        "classification": "travel_suggestion",
+        "characteristic": "restaurant_recommendation",
+        "locations": [
+            {
+                "lat": 37.5751,
+                "lng": 126.9854,
+                "location_name": "Insadong",
+                "characteristic": "neighborhood"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Sanchon in Insadong offers a unique dining experience with friendly service, suitable for those looking for traditional Korean meals."
+    },
+    {
+        "id": "mi8pk3w",
+        "body": "Be careful with Japchae - a lot of times it will have small amounts of Bulgogi in it. \n\nDon't eat kimchi as it will often use either oysters or shrimp for seasoning. \n\nThere are restaurants that serve",
+        "score": 1,
+        "post_id": "1jd9th6",
+        "classification": "travel_tip",
+        "characteristic": "food_advice",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Travelers should be cautious with Japchae and Kimchi due to potential non-vegan ingredients; some restaurants cater specifically to vegan diets."
+    },
+    {
+        "id": "mi8q6tw",
+        "body": "Thanks!! Do i have to go to a temple to eat or it\u2019s a cuisine I can find in certain restaurants?",
+        "score": 1,
+        "post_id": "1jd9th6",
+        "classification": "other",
+        "characteristic": "food_inquiry",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Korean temple cuisine is available in specific restaurants, not just in temples."
+    },
+    {
+        "id": "mi8pp1g",
+        "body": "Thanks for the recommendations! I was craving bibimbop but i always see eggs on them and wasn\u2019t sure if they used lard or meat. \uc644\uc804 \ucc44\uc2dd\uc8fc\uc758\uc790 Is that the right translation for vegan?",
+        "score": 1,
+        "post_id": "1jd9th6",
+        "classification": "other",
+        "characteristic": "food_inquiry",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Inquiry about the correct Korean translation for 'vegan' and specifics of vegan options in bibimbop."
+    },
+    {
+        "id": "mi8thk7",
+        "body": "Thanks for the recommendations! First time hearing about the savory hottok i always thought they came with sweet red beans only but that\u2019s sounds delicious \ud83e\udd24",
+        "score": 1,
+        "post_id": "1jd9th6",
+        "classification": "other",
+        "characteristic": "food_appreciation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Appreciation for learning about savory versions of traditional Korean hottok."
+    },
+    {
+        "id": "mi8qlwj",
+        "body": "If you googling '\uc0ac\ucc30\uc74c\uc2dd \uc2dd\ub2f9', there are a lot of them. I haven't been to any of them, so I can't recommend any specific ones.",
+        "score": 2,
+        "post_id": "1jd9th6",
+        "classification": "travel_tip",
+        "characteristic": "restaurant_search_tip",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Advice on finding restaurants specializing in temple cuisine by searching specific Korean phrases online."
+    },
+    {
+        "id": "mi89fwn",
+        "body": "\"I am told that sometimes the only way to connect with the best clinics is thru the concierge services\"\n\nWho told you that?",
+        "score": 2,
+        "post_id": "1jd6cnl",
+        "classification": "other",
+        "characteristic": "inquiry_response",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Response to an inquiry about the necessity of using concierge services to connect with top clinics."
+    }
+]

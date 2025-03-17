@@ -1,0 +1,394 @@
+[
+    {
+        "id": "mi8de36",
+        "body": ">Honestly I tried to stack as much things as I could\n\nAnd it shows. It's not a good idea but you'll get stressed by the timing and you won't enjoy the visits.",
+        "score": 2,
+        "post_id": "1jcwowv",
+        "classification": "travel_tip",
+        "characteristic": "packing",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Avoid overpacking your itinerary to prevent stress and ensure you enjoy your visits."
+    },
+    {
+        "id": "mi7tlns",
+        "body": "I thought you'd be staying in Kyoto till late into the evening before heading back to Osaka to rest, but if that's you doing everything during the daytime, then that's even worse. For your info, you c",
+        "score": 1,
+        "post_id": "1jcwowv",
+        "classification": "travel_suggestion",
+        "characteristic": "itinerary planning",
+        "locations": [
+            {
+                "lat": 35.0116,
+                "lng": 135.7681,
+                "location_name": "Kyoto",
+                "characteristic": "city"
+            },
+            {
+                "lat": 34.6937,
+                "lng": 135.5023,
+                "location_name": "Osaka",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Traveling between Kyoto and Osaka can be hectic if planned within a single day. Consider adjusting your schedule for a more relaxed experience."
+    },
+    {
+        "id": "mi7ttfn",
+        "body": "If you just like the movies and expect a movie experience then no. If you  like any of Harry Potter, Mario, Jaws, Minions,  Jurrasic Park and want to experience them in an interactive immersive level",
+        "score": 2,
+        "post_id": "1jcwowv",
+        "classification": "travel_suggestion",
+        "characteristic": "theme park attractions",
+        "locations": [
+            {
+                "lat": 34.6654,
+                "lng": 135.432,
+                "location_name": "Universal Studios Japan",
+                "characteristic": "theme park"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Universal Studios Japan in Osaka offers immersive experiences for fans of Harry Potter, Mario, Jaws, Minions, and Jurassic Park."
+    },
+    {
+        "id": "mi8dj6l",
+        "body": "Do you suggest I eliminate some of them?",
+        "score": 1,
+        "post_id": "1jcwowv",
+        "classification": "other",
+        "characteristic": "general query",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "It might be beneficial to eliminate some activities from your itinerary to avoid being overwhelmed."
+    },
+    {
+        "id": "mi7txf0",
+        "body": "Thank you. I will take a look at it!",
+        "score": 1,
+        "post_id": "1jcwowv",
+        "classification": "other",
+        "characteristic": "acknowledgment",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Acknowledgment of receiving travel advice."
+    },
+    {
+        "id": "mi8dxqj",
+        "body": "Yes. A least 1/3rd, if not half.\n\nKeep only the \"absolute must see\" (based on -your- preferences). If you have some free time, use it to visit the rest of your list.",
+        "score": 2,
+        "post_id": "1jcwowv",
+        "classification": "travel_tip",
+        "characteristic": "itinerary planning",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Reduce your itinerary by at least one-third, focusing on must-see attractions based on personal preference."
+    },
+    {
+        "id": "mi8e6xo",
+        "body": "Thank you, I will try to lighten it up.",
+        "score": 1,
+        "post_id": "1jcwowv",
+        "classification": "other",
+        "characteristic": "acknowledgment",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Acknowledgment of advice to lighten an itinerary."
+    },
+    {
+        "id": "mi8gdcc",
+        "body": "Good. \n\nRegroup them in \"close places\" from which you can walk (it's -almost- the case, but not always, in your proposal... For instance walking from Kabukiza to Yasukuni would be doable but long, and",
+        "score": 2,
+        "post_id": "1jcwowv",
+        "classification": "travel_tip",
+        "characteristic": "itinerary planning",
+        "locations": [
+            {
+                "lat": 35.6696,
+                "lng": 139.7649,
+                "location_name": "Kabukiza",
+                "characteristic": "theater"
+            },
+            {
+                "lat": 35.6941,
+                "lng": 139.7437,
+                "location_name": "Yasukuni",
+                "characteristic": "shrine"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Group destinations that are close to each other to save time and energy when traveling. Walking between distant places like Kabukiza and Yasukuni can be feasible but long."
+    },
+    {
+        "id": "mi3vuuf",
+        "body": "**Our FAQ is constantly being updated with more information and you can start** [**here**](https://www.reddit.com/r/JapanTravel/wiki/faqs/japantravel) **with regards to trip planning if you need tips,",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "trip planning resources",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For trip planning tips and resources, refer to the JapanTravel subreddit's FAQ."
+    },
+    {
+        "id": "mi5c8ng",
+        "body": "I like your itinerary, although each day is too  packed and ambitious for me. I would take my time and enjoy the experience instead of rushing to the next item on the list. Thumbs up to Kabukiza theat",
+        "score": 2,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "itinerary management",
+        "locations": [
+            {
+                "lat": 34.6851,
+                "lng": 135.805,
+                "location_name": "Osaka",
+                "characteristic": "city"
+            },
+            {
+                "lat": 34.6913,
+                "lng": 135.183,
+                "location_name": "Kobe",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "It's advisable to not overly pack daily itineraries to enjoy each experience fully, especially places like Kabukiza Theatre."
+    },
+    {
+        "id": "mi4za60",
+        "body": "I would recommend a spa break every 4-5 day.  \nbut since the first leg you will end up in hakone anyway,  \nSo try out spa in osaka/kobe area\n\nOsaka  \n[Spaworld](https://www.spaworld.co.jp/english/)\n\nK",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "travel_suggestion",
+        "characteristic": "spa recommendations",
+        "locations": [
+            {
+                "lat": 35.6696,
+                "lng": 139.7649,
+                "location_name": "Kabukiza Theatre",
+                "characteristic": "theater"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Consider scheduling spa breaks every 4-5 days during your trip, such as visiting Spa World in Osaka."
+    },
+    {
+        "id": "mi56pir",
+        "body": "Be wary about ramen and curry: most of it is made with meat as a matter of course, including even dishes called 'vegetable' ramen or 'vegetable' curry, because the 'vegetable' means effectively 'more",
+        "score": 2,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "food advice",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Be cautious with food labeling in Japan as dishes like 'vegetable' ramen or curry may still contain meat."
+    },
+    {
+        "id": "mi5ampz",
+        "body": "Day 8: Take the whole day off imo\n\nI wish I did. Maybe you've got more stamina/active than I am. But, that one breather day, where you don't have to think about traveling/where to eat, will feel nice.",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "rest day recommendation",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Including a rest day in your itinerary can provide a much-needed break from the continuous travel and activities."
+    },
+    {
+        "id": "mi5qw52",
+        "body": "For Osaka, I would definitely recommend go to Universal studio!! Personally I like universal studio more than Disneyland\n\nIn Universal studio, they have \u201c the Mario Cafe \u201c I loved it so much ! \n\nAlso",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "travel_suggestion",
+        "characteristic": "theme park recommendation",
+        "locations": [
+            {
+                "lat": 34.6654,
+                "lng": 135.432,
+                "location_name": "Universal Studios Japan",
+                "characteristic": "theme park"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Universal Studios Japan is highly recommended for its attractions, including the Mario Cafe."
+    },
+    {
+        "id": "mi6x69x",
+        "body": "In Tokyo, we enjoyed Harry Potter Studio Tour and Blue Note.\n\nYou should do Osaka Expo since you're already in Osaka and it's a once in a lifetime experience.",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "travel_suggestion",
+        "characteristic": "attraction recommendation",
+        "locations": [
+            {
+                "lat": 35.6895,
+                "lng": 139.6917,
+                "location_name": "Tokyo",
+                "characteristic": "city"
+            },
+            {
+                "lat": 34.6937,
+                "lng": 135.5023,
+                "location_name": "Osaka",
+                "characteristic": "city"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "While in Osaka, consider visiting the Osaka Expo for a unique experience, and enjoy attractions like the Harry Potter Studio Tour in Tokyo."
+    },
+    {
+        "id": "mi73h1a",
+        "body": "day 8, is a lot of downtime. at least check out the sculpture garden and find lunch if nothing else.",
+        "score": 0,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "activity suggestion",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Even on a downtime day, consider light activities like visiting a sculpture garden and finding a good lunch spot."
+    },
+    {
+        "id": "mi5o0s5",
+        "body": "Do you recommend anywhere where we could watch sumo practice? I know there are no tournaments happening while we are there. \nI think we might move the head spa to Osaka, thank you",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "travel_suggestion",
+        "characteristic": "cultural experience",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For cultural experiences like watching sumo practice, it's advised to check local resources, as many sumo activities may not be widely advertised in English."
+    },
+    {
+        "id": "mi594n4",
+        "body": "Will it be offensive if I ask for \u201cno meat\u201d or more specifically \u201cno pork, chicken, beef\u201d? I am okay with chicken broth for this trip because I understand that may be difficult to avoid, but I would l",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "food preferences",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "In Japan, asking for food without meat is generally acceptable, though avoiding all meat and meat-based broths can be challenging."
+    },
+    {
+        "id": "mi70dva",
+        "body": "\u201cVegetarian\u201d is an understood word there.  If you can\u2019t communicate pescatarian to them, I would say vegetarian but seafood is ok.",
+        "score": 0,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "food preferences",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Communicating dietary preferences such as vegetarian but accepting seafood is generally understood in Japan."
+    },
+    {
+        "id": "mi6umv9",
+        "body": "I think you are probably right, especially following two days at Disney and it being halfway through the trip",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "other",
+        "characteristic": "itinerary feedback",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Acknowledgment of itinerary feedback, especially considering the need for rest after extensive activities."
+    },
+    {
+        "id": "mi7lend",
+        "body": "There are not many sumo activities that we know, and most of it in japanese site T\\_T.  \n  \nAlso try spa in Tokyo too \n\nshinjuku -[Thermae-Yu ](https://thermae-yu.jp/)\n\nsuidobashi/tokyo dome - [Laqua]",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "travel_suggestion",
+        "characteristic": "spa and sumo activities",
+        "locations": [
+            {
+                "lat": 35.6895,
+                "lng": 139.6917,
+                "location_name": "Tokyo",
+                "characteristic": "city"
+            },
+            {
+                "lat": 35.7023,
+                "lng": 139.7745,
+                "location_name": "Thermae-Yu",
+                "characteristic": "spa"
+            },
+            {
+                "lat": 35.7009,
+                "lng": 139.7527,
+                "location_name": "Laqua",
+                "characteristic": "spa"
+            }
+        ],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For spa experiences in Tokyo, consider visiting Thermae-Yu and Laqua. Finding sumo practice sessions can be challenging and often in Japanese."
+    },
+    {
+        "id": "mi5guyy",
+        "body": "Japan is not really the culture to be asking for substitutions for food. It comes as it is intended to come.",
+        "score": 9,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "cultural etiquette",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "In Japan, it is culturally typical to accept food as prepared without requesting substitutions."
+    },
+    {
+        "id": "mi5gfjm",
+        "body": "Some people might be offended or annoyed, with the possible offence or annoyance correlated positively with the prices at the restaurant, but the problem you will face is that for many dishes (ramen a",
+        "score": 3,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "food etiquette",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Requesting food modifications in Japan may be met with resistance, especially in higher-end restaurants."
+    },
+    {
+        "id": "mi5he4m",
+        "body": "There are Reddit threads for Tokyo, Osaka, and Kyoto vegan and vegetarian options. So I would check them out.",
+        "score": 2,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "food resources",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "For vegetarian and vegan dining options in Tokyo, Osaka, and Kyoto, consult specific Reddit threads dedicated to these topics."
+    },
+    {
+        "id": "mi7u9wu",
+        "body": "Dashi - made with Bonito flakes (fish flakes) and konbu - is a main ingredient in Japanese cuisine. I've heard vegans talking about how ume onigiri are great and completely vegan. But the truth is tha",
+        "score": 1,
+        "post_id": "1jcozzc",
+        "classification": "travel_tip",
+        "characteristic": "food information",
+        "locations": [],
+        "start_date": null,
+        "end_date": null,
+        "summary": "Dashi, a common ingredient in Japanese cuisine, contains fish products. Vegans should be cautious, even with seemingly vegan options like ume onigiri."
+    }
+]
