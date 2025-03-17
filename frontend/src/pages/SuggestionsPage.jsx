@@ -8,9 +8,8 @@ import { useEffect, useState, useContext, useRef } from "react";
 import { useSearchParams } from "react-router";
 import { useSuggestions } from "../hooks/useSuggestionsData";
 import { useLocationCharacteristics } from "../hooks/useLocationCharacteristics";
-import { sortSuggestions } from "../utils/sorting";
+import { sortComments } from "../utils/sorting";
 import SortDropdown from "../components/SortDropdown";
-import CharacteristicsFilter from "../components/CharacteristicsFilter";
 import CharacteristicsFilterContainer from "../components/CharacteristicsFilterContainer";
 
 function SuggestionsPage() {
@@ -39,7 +38,7 @@ function SuggestionsPage() {
 
     useEffect(() => {
         if (suggestionData) {
-            const sortedSuggestions = sortSuggestions(suggestionData, "descending");
+            const sortedSuggestions = sortComments(suggestionData, "descending");
             setTotalSuggestions(sortedSuggestions);
         }
     }, [suggestionData]);
@@ -145,7 +144,6 @@ function SuggestionsPage() {
 
             <div id="place-container" className="h-[calc(100vh-4rem)] w-2/5 flex flex-col">
                 <div id="search-place-tag-field" className="fixed flex flex-row w-2/5 bg-gray-100 h-20 py-5 px-3">
-                    <div className="h-full bg-white rounded-full shadow flex items-center"></div>
 
                     <CharacteristicsFilterContainer
                         handleSearch={handleSearch}
@@ -158,7 +156,7 @@ function SuggestionsPage() {
                         handleShowAll={handleShowAll}
                         rotation={rotation}
                     />
-                    
+
                     {showAllPopup && (
                         <div style={popupStyles} className="flex items-center justify-center">
                             <div className="bg-white p-6 rounded shadow-lg" ref={showAllRef}>
@@ -193,8 +191,8 @@ function SuggestionsPage() {
                         </div>
                     )}
                     <SortDropdown
-                        suggestions={searchResults.length > 0 ? searchResults : totalSuggestions}
-                        setSortedSuggestions={setSearchResults}
+                        comments={searchResults.length > 0 ? searchResults : totalSuggestions}
+                        setSortedComments={setSearchResults}
                     />
                 </div>
                 <div id="search-place-tag-field-space" className="py-10"></div>
