@@ -97,12 +97,12 @@ function SuggestionsPage() {
         }
         setSortBy(e.target.value);
         if (searchResults.length != 0) {
-            const sortedCards = sortSuggestions(searchResults, e.target.value); // if the user has searched the tags, sort the results from the search.
-            setSearchCharacteristicsResults(sortedCards);
+            const sortedSuggestions = sortSuggestions(searchResults, e.target.value); // if the user has searched the tags, sort the results from the search.
+            setSearchResults(sortedSuggestions);
         } else {
             console.log("suggestionData at handleSortClick: ", suggestionData);
-            const sortedCards = sortSuggestions(suggestionData, e.target.value); // else, sort the total result.
-            setTotalSuggestions(sortedCards);
+            const sortedSuggestions = sortSuggestions(suggestionData, e.target.value); // else, sort the total result.
+            setTotalSuggestions(sortedSuggestions);
         }
     };
 
