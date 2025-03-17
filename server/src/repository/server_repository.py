@@ -1,6 +1,6 @@
 import os
 
-from database.sqlalchemy.models import Comment, Post, metadata
+from database.sqlalchemy.models import Comment, Post, Location, metadata
 from database.sqlalchemy.repository import Repository
 from flask import Response, jsonify, Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -91,11 +91,18 @@ class ServerRepository(Repository):
         return jsonify([country[0] for country in countries])
 
     def get_characteristics(self, classification: str = "") -> Response:
-        query = self.session.query(Comment.characteristic)
+        query = self.session.query(Location.characteristic)
 
         if classification in ("travel-suggestion", "travel-tip", "other"):
             classification = classification.replace("-", "_")
             query = query.filter(Comment.classification == classification)
+
+        characteristics = query.distinct().all()
+
+        return jsonify([characteristic[0] for characteristic in characteristics])
+
+    def get_locations_characteristics(self) -> Response:
+        query = self.session.query(Location.characteristic)
 
         characteristics = query.distinct().all()
 

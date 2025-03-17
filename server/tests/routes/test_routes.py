@@ -8,6 +8,7 @@ mock_get_posts_resp = b"mocked post response"
 mock_get_comments_resp = b"mocked comments response"
 mock_get_countries_resp = b"mocked countries response"
 mock_get_characteristics_resp = b"mocked characteristics response"
+mock_get_locations_characteristics_resp = b"mocked locations characteristics response"
 
 
 @pytest.fixture
@@ -18,6 +19,9 @@ def app():
     repo.get_comments.return_value = mock_get_comments_resp
     repo.get_countries.return_value = mock_get_countries_resp
     repo.get_characteristics.return_value = mock_get_characteristics_resp
+    repo.get_locations_characteristics.return_value = (
+        mock_get_locations_characteristics_resp
+    )
     create_routes(app, repo)
     return app
 
@@ -33,10 +37,12 @@ def client(app):
         ("/posts", mock_get_posts_resp),
         ("/comments", mock_get_comments_resp),
         ("/countries", mock_get_countries_resp),
-        ("/characteristics", mock_get_characteristics_resp),
+        ("/characteristics-comments", mock_get_characteristics_resp),
+        ("/characteristics-locations", mock_get_locations_characteristics_resp),
     ],
 )
 def test_get_endpoints(client: MagicMock, endpoint: str, expected_data: bytes) -> None:
     response = client.get(endpoint)
+
     assert response.status_code == 200
     assert response.data == expected_data
