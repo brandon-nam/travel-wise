@@ -13,12 +13,13 @@ export default function CharacteristicsFilterContainer({
     rotation,
 }) {
     return (
-        <div className="h-full bg-white rounded-full shadow flex items-center w-2/3 relative">
+        <div className="h-full bg-white rounded-full shadow flex items-center w-4/5 relative">
             <input
                 className="h-full px-3 flex-grow border-none outline-none"
                 type="text"
                 onChange={handleSearch}
                 onClick={toggleDropdown}
+                placeholder="search for tags..."
             />
 
             {isOpen && (
