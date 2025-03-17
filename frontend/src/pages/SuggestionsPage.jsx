@@ -11,6 +11,7 @@ import { useLocationCharacteristics } from "../hooks/useLocationCharacteristics"
 import { sortSuggestions } from "../utils/sorting";
 import SortDropdown from "../components/SortDropdown";
 import CharacteristicsFilter from "../components/CharacteristicsFilter";
+import CharacteristicsFilterContainer from "../components/CharacteristicsFilterContainer";
 
 function SuggestionsPage() {
     const { clickedMarker } = useContext(ClickMarkerContext);
@@ -145,53 +146,19 @@ function SuggestionsPage() {
             <div id="place-container" className="h-[calc(100vh-4rem)] w-2/5 flex flex-col">
                 <div id="search-place-tag-field" className="fixed flex flex-row w-2/5 bg-gray-100 h-20 py-5 px-3">
                     <div className="h-full bg-white rounded-full shadow flex items-center"></div>
-                    <div className="h-full bg-white rounded-full shadow flex items-center relative">
-                        <input
-                            className="h-full px-3 flex-grow border-none outline-none"
-                            type="text"
-                            onChange={handleSearch}
-                            onClick={toggleDropdown}
-                        />
 
-                        {isOpen && (
-                            <div
-                                ref={dropdownRef}
-                                className="absolute top-full left-0 w-full bg-white rounded-[10%] shadow-md mt-1 overflow-hidden"
-                            >
-                                <ul className="overflow-y-auto max-h-[200px]">
-                                    {
-                                        searchCharacteristicsResults.length > 0 ? (
-                                            <CharacteristicsFilter
-                                                characteristics={searchCharacteristicsResults}
-                                                handleOptionSelect={handleOptionSelect}
-                                                selectedOptions={selectedOptions}
-                                            />
-                                        ) : <CharacteristicsFilter
-                                                characteristics={characteristics}
-                                                handleOptionSelect={handleOptionSelect}
-                                                selectedOptions={selectedOptions}
-                                            />
-                                    }
-                                </ul>
-
-                                <div
-                                    className="w-full px-3 py-2 hover:bg-gray-100 cursor-pointer text-center"
-                                    onClick={handleShowAll}
-                                >
-                                    Show All Categories
-                                </div>
-                            </div>
-                        )}
-
-                        <button
-                            className="px-3 transition-transform duration-300"
-                            style={{ transform: `rotate(${rotation}deg)` }}
-                            onClick={toggleDropdown}
-                        >
-                            ✈️
-                        </button>
-                    </div>
-
+                    <CharacteristicsFilterContainer
+                        handleSearch={handleSearch}
+                        toggleDropdown={toggleDropdown}
+                        isOpen={isOpen}
+                        dropdownRef={dropdownRef}
+                        characteristics={searchCharacteristicsResults.length > 0 ? searchCharacteristicsResults : characteristics}
+                        handleOptionSelect={handleOptionSelect}
+                        selectedOptions={selectedOptions}
+                        handleShowAll={handleShowAll}
+                        rotation={rotation}
+                    />
+                    
                     {showAllPopup && (
                         <div style={popupStyles} className="flex items-center justify-center">
                             <div className="bg-white p-6 rounded shadow-lg" ref={showAllRef}>
@@ -225,11 +192,6 @@ function SuggestionsPage() {
                             </div>
                         </div>
                     )}
-
-                    {/* <select value={sortBy} onChange={handleSortClick} name="sort" className="ml-5">
-                        <option value="descending">Popularity⇂</option>
-                        <option value="ascending">Popularity↿</option>
-                    </select> */}
                     <SortDropdown
                         suggestions={searchResults.length > 0 ? searchResults : totalSuggestions}
                         setSortedSuggestions={setSearchResults}
