@@ -1,8 +1,5 @@
 name: Transformer to S3 workflow
 on:
-  push:
-    paths:
-      - 'transformer/**'
   workflow_dispatch:
 jobs:
   transform:
