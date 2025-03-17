@@ -49,6 +49,10 @@ class RedditTransformer(BaseTransformer):
                 target_directory, os.path.basename(file_path)
             )
 
+            if os.path.exists(transformed_file_path):
+                logger.info(f"file {transformed_file_path} already exists, skipping...")
+                continue
+
             with self.fs_access.open(transformed_file_path, "w") as f:
                 str_result = self.chain[0].handle(json.dumps(json_data))
                 json_result = json.loads(str_result)

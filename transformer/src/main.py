@@ -17,12 +17,12 @@ def main() -> None:
     fs_access = LocalFSAccess()
     post_transformer = RedditPostTransformer(fs_access)
     logger.info(
-        f"Running RedditPostTransformer, with handler chain {post_transformer.chain}"
+        f"Running RedditPostTransformer, with handler chain {[step.__class__.__name__ for step in post_transformer.chain]}"
     )
     post_transformer.transform()
     comment_transformer = RedditCommentTransformer(fs_access)
     logger.info(
-        f"Running RedditCommentTransformer, with handler chain {comment_transformer.chain}"
+        f"Running RedditCommentTransformer, with handler chain {[step.__class__.__name__ for step in comment_transformer.chain]}"
     )
     comment_transformer.transform()
 
