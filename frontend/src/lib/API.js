@@ -36,3 +36,9 @@ export async function fetchPosts() {
 
     return results.data
 }
+
+export async function fetchCharacteristics(classification) {
+    const results = await axios.get(`http://localhost:3203/characteristics-locations`); 
+
+    return results.data
+}
