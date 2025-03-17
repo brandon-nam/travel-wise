@@ -10,7 +10,7 @@ import { fetchSuggestionsByCountry, fetchCharacteristics } from "../lib/API";
 
 function SuggestionsPage() {
     const { clickedMarker } = useContext(ClickMarkerContext);
-    const { expandedElement, clickedSuggestion, handleClickPlaceDetails } = useContext(ClickDetailsContext);
+    const { expandedElement, clickedSuggestion } = useContext(ClickDetailsContext);
     const [searchCharacteristicsResults, setSearchCharacteristicsResults] = useState([]);
     const [sortBy, setSortBy] = useState("descending");
     const [totalSuggestions, setTotalSuggestions] = useState([]);
@@ -18,8 +18,7 @@ function SuggestionsPage() {
     const [showAllPopup, setShowAllPopup] = useState(false);
     const [searchParams] = useSearchParams();
 
-    const options = ["Art", "Business", "Chocolate"];
-    const searchResults = "";
+    const [searchResults, setSearchResults] = useState([]);
 
     const country = searchParams.get("country");
 
@@ -107,7 +106,6 @@ function SuggestionsPage() {
         }
     };
 
-    const [inputValue, setInputValue] = useState("");
     const [isOpen, setIsOpen] = useState(false);
     const [rotation, setRotation] = useState(0);
     const dropdownRef = useRef(null);
@@ -147,14 +145,9 @@ function SuggestionsPage() {
             setSearchCharacteristicsResults([]);
         } else {
             const characteristicsData = fuse.search(searchText).map((result) => result.item);
-            
-            setSearchCharacteristicsResults(characteristicsData);
-            console.log(searchCharacteristicsResults);
-        }
-    };
 
-    const handleInputChange = (event) => {
-        setInputValue(event.target.value);
+            setSearchCharacteristicsResults(characteristicsData);
+        }
     };
 
     const toggleDropdown = () => {
@@ -182,8 +175,18 @@ function SuggestionsPage() {
         }
     };
 
+    const handleOptionsChange = () => {
+        const filtered = totalSuggestions.filter((suggestion) => selectedOptions.includes(suggestion.characteristic));
+        console.log("filtered: ", filtered);
+        setSearchResults(filtered);
+    };
+
+    useEffect(() => {
+        console.log(selectedOptions);
+        handleOptionsChange();
+    }, [selectedOptions]);
+
     const handleShowAll = () => {
-        setInputValue("");
         setIsOpen(false);
         setShowAllPopup(true);
     };
@@ -243,39 +246,39 @@ function SuggestionsPage() {
                                 <ul className="overflow-y-auto max-h-[200px]">
                                     {searchCharacteristicsResults.length > 0
                                         ? searchCharacteristicsResults.map((option) => (
-                                              <div onClick={() => handleOptionSelect(option)}>
-                                                  <li
-                                                      key={option}
-                                                      className="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
-                                                  >
-                                                      <input
-                                                          type="checkbox"
-                                                          id={option}
-                                                          checked={selectedOptions.includes(option)}
-                                                          onChange={() => {}}
-                                                          className="mr-2"
-                                                      />
-                                                      <div className="cursor-pointer">{option}</div>
-                                                  </li>
-                                              </div>
-                                          ))
+                                            <div onClick={() => handleOptionSelect(option)}>
+                                                <li
+                                                    key={option}
+                                                    className="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        id={option}
+                                                        checked={selectedOptions.includes(option)}
+                                                        onChange={() => {}}
+                                                        className="mr-2"
+                                                    />
+                                                    <div className="cursor-pointer">{option}</div>
+                                                </li>
+                                            </div>
+                                        ))
                                         : characteristics.map((option) => (
-                                              <div onClick={() => handleOptionSelect(option)}>
-                                                  <li
-                                                      key={option}
-                                                      className="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
-                                                  >
-                                                      <input
-                                                          type="checkbox"
-                                                          id={option}
-                                                          checked={selectedOptions.includes(option)}
-                                                          onChange={() => {}}
-                                                          className="mr-2"
-                                                      />
-                                                      <div className="cursor-pointer">{option}</div>
-                                                  </li>
-                                              </div>
-                                          ))}
+                                            <div onClick={() => handleOptionSelect(option)}>
+                                                <li
+                                                    key={option}
+                                                    className="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        id={option}
+                                                        checked={selectedOptions.includes(option)}
+                                                        onChange={() => {}}
+                                                        className="mr-2"
+                                                    />
+                                                    <div className="cursor-pointer">{option}</div>
+                                                </li>
+                                            </div>
+                                        ))}
                                 </ul>
 
                                 <div
@@ -330,9 +333,9 @@ function SuggestionsPage() {
                         </div>
                     )}
 
-                    <select value={sortBy} onChange={handleSortClick} name="sort">
-                        <option value="descending">Karma⇂</option>
-                        <option value="ascending">Karma↿</option>
+                    <select value={sortBy} onChange={handleSortClick} name="sort" className="ml-5">
+                        <option value="descending">Popularity⇂</option>
+                        <option value="ascending">Popularity↿</option>
                     </select>
                 </div>
                 <div id="search-place-tag-field-space" className="py-10"></div>
