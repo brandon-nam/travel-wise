@@ -1,0 +1,40 @@
+name: Transformer to S3 workflow
+on:
+  push:
+    paths:
+      - 'transformer/**'
+  workflow_dispatch:
+jobs:
+  transform:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    steps:
+      - uses: 'actions/checkout@v4'
+      - uses: 'google-github-actions/auth@v2'
+        id: 'auth'
+        with:
+          project_id: 'evident-trees-449214-s9'
+          workload_identity_provider: 'projects/369525575533/locations/global/workloadIdentityPools/cs3203-team-1/providers/github'
+          service_account: 'cs3203-github-actions@evident-trees-449214-s9.iam.gserviceaccount.com'
+          token_format: 'access_token'
+      - name: Set up python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: ./transformer
+        run: |
+          pip install poetry;
+          poetry install;
+      - name: Download transform and upload
+        working-directory: ./transformer
+        env:
+          OPENAI_API_KEY: ${{ secrets.CI_OPENAI_API_KEY }}
+        run: |
+          gcloud storage cp "gs://cs3203-bucket-1/extractor/*" ./raw_data/
+          poetry run start
+          gcloud storage cp ./transformed_data/*.json gs://cs3203-bucket-1/transformed/
+          
+
